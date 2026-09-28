@@ -7,13 +7,25 @@ import { pages } from "./build/pages.js";
 const root = import.meta.dirname;
 
 export default defineConfig({
-    plugins: [htmlPartials(root), tailwindcss()],
+    // Relative base keeps assets working on:
+    // username.github.io/repository-name/
+    base: "./",
+
+    plugins: [
+        htmlPartials(root),
+        tailwindcss(),
+    ],
+
     build: {
-        // Razor integration must resolve hashed JS/CSS from the manifest,
-        // including CSS belonging to imported shared chunks (see docs).
         manifest: true,
+
         rollupOptions: {
-            input: Object.fromEntries(pages.map(({ name, file }) => [name, resolve(root, file)])),
+            input: Object.fromEntries(
+                pages.map(({ name, file }) => [
+                    name,
+                    resolve(root, file),
+                ])
+            ),
         },
     },
 });
