@@ -1,0 +1,185 @@
+/*
+ * Expertise page
+ * Keep shared Header / Footer / Mobile Menu styles in the common project files.
+ * This file only contains page-specific visual behavior that is awkward in Tailwind.
+ */
+
+.expertise-page__hero {
+    /* Keep the page title visually closer to the shared header. */
+    min-height: 310px;
+    padding-top: 112px;
+    padding-bottom: 44px;
+}
+
+.expertise-page__services {
+    position: relative;
+    isolation: isolate;
+}
+
+.expertise-page__media::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 82%;
+    border-radius: 8px 0 8px 8px;
+    background: linear-gradient(
+        278.37deg,
+        rgb(255 255 255 / 0) 0.77%,
+        rgb(255 255 255 / 0) 7.39%,
+        rgb(255 255 255 / 0.03) 14.4%,
+        rgb(255 255 255 / 0.5) 36.87%,
+        rgb(255 255 255 / 0.801634) 55.46%,
+        rgb(255 255 255 / 0.915876) 69.15%,
+        rgb(255 255 255 / 0.944088) 81.91%,
+        #fff 100%
+    );
+    opacity: 0.98;
+    content: "";
+    pointer-events: none;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transform-origin: center;
+}
+
+.expertise-page__media > img {
+    transform: translateZ(0);
+}
+
+.expertise-page__media-content {
+    direction: rtl;
+}
+
+@media (min-width: 48rem) {
+    .expertise-page__hero {
+        min-height: 350px;
+        padding-top: 120px;
+        padding-bottom: 52px;
+    }
+
+    .expertise-page__media::after {
+        width: 77.35%;
+        border-radius: 16px 0 16px 16px;
+    }
+}
+
+@media (min-width: 73.75rem) {
+    .expertise-page__hero {
+        min-height: 365px;
+        padding-top: 108px;
+        padding-bottom: 54px;
+    }
+}
+
+@media (max-width: 47.999rem) {
+    .expertise-page__services {
+        padding-top: 0;
+    }
+
+    .expertise-page__card--featured {
+        margin-top: 24px;
+    }
+
+    .expertise-page__media-content {
+        padding-top: 0.35rem;
+        padding-bottom: 0.35rem;
+    }
+}
+
+@media (max-width: 23rem) {
+    .expertise-page__media-content {
+        width: 62%;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
+    }
+}
+
+/* Final card refinements */
+.expertise-page__media-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 101%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateZ(0);
+    transform-origin: center;
+}
+
+.expertise-page__media-image--flip {
+    transform: scaleX(-1) translateZ(0);
+}
+
+/*
+ * The supplied expertise artwork has to cover the media box at every smaller
+ * breakpoint. A slight symmetric overscan prevents the thin empty bands that
+ * can appear above/below the image when the card ratio changes.
+ */
+@media (max-width: 73.749rem) {
+    .expertise-page__media-image {
+        top: -2%;
+        right: -2%;
+        bottom: auto;
+        left: auto;
+        width: 104%;
+        height: 107%;
+    }
+}
+
+@media (max-width: 47.999rem) {
+    .expertise-page__media-image {
+        top: -4%;
+        right: -4%;
+        width: 108%;
+        height: 108%;
+    }
+}
+
+/* Match the Figma reference: the benefits heading is centered vertically
+   against the two rows of benefit items on tablet/desktop. */
+@media (min-width: 48rem) {
+    .expertise-page__benefits {
+        align-items: center;
+    }
+
+    .expertise-page__benefits-title {
+        align-self: center;
+    }
+
+    .expertise-page__benefits-grid {
+        align-items: center;
+    }
+}
+
+.expertise-page__more-link {
+    color: #79b6ed;
+    border-bottom: 1px solid #79b6ed;
+    padding-bottom: 2px;
+    line-height: 1.35;
+}
+
+.expertise-page__more-link i {
+    margin-inline-start: 2px;
+    color: #79b6ed;
+}
+
+.expertise-page__project-cta {
+    color: #f76e11;
+}
+
+.expertise-page__project-cta span {
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    line-height: 1.35;
+}
+
+.expertise-page__project-cta:hover {
+    color: #fff;
+}
+
+.expertise-page__project-cta:hover span {
+    border-bottom-color: currentColor;
+}

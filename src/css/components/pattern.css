@@ -1,0 +1,43 @@
+/* Shared decorative layer for the approved Pattern Studio export.
+ * The site host supplies its own background/content. The inner stage keeps the
+ * exported 430px/404px scene geometry intact so the pattern is not stretched.
+ */
+.site-pattern-host {
+    position: relative;
+    isolation: isolate;
+}
+
+.site-pattern-layer {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.site-pattern-stage {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    width: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.site-pattern-graphic {
+    position: absolute;
+    pointer-events: none;
+}
+
+.site-pattern-graphic > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-pattern-layer {
+        contain: paint;
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "tabWidth": 4,
+  "printWidth": 120,
+  "htmlWhitespaceSensitivity": "css",
+  "overrides": [
+    { "files": "*.json", "options": { "tabWidth": 2 } }
+  ]
+}

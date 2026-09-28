@@ -1,0 +1,434 @@
+/* =========================================================
+   Technical tables — exact approved prototype styles
+   Source of truth: the user-approved standalone prototype.
+   The HTML on both detail pages uses these exact prototype classes
+   so there is no translation layer that can drift visually.
+   ========================================================= */
+
+:root {
+  --ink: #0f172b;
+  --panel: #ecf0f8;
+  --line: rgba(15, 23, 43, .20);
+  --line-soft: rgba(15, 23, 43, .14);
+  --line-strong: rgba(15, 23, 43, .78);
+  --accent: #ff7a24;
+  --check: #55a9f0;
+}
+
+.details-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.details-card--project,
+.details-card--product {
+  aspect-ratio: 1312 / 488;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 56px;
+}
+
+.details-card__body {
+  display: grid;
+  direction: ltr;
+  min-height: 0;
+}
+
+.details-card__body--project {
+  grid-template-columns: 46.05% 53.95%;
+}
+
+.details-card__body--product {
+  grid-template-columns: 33.69% 23.61% 42.70%;
+}
+
+.details-table-wrap {
+  min-width: 0;
+  height: 100%;
+  border-right: 1px solid var(--line-strong);
+}
+
+.details-table {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  direction: rtl;
+  color: var(--ink);
+}
+
+.details-table col.col-label { width: 40%; }
+.details-table col.col-value { width: 60%; }
+.details-table--product col.col-label { width: 41.6%; }
+.details-table--product col.col-value { width: 58.4%; }
+
+/* Horizontal row dividers — CSS only.
+   The reference line is a very thin 1px stroke with softly tapered ends. */
+.details-table thead tr,
+.details-table tbody tr:not(:last-child) {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(15, 23, 43, 0.58) 2.5%,
+    #0f172b 9%,
+    #0f172b 91%,
+    rgba(15, 23, 43, 0.58) 97.5%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: calc(100% - 22px) 1px;
+}
+
+.details-table th,
+.details-table td {
+  padding: 5px 14px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: clamp(11px, 1.02vw, 15px);
+  font-weight: 400;
+  line-height: 1.55;
+  background: transparent;
+}
+
+.details-table thead tr {
+  height: 64px;
+}
+
+.details-table thead th {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-weight: 700;
+  font-size: clamp(11px, 1vw, 14px);
+}
+
+.details-table th + th,
+.details-table td + td {
+  border-right: 1px solid var(--line-strong);
+}
+
+.details-visual {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.details-visual img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.details-visual--project {
+  padding: 18px 30px 14px 26px;
+}
+
+.details-visual--project img {
+  width: 89%;
+  max-height: 94%;
+}
+
+.details-visual--product {
+  padding: 20px 28px 14px 8px;
+}
+
+.details-visual--product img {
+  width: 94%;
+  max-height: 96%;
+}
+
+.extras-panel {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  padding: 0 12px;
+}
+
+.extras-panel__content {
+  width: min(100%, 272px);
+  transform: translateY(-3%);
+}
+
+.extras-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.extras-title span {
+  /* CSS reconstruction of the 38×1px reference Line 52 — placed below the title. */
+  order: 2;
+  width: 38px;
+  height: 1px;
+  flex: 0 0 1px;
+  background: #79b6ed;
+  clip-path: polygon(0 31.25%, 100% 0, 100% 100%, 0 68.75%);
+}
+
+.extras-title h3 {
+  order: 1;
+  margin: 0;
+  font-size: clamp(17px, 1.65vw, 24px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.extras-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.extras-panel li {
+  position: relative;
+  margin: 0 0 12px;
+  padding-right: 26px;
+  font-size: clamp(11px, 1vw, 15px);
+  line-height: 1.85;
+}
+
+.extras-panel li::before {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--check);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.details-card__note {
+  position: relative;
+  min-width: 0;
+  margin-inline: 14px;
+  display: flex;
+  align-items: center;
+  direction: rtl;
+}
+
+/* Full-width divider above the footer note — CSS only. */
+.details-card__note::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(15, 23, 43, 0.62) 1.5%,
+    #0f172b 6%,
+    #0f172b 94%,
+    rgba(15, 23, 43, 0.62) 98.5%,
+    transparent 100%
+  );
+}
+
+.details-card__note p {
+  width: 100%;
+  margin: 0;
+  padding: 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  text-align: right;
+  font-size: clamp(10px, 0.95vw, 13.5px);
+  line-height: 1.7;
+}
+
+.details-card__note-bullet {
+  flex: 0 0 auto;
+  align-self: baseline;
+  font-size: 16px;
+  line-height: 1;
+  padding-top: 3px;
+}
+
+.details-card__note-copy {
+  min-width: 0;
+}
+
+.details-card__note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+@media (max-width: 1180px) and (min-width: 901px) {
+  .details-table thead tr {
+    height: 56px;
+  }
+
+  .details-table thead th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .details-card__note p {
+    font-size: 10.5px;
+    gap: 6px;
+  }
+
+  .extras-panel__content {
+    width: min(100%, 240px);
+  }
+}
+
+@media (max-width: 900px) {
+  .details-card--project,
+  .details-card--product {
+    aspect-ratio: auto;
+    display: block;
+  }
+
+  .details-card__body--project,
+  .details-card__body--product {
+    grid-template-columns: 1fr;
+  }
+
+  .details-table-wrap {
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .details-table thead tr,
+  .details-table tbody tr:not(:last-child) {
+    background-size: calc(100% - 18px) 1px;
+  }
+
+  .details-table th,
+  .details-table td {
+    padding: 14px 10px;
+    font-size: 13px;
+  }
+
+  .details-table thead tr {
+    height: auto;
+  }
+
+  .details-table thead th {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 13px;
+  }
+
+  .extras-panel {
+    min-height: 250px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .details-visual {
+    min-height: 300px;
+  }
+
+  .details-visual--project,
+  .details-visual--product { padding: 20px; }
+
+  .details-card__note {
+    min-height: 64px;
+    padding-block: 8px 10px;
+  }
+
+  .details-card__note p {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    white-space: normal;
+    gap: 7px;
+    padding: 10px 4px 2px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .details-card__note-copy {
+    display: block;
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .details-card {
+    border-radius: 10px;
+  }
+
+  .details-table th,
+  .details-table td {
+    padding-inline: 8px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .details-table thead th {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 12.5px;
+  }
+
+  .extras-panel {
+    min-height: 230px;
+    padding-inline: 20px;
+  }
+
+  .extras-panel__content {
+    width: 100%;
+    max-width: 280px;
+    transform: none;
+  }
+
+  .extras-title {
+    margin-bottom: 20px;
+  }
+
+  .extras-title h3 {
+    font-size: 20px;
+  }
+
+  .extras-panel li {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .details-visual {
+    min-height: 0;
+  }
+
+  .details-visual--project,
+  .details-visual--product {
+    padding: 22px 14px;
+  }
+
+  .details-visual--project img,
+  .details-visual--product img {
+    width: 100%;
+  }
+
+  .details-card__note {
+    min-height: 72px;
+    margin-inline: 10px;
+    padding-block: 8px 10px;
+  }
+
+  .details-card__note p {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+}

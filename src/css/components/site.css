@@ -1,0 +1,114 @@
+/* Header geometry is shared across every page; 1180px matches menu.js. */
+.site-header {
+    direction: rtl;
+}
+.site-header__desktop {
+    display: none;
+}
+.site-header__mobile {
+    display: flex;
+}
+
+@media (min-width: 1180px) {
+    .site-header__desktop {
+        display: flex;
+    }
+    .site-header__mobile {
+        display: none;
+    }
+}
+
+.site-glass {
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(8.05px);
+    backdrop-filter: blur(8.05px);
+}
+
+.site-nav-link {
+    position: relative;
+}
+.site-nav-link[aria-current] {
+    color: #fff;
+}
+.site-nav-link[aria-current]::after {
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 38px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #79b6ed, transparent);
+    transform: translateX(-50%);
+    content: "";
+}
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #0f172b;
+    color: #fff;
+}
+.mobile-menu[aria-hidden="true"] {
+    display: none;
+}
+.mobile-menu[aria-hidden="false"] {
+    display: flex;
+}
+.mobile-menu [aria-current],
+.site-footer [aria-current] {
+    color: #79b6ed;
+}
+html.menu-open,
+body.menu-open {
+    overflow: hidden;
+}
+
+.site-card-shadow {
+    box-shadow: var(--shadow-card);
+}
+
+/* Shared visual surface for reusable content cards.
+   Uses the same border / radius / shadow language as catalog cards. */
+.site-card-surface {
+    border: 1px solid #dfe6f0;
+    border-radius: 9px;
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 767px) {
+    .site-card-surface {
+        border-radius: 6px;
+    }
+}
+
+.pending-form-status {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Shared consultation CTA: keep the compact form anchored to the RTL edge on tablet/small-desktop widths. */
+@media (min-width: 563px) and (max-width: 1023px) {
+    [data-consultation] .site-consultation__mobile-form {
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
+:where(.site-header, .mobile-menu, .site-footer) :focus-visible {
+    outline: 2px solid #79b6ed;
+    outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

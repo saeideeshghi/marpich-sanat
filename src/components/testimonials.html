@@ -1,0 +1,23 @@
+<section class="testimonials {{sectionClass}}" aria-labelledby="{{id}}">
+    <div class="testimonials__head">
+        <h2 id="{{id}}" class="type-section {{titleClass}}">{{title}}</h2>
+        <div class="testimonials__subtitle">
+            <span aria-hidden="true"></span>
+            <p class="type-body">{{subtitle}}</p>
+            <span aria-hidden="true"></span>
+        </div>
+    </div>
+    <div
+        class="testimonials__track"
+        data-testimonials-track
+        tabindex="0"
+        aria-label="نظرات مشتریان؛ با کلیدهای جهت یا کشیدن جابه‌جا شوید"
+    >
+        {{{cards}}}
+    </div>
+    <div class="testimonials__controls" data-slider-controls hidden>
+        <button type="button" data-slider-prev>نظر قبلی</button
+        ><button type="button" data-slider-pause aria-pressed="false">توقف پخش خودکار</button
+        ><button type="button" data-slider-next>نظر بعدی</button>
+    </div>
+</section>

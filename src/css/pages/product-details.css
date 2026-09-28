@@ -1,0 +1,231 @@
+@import "../components/catalog.css";
+
+/* Product details page-specific refinements. */
+
+/* Shared inner-page breadcrumb color. */
+.product-details__breadcrumb,
+.product-details__breadcrumb a,
+.product-details__breadcrumb span,
+.product-details__breadcrumb i {
+    color: #79b6ed !important;
+}
+
+[data-product-image] {
+    transition: transform 250ms ease;
+}
+
+/* Upper 2×2 information box.
+   The Figma divider shape is recreated in CSS: darkest at the center and
+   softly tapered toward both ends, so no divider SVG assets are required. */
+.product-details__quick-specs {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid #0f172b;
+    border-radius: 12px;
+    color: #28344b;
+    direction: rtl;
+    font-size: 7px;
+}
+
+.product-details__quick-specs::before,
+.product-details__quick-specs::after {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    pointer-events: none;
+}
+
+/* Horizontal Figma-style tapered divider. */
+.product-details__quick-specs::before {
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgb(15 23 43 / 0) 0%,
+        rgb(15 23 43 / 0.4) 12%,
+        #0f172b 50%,
+        rgb(15 23 43 / 0.4) 88%,
+        rgb(15 23 43 / 0) 100%
+    );
+}
+
+/* Vertical Figma-style tapered divider. */
+.product-details__quick-specs::after {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(
+        180deg,
+        rgb(15 23 43 / 0) 0%,
+        rgb(15 23 43 / 0.4) 12%,
+        #0f172b 50%,
+        rgb(15 23 43 / 0.4) 88%,
+        rgb(15 23 43 / 0) 100%
+    );
+}
+
+.product-details__quick-spec-item {
+    display: flex;
+    min-width: 0;
+    min-height: 52px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    direction: rtl;
+    text-align: right;
+}
+
+.product-details__quick-spec-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    object-fit: contain;
+}
+
+/* The exact Figma SVGs can overwrite these five files later without any
+   HTML/CSS change: delivery, standards, warranty, support and download. */
+.product-details__download-button {
+    position: relative;
+    display: flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #f76e11 0%, #f4824c 100%);
+    padding: 0 48px 0 12px;
+    color: #fff;
+    direction: rtl;
+    text-align: right;
+    font-size: 8px;
+    font-weight: 500;
+    transition: filter 180ms ease;
+}
+
+.product-details__download-button:hover {
+    filter: brightness(1.05);
+}
+
+.product-details__download-button img {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    object-fit: contain;
+}
+
+/* Shared catalog CTA is the single source of truth for the lower form. */
+.product-details__consultation-shell .catalog-consultation {
+    margin-top: 0;
+}
+
+@media (min-width: 640px) {
+    .product-details__quick-specs {
+        font-size: 9px;
+    }
+
+    .product-details__download-button {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1180px) {
+    .product-details__quick-specs {
+        font-size: 11px;
+    }
+
+    .product-details__quick-spec-item {
+        min-height: 58px;
+        gap: 10px;
+        padding-inline: 14px;
+    }
+
+    .product-details__quick-spec-icon {
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+    }
+
+    .product-details__download-button {
+        min-height: 46px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-product-image],
+    .product-details__download-button {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   Final product-details visual alignment
+   ========================================================= */
+
+/* Controls under the product image use the approved brand-blue icon color. */
+.product-details-page [data-view-reset],
+.product-details-page [data-view-rotate],
+.product-details-page [data-view-fullscreen] {
+    color: #79b6ed;
+}
+
+/* CAD / request-file button and the main technical frame use the same dark stroke. */
+.product-details__cad-button {
+    border-color: #0f172b;
+    color: #0f172b;
+}
+
+.product-details__technical-box {
+    border: 1px solid #0f172b;
+    background: transparent;
+}
+
+/* Internal dividers stay lighter than the outer frame, matching the Figma tables. */
+.product-details__technical-features,
+.product-details__technical-table-wrap {
+    border-top: 1px solid rgb(15 23 43 / 0.42);
+}
+
+.product-details__specs-table {
+    border-collapse: collapse;
+}
+
+.product-details__specs-table thead tr > * {
+    border-bottom: 1px solid rgb(15 23 43 / 0.58);
+}
+
+.product-details__specs-table tr > * + * {
+    border-right: 1px solid rgb(15 23 43 / 0.52);
+}
+
+.product-details__specs-table tbody tr:not(:last-child) > * {
+    border-bottom: 1px solid rgb(15 23 43 / 0.24);
+}
+
+.product-details__technical-note {
+    border-top: 1px solid rgb(15 23 43 / 0.42);
+}
+
+/* Keep the download icon clearly separated from the left edge. */
+.product-details__download-button img {
+    left: 16px;
+    filter: brightness(0) invert(1);
+}
+
+@media (min-width: 1180px) {
+    .product-details__technical-features,
+    .product-details__technical-table-wrap {
+        border-top: 0;
+        border-right: 1px solid rgb(15 23 43 / 0.42);
+    }
+}
+

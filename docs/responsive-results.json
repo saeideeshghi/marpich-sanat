@@ -1,0 +1,1488 @@
+{
+  "date": "2026-09-27",
+  "browser": "Chromium 153",
+  "assets": "Intentionally omitted; no image/font appearance approval",
+  "results": [
+    {
+      "page": "home",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "products",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 360,
+          "expected": 360,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "air-handling",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "product-details",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 590,
+          "expected": 590,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "projects",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 396,
+          "expected": 396,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "project-details",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 400,
+          "expected": 400,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industries",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industry-textile",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 496,
+          "expected": 496,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 386,
+          "expected": 386,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 302,
+          "expected": 302,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "width": 360,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 298,
+          "expected": 298,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 662,
+          "expected": 662,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "products",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 360,
+          "expected": 360,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "air-handling",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "product-details",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 590,
+          "expected": 590,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "projects",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 396,
+          "expected": 396,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "project-details",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 400,
+          "expected": 400,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industries",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industry-textile",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 496,
+          "expected": 496,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 361,
+          "expected": 361,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 302,
+          "expected": 302,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "width": 463,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 298,
+          "expected": 298,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.4,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "products",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 360,
+          "expected": 360,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "air-handling",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "product-details",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 590,
+          "expected": 590,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "projects",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 396,
+          "expected": 396,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "project-details",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 400,
+          "expected": 400,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industries",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industry-textile",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 496,
+          "expected": 496,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 361,
+          "expected": 361,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 302,
+          "expected": 302,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "width": 464,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 298,
+          "expected": 298,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 731,
+          "expected": 731,
+          "paths": 30,
+          "width": 160.278,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "products",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 430,
+          "expected": 430,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "air-handling",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "product-details",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 540,
+          "expected": 540,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "projects",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 408,
+          "expected": 408,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "project-details",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 455,
+          "expected": 455,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industries",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 278,
+          "expected": 278,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industry-textile",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 448,
+          "expected": 448,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 423,
+          "expected": 423,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 460,
+          "expected": 460,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "width": 768,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 298,
+          "expected": 298,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 810,
+          "expected": 810,
+          "paths": 30,
+          "width": 123.094,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "products",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 470,
+          "expected": 470,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "air-handling",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 470,
+          "expected": 470,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "product-details",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 540,
+          "expected": 540,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "projects",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 472,
+          "expected": 472,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "project-details",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 500,
+          "expected": 500,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industries",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 470,
+          "expected": 470,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industry-textile",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 500,
+          "expected": 500,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 446,
+          "expected": 446,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 500,
+          "expected": 500,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "width": 1180,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 354,
+          "expected": 354,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 310,
+          "expected": 310,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "products",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 470,
+          "expected": 470,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "air-handling",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 470,
+          "expected": 470,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "product-details",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 540,
+          "expected": 540,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "projects",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 473,
+          "expected": 473,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "project-details",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 500,
+          "expected": 500,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industries",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 470,
+          "expected": 470,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "industry-textile",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 500,
+          "expected": 500,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 446,
+          "expected": 446,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 500,
+          "expected": 500,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "width": 1440,
+      "overflow": false,
+      "patterns": [
+        {
+          "kind": "header",
+          "height": 354,
+          "expected": 354,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        },
+        {
+          "kind": "footer",
+          "height": 323,
+          "expected": 323,
+          "paths": 30,
+          "width": 72.7,
+          "stroke": "0.65"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "interactions": [
+    "mobile menu + Escape",
+    "auth dialog from menu + Escape",
+    "product list layout",
+    "catalog event payload",
+    "FAQ single-open",
+    "RFQ FormData attachment field",
+    "reduced motion and animation",
+    "document search and print"
+  ]
+}

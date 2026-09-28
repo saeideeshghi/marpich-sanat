@@ -1,0 +1,54 @@
+{
+  "source": "0(1).zip",
+  "date": "2026-09-27",
+  "version": "0.3.3",
+  "changed": [
+    "README.md",
+    "README.txt",
+    "docs/REVIEW.md",
+    "docs/VALIDATION.md",
+    "docs/assets-manifest.json",
+    "docs/backend-handoff.html",
+    "docs/responsive-results.json",
+    "docs/source-audit.json",
+    "package-lock.json",
+    "package.json",
+    "src/css/components/pattern.css",
+    "src/css/pages/home.css",
+    "src/css/pages/industries.css",
+    "src/css/pages/industry-textile.css",
+    "src/css/pages/products.css",
+    "src/css/pages/projects.css",
+    "src/data/patterns/site-pattern.json",
+    "src/js/components/site-pattern.js"
+  ],
+  "added": [
+    "docs/history/2026-09-26-REVIEW.md",
+    "docs/history/2026-09-26-VALIDATION.md",
+    "docs/history/HISTORY.md",
+    "docs/history/VALIDATION-HISTORY.md",
+    "docs/history/interaction-results.json",
+    "docs/history/responsive-results.json",
+    "docs/history/source-audit.json"
+  ],
+  "page_css_whitespace_only": [
+    "src/css/pages/industries.css",
+    "src/css/pages/industry-textile.css",
+    "src/css/pages/products.css",
+    "src/css/pages/home.css",
+    "src/css/pages/projects.css"
+  ],
+  "preserved": "All page/component HTML, page JSON and technical table CSS remain unchanged; all JS except site-pattern.js remains unchanged",
+  "assets": "157 referenced public assets intentionally absent from source upload",
+  "placeholder_links_in_rendered_pages": 292,
+  "browser_cases": 66,
+  "pattern_reference": "pattern-final.zip",
+  "pattern_changes": [
+    "site-pattern.json replaced with approved Pattern Studio settings",
+    "removed profile interpolation",
+    "removed footer opacity/light overrides",
+    "removed SVG vertical stretching",
+    "removed forced minimum/non-scaling stroke",
+    "restored authored desktop/mobile stage geometry and reference animation behavior"
+  ]
+}

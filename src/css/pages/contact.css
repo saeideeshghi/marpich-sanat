@@ -1,0 +1,598 @@
+/* =========================================================
+   CONTACT PAGE
+   Only geometry/pattern rules that are cleaner and more stable
+   outside the Tailwind markup live here.
+========================================================= */
+
+.contact-page {
+    min-height: 100vh;
+    overflow-x: clip;
+    background: #f4f7fd;
+    color: #121c31;
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================================================
+   HERO / PATTERN
+========================================================= */
+
+.contact-hero {
+    isolation: isolate;
+    background: #f4f7fd;
+}
+
+.contact-hero::before {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: -2;
+    width: 100%;
+    height: 298px;
+    background-color: #111a2d;
+    content: "";
+    pointer-events: none;
+}
+
+.contact-main {
+    isolation: isolate;
+    /* One continuous page surface from the office cards through the RFQ form. */
+    background: #f4f7fd;
+}
+
+/* =========================================================
+   INTRO + BRANCH CARDS
+========================================================= */
+
+.contact-intro {
+    padding-top: 108px;
+}
+
+.contact-branches {
+    position: relative;
+    z-index: 2;
+    margin-top: 14px;
+    padding-bottom: 13px;
+}
+
+.contact-branches > .branch-card {
+    display: grid !important;
+    visibility: visible !important;
+    width: 100%;
+    /* Let the card grow with its content. This prevents the CTA row from
+       being clipped at intermediate viewport widths. */
+    height: auto;
+    min-height: 196px;
+    grid-template-columns: minmax(0, 1fr) 112px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f8faff;
+    box-shadow: var(--shadow-card);
+}
+
+.branch-card__map {
+    width: 100%;
+    height: 100% !important;
+    min-height: 100% !important;
+    align-self: stretch;
+    object-fit: cover;
+}
+
+/* Exact alignment details from the Figma reference */
+.branch-card__title-row {
+    direction: rtl;
+    text-align: right;
+}
+
+.branch-card__location-icon {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.branch-card__address {
+    direction: rtl;
+    text-align: right;
+}
+
+.contact-whatsapp {
+    direction: ltr;
+}
+
+/* Branch typography tuned to the supplied desktop reference. */
+.branch-card__address {
+    font-size: 7.5px !important;
+    line-height: 1.9;
+}
+
+.branch-card dl {
+    font-size: 7.5px !important;
+    line-height: 1.82;
+}
+
+.branch-card dl dt {
+    font-weight: 600;
+}
+
+.branch-card dl dd {
+    font-weight: 400;
+}
+
+.branch-card a {
+    font-size: 7px;
+}
+
+.contact-whatsapp span {
+    color: #fff !important;
+}
+
+.contact-whatsapp__icon,
+.contact-submit__icon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: brightness(0) invert(1);
+}
+
+.contact-upload__icon {
+    display: block !important;
+    flex: 0 0 auto;
+}
+
+.contact-submit {
+    direction: ltr;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form-section {
+    padding-top: 20px;
+    padding-bottom: 22px;
+}
+
+.contact-control {
+    width: 100%;
+    height: 34px;
+    min-height: 34px;
+    border: 1px solid rgb(121 182 237 / 50%);
+    border-radius: 8px;
+    outline: none;
+    background: rgb(255 255 255 / 8%);
+    padding-inline: 11px;
+    color: #172137;
+    font-size: 8px;
+    line-height: 1.5;
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background-color 180ms ease;
+}
+
+.contact-control::placeholder {
+    color: #8b96aa;
+    opacity: 1;
+}
+
+.contact-control:focus {
+    border-color: #79b6ed;
+    background: rgb(255 255 255 / 40%);
+    box-shadow: 0 0 0 2px rgb(121 182 237 / 14%);
+}
+
+textarea.contact-control {
+    display: block;
+    height: 82px;
+    min-height: 82px;
+    resize: none;
+    padding-block: 10px;
+}
+
+.select-wrap {
+    position: relative;
+}
+
+.select-wrap::after {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    width: 7px;
+    height: 7px;
+    border-right: 1.4px solid #73baf6;
+    border-bottom: 1.4px solid #73baf6;
+    content: "";
+    pointer-events: none;
+    transform: translateY(-70%) rotate(45deg);
+}
+
+.select-wrap select {
+    appearance: none;
+    padding-left: 34px;
+}
+
+.upload-box {
+    background: rgb(255 255 255 / 6%);
+}
+
+.upload-box.is-dragging {
+    border-color: #ff7428;
+    background: rgb(255 116 40 / 7%);
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.contact-benefits {
+    margin-top: 0;
+    background: #cfe8fc !important;
+}
+
+.contact-benefits__grid {
+    background: #cfe8fc;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.contact-benefits .benefit-item {
+    display: flex !important;
+    min-height: 103px;
+    justify-content: center;
+    background: transparent !important;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 640px) and (max-width: 1179px) {
+    .contact-intro {
+        padding-top: 118px;
+        text-align: right;
+    }
+
+    .contact-intro > div {
+        text-align: right !important;
+    }
+
+    .contact-intro > div > p {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .contact-branches {
+        width: min(100%, 760px);
+        padding-bottom: 18px;
+    }
+
+    .contact-branches > .branch-card {
+        height: auto;
+        min-height: 224px;
+        grid-template-columns: minmax(0, 1fr) 150px;
+    }
+
+    .branch-card__map {
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+
+    .branch-card__address,
+    .branch-card dl {
+        font-size: 9px !important;
+    }
+
+    .branch-card__detail-row {
+        grid-template-columns: 56px minmax(0, 1fr);
+        column-gap: 8px;
+    }
+
+    .branch-card a {
+        font-size: 8px;
+    }
+
+    .contact-control {
+        height: 42px;
+        min-height: 42px;
+        padding-inline: 14px;
+        font-size: 10px;
+    }
+
+    textarea.contact-control {
+        height: 92px;
+        min-height: 92px;
+    }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1180px) {
+    .contact-hero::before {
+        height: 354px;
+    }
+
+    .contact-intro {
+        padding-top: 118px;
+        text-align: right;
+    }
+
+    .contact-intro > div {
+        text-align: right !important;
+    }
+
+    .contact-intro > div > p {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .contact-branches {
+        margin-top: 24px;
+        padding-bottom: 22px;
+    }
+
+    .contact-branches > .branch-card {
+        /* Keep the Figma desktop proportion as a minimum, while still
+           allowing the card to grow if text wraps on narrower desktops. */
+        height: auto;
+        min-height: 295px;
+        grid-template-columns: minmax(0, 1fr) 44%;
+        border-radius: 16px;
+        box-shadow: var(--shadow-card);
+    }
+
+    .branch-card__map {
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+
+    .branch-card__address {
+        font-size: 11.5px !important;
+        line-height: 1.95;
+    }
+
+    .branch-card dl {
+        font-size: 11px !important;
+        line-height: 1.85;
+    }
+
+    .branch-card a {
+        font-size: 9.5px;
+    }
+
+    .contact-form-section {
+        padding-top: 20px;
+        padding-bottom: 34px;
+    }
+
+    .contact-control {
+        height: 48px;
+        min-height: 48px;
+        border-radius: 12px;
+        padding-inline: 16px;
+        font-size: 12px;
+    }
+
+    textarea.contact-control {
+        height: 98px;
+        min-height: 98px;
+        padding-block: 14px;
+    }
+
+    .select-wrap::after {
+        left: 18px;
+        width: 8px;
+        height: 8px;
+    }
+
+    .contact-benefits__grid {
+        min-height: 272px;
+        align-items: center;
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .contact-benefits .benefit-item {
+        min-height: 190px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* =========================================================
+   MOBILE CARD HEIGHT
+   The branch card height is content-driven; only a minimum is kept so the
+   map and information panel stay visually balanced.
+========================================================= */
+
+@media (max-width: 639px) {
+    .contact-branches > .branch-card {
+        height: auto;
+        min-height: 196px;
+    }
+
+    .branch-card__map {
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+    .contact-intro {
+        padding-top: 109px;
+    }
+
+    .contact-branches {
+        margin-top: 12px;
+    }
+
+    .contact-branches > .branch-card {
+        min-height: 206px;
+        grid-template-columns: minmax(0, 1fr) 108px;
+    }
+
+    .contact-control {
+        padding-inline: 9px;
+        font-size: 7.5px;
+    }
+}
+
+/* Office text sizing and alignment */
+.branch-card__address {
+    direction: rtl;
+    text-align: right;
+}
+
+.branch-card__details {
+    width: 100%;
+    direction: rtl;
+}
+
+/* Figma alignment: one fixed label column on the right, values aligned beside it. */
+.branch-card__detail-row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 62px minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: 10px;
+    direction: rtl;
+}
+
+.branch-card__detail-row + .branch-card__detail-row {
+    margin-top: 4px;
+}
+
+.branch-card__detail-row dt {
+    grid-column: 1;
+    min-width: 0;
+    font-weight: 600;
+    text-align: right;
+    color: rgb(23 33 55 / 88%);
+}
+
+.branch-card__detail-row dd {
+    grid-column: 2;
+    min-width: 0;
+    width: 100%;
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: plaintext;
+    color: rgb(23 33 55 / 88%);
+}
+
+.branch-card__detail-row .branch-card__detail-value--rtl {
+    direction: rtl;
+    text-align: left;
+}
+.contact-whatsapp,
+.contact-submit {
+    background-image: linear-gradient(90deg, #f76e11 0%, #f4824c 100%) !important;
+    background-color: #f76e11;
+}
+
+.contact-location-button {
+    border-color: #f76e11 !important;
+    color: #f76e11 !important;
+    background: transparent !important;
+}
+
+.contact-whatsapp__icon,
+.contact-submit__icon {
+    display: block !important;
+    visibility: visible !important;
+    flex: 0 0 auto;
+    opacity: 1 !important;
+    filter: brightness(0) invert(1);
+}
+
+.contact-whatsapp span,
+.contact-submit span {
+    color: #fff !important;
+}
+
+/* Form stroke: #79B6ED at 50% */
+.contact-control {
+    border-color: rgba(121, 182, 237, 0.5) !important;
+}
+
+.contact-control::placeholder,
+.contact-control--select:required:invalid {
+    color: #8b96aa !important;
+    opacity: 1;
+}
+
+.contact-control--select option {
+    color: #172137;
+}
+
+.contact-control--select option[value=""] {
+    color: #8b96aa;
+}
+
+/* Phone placeholder is RTL/right aligned; entered digits remain natural LTR. */
+.contact-control--phone {
+    direction: rtl;
+    text-align: right;
+}
+
+.contact-control--phone::placeholder {
+    direction: rtl;
+    text-align: right;
+}
+
+.contact-control--phone:not(:placeholder-shown) {
+    direction: ltr;
+    text-align: right;
+}
+
+/* Upload icon physically on the left, text on its right. */
+.upload-box {
+    direction: ltr;
+    border-color: rgba(121, 182, 237, 0.5) !important;
+}
+
+.upload-box > span {
+    direction: rtl;
+    text-align: right;
+}
+
+.contact-upload__icon {
+    display: block !important;
+    flex: 0 0 auto;
+}
+
+@media (min-width: 1180px) {
+    .branch-card__address {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .branch-card__details {
+        font-size: 12px;
+        line-height: 1.85;
+    }
+}
+
+@media (max-width: 639px) {
+    .branch-card__detail-row {
+        grid-template-columns: 48px minmax(0, 1fr);
+        column-gap: 6px;
+    }
+
+    .branch-card__detail-row + .branch-card__detail-row {
+        margin-top: 2px;
+    }
+
+    .branch-card__address,
+    .branch-card__details {
+        font-size: 8px !important;
+        line-height: 1.85;
+    }
+
+    .branch-card a {
+        font-size: 7.5px;
+    }
+}

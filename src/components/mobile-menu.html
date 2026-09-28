@@ -1,0 +1,179 @@
+<div
+    aria-hidden="true"
+    aria-label="منوی اصلی"
+    aria-modal="true"
+    class="mobile-menu hidden flex-col"
+    data-mobile-menu=""
+    id="mobile-menu"
+    role="dialog"
+    tabindex="-1"
+>
+    <!-- MENU HEADER -->
+    <div
+        class="flex shrink-0 items-center justify-between border-b border-white/10 px-4 pb-5 pt-[50px] sm:px-6 md:px-8"
+    >
+        <!-- MENU BRAND -->
+        <a
+            aria-label="صفحه اصلی مارپیچ صنعت"
+            class="flex shrink-0 items-center gap-[8px] sm:gap-[9px]"
+            data-menu-close=""
+            dir="ltr"
+            href="index.html"
+        >
+            <!-- Logo LEFT -->
+            <img
+                alt=""
+                class="size-[38px] shrink-0 object-contain sm:size-[42px] md:size-[44px]"
+                src="/assets/logos/logo-symbol.svg"
+            />
+            <!-- Text RIGHT -->
+            <div class="flex flex-col items-end justify-center text-right" dir="rtl">
+                <span class="text-[21px] font-medium leading-[0.9] text-white sm:text-[22px] md:text-[23px]" dir="ltr">
+                    MPS
+                </span>
+                <span
+                    class="mt-[4px] whitespace-nowrap text-[5px] leading-none text-white/70 sm:text-[5.5px] md:text-[6px]"
+                >
+                    کیفیت امروز، تجربه‌ی فردا
+                </span>
+            </div>
+        </a>
+        <!-- Close -->
+        <button
+            aria-label="بستن منو"
+            class="flex size-[42px] items-center justify-center text-[23px] text-white sm:size-[44px]"
+            data-menu-close=""
+            type="button"
+        >
+            <i aria-hidden="true" class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <!-- MENU NAVIGATION -->
+    <nav aria-label="منوی موبایل" class="flex-1 overflow-y-auto px-5 py-4 sm:px-6 md:px-8 [direction:rtl]">
+        <ul>
+            <!-- Home -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="home"
+                    href="index.html"
+                >
+                    صفحه اصلی
+                </a>
+            </li>
+            <!-- Projects -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center justify-between border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="projects"
+                    href="projects.html"
+                >
+                    <span> پروژه‌ها </span>
+                    <i aria-hidden="true" class="fa-solid fa-chevron-left text-[8px] text-brand-blue"></i>
+                </a>
+            </li>
+            <!-- Expertise -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center justify-between border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="expertise"
+                    href="expertise.html"
+                >
+                    <span> حوزه‌های تخصصی </span>
+                    <i aria-hidden="true" class="fa-solid fa-chevron-left text-[8px] text-brand-blue"></i>
+                </a>
+            </li>
+            <!-- Products -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center justify-between border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="products"
+                    href="products.html"
+                >
+                    <span> محصولات </span>
+                    <i aria-hidden="true" class="fa-solid fa-chevron-left text-[8px] text-brand-blue"></i>
+                </a>
+            </li>
+            <!-- Industries -->
+            <li>
+                <a
+                    class="site-nav-link flex min-h-[52px] items-center justify-between border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="industries"
+                    href="industries.html"
+                >
+                    <span> صنایع تحت پوشش </span>
+                    <i aria-hidden="true" class="fa-solid fa-chevron-left text-[8px] text-brand-blue"></i>
+                </a>
+            </li>
+            <!-- Articles -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="articles"
+                    href="index.html#articles"
+                >
+                    مقالات
+                </a>
+            </li>
+            <!-- About -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="about"
+                    href="about.html"
+                >
+                    درباره ما
+                </a>
+            </li>
+            <!-- Contact -->
+            <li>
+                <a
+                    class="flex min-h-[52px] items-center border-b border-white/10 text-[14px] sm:text-[15px]"
+                    data-menu-close=""
+                    data-nav="contact"
+                    href="contact.html"
+                >
+                    تماس با ما
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- MENU FOOTER -->
+    <div class="shrink-0 border-t border-white/10 p-5 sm:px-6 md:px-8">
+        <div class="mb-4 flex items-center justify-between">
+            <!-- Language -->
+            <button aria-label="تغییر زبان" class="flex items-center gap-2 text-[13px] [direction:ltr]" type="button">
+                <span> FA </span>
+                <i aria-hidden="true" class="fa-solid fa-chevron-down text-[6px]"></i>
+                <img alt="" class="h-[17px] w-[21px] object-contain" src="/assets/icons/flags/iran.svg" />
+            </button>
+            <!-- Search SVG -->
+            <a
+                aria-label="جستجو"
+                class="flex size-10 items-center justify-center transition-opacity hover:opacity-75"
+                data-menu-close=""
+                href="products.html#product-search"
+            >
+                <img alt="" class="h-[18px] w-[18px] object-contain" src="/assets/icons/ui/search.svg" />
+            </a>
+        </div>
+        <!-- Login -->
+        <button
+            class="flex h-[42px] w-full items-center justify-center gap-2 rounded-[4px] border border-black bg-[rgba(15,23,43,0.4)] text-[13px] site-glass"
+            data-auth-open="login"
+            aria-haspopup="dialog"
+            aria-controls="auth-modal"
+            type="button"
+        >
+            <i aria-hidden="true" class="fa-regular fa-user"></i>
+            <span> ورود / ثبت نام </span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,327 @@
+/* ========================================
+   Home hero
+======================================== */
+
+.hero-shell {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    overflow: hidden;
+    background: #0f172b;
+    color: #ffffff;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 115%;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: left center;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 14.236%;
+    z-index: 1;
+    width: 86.389%;
+    opacity: 0.98;
+    background: linear-gradient(
+        278.37deg,
+        rgb(15 23 43 / 0) 0.77%,
+        rgb(15 23 43 / 0) 9.61%,
+        rgb(15 23 43 / 0.03) 17.64%,
+        rgb(15 23 43 / 0.5) 23.54%,
+        rgb(15 23 43 / 0.8648) 32.51%,
+        rgb(15 23 43 / 0.9441) 41.27%,
+        #0f172b 50.58%,
+        #0f172b 60.67%,
+        #0f172b 68.99%,
+        #0f172b 100%
+    );
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.hero-content {
+    direction: rtl;
+    text-align: right;
+}
+
+@media (min-width: 1180px) {
+    .hero-shell {
+        height: clamp(620px, 48.82vw, 703px);
+    }
+
+    .hero-content-wrapper {
+        padding: 82px clamp(40px, 4.45vw, 64px) 20px;
+    }
+
+    .hero-content {
+        width: min(49%, 650px);
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1179px) {
+    .hero-shell {
+        height: 600px;
+    }
+
+    .hero-overlay {
+        left: 0;
+        width: 100%;
+        opacity: 1;
+        background: linear-gradient(
+            90deg,
+            rgb(15 23 43 / 0) 0%,
+            rgb(15 23 43 / 0.04) 18%,
+            rgb(15 23 43 / 0.45) 37%,
+            rgb(15 23 43 / 0.88) 51%,
+            #0f172b 65%,
+            #0f172b 100%
+        );
+        transform: none;
+    }
+
+    .hero-content-wrapper {
+        padding: 110px 32px 20px;
+    }
+
+    .hero-content {
+        width: 58%;
+        max-width: 530px;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-shell {
+        height: 600px;
+    }
+
+    .hero-image {
+        left: 0;
+        height: 115%;
+        width: auto;
+    }
+
+    .hero-overlay {
+        inset: 0;
+        width: 100%;
+        opacity: 1;
+        background: linear-gradient(
+            90deg,
+            rgb(15 23 43 / 0) 0%,
+            rgb(15 23 43 / 0.04) 14%,
+            rgb(15 23 43 / 0.4) 32%,
+            rgb(15 23 43 / 0.84) 48%,
+            #0f172b 63%,
+            #0f172b 100%
+        );
+        transform: none;
+    }
+
+    .hero-content-wrapper {
+        padding: 110px 16px 16px;
+    }
+
+    .hero-content {
+        width: 73%;
+        max-width: 380px;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 374px) {
+    .hero-shell {
+        height: 520px;
+    }
+
+    .hero-content-wrapper {
+        padding: 105px 12px 14px;
+    }
+
+    .hero-content {
+        width: 76%;
+    }
+}
+
+/* =========================================================
+   HERO CTA BUTTONS
+   ========================================================= */
+
+.home-hero-actions {
+    direction: rtl;
+
+    /* Mobile */
+    width: 100%;
+    max-width: 500px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+
+    gap: 10px;
+}
+
+/* ---------------------------------------------------------
+   Shared button
+   --------------------------------------------------------- */
+
+.home-hero-action {
+    --cta-text-right: 15px;
+    --cta-icon-left: 10px;
+
+    position: relative;
+    min-width: 0;
+}
+
+.home-hero-action > span {
+    position: absolute;
+    right: var(--cta-text-right);
+}
+
+.home-hero-action > img {
+    position: absolute;
+    left: var(--cta-icon-left);
+}
+
+/* =========================================================
+   CONSULTATION BUTTON
+   ========================================================= */
+
+.home-hero-action--primary {
+    --cta-text-right: 22px;
+    --cta-icon-left: 14px;
+
+    background: linear-gradient(
+        90deg,
+        #f76e11 0%,
+        #f08000 100%
+    );
+}
+
+/* =========================================================
+   PRODUCTS BUTTON
+   Transparent background + Gradient Stroke only
+   ========================================================= */
+
+.home-hero-action--secondary {
+    --cta-text-right: 15px;
+    --cta-icon-left: 10px;
+
+    position: relative;
+
+    background: transparent !important;
+    border: 0;
+
+    border-radius: 4px;
+}
+
+/* Gradient Border Only */
+.home-hero-action--secondary::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    padding: 2px;
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        rgb(101 177 245 / 46%) 0%,
+        #65b1f5 60%,
+        rgb(101 177 245 / 75%) 100%
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+.home-hero-action--secondary:hover {
+    background: transparent !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 640px) {
+    .home-hero-actions {
+        width: max-content;
+        max-width: 100%;
+
+        grid-template-columns:
+            240px
+            170px;
+
+        gap: 12px;
+
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .home-hero-action--primary {
+        --cta-text-right: 29px;
+        --cta-icon-left: 18px;
+    }
+
+    .home-hero-action--secondary {
+        --cta-text-right: 19px;
+        --cta-icon-left: 12px;
+    }
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1180px) {
+    .home-hero-actions {
+        grid-template-columns:
+            220px
+            180px;
+
+        gap: 12px;
+    }
+
+    .home-hero-action--primary {
+        --cta-text-right: 36px;
+        --cta-icon-left: 23px;
+    }
+
+    .home-hero-action--secondary {
+        --cta-text-right: 23px;
+        --cta-icon-left: 15px;
+    }
+}
+
+/* Process connectors. */
+.home-process-connector {
+    -webkit-mask: url("/assets/icons/process/connector.svg") center / 100% 100% no-repeat;
+
+    mask: url("/assets/icons/process/connector.svg") center / 100% 100% no-repeat;
+}
