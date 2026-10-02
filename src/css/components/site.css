@@ -451,16 +451,7 @@ body.menu-open {
     }
 }
 
-/* Readability: shared footer and navigation, independent of page styles. */
-.site-footer { font-size: 16px; line-height: 1.9; }
-.site-footer h3 { font-size: 18px; line-height: 1.7; }
-.site-footer p, .site-footer ul, .site-footer a[href^="tel:"], .site-footer a[href^="mailto:"] { font-size: 16px; }
-.site-footer p { overflow-wrap: anywhere; }
-.site-footer ul a { min-height: 32px; }
-.site-footer [aria-label="شبکه‌های اجتماعی"] a { width: 40px; height: 40px; }
-.site-footer [aria-label="شبکه‌های اجتماعی"] img { width: 18px; height: 18px; }
-.site-footer > div > div:last-child { color: #d8e0ed; }
-.site-footer > div > div:last-child p { font-size: 14px; }
+/* Shared navigation typography. Footer styles live in footer.css. */
 .site-navigation > ul { font-size: 14px; }
 @media (min-width: 1180px) and (max-width: 1279px) {
     .site-header__desktop { padding-inline: 24px; }

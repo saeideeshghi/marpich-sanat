@@ -547,7 +547,7 @@ export function initSitePatterns() {
         footer.classList.add("site-pattern-host");
         const layer = createPatternLayer("footer");
         footer.prepend(layer);
-        // Interim approved export; replace only footer-pattern.json when the distinct footer reference arrives.
+        // The footer uses its own vertical fan artwork; header settings stay independent.
         mountPattern(layer, cloneConfig(footerPatternSettings));
     }
 }

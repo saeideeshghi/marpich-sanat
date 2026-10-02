@@ -1,0 +1,19 @@
+بسته اصلاحات نسخه v2
+
+محتویات این ZIP را در ریشه پروژه فعلی کپی و Replace کنید.
+پوشه‌های src و public باید Merge شوند؛ assets، فونت‌ها و .git فعلی را نگه دارید.
+راهنمای کامل: docs/2026-10-02-FINAL-RESPONSIVE.md
+این بسته فایل‌های اصلاح‌شده را دارد و یک پروژه مستقل جداگانه نیست.
+
+اجرا و بررسی:
+npm ci
+npm run check
+npm run build:pages
+npm run preview:pages
+
+بعد از بررسی:
+git add .
+git commit -m "Fix hero, footer and responsive layouts"
+git push origin main
+
+تنها دارایی مفقود: PDF دیتاشیت؛ مسیر دقیق در گزارش آمده است.

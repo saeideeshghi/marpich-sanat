@@ -1,4 +1,4 @@
-> بسته آماده GitHub Pages — ۱ اکتبر ۲۰۲۶: تمام اصلاحات بازبینی سوم حفظ شده‌اند. مسیر تصاویر قدیمی و build مخصوص Pages اصلاح شد. [راهنمای تصویری آپلود](docs/GITHUB-UPLOAD.html) · [مراحل متنی](GITHUB-UPLOAD.md) · [گزارش اصلاحات ظاهری](docs/2026-10-01-FOOTER-STUDIO.md) · [راهنمای ادیتور](tools/README.md)
+> بازبینی ۲ اکتبر ۲۰۲۶: Hero صفحه اصلی، Footer و خوانایی و چیدمان responsive هر ۱۲ صفحه اصلاح شدند. [گزارش فعلی و روش جایگزینی](docs/2026-10-02-FINAL-RESPONSIVE.md). گزارش‌های قدیمی‌تر پایین این فایل، سابقه نسخه‌های قبل هستند.
 
 # مارپیچ صنعت — سورس فرانت‌اند
 
@@ -77,17 +77,18 @@ VITE_AUTH_API_BASE=/api/auth
 
 رویدادهای `consultation:submit` و `rfq:submit` دارای `{form, formData}` هستند. `catalog:search` یک object تخت از فیلدهای فرم دارد. adapter باید قبل از await، preventDefault کند و خودش وضعیت ارسال/خطا/موفقیت را مدیریت کند.
 
-۳۲۲ لینک خالی/# در خروجی صفحات، با احتساب تکرار partialها، باقی است. مقصد واقعی باید تعیین شود. CTAهای دارای فیلد company راه تماس مستقیمی ندارند؛ پیش از فعال‌کردن ثبت، راه تماس یا حساب تأییدشده لازم است.
+۱۱۸ لینک خالی/# در خروجی صفحات، با احتساب تکرار partialها، باقی است. مقصد واقعی باید تعیین شود. CTAهای دارای فیلد company راه تماس مستقیمی ندارند؛ پیش از فعال‌کردن ثبت، راه تماس یا حساب تأییدشده لازم است.
 
 ## قرارداد ظاهر
 
 RTL و DOM فعلی حفظ شود. منوی دسکتاپ از 1180px؛ فوتر breakpoint مستقل دارد. جدول‌های فنی محصول/پروژه از `detail-technical.css` و کلاس‌های `details-card`, `details-table`, `extras-panel` استفاده می‌کنند. خطوط جدول CSS هستند.
 
-CTA هیروی خانه با چیدمان flex و اندازه متناسب موبایل اصلاح شده است. gradient stroke شفاف دکمه محصولات و برش تصاویر Expertise حفظ شده‌اند. `src/css/responsive.css` در importهای جاری فعال نیست؛ افزودن عمومی آن ممکن است ظاهر را عوض کند.
+CTA هیروی خانه یک Grid دو ستونه RTL است؛ زیر 360px تک‌ستونه می‌شود تا متن 14px خوانا بماند. دکمه محصولات پس‌زمینه شفاف و gradient stroke دارد. `src/css/responsive.css` پس از CSS صفحه و جدول‌های فنی در هر ۱۲ entry وارد می‌شود؛ فونت و هندسه responsive را در همین لایه تنظیم کنید. ظاهر Footer در `src/css/components/footer.css` و HTML مشترک آن در `src/components/footer.html` است.
 
 ## بررسی و ادامه کار
 
-- گزارش جاری: `docs/2026-10-01-FOOTER-STUDIO.md`
+- گزارش جاری: `docs/2026-10-02-FINAL-RESPONSIVE.md`
+- گزارش قبلی: `docs/2026-10-01-FOOTER-STUDIO.md`
 - ادیتور پترن: `tools/footer-pattern-studio.html` (مستقیم و آفلاین باز می‌شود)؛ راهنمای اعمال خروجی در `tools/README.md`
 - اصلاحات پترن/هیرو/لینک‌ها: `docs/2026-10-01-PATTERN-HERO-LINKS.md`
 - اصلاحات پایه موبایل: `docs/2026-10-01-MOBILE-FIXES.md`
