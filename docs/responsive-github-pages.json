@@ -1,0 +1,1329 @@
+[
+  {
+    "name": "index",
+    "width": 320,
+    "small": [
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "مشاوره و طراحی مهندسی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "تولید سفارشی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "نصب و راه‌اندازی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "بهینه‌سازی و پشتیبانی تخصصی"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 320,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-gallery__link-arrow",
+        "size": "10px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 312.578125
+  },
+  {
+    "name": "contact",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 320,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 360,
+    "small": [
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "مشاوره و طراحی مهندسی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "تولید سفارشی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "نصب و راه‌اندازی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "بهینه‌سازی و پشتیبانی تخصصی"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 360,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-gallery__link-arrow",
+        "size": "10px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 312.578125
+  },
+  {
+    "name": "contact",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 360,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 390,
+    "small": [
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "مشاوره و طراحی مهندسی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "تولید سفارشی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "نصب و راه‌اندازی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "بهینه‌سازی و پشتیبانی تخصصی"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 390,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-gallery__link-arrow",
+        "size": "10px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 312.578125
+  },
+  {
+    "name": "contact",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 390,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 430,
+    "small": [
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "مشاوره و طراحی مهندسی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "تولید سفارشی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "نصب و راه‌اندازی"
+      },
+      {
+        "selector": "h3.",
+        "size": "10.5px",
+        "text": "بهینه‌سازی و پشتیبانی تخصصی"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 430,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-gallery__link-arrow",
+        "size": "10px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 315.09375
+  },
+  {
+    "name": "contact",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 430,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 640,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-gallery__link-arrow",
+        "size": "10px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 292.265625
+  },
+  {
+    "name": "contact",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 640,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 768,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 317.015625
+  },
+  {
+    "name": "contact",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 768,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 1024,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 288.21875
+  },
+  {
+    "name": "contact",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 1024,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 1180,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 288.21875
+  },
+  {
+    "name": "contact",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 1180,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 1440,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 296.40625
+  },
+  {
+    "name": "contact",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 1440,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 1920,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 300.859375
+  },
+  {
+    "name": "contact",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 1920,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "index",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "about",
+    "width": 2560,
+    "small": [
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      },
+      {
+        "selector": "span.about-card-link__arrow",
+        "size": "0px",
+        "text": "←"
+      }
+    ],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false,
+    "aboutBottom": 300.859375
+  },
+  {
+    "name": "contact",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "products",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "product-details",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "projects",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "project-details",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industries",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "industry-textile",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "expertise",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "air-handling",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  },
+  {
+    "name": "articles",
+    "width": 2560,
+    "small": [],
+    "overflow": [],
+    "clipped": [],
+    "bodyOverflow": false
+  }
+]

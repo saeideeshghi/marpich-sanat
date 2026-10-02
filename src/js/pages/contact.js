@@ -4,6 +4,7 @@
  */
 import "../../css/main.css";
 import "../../css/pages/contact.css";
+import "../../css/layout-checks.css";
 import { initSite } from "../main.js";
 
 function initFileUpload() {
@@ -119,3 +120,12 @@ function initContactForm() {
 initSite();
 initFileUpload();
 initContactForm();
+
+// Keep the dark intro background behind all copy after font loading, wrapping or zoom.
+const contactIntro = document.querySelector(".contact-intro");
+const contactHero = document.querySelector(".contact-hero");
+if (contactIntro && contactHero) {
+    new ResizeObserver(() => {
+        contactHero.style.setProperty("--contact-intro-background", `${contactIntro.offsetHeight + 48}px`);
+    }).observe(contactIntro);
+}

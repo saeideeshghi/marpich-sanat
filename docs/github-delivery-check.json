@@ -1,0 +1,87 @@
+{
+  "assetMerge": "pass",
+  "fonts": "9/9 loaded, all requests HTTP 200 under Pages prefix",
+  "imageChecks": [
+    {
+      "viewport": [
+        320,
+        640
+      ],
+      "width": 299.984375,
+      "height": 143.703125,
+      "top": 283.78125,
+      "bottom": 427.484375,
+      "naturalWidth": 1311,
+      "naturalHeight": 628,
+      "fit": "contain"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": 365.96875,
+      "height": 175.3125,
+      "top": 283.78125,
+      "bottom": 459.09375,
+      "naturalWidth": 1311,
+      "naturalHeight": 628,
+      "fit": "contain"
+    },
+    {
+      "viewport": [
+        640,
+        700
+      ],
+      "width": 615.984375,
+      "height": 295.078125,
+      "top": 263.46875,
+      "bottom": 558.546875,
+      "naturalWidth": 1311,
+      "naturalHeight": 628,
+      "fit": "contain"
+    },
+    {
+      "viewport": [
+        768,
+        900
+      ],
+      "width": 719.984375,
+      "height": 344.890625,
+      "top": 288.21875,
+      "bottom": 633.109375,
+      "naturalWidth": 1311,
+      "naturalHeight": 628,
+      "fit": "contain"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": 1278.40625,
+      "height": 612.390625,
+      "top": 267.609375,
+      "bottom": 880,
+      "naturalWidth": 1311,
+      "naturalHeight": 628,
+      "fit": "contain"
+    },
+    {
+      "viewport": [
+        2560,
+        1080
+      ],
+      "width": 1311,
+      "height": 628,
+      "top": 272.0625,
+      "bottom": 900.0625,
+      "naturalWidth": 1311,
+      "naturalHeight": 628,
+      "fit": "contain"
+    }
+  ],
+  "aboutImage": "Original remote about-team.svg at 1311×628, served for QA only at its production URL. Heavy original artwork is omitted from the delivered ZIP.",
+  "pagesBase": "12 HTML files and all CSS public URLs prefixed, including fallbacks and missing files",
+  "errors": []
+}

@@ -26,7 +26,7 @@
     border-radius: 12px;
     color: #28344b;
     direction: rtl;
-    font-size: 7px;
+    font-size: 14px;
 }
 
 .product-details__quick-specs::before,
@@ -102,7 +102,7 @@
     color: #fff;
     direction: rtl;
     text-align: right;
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 500;
     transition: filter 180ms ease;
 }
@@ -129,17 +129,17 @@
 
 @media (min-width: 640px) {
     .product-details__quick-specs {
-        font-size: 9px;
+        font-size: 14px;
     }
 
     .product-details__download-button {
-        font-size: 10px;
+        font-size: 14px;
     }
 }
 
 @media (min-width: 1180px) {
     .product-details__quick-specs {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .product-details__quick-spec-item {
@@ -156,7 +156,7 @@
 
     .product-details__download-button {
         min-height: 46px;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 

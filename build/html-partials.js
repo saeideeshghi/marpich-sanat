@@ -24,7 +24,7 @@ export function renderPage(html, filename, root) {
         }
         if (!partialNames.includes(name)) throw new Error(`Unknown HTML partial: ${name}`);
         const partial = readFileSync(resolve(root, "src/components", `${name}.html`), "utf8");
-        return partial.replace(/<a\b[^>]*\bdata-nav="([^"]+)"[^>]*>/g, (tag, nav) => {
+        return partial.replace(/<(?:a|button)\b[^>]*\bdata-nav="([^"]+)"[^>]*>/g, (tag, nav) => {
             if (nav !== page.activeNav) return tag;
             const destination = tag.match(/\bhref="([^"]+)"/)?.[1];
             const current = destination === page.file ? "page" : "true";

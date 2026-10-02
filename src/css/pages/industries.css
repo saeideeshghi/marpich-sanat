@@ -68,7 +68,7 @@
 .industries-hero__title {
     max-width: 980px;
     margin: 0;
-    font-size: clamp(34px, 2.7vw, 42px);
+    font-size: max(14px, clamp(34px, 2.7vw, 42px));
     font-weight: 800;
     line-height: 1.35;
 }
@@ -173,7 +173,7 @@
 
 .industry-feature__content h2 {
     margin: 0;
-    font-size: clamp(21px, 1.8vw, 29px);
+    font-size: max(14px, clamp(21px, 1.8vw, 29px));
     font-weight: 800;
     line-height: 1.45;
 }
@@ -182,7 +182,7 @@
     max-width: 98%;
     margin: 8px 0 0;
     color: rgb(255 255 255 / 0.95);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.85;
 }
 
@@ -198,10 +198,12 @@
     padding-bottom: 6px;
     direction: rtl;
     color: var(--ind-blue);
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
     text-align: right;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
 
 .industry-feature__link::after {
@@ -301,7 +303,7 @@
     padding: 0 0 6px;
     color: #354158;
     font: inherit;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -358,7 +360,7 @@
 
 .industries-consultation__content h2 {
     margin: 0;
-    font-size: clamp(27px, 2.1vw, 34px);
+    font-size: max(14px, clamp(27px, 2.1vw, 34px));
     font-weight: 800;
     line-height: 1.45;
 }
@@ -394,7 +396,7 @@
     padding: 0 16px;
     color: var(--ind-navy);
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .industries-consultation__field::placeholder {
@@ -418,7 +420,7 @@
     padding: 0 20px;
     color: #fff;
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
     box-shadow: 0 8px 18px rgb(247 110 17 / 0.2);
 }
@@ -488,7 +490,7 @@
 
     .industries-hero__eyebrow {
         margin-bottom: 4px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.6;
     }
 
@@ -551,7 +553,7 @@
 
     .industry-feature__content p {
         margin-top: 4px;
-        font-size: 8.5px;
+        font-size: 14px;
         line-height: 1.7;
     }
 
@@ -559,7 +561,7 @@
         gap: 5px;
         margin-top: 7px;
         padding-bottom: 4px;
-        font-size: 7.5px;
+        font-size: 14px;
     }
 
     .industry-feature--pharma .industry-feature__content h2 {
@@ -569,7 +571,7 @@
     .industry-feature--pharma .industry-feature__content p,
     .industry-feature--petrochemical .industry-feature__content p,
     .industry-feature--other .industry-feature__content p {
-        font-size: 7.5px;
+        font-size: 14px;
     }
 
     .industries-catalog {
@@ -592,7 +594,7 @@
         width: 30px;
         height: 30px;
         border-radius: 4px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .industries-grid {
@@ -609,7 +611,7 @@
 
     .catalog-more__button {
         gap: 7px;
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .industries-consultation {
@@ -627,7 +629,7 @@
 
     .industries-consultation__eyebrow {
         margin-bottom: 7px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .industries-consultation__content h2 {
@@ -636,7 +638,7 @@
 
     .industries-consultation__description {
         margin-top: 10px;
-        font-size: 10.5px;
+        font-size: 14px;
         line-height: 1.95;
     }
 
@@ -652,7 +654,7 @@
 
     .industries-consultation__field {
         min-height: 40px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .industries-consultation__field--wide {
@@ -663,7 +665,7 @@
         width: 100%;
         min-height: 41px;
         justify-self: stretch;
-        font-size: 10px;
+        font-size: 14px;
     }
 }
 

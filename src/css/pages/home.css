@@ -319,9 +319,74 @@
     }
 }
 
-/* Process connectors. */
-.home-process-connector {
-    -webkit-mask: url("/assets/icons/process/connector.svg") center / 100% 100% no-repeat;
-
-    mask: url("/assets/icons/process/connector.svg") center / 100% 100% no-repeat;
+/* Continuous logos: both groups have equal width, including the trailing gap. */
+.home-partners { --logo-width: 160px; --logo-gap: 32px; --marquee-time: 48s; background: #d3eaff; }
+.home-partners__inner { width: min(100% - 40px, 1320px); margin-inline: auto; display: flex; align-items: center; gap: 28px; padding-block: 22px; }
+.home-partners__title { flex: 0 0 190px; margin: 0; font-size: 15px; line-height: 1.85; }
+.home-partners__title span, .home-partners__title strong { display: block; }
+.home-partners__viewport { flex: 1; min-width: 0; overflow: hidden; direction: ltr; }
+.home-partners__track { display: flex; width: max-content; animation: partner-flow var(--marquee-time) linear infinite; }
+.home-partners__logos { display: flex; flex: 0 0 auto; align-items: center; gap: var(--logo-gap); margin: 0; padding: 0 var(--logo-gap) 0 0; list-style: none; direction: rtl; }
+.home-partners__item { width: var(--logo-width); flex: 0 0 var(--logo-width); display: flex; justify-content: center; }
+.home-partners__logos img { width: 100%; max-width: 180px; height: 80px; object-fit: contain; }
+@media (hover: hover) { .home-partners:hover .home-partners__track { animation-play-state: paused !important; } }
+@keyframes partner-flow { to { transform: translateX(-50%); } }
+.home-partners--static .home-partners__track { width: 100%; animation: none; }
+.home-partners--static .home-partners__logos { justify-content: space-evenly; width: 100%; padding: 0; }
+.home-partners--static [aria-hidden="true"] { display: none; }
+@media (max-width: 639px) {
+    .home-partners__inner { width: calc(100% - 24px); gap: 14px; padding-block: 16px; }
+    .home-partners__title { flex-basis: 96px; font-size: 11px; }
+    .home-partners__logos img { height: 56px; }
 }
+@media (min-width: 1600px) { .home-partners__inner { width: min(100% - 120px, 1680px); } .home-partners__logos img { height: 88px; } }
+@media (prefers-reduced-motion: reduce) {
+    .home-partners__track { width: 100%; animation: none; }
+    .home-partners__logos { width: 100%; flex-wrap: wrap; justify-content: center; padding: 0; row-gap: 16px; }
+    .home-partners__logos[aria-hidden="true"] { display: none; }
+}
+
+/* Use the supplied arrow assets; their heads retain the authored proportions. */
+.home-process-steps { --icon-size: 64px; margin: 0 auto; padding: 30px 24px; width: min(100%, 1320px); display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0; direction: rtl; list-style: none; }
+.home-process-step { position: relative; min-width: 0; text-align: center; padding-inline: 8px; }
+.home-process-icon { display: block; width: var(--icon-size); height: var(--icon-size); margin-inline: auto; object-fit: contain; }
+.home-process-step h3 { margin: 16px 0 0; font-size: 15px; font-weight: 500; line-height: 1.7; }
+.home-process-step p { margin: 4px 0 0; font-size: 12px; line-height: 1.8; }
+.home-process-arrow { position: absolute; top: calc(var(--icon-size) / 2 - 6px); left: -50%; width: 100%; padding-inline: calc(var(--icon-size) / 2 + 18px); pointer-events: none; }
+.home-process-arrow img { width: 100%; height: 12px; object-fit: fill; }
+@media (max-width: 639px) {
+    .home-process-steps { --icon-size: 34px; width: 100%; padding: 22px 10px; }
+    .home-process-step { padding-inline: 3px; }
+    .home-process-step h3 { margin-top: 14px; font-size: 10.5px; line-height: 1.65; }
+    .home-process-step p { display: none; }
+    .home-process-arrow { top: calc(var(--icon-size) / 2 - 3px); padding-inline: calc(var(--icon-size) / 2 + 5px); }
+    .home-process-arrow img { height: 6px; }
+}
+@media (min-width: 1600px) { .home-process-steps { width: min(100% - 120px, 1680px); } }
+
+/* Size by height so narrow viewports do not shrink the photograph vertically.
+ * Its intrinsic aspect ratio is preserved; the hero clips only horizontal overflow. */
+body[data-page="home"] .hero-image {
+    inset: 0 auto 0 0;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    object-position: left top;
+}
+body[data-page="home"] .hero-shell { height: auto; min-height: 600px; }
+body[data-page="home"] .hero-content-wrapper { min-height: inherit; height: auto; padding-block: 116px 44px; }
+.home-hero-action { display: flex; justify-content: space-between; align-items: center; gap: 8px; height: 46px; padding: 0 16px; font-size: 12px; line-height: 1.5; }
+.home-hero-action > span { position: static; min-width: 0; white-space: nowrap; }
+.home-hero-action > img { position: static; width: 16px; height: 16px; flex-shrink: 0; }
+@media (max-width: 639px) {
+    body[data-page="home"] .hero-shell { min-height: 560px; }
+    body[data-page="home"] .hero-content { width: 100%; max-width: 400px; }
+    body[data-page="home"] .hero-content-wrapper { padding: 112px 16px 34px; }
+    body[data-page="home"] .hero-content h1 { font-size: clamp(22px, 5.8vw, 28px); line-height: 1.65; }
+    body[data-page="home"] .hero-content p { font-size: 13px; line-height: 1.9; }
+    .home-hero-action { padding-inline: 9px; gap: 5px; height: 44px; font-size: 11px; }
+    .home-hero-action > img { width: 12px; height: 12px; }
+}
+@media (min-width: 640px) and (max-width: 767px) { body[data-page="home"] .hero-content { width: 100%; max-width: 500px; } }
+@media (min-width: 768px) and (max-width: 1179px) { body[data-page="home"] .hero-content { width: 65%; max-width: 560px; } }

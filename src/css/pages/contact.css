@@ -18,6 +18,7 @@
 ========================================================= */
 
 .contact-hero {
+    --site-pattern-crop-height: var(--contact-intro-background, 354px);
     isolation: isolate;
     background: #f4f7fd;
 }
@@ -99,12 +100,12 @@
 
 /* Branch typography tuned to the supplied desktop reference. */
 .branch-card__address {
-    font-size: 7.5px !important;
+    font-size: 14px !important;
     line-height: 1.9;
 }
 
 .branch-card dl {
-    font-size: 7.5px !important;
+    font-size: 14px !important;
     line-height: 1.82;
 }
 
@@ -117,7 +118,7 @@
 }
 
 .branch-card a {
-    font-size: 7px;
+    font-size: 14px;
 }
 
 .contact-whatsapp span {
@@ -160,7 +161,7 @@
     background: rgb(255 255 255 / 8%);
     padding-inline: 11px;
     color: #172137;
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.5;
     transition:
         border-color 180ms ease,
@@ -277,7 +278,7 @@ textarea.contact-control {
 
     .branch-card__address,
     .branch-card dl {
-        font-size: 9px !important;
+        font-size: 14px !important;
     }
 
     .branch-card__detail-row {
@@ -286,14 +287,14 @@ textarea.contact-control {
     }
 
     .branch-card a {
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .contact-control {
         height: 42px;
         min-height: 42px;
         padding-inline: 14px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     textarea.contact-control {
@@ -346,17 +347,17 @@ textarea.contact-control {
     }
 
     .branch-card__address {
-        font-size: 11.5px !important;
+        font-size: 14px !important;
         line-height: 1.95;
     }
 
     .branch-card dl {
-        font-size: 11px !important;
+        font-size: 14px !important;
         line-height: 1.85;
     }
 
     .branch-card a {
-        font-size: 9.5px;
+        font-size: 14px;
     }
 
     .contact-form-section {
@@ -369,7 +370,7 @@ textarea.contact-control {
         min-height: 48px;
         border-radius: 12px;
         padding-inline: 16px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     textarea.contact-control {
@@ -436,7 +437,7 @@ textarea.contact-control {
 
     .contact-control {
         padding-inline: 9px;
-        font-size: 7.5px;
+        font-size: 14px;
     }
 }
 
@@ -566,12 +567,12 @@ textarea.contact-control {
 
 @media (min-width: 1180px) {
     .branch-card__address {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.9;
     }
 
     .branch-card__details {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.85;
     }
 }
@@ -588,11 +589,13 @@ textarea.contact-control {
 
     .branch-card__address,
     .branch-card__details {
-        font-size: 8px !important;
+        font-size: 14px !important;
         line-height: 1.85;
     }
 
     .branch-card a {
-        font-size: 7.5px;
+        font-size: 14px;
     }
 }
+
+.contact-page .contact-hero::before { height: var(--contact-intro-background, 354px); }

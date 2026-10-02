@@ -1,6 +1,6 @@
 /* Shared navigation below 1180px. Locks background with inert, traps focus,
  * closes on navigation/Escape/desktop resize and restores the prior inert state.
- * Keep the menu directly under body so its own ancestors are never made inert.
+ * Mobile submenus are real disclosure controls; desktop dropdowns use CSS hover/focus.
  */
 const DESKTOP_QUERY = "(min-width: 1180px)";
 
@@ -21,6 +21,29 @@ export function initMobileMenu() {
                 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex="0"]',
             ),
         ].filter((element) => element.getClientRects().length > 0);
+
+    const submenuItems = [...menu.querySelectorAll("[data-mobile-submenu]")];
+
+    const setSubmenu = (group, open) => {
+        const toggle = group.querySelector("[data-mobile-submenu-toggle]");
+        const panel = group.querySelector("[data-mobile-submenu-panel]");
+        if (!toggle || !panel) return;
+
+        toggle.setAttribute("aria-expanded", String(open));
+        panel.hidden = !open;
+        group.classList.toggle("is-open", open);
+    };
+
+    submenuItems.forEach((group) => {
+        const toggle = group.querySelector("[data-mobile-submenu-toggle]");
+        toggle?.addEventListener("click", () => {
+            const next = toggle.getAttribute("aria-expanded") !== "true";
+            submenuItems.forEach((other) => {
+                if (other !== group) setSubmenu(other, false);
+            });
+            setSubmenu(group, next);
+        });
+    });
 
     function closeMenu({ restoreFocus = true } = {}) {
         if (!isOpen) return;
@@ -59,6 +82,7 @@ export function initMobileMenu() {
         if (event.target.closest("[data-auth-open]")) closeMenu();
         else if (event.target.closest("[data-menu-close], a[href]")) closeMenu();
     });
+
     document.addEventListener("keydown", (event) => {
         if (!isOpen) return;
         if (event.key === "Escape") {
@@ -82,9 +106,10 @@ export function initMobileMenu() {
             }
         }
     });
+
     desktop.addEventListener("change", (event) => {
         if (event.matches) closeMenu({ restoreFocus: false });
     });
-    // Restore the closed state when a browser restores a page from its back/forward cache.
+
     window.addEventListener("pagehide", () => closeMenu({ restoreFocus: false }));
 }

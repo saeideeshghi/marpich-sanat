@@ -3,7 +3,94 @@
  * call preventDefault() synchronously to suppress the disconnected fallback.
  * Changing a select/chip does not request results. Pagination is not implemented.
  */
+
+function closeCatalogDropdowns(except = null) {
+    document.querySelectorAll("[data-catalog-dropdown].is-open").forEach((dropdown) => {
+        if (dropdown === except) return;
+        dropdown.classList.remove("is-open");
+        dropdown.querySelector("[data-catalog-dropdown-toggle]")?.setAttribute("aria-expanded", "false");
+    });
+}
+
+function enhanceCatalogSelect(select, index) {
+    if (select.dataset.customized === "true") return;
+    select.dataset.customized = "true";
+    select.classList.add("product-search__select--native");
+
+    const dropdown = document.createElement("div");
+    dropdown.className = `product-search__dropdown product-search__dropdown--${index + 1}`;
+    dropdown.dataset.catalogDropdown = "";
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "product-search__dropdown-toggle";
+    toggle.dataset.catalogDropdownToggle = "";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-haspopup", "listbox");
+
+    const label = document.createElement("span");
+    label.className = "product-search__dropdown-label";
+    const icon = document.createElement("i");
+    icon.className = "fa-solid fa-chevron-down";
+    icon.setAttribute("aria-hidden", "true");
+    toggle.append(label, icon);
+
+    const panel = document.createElement("div");
+    panel.className = "product-search__dropdown-panel";
+    panel.setAttribute("role", "listbox");
+
+    [...select.options].forEach((option) => {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "product-search__dropdown-option";
+        item.dataset.value = option.value;
+        item.setAttribute("role", "option");
+        item.textContent = option.textContent.trim();
+        item.addEventListener("click", () => {
+            select.value = option.value;
+            select.dispatchEvent(new Event("change", { bubbles: true }));
+            closeCatalogDropdowns();
+        });
+        panel.append(item);
+    });
+
+    const sync = () => {
+        const selected = select.selectedOptions[0] || select.options[0];
+        label.textContent = selected?.textContent.trim() || "انتخاب کنید";
+        panel.querySelectorAll("[data-value]").forEach((item) => {
+            const active = item.dataset.value === select.value;
+            item.classList.toggle("is-selected", active);
+            item.setAttribute("aria-selected", String(active));
+        });
+    };
+
+    toggle.addEventListener("click", () => {
+        const open = !dropdown.classList.contains("is-open");
+        closeCatalogDropdowns(dropdown);
+        dropdown.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+    });
+
+    select.addEventListener("change", sync);
+    select.insertAdjacentElement("afterend", dropdown);
+    dropdown.append(toggle, panel);
+    sync();
+}
+
+let catalogDropdownGlobalEventsBound = false;
+function bindCatalogDropdownGlobalEvents() {
+    if (catalogDropdownGlobalEventsBound) return;
+    catalogDropdownGlobalEventsBound = true;
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest("[data-catalog-dropdown]")) closeCatalogDropdowns();
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeCatalogDropdowns();
+    });
+}
+
 export function initCatalogs(scope = document) {
+    bindCatalogDropdownGlobalEvents();
     scope
         .querySelectorAll(
             "[data-products-page], [data-air-handling-page], [data-industries-page], [data-page='projects']",
@@ -30,6 +117,9 @@ export function initCatalogs(scope = document) {
                 }),
             );
             page.querySelectorAll("[data-product-search]").forEach((form) => {
+                [...form.querySelectorAll("select.product-search__select")].forEach((select, index) =>
+                    enhanceCatalogSelect(select, index),
+                );
                 const chips = form.querySelector("[data-active-filters]");
                 const status = form.querySelector("[data-search-status]");
                 const announce = (message) => {
@@ -93,6 +183,9 @@ export function initCatalogs(scope = document) {
                 form.querySelector("[data-clear-filters]")?.addEventListener("click", () => {
                     form.reset();
                     chips?.replaceChildren();
+                    form.querySelectorAll("select").forEach((select) =>
+                        select.dispatchEvent(new Event("change", { bubbles: true })),
+                    );
                     if (status) status.hidden = true;
                 });
             });

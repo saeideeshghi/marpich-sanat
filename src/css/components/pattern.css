@@ -41,3 +41,10 @@
         contain: paint;
     }
 }
+
+/* All internal-page headers share the same authored canvas, including About/Contact. */
+.site-pattern-layer--header {
+    bottom: auto;
+    height: min(var(--site-pattern-scene-height, 430px), var(--site-pattern-crop-height, 100%));
+}
+@media (max-width: 639px) { .site-pattern-layer--header { --site-pattern-scene-height: 404px; } }

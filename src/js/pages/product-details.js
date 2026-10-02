@@ -3,6 +3,7 @@
  */
 import "../../css/main.css";
 import "../../css/pages/product-details.css";
+import "../../css/layout-checks.css";
 import "../../css/components/detail-technical.css";
 import { initSite } from "../main.js";
 

@@ -2,7 +2,7 @@
  * Shared decorative site pattern.
  *
  * Rendering and animation intentionally mirror the approved Pattern Studio export:
- * - the authored desktop/mobile profiles switch at the exported breakpoint (463px)
+ * - header profiles switch at 640px; the approved footer retains its exported breakpoint
  * - path geometry, gradients, wave motion, moving light and opacity are untouched
  * - no tablet interpolation, footer dimming, SVG stretching or forced minimum stroke
  *
@@ -10,12 +10,15 @@
  * its background/content; this module supplies the decorative SVG layer only.
  */
 import patternSettings from "../../data/patterns/site-pattern.json";
+import footerPatternSettings from "../../data/patterns/footer-pattern.json";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
+// Both decorative layers use one clock; scroll visibility only controls rendering.
+const patternClockStart = performance.now();
 
-const cloneConfig = () => JSON.parse(JSON.stringify(patternSettings));
+const cloneConfig = (settings = patternSettings) => JSON.parse(JSON.stringify(settings));
 
-function mountPattern(root, initialConfig) {
+export function mountPattern(root, initialConfig) {
     const uid = `mps-pattern-${Math.random().toString(36).slice(2, 10)}`;
     const create = (tag, attrs = {}, parent) => {
         const element = document.createElementNS(SVG_NS, tag);
@@ -26,10 +29,15 @@ function mountPattern(root, initialConfig) {
 
     const config = initialConfig;
     let time = 0;
+    let paused = false;
+    let heldTime = null;
+    let timeOffset = 0;
+    let selected = null;
+    let artwork = null;
+    let sceneWidth = 1008;
+    let sceneHeight = 494;
+    const defaultArtwork = { viewBox: [0, 0, 1008, 494], lines: config.lines, waveAxis: "y", lightAxis: "x" };
     let visible = true;
-    let frame = 0;
-    let last = 0;
-    let painted = 0;
     let profile;
     let nodes = [];
 
@@ -142,7 +150,7 @@ function mountPattern(root, initialConfig) {
         normal.replaceChildren();
         glowGroup.replaceChildren();
 
-        nodes = config.lines.map((line, index) => {
+        nodes = artwork.lines.map((line, index) => {
             const gradient = create(
                 "linearGradient",
                 { id: `${uid}-gradient-${index}`, gradientUnits: "userSpaceOnUse" },
@@ -156,7 +164,7 @@ function mountPattern(root, initialConfig) {
             const centerY = (base.y1 + base.y2) / 2;
             const deltaX = ((base.x1 - base.x2) / 2) * (line.gradientScale / 100);
             const deltaY = ((base.y1 - base.y2) / 2) * (line.gradientScale / 100);
-            const shift = (line.gradientShift / 100) * 1016;
+            const shift = (line.gradientShift / 100) * (sceneWidth + 8);
             const rotatedX = deltaX * Math.cos(angle) - deltaY * Math.sin(angle);
             const rotatedY = deltaX * Math.sin(angle) + deltaY * Math.cos(angle);
 
@@ -182,7 +190,7 @@ function mountPattern(root, initialConfig) {
 
             const group = create("g", {}, normal);
             const glowWrapper = create("g", {}, glowGroup);
-            const transform = `translate(${line.x} ${line.y}) translate(504 247) rotate(${line.rotation}) scale(${line.scaleX / 100} ${line.scaleY / 100}) translate(-504 -247)`;
+            const transform = `translate(${line.x} ${line.y}) translate(${sceneWidth / 2} ${sceneHeight / 2}) rotate(${line.rotation}) scale(${line.scaleX / 100} ${line.scaleY / 100}) translate(${-sceneWidth / 2} ${-sceneHeight / 2})`;
 
             [group, glowWrapper].forEach((item) => {
                 item.setAttribute("transform", transform);
@@ -246,9 +254,28 @@ function mountPattern(root, initialConfig) {
     }
 
     function layout() {
-        // Approved export has a hard profile switch at 463px. No interpolation.
-        profile = config.profiles[root.clientWidth <= config.breakpoint ? "mobile" : "desktop"];
+        // Use the original mobile geometry below 640px; no interpolation of the authored profiles.
+        const breakpoint = root.dataset.sitePattern === "header" ? 640 : config.breakpoint;
+        const mobile = root.clientWidth < breakpoint;
+        profile = config.profiles[mobile ? "mobile" : "desktop"];
+        root.dataset.patternProfile = mobile ? "mobile" : "desktop";
+        const nextArtwork = config.artworks?.[profile.artwork || (mobile ? "mobile" : "desktop")] || defaultArtwork;
+        if (artwork !== nextArtwork) {
+            artwork = nextArtwork;
+            sceneWidth = artwork.viewBox[2];
+            sceneHeight = artwork.viewBox[3];
+            svg.setAttribute("viewBox", artwork.viewBox.join(" "));
+            svg.setAttribute("width", sceneWidth);
+            svg.setAttribute("height", sceneHeight);
+            maskGradient.setAttribute("x2", sceneWidth);
+            build();
+            return;
+        }
         const p = profile;
+        // The stage keeps authored geometry; CSS clips the layer to the host’s dark surface.
+        if (root.dataset.sitePattern === "header") {
+            root.style.setProperty("--site-pattern-scene-height", `${p.height}px`);
+        }
 
         setStyles(stage, {
             height: `${p.height}px`,
@@ -280,8 +307,9 @@ function mountPattern(root, initialConfig) {
     const eased = (value) =>
         config.animation.easing === "smooth" ? value * value * (3 - 2 * value) : value;
 
-    function paint() {
+    function paint(now = performance.now()) {
         if (!profile) return;
+        time = heldTime ?? Math.max(0, (now - patternClockStart) / 1000 * config.animation.speed * profile.motionSpeed + timeOffset);
 
         const animation = config.animation;
         const p = profile;
@@ -317,17 +345,14 @@ function mountPattern(root, initialConfig) {
             let d = line.d;
 
             if (wave && line.wave > 0) {
-                let x = 0;
                 const localTime = Math.max(0, time - line.delay) * line.speed;
                 d = node.tokens
-                    .map((token) => {
+                    .map((token, index) => {
                         if (typeof token === "string") return token;
-                        if (token.x) {
-                            x = token.value;
-                            return x;
-                        }
-
-                        const u = Math.max(0, Math.min(1, x / 1008));
+                        const vertical = artwork.waveAxis === "x";
+                        if (token.x !== vertical) return token.value;
+                        const along = node.tokens[index + (vertical ? 1 : -1)].value;
+                        const u = Math.max(0, Math.min(1, along / (vertical ? sceneHeight : sceneWidth)));
                         const basePhase =
                             u * Math.PI * 2 * animation.cycles +
                             node.index * animation.phaseStep +
@@ -360,10 +385,14 @@ function mountPattern(root, initialConfig) {
                 (animation.lightDirection === 1
                     ? eased(Math.min(1, progress))
                     : 1 - eased(Math.min(1, progress))) *
-                    (1008 + 2 * animation.lightWidth);
+                    ((artwork.lightAxis === "y" ? sceneHeight : sceneWidth) + 2 * animation.lightWidth);
 
-            node.light.setAttribute("x1", center - animation.lightWidth / 2);
-            node.light.setAttribute("x2", center + animation.lightWidth / 2);
+            const lightAxis = artwork.lightAxis === "y" ? "y" : "x";
+            const crossAxis = lightAxis === "y" ? "x" : "y";
+            node.light.setAttribute(`${crossAxis}1`, 0);
+            node.light.setAttribute(`${crossAxis}2`, 0);
+            node.light.setAttribute(`${lightAxis}1`, center - animation.lightWidth / 2);
+            node.light.setAttribute(`${lightAxis}2`, center + animation.lightWidth / 2);
 
             const intensity =
                 (animation.lightIntensity / 100) *
@@ -372,13 +401,15 @@ function mountPattern(root, initialConfig) {
             node.brightPath.setAttribute("opacity", active ? intensity : 0);
             node.glowPath.setAttribute("opacity", active ? intensity * 0.7 : 0);
             node.glowWrapper.style.display = line.visible && animation.glow > 0 ? "" : "none";
-            node.group.setAttribute("opacity", line.opacity / 100);
-            node.glowWrapper.setAttribute("opacity", line.opacity / 100);
+            const emphasis = selected === null || selected === node.index ? 1 : 0.08;
+            node.group.setAttribute("opacity", line.opacity / 100 * emphasis);
+            node.glowWrapper.setAttribute("opacity", line.opacity / 100 * emphasis);
         });
     }
 
     function isAnimating() {
         return (
+            !paused &&
             !document.hidden &&
             visible &&
             !prefersReducedMotion() &&
@@ -389,29 +420,42 @@ function mountPattern(root, initialConfig) {
         );
     }
 
+    // One scheduler paints every visible layer in the same authored FPS slot.
+    // Independent loops could display adjacent samples after a layer re-entered view.
+    // Keep this state on mountPattern so standalone Studio exports remain self-contained.
+    const frames = mountPattern.frames ??= { entries: new Set(), frame: 0 };
+    const entry = { paint, isAnimating, fps: () => config.animation.fps, slot: -1 };
+
     function tick(now) {
-        frame = 0;
-        if (!isAnimating()) return;
-        if (last) {
-            time +=
-                Math.min((now - last) / 1000, 0.1) *
-                config.animation.speed *
-                profile.motionSpeed;
+        frames.frame = 0;
+        for (const item of frames.entries) {
+            if (!item.isAnimating()) { frames.entries.delete(item); continue; }
+            const interval = 1000 / Math.max(1, item.fps());
+            const slot = Math.floor((now - patternClockStart) / interval);
+            if (slot !== item.slot) {
+                item.paint(patternClockStart + slot * interval);
+                item.slot = slot;
+            }
         }
-        last = now;
-        if (now - painted >= 1000 / config.animation.fps) {
-            paint();
-            painted = now;
+        if (frames.entries.size) frames.frame = requestAnimationFrame(tick);
+    }
+
+    function unschedule() {
+        frames.entries.delete(entry);
+        if (!frames.entries.size) {
+            cancelAnimationFrame(frames.frame);
+            frames.frame = 0;
         }
-        frame = requestAnimationFrame(tick);
     }
 
     function sync() {
-        cancelAnimationFrame(frame);
-        frame = 0;
-        last = 0;
+        unschedule();
         paint();
-        if (isAnimating()) frame = requestAnimationFrame(tick);
+        if (isAnimating()) {
+            entry.slot = -1;
+            frames.entries.add(entry);
+            if (!frames.frame) frames.frame = requestAnimationFrame(tick);
+        }
     }
 
     const resizeObserver = new ResizeObserver(() => {
@@ -424,7 +468,7 @@ function mountPattern(root, initialConfig) {
         visible = entries[0]?.isIntersecting ?? true;
         sync();
     });
-    intersectionObserver.observe(root);
+    intersectionObserver.observe(stage);
 
     const syncVisibility = () => sync();
     document.addEventListener("visibilitychange", syncVisibility);
@@ -434,12 +478,33 @@ function mountPattern(root, initialConfig) {
         reducedMotion.addListener?.(syncVisibility);
     }
 
-    build();
+    layout();
     sync();
 
     return {
+        pause(value) {
+            if (Boolean(value) === paused) return;
+            if (value) { paint(); heldTime = time; }
+            else { timeOffset = heldTime - (performance.now() - patternClockStart) / 1000 * config.animation.speed * profile.motionSpeed; heldTime = null; }
+            paused = Boolean(value);
+            sync();
+        },
+        seek(value) {
+            const target = Math.max(0, Number(value) || 0);
+            if (paused) heldTime = target;
+            else timeOffset = target - (performance.now() - patternClockStart) / 1000 * config.animation.speed * profile.motionSpeed;
+            paint();
+        },
+        restart() { this.seek(0); sync(); },
+        solo(index) { selected = index; paint(); },
+        get time() { return time; },
+        snapshot() {
+            const clone = svg.cloneNode(true);
+            clone.setAttribute("style", `opacity:${pattern.style.opacity}`);
+            return new XMLSerializer().serializeToString(clone);
+        },
         destroy() {
-            cancelAnimationFrame(frame);
+            unschedule();
             resizeObserver.disconnect();
             intersectionObserver.disconnect();
             document.removeEventListener("visibilitychange", syncVisibility);
@@ -482,6 +547,7 @@ export function initSitePatterns() {
         footer.classList.add("site-pattern-host");
         const layer = createPatternLayer("footer");
         footer.prepend(layer);
-        mountPattern(layer, cloneConfig());
+        // Interim approved export; replace only footer-pattern.json when the distinct footer reference arrives.
+        mountPattern(layer, cloneConfig(footerPatternSettings));
     }
 }

@@ -56,7 +56,7 @@
 
 .about-hero__title {
     margin: 22px 0 0;
-    font-size: clamp(37px, 3vw, 44px);
+    font-size: max(14px, clamp(37px, 3vw, 44px));
     font-weight: 700;
     line-height: 1.32;
     letter-spacing: -0.025em;
@@ -211,7 +211,7 @@
     display: block;
     margin: 10px 0 0;
     color: var(--about-blue);
-    font-size: clamp(29px, 2.2vw, 34px);
+    font-size: max(14px, clamp(29px, 2.2vw, 34px));
     font-weight: 650;
     line-height: 1.48;
 }
@@ -221,7 +221,7 @@
     max-width: 575px;
     margin: 15px 0 0;
     color: var(--about-text);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 2.05;
     text-align: justify;
@@ -288,7 +288,7 @@
     right: 24px;
     width: 49px;
     color: var(--about-blue);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.7;
     direction: ltr;
@@ -302,7 +302,7 @@
 .about-timeline__body h3 {
     margin: 0;
     color: var(--about-text);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 650;
     line-height: 1.72;
 }
@@ -311,7 +311,7 @@
     max-width: 555px;
     margin: 4px 0 0;
     color: #273247;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.92;
 }
 
@@ -340,9 +340,11 @@
 
 .about-text-link {
     color: var(--about-blue);
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.7;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
 
 .about-expertise__grid {
@@ -394,7 +396,7 @@
 .about-expertise-card__body p {
     margin: 0;
     color: #33415b;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.95;
 }
 
@@ -408,9 +410,11 @@
     padding-top: 14px;
     direction: ltr;
     color: var(--about-blue);
-    font-size: 10.5px;
+    font-size: 14px;
     font-weight: 500;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
 
 .about-card-link__text {
@@ -489,7 +493,7 @@
     gap: 12px;
     margin: 0;
     color: var(--about-orange);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -509,7 +513,7 @@
 
 .about-management__content > p:not(.about-management__kicker):not(.about-management__signature) {
     margin: 14px 0 0;
-    font-size: 12.5px;
+    font-size: 14px;
     line-height: 2;
     text-align: justify;
 }
@@ -517,7 +521,7 @@
 .about-management__signature {
     margin: 14px 0 0;
     color: #49566c;
-    font-size: 10.5px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -597,7 +601,7 @@
 
 .about-gallery__content p {
     margin: 12px 0 0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.9;
 }
 
@@ -609,8 +613,10 @@
     margin-top: 9px;
     direction: ltr;
     color: var(--about-blue);
-    font-size: 10px;
-    text-decoration: none;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
 
 .about-gallery__link-text {
@@ -673,7 +679,7 @@
     max-width: 510px;
     margin: 0;
     color: #697386;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 2.05;
     text-align: justify;
 }
@@ -734,7 +740,7 @@
 .about-certificate-card__caption span {
     margin-top: 2px;
     color: #4e9fe7;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.45;
 }
@@ -742,7 +748,7 @@
 .about-certificate-card__caption p {
     margin: 7px 0 0;
     color: #606c80;
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.65;
 }
 
@@ -815,7 +821,7 @@
     }
 
     .about-eyebrow {
-        font-size: 9px;
+        font-size: 14px;
     }
 
     .about-eyebrow--hero::after {
@@ -826,7 +832,7 @@
 
     .about-hero__title {
         margin-top: 15px;
-        font-size: clamp(21px, 6.2vw, 24px);
+        font-size: max(14px, clamp(21px, 6.2vw, 24px));
         line-height: 1.4;
     }
 
@@ -834,7 +840,7 @@
         max-width: 100%;
         margin-top: 5px;
         color: rgb(255 255 255 / 0.92);
-        font-size: clamp(7.5px, 2.2vw, 8.6px);
+        font-size: max(14px, clamp(7.5px, 2.2vw, 8.6px));
         line-height: 1.8;
     }
 
@@ -891,14 +897,14 @@
         display: block;
         margin-top: 12px;
         color: var(--about-text);
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .about-story__title {
         display: block;
         margin-top: 6px;
         color: var(--about-blue);
-        font-size: clamp(25px, 7.2vw, 28px);
+        font-size: max(14px, clamp(25px, 7.2vw, 28px));
         line-height: 1.5;
     }
 
@@ -911,7 +917,7 @@
         max-width: none;
         margin-top: 8px;
         color: var(--about-text);
-        font-size: clamp(9.4px, 2.65vw, 10.4px);
+        font-size: max(14px, clamp(9.4px, 2.65vw, 10.4px));
         line-height: 1.9;
         text-align: justify;
     }
@@ -951,17 +957,17 @@
         top: 4px;
         right: 20px;
         width: 34px;
-        font-size: 9.5px;
+        font-size: 14px;
     }
 
     .about-timeline__body h3 {
-        font-size: clamp(9.8px, 2.8vw, 10.8px);
+        font-size: max(14px, clamp(9.8px, 2.8vw, 10.8px));
         line-height: 1.72;
     }
 
     .about-timeline__body p {
         margin-top: 2px;
-        font-size: clamp(8.2px, 2.35vw, 9px);
+        font-size: max(14px, clamp(8.2px, 2.35vw, 9px));
         line-height: 1.82;
     }
 
@@ -976,11 +982,11 @@
     }
 
     .about-section-title {
-        font-size: clamp(15px, 4.6vw, 18px);
+        font-size: max(14px, clamp(15px, 4.6vw, 18px));
     }
 
     .about-text-link {
-        font-size: 7.3px;
+        font-size: 14px;
     }
 
     .about-expertise__grid {
@@ -1010,7 +1016,7 @@
     }
 
     .about-expertise-card__body h3 {
-        font-size: clamp(8.3px, 2.45vw, 9.6px);
+        font-size: max(14px, clamp(8.3px, 2.45vw, 9.6px));
         line-height: 1.65;
     }
 
@@ -1021,14 +1027,14 @@
     }
 
     .about-expertise-card__body p {
-        font-size: clamp(6.7px, 1.95vw, 7.7px);
+        font-size: max(14px, clamp(6.7px, 1.95vw, 7.7px));
         line-height: 1.75;
     }
 
     .about-card-link {
         gap: 4px;
         padding-top: 7px;
-        font-size: clamp(6.4px, 1.9vw, 7.4px);
+        font-size: max(14px, clamp(6.4px, 1.9vw, 7.4px));
     }
 
     .about-card-link__arrow {
@@ -1062,7 +1068,7 @@
 
     .about-management__kicker {
         gap: 7px;
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .about-management__kicker::before {
@@ -1072,19 +1078,19 @@
 
     .about-management__content h2 {
         margin-top: 7px;
-        font-size: clamp(15px, 4.8vw, 18px);
+        font-size: max(14px, clamp(15px, 4.8vw, 18px));
         line-height: 1.5;
     }
 
     .about-management__content > p:not(.about-management__kicker):not(.about-management__signature) {
         margin-top: 7px;
-        font-size: clamp(8px, 2.35vw, 9px);
+        font-size: max(14px, clamp(8px, 2.35vw, 9px));
         line-height: 1.82;
     }
 
     .about-management__signature {
         margin-top: 8px;
-        font-size: 7.4px;
+        font-size: 14px;
     }
 
     .about-management__signature::before {
@@ -1120,19 +1126,19 @@
     }
 
     .about-gallery__content h2 {
-        font-size: clamp(15px, 4.8vw, 18px);
+        font-size: max(14px, clamp(15px, 4.8vw, 18px));
     }
 
     .about-gallery__content p {
         margin-top: 5px;
-        font-size: clamp(7.2px, 2.1vw, 8.2px);
+        font-size: max(14px, clamp(7.2px, 2.1vw, 8.2px));
         line-height: 1.75;
     }
 
     .about-gallery__link {
         gap: 4px;
         margin-top: 5px;
-        font-size: 6.8px;
+        font-size: 14px;
     }
 
     .about-gallery__link-arrow {
@@ -1156,12 +1162,12 @@
     }
 
     .about-certificates__content h2 {
-        font-size: clamp(18px, 5.2vw, 21px);
+        font-size: max(14px, clamp(18px, 5.2vw, 21px));
     }
 
     .about-certificates__content h3 {
         margin-top: 4px;
-        font-size: clamp(10px, 3vw, 12px);
+        font-size: max(14px, clamp(10px, 3vw, 12px));
     }
 
     .about-certificates__rule {
@@ -1172,7 +1178,7 @@
 
     .about-certificates__content p {
         max-width: none;
-        font-size: clamp(8px, 2.35vw, 9px);
+        font-size: max(14px, clamp(8px, 2.35vw, 9px));
         line-height: 1.82;
     }
 
@@ -1217,17 +1223,17 @@
     }
 
     .about-certificate-card__caption strong {
-        font-size: clamp(13px, 4vw, 16px);
+        font-size: max(14px, clamp(13px, 4vw, 16px));
     }
 
     .about-certificate-card__caption span {
         margin-top: 2px;
-        font-size: clamp(8px, 2.5vw, 10px);
+        font-size: max(14px, clamp(8px, 2.5vw, 10px));
     }
 
     .about-certificate-card__caption p {
         margin-top: 7px;
-        font-size: clamp(6.6px, 2vw, 7.8px);
+        font-size: max(14px, clamp(6.6px, 2vw, 7.8px));
         line-height: 1.65;
     }
 }
@@ -1246,7 +1252,7 @@
     }
 
     .about-hero__description {
-        font-size: 7.2px;
+        font-size: 14px;
     }
 
     .about-team-wrap {
@@ -1265,4 +1271,28 @@
     .about-certificate-card {
         height: 205px;
     }
+}
+
+/* First-screen team image. Actual remaining viewport space is measured in about.js. */
+.about-hero-shell { min-height: 0; padding-bottom: 64px; }
+.about-hero { padding-top: 100px; }
+.about-hero__title { margin-top: 12px; }
+.about-hero__description { margin-top: 8px; font-size: 16px; line-height: 1.8; }
+.about-team-wrap { transform: translateY(-36px); margin-bottom: -36px; }
+.about-team-media { aspect-ratio: auto; height: auto; background: transparent; box-shadow: none; }
+.about-team-media__image { position: static; width: auto; height: auto; max-width: 100%; margin-inline: auto; max-height: var(--about-image-space, calc(100svh - 300px)); object-fit: contain; object-position: center top; border-radius: inherit; }
+@media (max-width: 767px) {
+    .about-hero { padding-top: 94px; }
+    .about-hero-shell { padding-bottom: 48px; }
+    .about-hero__title { font-size: clamp(24px, 6vw, 32px); }
+    .about-hero__description { font-size: 14px; }
+    .about-team-wrap { transform: translateY(-24px); margin-bottom: -24px; }
+    .about-team-media__image { max-height: var(--about-image-space, calc(100svh - 330px)); }
+    .about-gallery__content { width: 58%; padding-block: 24px; }
+    .about-gallery, .about-gallery__content-wrap { min-height: 280px; }
+}
+@media (max-width: 479px) {
+    .about-expertise__grid { grid-template-columns: 1fr; }
+    .about-expertise-card__image { height: 180px; }
+    .about-certificate-card { height: auto; min-height: 240px; }
 }

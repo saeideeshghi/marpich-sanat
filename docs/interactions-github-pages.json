@@ -1,0 +1,1380 @@
+{
+  "results": [
+    "Exactly one blue active mobile destination on all 12 pages, including disclosure buttons",
+    "CTA labels fit without icon collisions at seven widths; hero photograph uses contain without overscan",
+    "Uploaded mobile/desktop connector selected at 640px; no customer buttons or scrollbars",
+    "Approved footer retains its original 463px profile breakpoint",
+    "Identical authored header stage and graphic geometry across About,Contact,Products,Articles at three widths",
+    "Article dark backdrop covers all wrapped heading text at all eleven widths",
+    "Text-link labels are underlined; parent links and decorative arrows have no propagated underline across all pages",
+    "Mobile explanatory prose is justified at three widths, with right-aligned last lines and fonts of at least 14px",
+    "Load-more controls use text-only underlines on articles/products/industries/air-handling; arrows and button borders stay undecorated",
+    "Image fixtures preserve intrinsic ratio: home fills hero height, About stays fully in the first view at six viewport sizes",
+    "Customer strip moves on a touch viewport without controls",
+    "Reduced motion displays an accessible static customer list",
+    "Wave and moving light advance in every visible pattern on all 12 pages at mobile/desktop; About/Contact/Articles clip to the dark header surface",
+    "Header/footer share one animation clock; revealing the footer does not start its animation from zero",
+    "Pattern respects reduced motion"
+  ],
+  "errors": [],
+  "samples": [
+    {
+      "width": 320,
+      "cta": [
+        {
+          "button": {
+            "left": 144.3125,
+            "right": 304,
+            "bottom": 484.875
+          },
+          "text": {
+            "left": 185,
+            "right": 295,
+            "bottom": 471.125
+          },
+          "icon": {
+            "left": 153.3125,
+            "right": 165.3125
+          },
+          "size": "11px"
+        },
+        {
+          "button": {
+            "left": 16,
+            "right": 134.3125,
+            "bottom": 484.875
+          },
+          "text": {
+            "left": 45.3125,
+            "right": 125.3125,
+            "bottom": 471.125
+          },
+          "icon": {
+            "left": 25,
+            "right": 37
+          },
+          "size": "11px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 560,
+        "parent": 560
+      },
+      "connector": "connector-mobile.svg"
+    },
+    {
+      "width": 390,
+      "cta": [
+        {
+          "button": {
+            "left": 174.09375,
+            "right": 374,
+            "bottom": 472.265625
+          },
+          "text": {
+            "left": 255,
+            "right": 365,
+            "bottom": 458.515625
+          },
+          "icon": {
+            "left": 183.09375,
+            "right": 195.09375
+          },
+          "size": "11px"
+        },
+        {
+          "button": {
+            "left": 16,
+            "right": 164.09375,
+            "bottom": 472.265625
+          },
+          "text": {
+            "left": 75.09375,
+            "right": 155.09375,
+            "bottom": 458.515625
+          },
+          "icon": {
+            "left": 25,
+            "right": 37
+          },
+          "size": "11px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 560,
+        "parent": 560
+      },
+      "connector": "connector-mobile.svg"
+    },
+    {
+      "width": 640,
+      "cta": [
+        {
+          "button": {
+            "left": 384,
+            "right": 624,
+            "bottom": 464.1875
+          },
+          "text": {
+            "left": 486,
+            "right": 608,
+            "bottom": 450.1875
+          },
+          "icon": {
+            "left": 400,
+            "right": 416
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 202,
+            "right": 372,
+            "bottom": 464.1875
+          },
+          "text": {
+            "left": 270,
+            "right": 356,
+            "bottom": 450.1875
+          },
+          "icon": {
+            "left": 218,
+            "right": 234
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 768,
+      "cta": [
+        {
+          "button": {
+            "left": 496,
+            "right": 736,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 598,
+            "right": 720,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 512,
+            "right": 528
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 314,
+            "right": 484,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 382,
+            "right": 468,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 330,
+            "right": 346
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 1180,
+      "cta": [
+        {
+          "button": {
+            "left": 907.5,
+            "right": 1127.5,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 989.5,
+            "right": 1111.5,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 923.5,
+            "right": 939.5
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 715.5,
+            "right": 895.5,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 793.5,
+            "right": 879.5,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 731.5,
+            "right": 747.5
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 1440,
+      "cta": [
+        {
+          "button": {
+            "left": 1156,
+            "right": 1376,
+            "bottom": 467.3125
+          },
+          "text": {
+            "left": 1238,
+            "right": 1360,
+            "bottom": 453.3125
+          },
+          "icon": {
+            "left": 1172,
+            "right": 1188
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 964,
+            "right": 1144,
+            "bottom": 467.3125
+          },
+          "text": {
+            "left": 1042,
+            "right": 1128,
+            "bottom": 453.3125
+          },
+          "icon": {
+            "left": 980,
+            "right": 996
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 2560,
+      "cta": [
+        {
+          "button": {
+            "left": 1900,
+            "right": 2120,
+            "bottom": 515.890625
+          },
+          "text": {
+            "left": 1982,
+            "right": 2104,
+            "bottom": 501.890625
+          },
+          "icon": {
+            "left": 1916,
+            "right": 1932
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 1708,
+            "right": 1888,
+            "bottom": 515.890625
+          },
+          "text": {
+            "left": 1786,
+            "right": 1872,
+            "bottom": 501.890625
+          },
+          "icon": {
+            "left": 1724,
+            "right": 1740
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    }
+  ],
+  "configs": [
+    {
+      "name": "about",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "contact",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "products",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "articles",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "about",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "contact",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "products",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "articles",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "about",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "contact",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "products",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "articles",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    }
+  ],
+  "labels": [
+    {
+      "name": "index",
+      "count": 21
+    },
+    {
+      "name": "about",
+      "count": 5
+    },
+    {
+      "name": "contact",
+      "count": 0
+    },
+    {
+      "name": "products",
+      "count": 12
+    },
+    {
+      "name": "product-details",
+      "count": 0
+    },
+    {
+      "name": "projects",
+      "count": 12
+    },
+    {
+      "name": "project-details",
+      "count": 0
+    },
+    {
+      "name": "industries",
+      "count": 18
+    },
+    {
+      "name": "industry-textile",
+      "count": 2
+    },
+    {
+      "name": "expertise",
+      "count": 6
+    },
+    {
+      "name": "air-handling",
+      "count": 12
+    },
+    {
+      "name": "articles",
+      "count": 10
+    }
+  ],
+  "imageChecks": [
+    {
+      "name": "index",
+      "viewport": [
+        320,
+        640
+      ],
+      "width": 1468.3125,
+      "height": 560,
+      "top": 0,
+      "bottom": 560,
+      "parentHeight": 560,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "about",
+      "viewport": [
+        320,
+        640
+      ],
+      "width": 299.96875,
+      "height": 114.40625,
+      "top": 283.78125,
+      "bottom": 398.1875,
+      "parentHeight": 114.40625,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "index",
+      "viewport": [
+        390,
+        844
+      ],
+      "width": 1468.3125,
+      "height": 560,
+      "top": 0,
+      "bottom": 560,
+      "parentHeight": 560,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "about",
+      "viewport": [
+        390,
+        844
+      ],
+      "width": 365.96875,
+      "height": 139.578125,
+      "top": 283.78125,
+      "bottom": 423.359375,
+      "parentHeight": 139.578125,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "index",
+      "viewport": [
+        640,
+        700
+      ],
+      "width": 1573.1875,
+      "height": 600,
+      "top": 0,
+      "bottom": 600,
+      "parentHeight": 600,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "about",
+      "viewport": [
+        640,
+        700
+      ],
+      "width": 615.953125,
+      "height": 234.921875,
+      "top": 263.46875,
+      "bottom": 498.390625,
+      "parentHeight": 234.921875,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "index",
+      "viewport": [
+        768,
+        900
+      ],
+      "width": 1573.1875,
+      "height": 600,
+      "top": 0,
+      "bottom": 600,
+      "parentHeight": 600,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "about",
+      "viewport": [
+        768,
+        900
+      ],
+      "width": 719.984375,
+      "height": 274.59375,
+      "top": 288.21875,
+      "bottom": 562.8125,
+      "parentHeight": 274.59375,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "index",
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": 1573.1875,
+      "height": 600,
+      "top": 0,
+      "bottom": 600,
+      "parentHeight": 600,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "about",
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": 1311,
+      "height": 500,
+      "top": 267.609375,
+      "bottom": 767.609375,
+      "parentHeight": 500,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "index",
+      "viewport": [
+        2560,
+        1080
+      ],
+      "width": 1573.1875,
+      "height": 600,
+      "top": 0,
+      "bottom": 600,
+      "parentHeight": 600,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    },
+    {
+      "name": "about",
+      "viewport": [
+        2560,
+        1080
+      ],
+      "width": 1311,
+      "height": 500,
+      "top": 272.0625,
+      "bottom": 772.0625,
+      "parentHeight": 500,
+      "fit": "contain",
+      "naturalRatio": 2.622
+    }
+  ],
+  "motion": [
+    {
+      "name": "index",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "about",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 308,
+      "sceneHeight": 404
+    },
+    {
+      "name": "about",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "contact",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 294,
+      "sceneHeight": 404
+    },
+    {
+      "name": "contact",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "products",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 404,
+      "sceneHeight": 404
+    },
+    {
+      "name": "products",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "product-details",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 404,
+      "sceneHeight": 404
+    },
+    {
+      "name": "product-details",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.328888888888855,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 396,
+      "sceneHeight": 404
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.328888888888855,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "project-details",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 400,
+      "sceneHeight": 404
+    },
+    {
+      "name": "project-details",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 63.38370370370376,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "industries",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.328888888888855,
+      "height": 404,
+      "sceneHeight": 404
+    },
+    {
+      "name": "industries",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 63.38370370370376,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "industry-textile",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 404,
+      "sceneHeight": 404
+    },
+    {
+      "name": "industry-textile",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 81.49333333333334,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "expertise",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 371,
+      "sceneHeight": 404
+    },
+    {
+      "name": "expertise",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.328888888888855,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "air-handling",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 63.3837037037037,
+      "height": 404,
+      "sceneHeight": 404
+    },
+    {
+      "name": "air-handling",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.32888888888894,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "articles",
+      "width": 390,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 54.32888888888891,
+      "height": 288,
+      "sceneHeight": 404
+    },
+    {
+      "name": "articles",
+      "width": 390,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 54.32888888888894,
+      "height": 1048,
+      "sceneHeight": 404
+    },
+    {
+      "name": "index",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "about",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 304,
+      "sceneHeight": 430
+    },
+    {
+      "name": "about",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555558,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "contact",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 295,
+      "sceneHeight": 430
+    },
+    {
+      "name": "contact",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555558,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "products",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "products",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "product-details",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "product-details",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555558,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "projects",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "projects",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "project-details",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "project-details",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "industries",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "industries",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "industry-textile",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555564,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "industry-textile",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "expertise",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555552,
+      "height": 387,
+      "sceneHeight": 430
+    },
+    {
+      "name": "expertise",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555558,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "air-handling",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 430,
+      "sceneHeight": 430
+    },
+    {
+      "name": "air-handling",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 464,
+      "sceneHeight": 430
+    },
+    {
+      "name": "articles",
+      "width": 1440,
+      "kind": "header",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 306,
+      "sceneHeight": 430
+    },
+    {
+      "name": "articles",
+      "width": 1440,
+      "kind": "footer",
+      "changed": true,
+      "lightDelta": 64.51555555555555,
+      "height": 464,
+      "sceneHeight": 430
+    }
+  ],
+  "articleBackdrops": [
+    {
+      "width": 320,
+      "dark": 311,
+      "headingBottom": 278.78125,
+      "pattern": 311
+    },
+    {
+      "width": 360,
+      "dark": 311,
+      "headingBottom": 278.78125,
+      "pattern": 311
+    },
+    {
+      "width": 390,
+      "dark": 288,
+      "headingBottom": 255.984375,
+      "pattern": 288
+    },
+    {
+      "width": 430,
+      "dark": 288,
+      "headingBottom": 255.984375,
+      "pattern": 288
+    },
+    {
+      "width": 640,
+      "dark": 287,
+      "headingBottom": 254.578125,
+      "pattern": 287
+    },
+    {
+      "width": 768,
+      "dark": 315,
+      "headingBottom": 270.9375,
+      "pattern": 315
+    },
+    {
+      "width": 1024,
+      "dark": 315,
+      "headingBottom": 270.9375,
+      "pattern": 315
+    },
+    {
+      "width": 1180,
+      "dark": 306,
+      "headingBottom": 243.9375,
+      "pattern": 306
+    },
+    {
+      "width": 1440,
+      "dark": 306,
+      "headingBottom": 252.625,
+      "pattern": 306
+    },
+    {
+      "width": 1920,
+      "dark": 306,
+      "headingBottom": 260.140625,
+      "pattern": 306
+    },
+    {
+      "width": 2560,
+      "dark": 306,
+      "headingBottom": 260.140625,
+      "pattern": 306
+    }
+  ],
+  "prose": [
+    {
+      "name": "index",
+      "width": 320,
+      "count": 18
+    },
+    {
+      "name": "about",
+      "width": 320,
+      "count": 19
+    },
+    {
+      "name": "contact",
+      "width": 320,
+      "count": 6
+    },
+    {
+      "name": "products",
+      "width": 320,
+      "count": 19
+    },
+    {
+      "name": "product-details",
+      "width": 320,
+      "count": 5
+    },
+    {
+      "name": "projects",
+      "width": 320,
+      "count": 14
+    },
+    {
+      "name": "project-details",
+      "width": 320,
+      "count": 16
+    },
+    {
+      "name": "industries",
+      "width": 320,
+      "count": 19
+    },
+    {
+      "name": "industry-textile",
+      "width": 320,
+      "count": 14
+    },
+    {
+      "name": "expertise",
+      "width": 320,
+      "count": 14
+    },
+    {
+      "name": "air-handling",
+      "width": 320,
+      "count": 14
+    },
+    {
+      "name": "articles",
+      "width": 320,
+      "count": 12
+    },
+    {
+      "name": "index",
+      "width": 390,
+      "count": 18
+    },
+    {
+      "name": "about",
+      "width": 390,
+      "count": 19
+    },
+    {
+      "name": "contact",
+      "width": 390,
+      "count": 6
+    },
+    {
+      "name": "products",
+      "width": 390,
+      "count": 19
+    },
+    {
+      "name": "product-details",
+      "width": 390,
+      "count": 5
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "count": 14
+    },
+    {
+      "name": "project-details",
+      "width": 390,
+      "count": 16
+    },
+    {
+      "name": "industries",
+      "width": 390,
+      "count": 19
+    },
+    {
+      "name": "industry-textile",
+      "width": 390,
+      "count": 14
+    },
+    {
+      "name": "expertise",
+      "width": 390,
+      "count": 14
+    },
+    {
+      "name": "air-handling",
+      "width": 390,
+      "count": 14
+    },
+    {
+      "name": "articles",
+      "width": 390,
+      "count": 12
+    },
+    {
+      "name": "index",
+      "width": 639,
+      "count": 18
+    },
+    {
+      "name": "about",
+      "width": 639,
+      "count": 19
+    },
+    {
+      "name": "contact",
+      "width": 639,
+      "count": 6
+    },
+    {
+      "name": "products",
+      "width": 639,
+      "count": 19
+    },
+    {
+      "name": "product-details",
+      "width": 639,
+      "count": 5
+    },
+    {
+      "name": "projects",
+      "width": 639,
+      "count": 14
+    },
+    {
+      "name": "project-details",
+      "width": 639,
+      "count": 16
+    },
+    {
+      "name": "industries",
+      "width": 639,
+      "count": 19
+    },
+    {
+      "name": "industry-textile",
+      "width": 639,
+      "count": 14
+    },
+    {
+      "name": "expertise",
+      "width": 639,
+      "count": 14
+    },
+    {
+      "name": "air-handling",
+      "width": 639,
+      "count": 14
+    },
+    {
+      "name": "articles",
+      "width": 639,
+      "count": 12
+    }
+  ],
+  "loadMore": [
+    {
+      "name": "articles",
+      "parent": "none",
+      "border": "0px",
+      "label": "underline",
+      "labelBorder": "0px",
+      "arrow": "none"
+    },
+    {
+      "name": "products",
+      "parent": "none",
+      "border": "0px",
+      "label": "underline",
+      "labelBorder": "0px",
+      "arrow": "none"
+    },
+    {
+      "name": "industries",
+      "parent": "none",
+      "border": "0px",
+      "label": "underline",
+      "labelBorder": "0px",
+      "arrow": "none"
+    },
+    {
+      "name": "air-handling",
+      "parent": "none",
+      "border": "0px",
+      "label": "underline",
+      "labelBorder": "0px",
+      "arrow": "none"
+    }
+  ],
+  "assetLimit": "All nine original Peyda fonts are loaded. Heavy original photos/logos were omitted by the owner; photo ratio/bounds checks use a controlled SVG fixture."
+}

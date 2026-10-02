@@ -10,3 +10,30 @@
 
 /* Include utilities used by build-time HTML partials. */
 @source "../components";
+
+/* =========================================================
+   Ultra-wide layout guard
+   1440px references keep their original ~60px gutters. From 1600px upward,
+   former 1320px shells can grow to 1680px so content does not float too far
+   from the viewport edges on 1920px/2K displays.
+   ========================================================= */
+@media (min-width: 1600px) {
+    .max-w-\[1320px\],
+    .max-w-\[82\.5rem\] {
+        max-width: 1680px !important;
+    }
+
+    :where(.site-container, .about-container, .projects-page__container, .industry-textile__container, .articles-container) {
+        width: min(calc(100% - 120px), 1680px) !important;
+        max-width: none !important;
+    }
+
+    :where(.industries-hero, .industries-main, .air-handling__hero, .air-handling__main) > .site-container {
+        width: min(calc(100% - 120px), 1680px) !important;
+        max-width: none !important;
+    }
+
+    .consultation__layout {
+        width: min(calc(100% - 120px), 1680px) !important;
+    }
+}

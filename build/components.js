@@ -42,6 +42,10 @@ export function renderComponent(name, data, root) {
     const chip = (label) =>
         `<span class="filter-chip" data-filter-chip><span>${e(label)}</span><button type="button" data-remove-filter aria-label="حذف فیلتر ${e(label)}"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></span>`;
     switch (name) {
+        case "partners":
+            return render(name, data, {
+                logos: data.logos.map((logo) => `<li class="home-partners__item"><img src="${e(validateContentUrl(logo.image, true))}" alt="${e(logo.name)}" width="180" height="88" loading="lazy" decoding="async" /></li>`).join("\n"),
+            });
         case "consultation":
             return render(name, data);
         case "catalog-consultation":

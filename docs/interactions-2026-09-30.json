@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "RTL next button; eight customers; two visible on mobile; reduced-motion starts paused",
+    "Keyboard End/Home reaches all customers and respects boundaries",
+    "Resize preserves slider geometry at 768,1440,2560px",
+    "Mobile menu opens and Escape closes",
+    "About first-screen fit with a controlled 1311×500 image at four viewport sizes",
+    "Autoplay advances while visible",
+    "Pause stops automatic motion",
+    "No JavaScript page errors in tested interactions"
+  ],
+  "errors": [],
+  "assetLimit": "Original images and Peyda are not supplied; about-image fitting uses a controlled fixture."
+}

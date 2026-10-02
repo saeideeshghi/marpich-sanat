@@ -1,0 +1,87 @@
+/* Cross-page fixes verified at 320–2560px. Explicit specificity keeps these fixes stable when Vite splits shared CSS.
+ * Footer appearance is approved and intentionally has no overrides here.
+ */
+body { font-size: 16px; line-height: 1.8; }
+body[data-page] :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), select, textarea) { font-size: 16px; }
+main :is(p, h1, h2, h3, h4, li, dd) { overflow-wrap: break-word; }
+main :is(button, a):focus-visible { outline: 2px solid #2f75ab; outline-offset: 3px; }
+
+/* Specification chips may wrap instead of squeezing full words into three tiny cells. */
+body[data-page] :is(.product-card__specs, .industry-textile__product-specs, .project-details__product-specs, .industry-textile__product-tags, .industry-textile__project-meta) {
+    display: flex; flex-wrap: wrap; gap: 6px;
+}
+body[data-page] :is(.product-card__specs, .industry-textile__product-specs, .project-details__product-specs, .industry-textile__product-tags, .industry-textile__project-meta) > span {
+    flex: 1 1 76px; min-width: 0; max-width: 100%; white-space: normal; overflow-wrap: anywhere; line-height: 1.7;
+}
+.product-card__category { max-width: calc(100% - 24px); white-space: normal; height: auto; }
+.product-card__link { min-height: 36px; }
+.product-card__body { min-width: 0; }
+
+.home-products-actions { flex-wrap: wrap; gap: 10px; padding-top: 14px; }
+.home-products-actions a { min-height: 36px; white-space: normal; }
+.home-products-actions span { overflow-wrap: anywhere; }
+.projects-page__testimonials-subtitle { min-width: 0; max-width: 100%; flex-wrap: wrap; }
+.projects-page__testimonials-subtitle p { min-width: 0; max-width: 100%; white-space: normal; }
+
+/* Contact cards grow naturally with legible copy and touch-sized actions. */
+.branch-card__detail-row dd { overflow-wrap: anywhere; }
+.branch-card a { min-height: 44px; height: auto; padding-block: 8px; white-space: normal; line-height: 1.7; }
+.contact-control { min-height: 44px; }
+/* Large screens use wider containers, with readable text rather than stretched lines. */
+@media (min-width: 1600px) {
+    main :is(p, li, td, th),
+    :is(.hero-content, .about-hero, .industries-hero, .air-handling__hero, .projects-page__hero) p { font-size: 16px; }
+    main :is(.product-card__description, .product-card__spec, .product-card__link) { font-size: 16px; }
+    main :is(.product-card__title, .articles-card__title) { font-size: 22px; }
+}
+
+body[data-page="home"] .home-product-category { width: auto; min-width: 72px; max-width: calc(100% - 16px); height: auto; min-height: 26px; padding: 4px 8px; line-height: 1.6; overflow-wrap: anywhere; }
+@media (min-width: 1600px) {
+    body[data-page] .site-header__desktop { max-width: 1808px; margin-inline: auto; }
+    body[data-page="home"] .hero-content-wrapper { width: min(100% - 120px, 1680px); margin-inline: auto; padding-inline: 0; }
+    body[data-page="home"] .hero-content { width: min(49%, 740px); }
+    body[data-page="home"] .hero-content h1 { font-size: clamp(34px, 1.8vw, 42px); }
+    body[data-page="home"] .home-partners__intro { flex-basis: 240px; }
+}
+/* Small-screen density is component-specific; a 14px floor on every caption
+ * previously broke two-column cards and narrow inline controls. */
+@media (max-width: 639px) {
+    body[data-page] main p { font-size: 12px; line-height: 1.9; }
+    body[data-page] main :is(.product-card__title, .about-expertise-card__body h3, .industry-textile__product-body h3, .project-details__product-title) { font-size: 14px; line-height: 1.7; }
+    body[data-page] :is(.product-card__spec, .product-card__category, .industry-textile__product-specs span, .industry-textile__product-tags span, .project-details__product-specs span) { font-size: 11px; line-height: 1.65; }
+    body[data-page] :is(.product-card__link, .about-card-link, .industry-textile__card-link) { font-size: 12px; }
+    body[data-page] :is(.product-card__body, .about-expertise-card__body) { padding: 12px 10px; }
+    body[data-page="about"] .about-expertise__grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+    body[data-page="about"] .about-expertise-card__image { height: 115px; }
+    body[data-page="contact"] .contact-branches > .branch-card { grid-template-columns: minmax(0,1fr) 30%; }
+    body[data-page="contact"] .branch-card__detail-row { grid-template-columns: 45px minmax(0,1fr); gap: 5px; }
+    body[data-page="contact"] :is(.branch-card__address, .branch-card dl) { font-size: 12px !important; }
+    body[data-page="contact"] .branch-card__map { min-height: 100% !important; height: 100% !important; }
+    body[data-page="contact"] .branch-card a { font-size: 11px; min-height: 40px; padding-inline: 4px; }
+}
+.mobile-menu [data-nav][aria-current], .mobile-menu [data-nav][aria-current] span { color: #79b6ed; }
+body[data-page] :is(.about-card-link__text, .about-gallery__link-text, .home-products-actions span) { border-bottom: 0; text-decoration: underline; text-underline-offset: 4px; }
+
+/* Apply link decoration to the label, never to a sibling arrow/icon. */
+body[data-page] :is(a, button).site-text-link { text-decoration: none; }
+body[data-page] :is(a, button).site-text-link > .site-text-link__label {
+    border-bottom: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+/* Mobile prose gets readable rhythm; captions and button labels keep their layout. */
+@media (max-width: 639px) {
+    body[data-page] :is(p.site-prose, .industry-textile__faq-answer),
+    body[data-page] :is(main, .hero-content, .about-hero) :is(p.site-prose, .industry-textile__faq-answer) {
+        font-size: 14px;
+        line-height: 1.95;
+        text-align: justify;
+        text-align-last: right;
+        text-justify: inter-word;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+}
+body[data-page] button.site-text-link { border-bottom: 0; }

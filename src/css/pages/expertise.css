@@ -155,7 +155,6 @@
 
 .expertise-page__more-link {
     color: #79b6ed;
-    border-bottom: 1px solid #79b6ed;
     padding-bottom: 2px;
     line-height: 1.35;
 }
@@ -171,15 +170,10 @@
 
 .expertise-page__project-cta span {
     color: inherit;
-    border-bottom: 1px solid currentColor;
     padding-bottom: 2px;
     line-height: 1.35;
 }
 
 .expertise-page__project-cta:hover {
     color: #fff;
-}
-
-.expertise-page__project-cta:hover span {
-    border-bottom-color: currentColor;
 }

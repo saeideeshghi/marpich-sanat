@@ -9,6 +9,8 @@ import { initSitePatterns } from "./components/site-pattern.js";
 
 // Shared behavior only. Never import a page module here.
 export function initSite() {
+    // Mount decoration independently before interactive enhancements initialize.
+    initSitePatterns();
     initMobileMenu();
     initAuth();
     initPendingForms();
@@ -16,5 +18,4 @@ export function initSite() {
     initTestimonials();
     initCatalogs();
     initConsultationForms();
-    initSitePatterns();
 }

@@ -101,7 +101,7 @@ body.auth-open {
     background: transparent;
     color: var(--color-brand-navy);
     text-align: right;
-    font-size: 13px;
+    font-size: 14px;
 }
 .auth-input::placeholder {
     color: var(--auth-muted);
@@ -152,7 +152,7 @@ body.auth-open {
 .auth-button--outline {
     border-color: var(--color-brand-blue);
     color: var(--color-brand-blue);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     white-space: nowrap;
 }
@@ -172,7 +172,7 @@ body.auth-open {
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 12px;
-    font-size: 10px;
+    font-size: 14px;
     color: var(--auth-muted);
 }
 .auth-remember {
@@ -197,13 +197,13 @@ body.auth-open {
 .auth-footer {
     margin-top: 28px;
     color: var(--auth-muted);
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.9;
 }
 .auth-edit {
     margin-top: -16px;
     margin-bottom: 26px;
-    font-size: 11px;
+    font-size: 14px;
     color: var(--auth-muted);
 }
 .auth-otp-group {
@@ -242,7 +242,7 @@ body.auth-open {
 .auth-field-error,
 .auth-status {
     margin: 6px 0 0;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.8;
     color: #a12218;
     overflow-wrap: anywhere;
@@ -311,7 +311,7 @@ body.auth-open {
         margin-bottom: 20px;
     }
     .auth-subtitle {
-        font-size: 12px;
+        font-size: 14px;
         margin-top: -12px;
         margin-bottom: 20px;
     }
@@ -319,7 +319,7 @@ body.auth-open {
         height: 40px;
         padding-inline: 12px;
         border-radius: 8px;
-        font-size: 12px;
+        font-size: 14px;
     }
     .auth-password-toggle {
         top: 0;
@@ -333,19 +333,19 @@ body.auth-open {
     .auth-button {
         min-height: 40px;
         padding: 8px 5px;
-        font-size: 12px;
+        font-size: 14px;
         border-radius: 8px;
     }
     .auth-button--outline {
-        font-size: 10px;
+        font-size: 14px;
     }
     .auth-options {
-        font-size: 10px;
+        font-size: 14px;
         gap: 8px;
     }
     .auth-footer,
     .auth-edit {
-        font-size: 10px;
+        font-size: 14px;
     }
     .auth-otp-inputs {
         gap: 6px;
@@ -370,6 +370,6 @@ body.auth-open {
         gap: 6px;
     }
     .auth-button--outline {
-        font-size: 9px;
+        font-size: 14px;
     }
 }

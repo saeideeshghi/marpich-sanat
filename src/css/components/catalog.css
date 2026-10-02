@@ -95,7 +95,7 @@
     background-color: #fff;
     color: #29364b;
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 :where(.products-page, .air-handling-page, .industries-page) .product-search__select {
@@ -147,7 +147,7 @@
 :where(.products-page, .air-handling-page, .industries-page) .product-search__advanced i {
     flex: 0 0 auto;
     color: #4f5f76;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 /* Chips stay on the RTL start edge. Clear comes immediately AFTER them,
@@ -182,7 +182,7 @@
     background: #e0dff5;
     padding: 4px 12px;
     color: #49536a;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
     white-space: nowrap;
 }
@@ -209,7 +209,7 @@
     padding: 0;
     color: #68758a;
     font: inherit;
-    font-size: 11px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -300,7 +300,7 @@
     background: var(--color-media-badge);
     padding-inline: 12px;
     color: #fff;
-    font-size: 9px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -313,7 +313,7 @@
     height: 24px;
     place-items: center;
     color: #0f172b;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 :where(.products-page, .air-handling-page, .industries-page) .product-card__body {
@@ -339,7 +339,7 @@
     overflow: hidden;
     margin: 8px 0 0;
     color: #344057;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.9;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -360,7 +360,7 @@
     padding: 7px 4px;
     color: #5a6476;
     text-align: center;
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.45;
 }
 
@@ -371,9 +371,11 @@
     gap: 7px;
     margin-top: 13px;
     color: #4fa9ef;
-    font-size: 9px;
+    font-size: 14px;
     font-weight: 500;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
 
 :where(.products-page, .air-handling-page, .industries-page) .products-grid:is(.is-list, .products-grid--list) {
@@ -412,7 +414,7 @@
     padding: 0;
     color: #354158;
     font: inherit;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -474,7 +476,7 @@
 .catalog-consultation__title {
     margin: 0;
     color: #0f172b;
-    font-size: clamp(27px, 2.1vw, 34px);
+    font-size: max(14px, clamp(27px, 2.1vw, 34px));
     font-weight: 800;
     line-height: 1.45;
 }
@@ -515,7 +517,7 @@
     direction: rtl;
     text-align: right;
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .catalog-consultation__field::placeholder {
@@ -546,7 +548,7 @@
     direction: rtl;
     text-align: right;
     font: inherit;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     box-shadow: none;
@@ -624,7 +626,7 @@
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__bar > span {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__field-row {
@@ -639,7 +641,7 @@
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__input {
         padding-inline: 11px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__filters {
@@ -654,7 +656,7 @@
     :where(.products-page, .air-handling-page, .industries-page) .product-search__advanced {
         min-height: 36px;
         border-radius: 5px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__select {
@@ -688,18 +690,18 @@
         min-height: 25px;
         gap: 5px;
         padding: 3px 8px;
-        font-size: 8.5px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .filter-chip button {
         width: 14px;
         height: 14px;
-        font-size: 8px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__result {
         margin-top: 0;
-        font-size: 9px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .view-switcher {
@@ -710,7 +712,7 @@
         width: 30px;
         height: 30px;
         border-radius: 4px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .products-grid {
@@ -733,7 +735,7 @@
         min-width: 68px;
         height: 20px;
         padding-inline: 7px;
-        font-size: 6px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-card__badge {
@@ -741,7 +743,7 @@
         left: 5px;
         width: 16px;
         height: 16px;
-        font-size: 8px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-card__body {
@@ -750,13 +752,13 @@
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-card__title {
-        font-size: 10px;
+        font-size: 14px;
         line-height: 1.6;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-card__description {
         margin-top: 5px;
-        font-size: 6.5px;
+        font-size: 14px;
         line-height: 1.8;
         -webkit-line-clamp: 3;
     }
@@ -769,14 +771,14 @@
     :where(.products-page, .air-handling-page, .industries-page) .product-card__spec {
         border-radius: 3px;
         padding: 4px 2px;
-        font-size: 4.8px;
+        font-size: 14px;
         line-height: 1.45;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-card__link {
         gap: 4px;
         margin-top: 8px;
-        font-size: 5.5px;
+        font-size: 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .products-grid:is(.is-list, .products-grid--list) {
@@ -799,7 +801,7 @@
 
     :where(.products-page, .air-handling-page, .industries-page) .catalog-more__button {
         gap: 7px;
-        font-size: 8px;
+        font-size: 14px;
     }
 
     .catalog-consultation {
@@ -817,7 +819,7 @@
 
     .catalog-consultation__eyebrow {
         margin-bottom: 7px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .catalog-consultation__title {
@@ -826,7 +828,7 @@
 
     .catalog-consultation__description {
         margin-top: 10px;
-        font-size: 10.5px;
+        font-size: 14px;
         line-height: 1.95;
     }
 
@@ -844,7 +846,7 @@
     .catalog-consultation__field {
         min-height: 40px;
         border-radius: 8px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .catalog-consultation__field--wide {
@@ -857,7 +859,7 @@
         max-width: 100%;
         min-height: 41px;
         border-radius: 8px;
-        font-size: 10px;
+        font-size: 14px;
     }
 }
 
@@ -880,5 +882,169 @@
     :where(.products-page, .air-handling-page, .industries-page) .product-search__submit,
     :where(.products-page, .air-handling-page, .industries-page) .product-search__advanced {
         transition: none;
+    }
+}
+
+/* =========================================================
+   Custom filter dropdowns
+   Native <select> is retained for forms/FormData and enhanced visually in JS.
+   The open panel follows the supplied Figma surface exactly.
+   ========================================================= */
+:where(.products-page, .air-handling-page, .industries-page) .product-search {
+    overflow: visible !important;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__select--native {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown {
+    position: relative;
+    min-width: 0;
+    flex: 1 1 180px;
+    z-index: 1;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown--1 {
+    flex: 1.12 1 220px;
+}
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown--2 {
+    flex: 0.82 1 165px;
+}
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown--3 {
+    flex: 0.94 1 190px;
+}
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown--4 {
+    flex: 1.25 1 250px;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-toggle {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 14px;
+    color: #29364b;
+    font: inherit;
+    font-size: 14px;
+    text-align: right;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-toggle i {
+    flex: 0 0 auto;
+    color: #64758b;
+    font-size: 14px;
+    transition: transform 150ms ease;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown.is-open {
+    z-index: 60;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown.is-open .product-search__dropdown-toggle {
+    border-color: #79b6ed;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown.is-open .product-search__dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 80;
+    display: none;
+    width: max(100%, 270px);
+    max-width: min(320px, calc(100vw - 24px));
+    overflow: hidden;
+    border: 1px solid #c5c4d5;
+    border-radius: 4px;
+    background: #f5f8ff;
+    box-shadow: 0 16px 32px rgb(15 23 43 / 0.16);
+    direction: rtl;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown.is-open .product-search__dropdown-panel {
+    display: grid;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option {
+    display: flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: flex-start;
+    border: 0;
+    border-bottom: 1px solid #d9deea;
+    background: transparent;
+    padding: 0 14px;
+    color: #0f172b;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option:last-child {
+    border-bottom: 0;
+}
+
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option:hover,
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option:focus-visible,
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option.is-selected {
+    background: rgb(121 182 237 / 0.12);
+    color: #2f75ab;
+}
+
+@media (min-width: 768px) and (max-width: 1179px) {
+    :where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown {
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+}
+
+@media (max-width: 767px) {
+    :where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown {
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+    :where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-toggle {
+        min-height: 36px;
+        padding: 0 8px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    :where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-panel {
+        width: max(100%, 230px);
+    }
+    :where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option {
+        min-height: 40px;
+        padding-inline: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Keep the panel's top radius visible after overflow is opened for custom menus. */
+:where(.products-page, .air-handling-page, .industries-page) .product-search__bar:first-child {
+    border-radius: 16px 16px 0 0;
+}
+@media (max-width: 767px) {
+    :where(.products-page, .air-handling-page, .industries-page) .product-search__bar:first-child {
+        border-radius: 8px 8px 0 0;
     }
 }

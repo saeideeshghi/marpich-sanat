@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-01",
+  "repository": "saeideeshghi/marpich-sanat",
+  "baseCommit": "a4a0446b3e5bd0cba3e49c1a5edbc720dee24bf1",
+  "missing": [
+    "/assets/documents/product-details/northair-pro-flow-datasheet.pdf",
+    "/assets/images/articles/article-air-transfer-design.svg",
+    "/assets/images/articles/article-custom-production.svg",
+    "/assets/images/articles/article-duct-material.svg",
+    "/assets/images/articles/article-engineering-to-execution.svg",
+    "/assets/images/articles/article-hvac-maintenance.svg",
+    "/assets/images/articles/article-hvac-selection-factors.svg",
+    "/assets/images/articles/article-industrial-hvac-design.svg",
+    "/assets/images/articles/article-manufacturing-quality.svg",
+    "/assets/images/articles/article-pressure-drop.svg",
+    "/assets/images/articles/article-spiral-vs-rectangular.svg",
+    "/assets/images/industries/textile/textile-main.webp",
+    "/assets/images/products-page/page-pattern.svg",
+    "/assets/images/projects/list/mashhad-carpet.webp",
+    "/assets/images/projects/list/savin-carpet.webp"
+  ],
+  "referencedAssetCount": 168
+}

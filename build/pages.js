@@ -13,4 +13,5 @@ export const pages = [
     { name: "expertise", file: "expertise.html", activeNav: "expertise" },
     { name: "air-handling", file: "air-handling.html", activeNav: "products" },
     { name: "industries", file: "industries.html", activeNav: "industries" },
+    { name: "articles", file: "articles.html", activeNav: "articles" },
 ];

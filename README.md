@@ -1,6 +1,8 @@
+> بسته آماده GitHub Pages — ۱ اکتبر ۲۰۲۶: تمام اصلاحات بازبینی سوم حفظ شده‌اند. مسیر تصاویر قدیمی و build مخصوص Pages اصلاح شد. [راهنمای تصویری آپلود](docs/GITHUB-UPLOAD.html) · [مراحل متنی](GITHUB-UPLOAD.md) · [گزارش اصلاحات ظاهری](docs/2026-10-01-FOOTER-STUDIO.md) · [راهنمای ادیتور](tools/README.md)
+
 # مارپیچ صنعت — سورس فرانت‌اند
 
-نسخه 0.3.3 · بازبینی ۲۰۲۶-۰۹-۲۷
+نسخه 0.4.0 · بازبینی ۲۰۲۶-۰۹-۲۹
 
 راهنمای کامل تحویل: [docs/backend-handoff.html](docs/backend-handoff.html)
 این راهنما مستقل و آفلاین است؛ جستجو و چاپ دارد و قراردادهای اتصال فرم‌ها، Auth، CMS و Razor را توضیح می‌دهد.
@@ -23,21 +25,23 @@ npm run build
 npm run preview
 ```
 
+برای انتشار این ریپو در GitHub Pages، از `npm run build:pages` و `npm run preview:pages` استفاده کنید؛ راهنمای کامل در `GITHUB-UPLOAD.md` است. دارایی‌های `assets` در ریشه نیز هنگام build خوانده می‌شوند. `public/assets` در صورت هم‌نام‌بودن فایل اولویت دارد؛ خروجی موقت در `.cache` است.
+
 `dist` و `node_modules` در بسته نیستند؛ build آن‌ها را تولید/مصرف می‌کند. خروجی manifest در `dist/.vite/manifest.json` برای Razor است.
 
 ## دارایی‌های عمومی
 
-assets و فونت‌ها طبق درخواست، همراه ZIP ارسالی نبوده‌اند. ۱۵۷ مسیر مرجع در `docs/assets-manifest.json` ثبت شده است. پوشه‌های اصلی را با همان نام‌ها به `public/assets` و `public/fonts` برگردانید. تا آن زمان شکست `check:assets` و خطاهای تصاویر/فونت طبیعی است؛ build موفق به معنی تأیید این فایل‌ها نیست.
+۹ فایل فونت اصلی Peyda و دو SVG فلش فرایند همکاری داخل این بسته هستند. تصاویر و لوگوهای سنگین مطابق درخواست مالک در ZIP نیستند؛ فایل‌های موجود در Clone ریپو حفظ شوند و دارایی‌های جدید محلی اضافه شوند. ۱۶۸ مسیر مرجع در `docs/assets-manifest.json` ثبت شده است. `public/assets` و `assets` ریشه هر دو پشتیبانی می‌شوند. `npm run check:assets` را پس از ادغام فایل‌ها اجرا کنید؛ build موفق به معنی موجود بودن همه تصاویر نیست.
 
 ## معماری
 
-HTML + Tailwind CSS 4 + ES Modules + Vite؛ ۱۱ صفحه مستقل، بدون React/Vue.
+HTML + Tailwind CSS 4 + ES Modules + Vite؛ ۱۲ صفحه مستقل، بدون React/Vue.
 
 - `build/pages.js`: رجیستری صفحه‌ها و ناوبری فعال.
 - `build/html-partials.js`: ترکیب HTML، partial و JSON در dev/build.
 - `build/components.js`: renderer همراه escape متن و اعتبارسنجی URL.
 - `src/components`: header/footer/menu/auth و اجزای محتوایی مشترک.
-- `src/data/pages`: داده includeها برای ۱۰ صفحه؛ Contact JSON ندارد. بخشی از محتوا هنوز در HTML است.
+- `src/data/pages`: داده includeها برای صفحات دارای component data؛ Contact JSON ندارد. بخشی از محتوا هنوز در HTML است.
 - `src/js/pages`: entry هر صفحه؛ CSS عمومی و اختصاصی و اجرای initSite.
 - `src/js/main.js`: رفتار مشترک؛ فایل صفحه به آن import نمی‌شود.
 - `src/css/main.css`: استایل عمومی. `catalog.css` در entryهای فهرست پس از CSS صفحه و در دو صفحه جزئیات از ابتدای CSS صفحه وارد می‌شود. `detail-technical.css` در دو entry جزئیات آخر وارد می‌شود.
@@ -45,13 +49,13 @@ HTML + Tailwind CSS 4 + ES Modules + Vite؛ ۱۱ صفحه مستقل، بدون 
 
 ## تغییرات این نسخه
 
-- پترن هدر و فوتر با خروجی نهایی `pattern-final` یکسان شد؛ فایل `site-pattern.json` همان تنظیمات مرجع است.
-- breakpoint پترن دقیقاً 463px است: تا 463 پروفایل mobile و از 464 به بالا پروفایل desktop؛ interpolation حذف شد.
-- هندسه SVG دست‌نخورده است؛ `minimumStroke` و `non-scaling-stroke` اضافه اعمال نمی‌شود.
-- فوتر دیگر opacity/light جداگانه ندارد و SVG عمودی stretch نمی‌شود؛ همان سبک و animation مرجع اجرا می‌شود.
-- صحنه authored پترن با ارتفاع 430px دسکتاپ و 404px موبایل حفظ می‌شود و host سایت فقط آن را clip می‌کند.
-- `prefers-reduced-motion`، توقف خارج دید و جلوگیری از mount تکراری همچنان فعال است.
-- راهنمای تحویل بک‌اند با رفتار جدید پترن همگام شد.
+- صفحه جدید `articles.html` بر اساس رفرنس Desktop/Mobile اضافه شد: Hero، جستجو و دسته‌بندی، Grid/List مقالات، ۱۰ کارت، Load more و CTA مشاوره.
+- مسیر «مقالات» در Header، Mobile Menu و Footer به صفحه جدید متصل شد و `articles` به registry ساخت اضافه شد.
+- منوی موبایل از حالت تمام‌صفحه تیره به Drawer روشن با `#ECEFF8` و `border-radius: 0 16px 16px 0` تغییر کرد؛ submenuها accordion و قابل استفاده با keyboard هستند.
+- Dropdown دسکتاپ منو با `#ECEFF8` و `border-radius: 16px 4px 16px 16px` اضافه شد.
+- Selectهای فرم‌های کاتالوگ به Custom Dropdown قابل استایل ارتقا یافتند؛ `<select>` اصلی برای FormData و اتصال Backend حفظ شده است.
+- برای نمایشگرهای >=1600px، containerهای اصلی تا 1680px رشد می‌کنند تا حاشیه‌های افراطی روی 1920/2K ایجاد نشود؛ هندسه 1440px تغییر نکرده است.
+- فایل‌های تصویر صفحه مقالات زیر `/assets/images/articles/` انتظار می‌روند؛ در نبود آن‌ها fallback بصری نمایش داده می‌شود.
 
 ## وضعیت اتصال
 
@@ -73,19 +77,36 @@ VITE_AUTH_API_BASE=/api/auth
 
 رویدادهای `consultation:submit` و `rfq:submit` دارای `{form, formData}` هستند. `catalog:search` یک object تخت از فیلدهای فرم دارد. adapter باید قبل از await، preventDefault کند و خودش وضعیت ارسال/خطا/موفقیت را مدیریت کند.
 
-۲۹۲ لینک خالی/# در خروجی صفحات، با احتساب تکرار partialها، باقی است. مقصد واقعی باید تعیین شود. CTAهای دارای فیلد company راه تماس مستقیمی ندارند؛ پیش از فعال‌کردن ثبت، راه تماس یا حساب تأییدشده لازم است.
+۳۲۲ لینک خالی/# در خروجی صفحات، با احتساب تکرار partialها، باقی است. مقصد واقعی باید تعیین شود. CTAهای دارای فیلد company راه تماس مستقیمی ندارند؛ پیش از فعال‌کردن ثبت، راه تماس یا حساب تأییدشده لازم است.
 
 ## قرارداد ظاهر
 
 RTL و DOM فعلی حفظ شود. منوی دسکتاپ از 1180px؛ فوتر breakpoint مستقل دارد. جدول‌های فنی محصول/پروژه از `detail-technical.css` و کلاس‌های `details-card`, `details-table`, `extras-panel` استفاده می‌کنند. خطوط جدول CSS هستند.
 
-CTA هیروی خانه، gradient stroke شفاف دکمه محصولات و برش تصاویر Expertise حفظ شده‌اند. `src/css/responsive.css` در importهای جاری فعال نیست؛ افزودن عمومی آن ممکن است ظاهر را عوض کند.
+CTA هیروی خانه با چیدمان flex و اندازه متناسب موبایل اصلاح شده است. gradient stroke شفاف دکمه محصولات و برش تصاویر Expertise حفظ شده‌اند. `src/css/responsive.css` در importهای جاری فعال نیست؛ افزودن عمومی آن ممکن است ظاهر را عوض کند.
 
 ## بررسی و ادامه کار
 
-- گزارش جاری: `docs/VALIDATION.md`
+- گزارش جاری: `docs/2026-10-01-FOOTER-STUDIO.md`
+- ادیتور پترن: `tools/footer-pattern-studio.html` (مستقیم و آفلاین باز می‌شود)؛ راهنمای اعمال خروجی در `tools/README.md`
+- اصلاحات پترن/هیرو/لینک‌ها: `docs/2026-10-01-PATTERN-HERO-LINKS.md`
+- اصلاحات پایه موبایل: `docs/2026-10-01-MOBILE-FIXES.md`
+- اعتبارسنجی پایه پروژه: `docs/VALIDATION.md`
 - شرح تغییرات و محدودیت‌ها: `docs/REVIEW.md`
 - تفاوت فایل‌ها با ورودی: `docs/source-audit.json`
 - گزارش‌های قدیمی: `docs/history/` (سابقه، نه نتیجه این نسخه)
 
 برای صفحه تازه، HTML + CSS/JS صفحه را ایجاد و در `build/pages.js` ثبت کنید. سپس check/build و بررسی responsive مرتبط را انجام دهید. کلاس‌ها، data-* و ترتیب importها قرارداد مشترک با بک‌اند هستند.
+
+### Articles polish — 2026-09-29 (pass 2)
+
+- The article read-more link is aligned to the visual left in two-column grid cards and pinned to the bottom-left in desktop list view.
+- Article media now overscans the media frame by 1px while keeping `object-fit: cover`, preventing the card/media background from showing at fractional zoom or SVG edges.
+- The articles hero eyebrow now uses the same orange accent-line language as the other internal page heroes.
+- The article search panel sits slightly higher, while the spacing below it before the catalog heading has been increased on desktop, tablet and mobile.
+- Shared header/menu code remains untouched by this pass so the same responsive behavior continues across every page; project-wide structural checks and production build should be run after changes.
+
+
+### Navigation / article media polish
+- Active navigation color is `#79B6ED` across desktop/mobile shared navigation.
+- Article media uses explicit full-size cover behavior with a small overscan to avoid SVG/image edge gaps.

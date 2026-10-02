@@ -1,0 +1,451 @@
+{
+  "results": [
+    "Exactly one blue active mobile destination on all 12 pages, including disclosure buttons",
+    "CTA labels fit without icon collisions at seven widths; hero photograph uses contain without overscan",
+    "Uploaded mobile/desktop connector selected at 640px; no customer buttons or scrollbars",
+    "Approved footer retains its original 463px profile breakpoint",
+    "Identical header pattern dimensions and crop across About,Contact,Products,Articles at three widths",
+    "Customer strip moves on a touch viewport without controls",
+    "Reduced motion displays an accessible static customer list"
+  ],
+  "errors": [],
+  "samples": [
+    {
+      "width": 320,
+      "cta": [
+        {
+          "button": {
+            "left": 144.3125,
+            "right": 304,
+            "bottom": 496.5
+          },
+          "text": {
+            "left": 170.3125,
+            "right": 295,
+            "bottom": 482.75
+          },
+          "icon": {
+            "left": 153.3125,
+            "right": 165.3125
+          },
+          "size": "11px"
+        },
+        {
+          "button": {
+            "left": 16,
+            "right": 134.3125,
+            "bottom": 496.5
+          },
+          "text": {
+            "left": 42,
+            "right": 125.3125,
+            "bottom": 482.75
+          },
+          "icon": {
+            "left": 25,
+            "right": 37
+          },
+          "size": "11px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 560,
+        "parent": 560
+      },
+      "connector": "connector-mobile.svg"
+    },
+    {
+      "width": 390,
+      "cta": [
+        {
+          "button": {
+            "left": 174.09375,
+            "right": 374,
+            "bottom": 467.046875
+          },
+          "text": {
+            "left": 238.34375,
+            "right": 365,
+            "bottom": 453.296875
+          },
+          "icon": {
+            "left": 183.09375,
+            "right": 195.09375
+          },
+          "size": "11px"
+        },
+        {
+          "button": {
+            "left": 16,
+            "right": 164.09375,
+            "bottom": 467.046875
+          },
+          "text": {
+            "left": 70.359375,
+            "right": 155.09375,
+            "bottom": 453.296875
+          },
+          "icon": {
+            "left": 25,
+            "right": 37
+          },
+          "size": "11px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 560,
+        "parent": 560
+      },
+      "connector": "connector-mobile.svg"
+    },
+    {
+      "width": 640,
+      "cta": [
+        {
+          "button": {
+            "left": 384,
+            "right": 624,
+            "bottom": 482.78125
+          },
+          "text": {
+            "left": 469.828125,
+            "right": 608,
+            "bottom": 468.78125
+          },
+          "icon": {
+            "left": 400,
+            "right": 416
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 202,
+            "right": 372,
+            "bottom": 482.78125
+          },
+          "text": {
+            "left": 263.5625,
+            "right": 356,
+            "bottom": 468.78125
+          },
+          "icon": {
+            "left": 218,
+            "right": 234
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 768,
+      "cta": [
+        {
+          "button": {
+            "left": 496,
+            "right": 736,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 581.828125,
+            "right": 720,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 512,
+            "right": 528
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 314,
+            "right": 484,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 375.5625,
+            "right": 468,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 330,
+            "right": 346
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 1180,
+      "cta": [
+        {
+          "button": {
+            "left": 907.5,
+            "right": 1127.5,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 973.328125,
+            "right": 1111.5,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 923.5,
+            "right": 939.5
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 715.5,
+            "right": 895.5,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 787.0625,
+            "right": 879.5,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 731.5,
+            "right": 747.5
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 1440,
+      "cta": [
+        {
+          "button": {
+            "left": 1156,
+            "right": 1376,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 1221.828125,
+            "right": 1360,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 1172,
+            "right": 1188
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 964,
+            "right": 1144,
+            "bottom": 488.234375
+          },
+          "text": {
+            "left": 1035.5625,
+            "right": 1128,
+            "bottom": 474.234375
+          },
+          "icon": {
+            "left": 980,
+            "right": 996
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    },
+    {
+      "width": 2560,
+      "cta": [
+        {
+          "button": {
+            "left": 1900,
+            "right": 2120,
+            "bottom": 515.890625
+          },
+          "text": {
+            "left": 1965.828125,
+            "right": 2104,
+            "bottom": 501.890625
+          },
+          "icon": {
+            "left": 1916,
+            "right": 1932
+          },
+          "size": "12px"
+        },
+        {
+          "button": {
+            "left": 1708,
+            "right": 1888,
+            "bottom": 515.890625
+          },
+          "text": {
+            "left": 1779.5625,
+            "right": 1872,
+            "bottom": 501.890625
+          },
+          "icon": {
+            "left": 1724,
+            "right": 1740
+          },
+          "size": "12px"
+        }
+      ],
+      "image": {
+        "fit": "contain",
+        "height": 600,
+        "parent": 600
+      },
+      "connector": "connector-desktop.svg"
+    }
+  ],
+  "configs": [
+    {
+      "name": "about",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "contact",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "products",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "articles",
+      "width": "160.4%",
+      "height": "404px",
+      "profile": "mobile",
+      "left": "-24.9%",
+      "top": "10.8%",
+      "transform": "rotate(-2.6deg) scale(1, 1.018)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "about",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "contact",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "products",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "articles",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "about",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "contact",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "products",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    },
+    {
+      "name": "articles",
+      "width": "72.7%",
+      "height": "430px",
+      "profile": "desktop",
+      "left": "-0.5%",
+      "top": "7.1%",
+      "transform": "rotate(3.9deg) scale(1, 1)",
+      "opacity": "0.5"
+    }
+  ]
+}
