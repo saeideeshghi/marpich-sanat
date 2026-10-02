@@ -46,5 +46,7 @@
 .site-pattern-layer--header {
     bottom: auto;
     height: min(var(--site-pattern-scene-height, 430px), var(--site-pattern-crop-height, 100%));
+    /* Short intro surfaces fade the wave before the light page starts. */
+    mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 36px), transparent 100%);
 }
 @media (max-width: 639px) { .site-pattern-layer--header { --site-pattern-scene-height: 404px; } }

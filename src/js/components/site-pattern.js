@@ -2,9 +2,9 @@
  * Shared decorative site pattern.
  *
  * Rendering and animation intentionally mirror the approved Pattern Studio export:
- * - header profiles switch at 640px; the approved footer retains its exported breakpoint
- * - path geometry, gradients, wave motion, moving light and opacity are untouched
- * - no tablet interpolation, footer dimming, SVG stretching or forced minimum stroke
+ * - header profiles switch at 640px; footer uses the same header artwork from 1180px
+ * - compact footer profiles keep their separate fan artwork and animation
+ * - authored geometry retains its aspect ratio; decorative layers never affect layout
  *
  * Only the Pattern Studio demo background/text are omitted here. The site host owns
  * its background/content; this module supplies the decorative SVG layer only.
@@ -28,6 +28,8 @@ export function mountPattern(root, initialConfig) {
     };
 
     const config = initialConfig;
+    // Profiles may override motion without affecting another artwork/profile.
+    let animation = config.animation;
     let time = 0;
     let paused = false;
     let heldTime = null;
@@ -140,7 +142,7 @@ export function mountPattern(root, initialConfig) {
             );
     };
 
-    const prefersReducedMotion = () => config.animation.respectReducedMotion && reducedMotion.matches;
+    const prefersReducedMotion = () => animation.respectReducedMotion && reducedMotion.matches;
 
     function build() {
         nodes.forEach((node) => {
@@ -181,11 +183,11 @@ export function mountPattern(root, initialConfig) {
                 defs,
             );
             setGradientStops(light, [
-                { offset: 0, color: config.animation.lightColor, opacity: 0 },
-                { offset: 34, color: config.animation.lightColor, opacity: 0.3 },
-                { offset: 50, color: config.animation.coreColor, opacity: 1 },
-                { offset: 67, color: config.animation.lightColor, opacity: 0.65 },
-                { offset: 100, color: config.animation.lightColor, opacity: 0 },
+                { offset: 0, color: animation.lightColor, opacity: 0 },
+                { offset: 34, color: animation.lightColor, opacity: 0.3 },
+                { offset: 50, color: animation.coreColor, opacity: 1 },
+                { offset: 67, color: animation.lightColor, opacity: 0.65 },
+                { offset: 100, color: animation.lightColor, opacity: 0 },
             ]);
 
             const group = create("g", {}, normal);
@@ -256,10 +258,14 @@ export function mountPattern(root, initialConfig) {
     function layout() {
         // Use the original mobile geometry below 640px; no interpolation of the authored profiles.
         const breakpoint = root.dataset.sitePattern === "header" ? 640 : config.breakpoint;
-        const mobile = root.clientWidth < breakpoint;
-        profile = config.profiles[mobile ? "mobile" : "desktop"];
-        root.dataset.patternProfile = mobile ? "mobile" : "desktop";
-        const nextArtwork = config.artworks?.[profile.artwork || (mobile ? "mobile" : "desktop")] || defaultArtwork;
+        const compact = root.clientWidth < breakpoint;
+        const profileName = compact && root.clientWidth >= 640 && config.profiles.tablet
+            ? "tablet" : compact ? "mobile" : "desktop";
+        profile = config.profiles[profileName];
+        animation = { ...config.animation, ...profile.animation };
+        root.dataset.patternProfile = profileName;
+        root.dataset.patternArtwork = profile.artwork || profileName;
+        const nextArtwork = config.artworks?.[profile.artwork || profileName] || defaultArtwork;
         if (artwork !== nextArtwork) {
             artwork = nextArtwork;
             sceneWidth = artwork.viewBox[2];
@@ -285,6 +291,7 @@ export function mountPattern(root, initialConfig) {
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: `${p.width}%`,
+            maxWidth: p.maxWidth ? `${p.maxWidth}px` : "none",
             transform: `rotate(${p.rotation}deg) scale(${p.flipX ? -1 : 1}, ${p.scaleY / 100})`,
             transformOrigin: "center",
             opacity: p.opacity / 100,
@@ -301,17 +308,15 @@ export function mountPattern(root, initialConfig) {
             },
         ]);
 
-        blur.setAttribute("stdDeviation", config.animation.glow);
+        blur.setAttribute("stdDeviation", animation.glow);
     }
 
     const eased = (value) =>
-        config.animation.easing === "smooth" ? value * value * (3 - 2 * value) : value;
+        animation.easing === "smooth" ? value * value * (3 - 2 * value) : value;
 
     function paint(now = performance.now()) {
         if (!profile) return;
-        time = heldTime ?? Math.max(0, (now - patternClockStart) / 1000 * config.animation.speed * profile.motionSpeed + timeOffset);
-
-        const animation = config.animation;
+        time = heldTime ?? Math.max(0, (now - patternClockStart) / 1000 * animation.speed * profile.motionSpeed + timeOffset);
         const p = profile;
         const calm = prefersReducedMotion();
         const wave = !calm && (animation.mode === "wave" || animation.mode === "combined");
@@ -413,10 +418,10 @@ export function mountPattern(root, initialConfig) {
             !document.hidden &&
             visible &&
             !prefersReducedMotion() &&
-            (config.animation.mode !== "static" ||
-                config.animation.pulse > 0 ||
-                (config.animation.entrance !== "none" &&
-                    time < config.animation.entranceDelay + config.animation.entranceDuration))
+            (animation.mode !== "static" ||
+                animation.pulse > 0 ||
+                (animation.entrance !== "none" &&
+                    time < animation.entranceDelay + animation.entranceDuration))
         );
     }
 
@@ -424,7 +429,7 @@ export function mountPattern(root, initialConfig) {
     // Independent loops could display adjacent samples after a layer re-entered view.
     // Keep this state on mountPattern so standalone Studio exports remain self-contained.
     const frames = mountPattern.frames ??= { entries: new Set(), frame: 0 };
-    const entry = { paint, isAnimating, fps: () => config.animation.fps, slot: -1 };
+    const entry = { paint, isAnimating, fps: () => animation.fps, slot: -1 };
 
     function tick(now) {
         frames.frame = 0;
@@ -460,7 +465,7 @@ export function mountPattern(root, initialConfig) {
 
     const resizeObserver = new ResizeObserver(() => {
         layout();
-        paint();
+        sync();
     });
     resizeObserver.observe(root);
 
@@ -468,7 +473,7 @@ export function mountPattern(root, initialConfig) {
         visible = entries[0]?.isIntersecting ?? true;
         sync();
     });
-    intersectionObserver.observe(stage);
+    intersectionObserver.observe(root);
 
     const syncVisibility = () => sync();
     document.addEventListener("visibilitychange", syncVisibility);
@@ -485,14 +490,14 @@ export function mountPattern(root, initialConfig) {
         pause(value) {
             if (Boolean(value) === paused) return;
             if (value) { paint(); heldTime = time; }
-            else { timeOffset = heldTime - (performance.now() - patternClockStart) / 1000 * config.animation.speed * profile.motionSpeed; heldTime = null; }
+            else { timeOffset = heldTime - (performance.now() - patternClockStart) / 1000 * animation.speed * profile.motionSpeed; heldTime = null; }
             paused = Boolean(value);
             sync();
         },
         seek(value) {
             const target = Math.max(0, Number(value) || 0);
             if (paused) heldTime = target;
-            else timeOffset = target - (performance.now() - patternClockStart) / 1000 * config.animation.speed * profile.motionSpeed;
+            else timeOffset = target - (performance.now() - patternClockStart) / 1000 * animation.speed * profile.motionSpeed;
             paint();
         },
         restart() { this.seek(0); sync(); },
@@ -547,7 +552,7 @@ export function initSitePatterns() {
         footer.classList.add("site-pattern-host");
         const layer = createPatternLayer("footer");
         footer.prepend(layer);
-        // The footer uses its own vertical fan artwork; header settings stay independent.
+        // Desktop shares header geometry/motion; compact profiles use the footer fan.
         mountPattern(layer, cloneConfig(footerPatternSettings));
     }
 }

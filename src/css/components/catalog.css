@@ -335,14 +335,12 @@
 }
 
 :where(.products-page, .air-handling-page, .industries-page) .product-card__description {
-    display: -webkit-box;
+    display: block;
     overflow: hidden;
     margin: 8px 0 0;
     color: #344057;
     font-size: 14px;
     line-height: 1.9;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
 }
 
 :where(.products-page, .air-handling-page, .industries-page) .product-card__specs {
@@ -760,7 +758,6 @@
         margin-top: 5px;
         font-size: 14px;
         line-height: 1.8;
-        -webkit-line-clamp: 3;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-card__specs {

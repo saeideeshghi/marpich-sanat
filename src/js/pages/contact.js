@@ -126,7 +126,11 @@ initContactForm();
 const contactIntro = document.querySelector(".contact-intro");
 const contactHero = document.querySelector(".contact-hero");
 if (contactIntro && contactHero) {
-    new ResizeObserver(() => {
-        contactHero.style.setProperty("--contact-intro-background", `${contactIntro.offsetHeight + 48}px`);
-    }).observe(contactIntro);
+    const fitContactBackdrop = () => {
+        const bottom = contactIntro.getBoundingClientRect().bottom - contactHero.getBoundingClientRect().top;
+        contactHero.style.setProperty("--contact-intro-background", `${Math.ceil(bottom + 28)}px`);
+    };
+    new ResizeObserver(fitContactBackdrop).observe(contactIntro);
+    document.fonts.ready.then(fitContactBackdrop);
+    fitContactBackdrop();
 }

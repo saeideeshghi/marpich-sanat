@@ -849,7 +849,7 @@
 }
 
 .product-card__description {
-    display: -webkit-box;
+    display: block;
 
     overflow: hidden;
 
@@ -861,9 +861,7 @@
 
     line-height: 1.9;
 
-    -webkit-box-orient: vertical;
 
-    -webkit-line-clamp: 2;
 }
 
 .product-card__specs {
@@ -1591,7 +1589,6 @@
 
         line-height: 1.8;
 
-        -webkit-line-clamp: 3;
     }
 
     .product-card__specs {

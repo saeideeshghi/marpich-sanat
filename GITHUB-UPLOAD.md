@@ -1,84 +1,108 @@
-# آپلود نسخه نهایی مارپیچ صنعت
+# آپدیت همین پروژه روی GitHub
 
-نسخه قابل‌خواندن در مرورگر: `docs/GITHUB-UPLOAD.html`.
+ریپو: https://github.com/saeideeshghi/marpich-sanat
 
-این بسته اصلاحات پترن، ارتفاع هیرو، CTA، منوی فعال موبایل، اسلایدر مشتریان، SVGهای فرایند همکاری، متن جاستیفای ۱۴px و underline فقط زیر متن را دارد. ادیتور مستقل فوتر در `tools/footer-pattern-studio.html` است. پیش‌نویس ادیتور جایگزین خودکار پترن تأییدشده سایت نشده است.
+شاخه انتشار: `main`
 
-## چرا نسخه قبلی دیده می‌شد؟
+سایت: https://saeideeshghi.github.io/marpich-sanat/index.html
 
-Push با `fetch first` رد شده بود، بنابراین اصلاحات هنوز روی branch اصلی GitHub نبودند. علاوه بر آن، تصاویر ریپو در `assets/` قرار داشتند ولی build Vite پوشه `public/` را منتشر می‌کند. تنظیمات تازه هنگام اجرا و build، دارایی‌های هر دو محل را در پوشه موقت `.cache/static-public` ادغام می‌کنند؛ فایل‌های `public` اولویت دارند. فایل‌های اصلی جابه‌جا یا حذف نمی‌شوند.
+## روش ثابت هر بار
 
-## ۱. یک Clone تمیز بگیر
+۱. بسته اصلاحات را خارج از پروژه Extract کن. **محتویات داخل بسته** را کنار `package.json` در ریشه همان پروژه قبلی کپی و Replace کن. پوشه‌های `src` و `public` با نسخه موجود ادغام شوند؛ تصاویر، فونت‌ها و تاریخچه Git را حذف نکن.
 
-در یک پوشه تازه، PowerShell را باز کن:
-
-```powershell
-git clone https://github.com/saeideeshghi/marpich-sanat.git marpich-sanat-new
-cd marpich-sanat-new
-```
-
-همین ریپو و تاریخچه‌اش استفاده می‌شود. پوشه قدیمی پروژه خودت را نگه دار.
-
-## ۲. فایل‌های نسخه نهایی را ادغام کن
-
-ZIP نهایی را خارج از ریپو Extract کن. محتویاتش را داخل `marpich-sanat-new` کپی و Replace کن. `package.json` باید مستقیم در ریشه ریپو باشد، نه داخل یک زیرپوشه دیگر.
-
-- `.git` نسخه Clone را حفظ کن.
-- پوشه‌های تصاویر و فونت‌های Clone را حذف نکن. فایل‌های `public` بسته جدید را با آن‌ها ادغام کن.
-- دارایی‌های تازه‌ای که روی سیستم خودت داری را در `public/assets` با همان نام‌های مرجع اضافه کن. `assets` در ریشه نیز پشتیبانی می‌شود.
-- ZIP/RAR پروژه را داخل ریپو کپی نکن. پوشه‌های `node_modules`، `dist` و `.cache` نیز در git ثبت نمی‌شوند.
-
-## ۳. بررسی و اجرای نسخه مخصوص Pages
-
-Node.js 22.12 یا بالاتر لازم است. دستورها را یکی‌یکی اجرا کن:
+۲. همان پوشه را در VS Code باز کن. در **Terminal → New Terminal** اجرا کن:
 
 ```powershell
-npm ci
-npm run check
-npm run check:assets
-npm run build:pages
-npm run preview:pages
+.\PUSH-GITHUB.cmd
 ```
 
-Preview را در این آدرس بررسی کن:
+این فایل Windows، نام ریپو و شاخه را بررسی می‌کند؛ Check و Build مخصوص Pages را اجرا می‌کند، تغییرات را Commit می‌کند، با `origin/main` همگام می‌کند و Push می‌کند. اگر dependencies نصب نیستند ابتدا `npm ci` اجرا می‌شود. روی اولین خطا توقف می‌کند. Tagها جابه‌جا نمی‌شوند.
 
-```text
-http://localhost:4173/marpich-sanat/index.html
-```
+۳. [Actions پروژه](https://github.com/saeideeshghi/marpich-sanat/actions) را باز کن. وقتی اجرای جدید **Deploy website to GitHub Pages** سبز شد، سایت را با **Ctrl + F5** تازه کن. Workflow فعلی Build و Deploy را انجام می‌دهد؛ `dist` را دستی آپلود نکن.
 
-اگر پورت دیگری نمایش داده شد، همان پورت را جایگزین کن. بعد با `Ctrl+C` Preview را ببند. `check:assets` فایل‌های مفقود را دقیق می‌نویسد؛ خطاهای فایل را با افزودن دارایی اصلی اصلاح کن. build موفق به معنی موجود بودن همه تصاویر نیست.
+## اجرای دستی همین مراحل
 
-## ۴. Commit و Push
+دستورها را یکی‌یکی اجرا کن؛ بعد از خطا مرحله بعد را اجرا نکن:
 
 ```powershell
 git status
-git add .
-git commit -m "Update complete frontend and GitHub Pages asset handling"
+npm.cmd run check
+npm.cmd run build:pages
+git add -A
+git commit -m "Update v2 frontend"
+git pull --rebase origin main
 git push origin main
 ```
 
-اگر روی GitHub بعد از Clone تغییر دیگری ندادی، این Push بر پایه آخرین نسخه ریپو خواهد بود. اگر باز هم `fetch first` دیدی، اول با working tree تمیز `git pull --rebase origin main` اجرا کن. اگر Conflict آمد، قبل از Push باید حل شود؛ از force push برای این آپدیت استفاده نکن.
+`git status` باید `On branch main` نشان دهد. اگر dependencies نصب نیستند قبل از Check، `npm.cmd ci` اجرا کن. اگر Commit نوشت `nothing to commit`، تغییر جدیدی باقی نمانده و می‌توانی دو دستور آخر را اجرا کنی.
 
-## ۵. انتشار
+## اجرای محلی
 
-در Settings → Pages، گزینه Source باید GitHub Actions باشد. workflow موجود با هر Push روی `main` این کارها را انجام می‌دهد: نصب dependencyها، `build:pages` و انتشار `dist`.
+```powershell
+npm.cmd run dev
+```
 
-وضعیت اجرا:
+آدرس ترمینال را باز کن. برای Preview مسیر Pages، بعد از `build:pages` اجرا کن:
 
-<https://github.com/saeideeshghi/marpich-sanat/actions>
+```powershell
+npm.cmd run preview:pages
+```
 
-سایت:
+آدرس معمول: http://localhost:4173/marpich-sanat/index.html
 
-<https://saeideeshghi.github.io/marpich-sanat/index.html>
+اگر پورت متفاوتی نمایش داده شد، همان را استفاده کن. سرور با **Ctrl + C** بسته می‌شود. بازکردن HTML مستقیم یا Live Server، includeهای مشترک را پردازش نمی‌کند.
 
-بعد از موفق‌شدن Deploy، با `Ctrl+F5` صفحه را تازه کن. اگر هنوز نسخه قبلی دیده شد، یک پنجره Incognito باز کن و commit و اجرای Actions را مقایسه کن.
+## خطاهای رایج
 
-## اجرای صحیح فایل‌ها
+| پیام | اقدام |
+| --- | --- |
+| `not a git repository` | همان پوشه‌ای را باز کن که قبلاً Push کردی. اگر فقط ZIP داری، روش Clone پایین را اجرا کن. |
+| شاخه `main` نیست | با `git status` شاخه و تغییرات را بررسی کن. |
+| Remote تطبیق ندارد | `git remote -v` باید همین ریپوی `saeideeshghi/marpich-sanat` باشد. |
+| `npm.ps1 cannot be loaded` | از `npm.cmd` یا `PUSH-GITHUB.cmd` استفاده کن؛ تغییر Execution Policy لازم نیست. |
+| Check یا Build ناموفق | خطای دقیق را اصلاح کن و دوباره فایل Push را اجرا کن. |
+| خطای شبکه یا ورود | اتصال یا احراز هویت GitHub را کامل کن و دوباره اجرا کن. رمز یا Token را داخل فایل‌ها ننویس. |
+| `CONFLICT` | فایل‌های Conflict را در VS Code حل کن، سپس دستورهای زیر را اجرا کن. |
+| `fetch first` / `non-fast-forward` | بعد از Commit محلی، `git pull --rebase origin main` و سپس Push کن. |
+| Actions قرمز شد | اجرای جدید را باز کن و خطای مرحله ناموفق را بررسی کن. |
 
-برای ویرایش سایت `npm run dev` اجرا کنید. بازکردن مستقیم `index.html` یا Live Server، includeهای مشترک را پردازش نمی‌کند و ظاهر ناقص نشان می‌دهد.
+بعد از حل Conflict در Rebase:
 
-## فایل‌هایی که باید اضافه شوند
+```powershell
+git add -A
+git rebase --continue
+npm.cmd run check
+npm.cmd run build:pages
+git push origin main
+```
 
-تصاویر سنگین در ZIP ارسالی مالک نبودند. فونت‌ها و دو SVG جدید همکاری در این بسته هستند. لیست مسیرهای موردنیاز در `docs/assets-manifest.json` است؛ گزارش مقایسه با ریپوی قدیمی در `docs/github-assets-missing.json`، فقط وضعیت زمان این تحویل را نشان می‌دهد. دارایی‌های جدید محلی را قبل از Push اضافه کن.
+`git rebase --abort` همگام‌سازی ناموفق را لغو می‌کند و Commit محلی خودت حفظ می‌شود. برای آپدیت معمول این پروژه از `git push --force` استفاده نکن.
 
-برای بک‌اند یا میزبانی در ریشه دامنه همچنان `npm run build` استفاده می‌شود؛ `build:pages` و `preview:pages` مخصوص ریپوی `marpich-sanat` هستند.
+## اگر پوشه فعلی Git ندارد
+
+فقط در این حالت در یک پوشه تازه اجرا کن:
+
+```powershell
+git clone https://github.com/saeideeshghi/marpich-sanat.git marpich-sanat
+cd marpich-sanat
+```
+
+اصلاحات و دارایی‌های محلی جدید را در ریشه این Clone ادغام کن و روش ثابت بالا را اجرا کن. پوشه قبلی خودت را نگه دار.
+
+## v2 و Tag
+
+سایت از آخرین Commit روی `main` ساخته می‌شود و آدرسش ثابت می‌ماند. Tag قدیمی `v2.0.0` تصویر ثبت‌شده همان زمان است و با Push معمولی تغییر نمی‌کند. این روال اصلاحات v2 را روی سایت منتشر می‌کند و تاریخچه نسخه قبلی را حفظ می‌کند.
+
+## بررسی دارایی‌ها
+
+```powershell
+npm.cmd run check:assets
+```
+
+این بررسی مستقل، فایل‌های مفقود را مشخص می‌کند. در زمان تحویل فقط PDF واقعی زیر موجود نبود:
+
+```text
+public/assets/documents/product-details/northair-pro-flow-datasheet.pdf
+```
+
+دیتاشیت اصلی را با همین مسیر اضافه کن. فایل Push، Check و Build را اجرا می‌کند؛ بررسی دارایی‌ها جداگانه در اختیار توست.

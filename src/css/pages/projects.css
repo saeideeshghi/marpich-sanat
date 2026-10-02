@@ -225,10 +225,8 @@
 }
 
 .projects-page__card-description {
-    display: -webkit-box;
+    display: block;
     overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
     margin: 0.65rem 0 0;
     color: #39445a;
     font-size: 0.875rem;
@@ -299,7 +297,6 @@
 }
 
 .projects-page__grid.is-list .projects-page__card-description {
-    -webkit-line-clamp: 4;
 }
 
 /* ---------------------------------------------
@@ -552,7 +549,6 @@
         margin-top: 0.3rem;
         font-size: 0.875rem;
         line-height: 1.8;
-        -webkit-line-clamp: 3;
     }
 
     .projects-page__card-meta {

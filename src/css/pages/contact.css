@@ -18,7 +18,8 @@
 ========================================================= */
 
 .contact-hero {
-    --site-pattern-crop-height: var(--contact-intro-background, 354px);
+    --contact-backdrop-min-height: 298px;
+    --site-pattern-crop-height: max(var(--contact-backdrop-min-height), var(--contact-intro-background, 0px));
     isolation: isolate;
     background: #f4f7fd;
 }
@@ -28,7 +29,7 @@
     inset: 0 0 auto;
     z-index: -2;
     width: 100%;
-    height: 298px;
+    height: var(--site-pattern-crop-height);
     background-color: #111a2d;
     content: "";
     pointer-events: none;
@@ -308,8 +309,8 @@ textarea.contact-control {
 ========================================================= */
 
 @media (min-width: 1180px) {
-    .contact-hero::before {
-        height: 354px;
+    .contact-hero {
+        --contact-backdrop-min-height: 354px;
     }
 
     .contact-intro {

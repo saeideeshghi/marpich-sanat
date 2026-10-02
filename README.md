@@ -1,4 +1,4 @@
-> بازبینی ۲ اکتبر ۲۰۲۶: Hero صفحه اصلی، Footer و خوانایی و چیدمان responsive هر ۱۲ صفحه اصلاح شدند. [گزارش فعلی و روش جایگزینی](docs/2026-10-02-FINAL-RESPONSIVE.md). گزارش‌های قدیمی‌تر پایین این فایل، سابقه نسخه‌های قبل هستند.
+> بازبینی دوم ۲ اکتبر ۲۰۲۶: پترن فوتر دسکتاپ مطابق هدر، پترن مستقل موبایل/تبلت، متن کامل کارت‌ها و اندازه تصاویر اصلاح شدند. [گزارش فعلی](docs/2026-10-02-PATTERNS-CARDS.md) · [روش ثابت Push](GITHUB-UPLOAD.md). گزارش‌های قدیمی‌تر سابقه نسخه‌های قبل هستند.
 
 # مارپیچ صنعت — سورس فرانت‌اند
 
@@ -81,13 +81,15 @@ VITE_AUTH_API_BASE=/api/auth
 
 ## قرارداد ظاهر
 
-RTL و DOM فعلی حفظ شود. منوی دسکتاپ از 1180px؛ فوتر breakpoint مستقل دارد. جدول‌های فنی محصول/پروژه از `detail-technical.css` و کلاس‌های `details-card`, `details-table`, `extras-panel` استفاده می‌کنند. خطوط جدول CSS هستند.
+RTL و DOM فعلی حفظ شود. منوی دسکتاپ از 1180px؛ پترن فوتر از همین عرض با هدر یکسان است و زیر آن از طرح مستقل موبایل/تبلت استفاده می‌کند. جدول‌های فنی محصول/پروژه از `detail-technical.css` و کلاس‌های `details-card`, `details-table`, `extras-panel` استفاده می‌کنند. خطوط جدول CSS هستند.
 
 CTA هیروی خانه یک Grid دو ستونه RTL است؛ زیر 360px تک‌ستونه می‌شود تا متن 14px خوانا بماند. دکمه محصولات پس‌زمینه شفاف و gradient stroke دارد. `src/css/responsive.css` پس از CSS صفحه و جدول‌های فنی در هر ۱۲ entry وارد می‌شود؛ فونت و هندسه responsive را در همین لایه تنظیم کنید. ظاهر Footer در `src/css/components/footer.css` و HTML مشترک آن در `src/components/footer.html` است.
 
 ## بررسی و ادامه کار
 
-- گزارش جاری: `docs/2026-10-02-FINAL-RESPONSIVE.md`
+- گزارش Hero و Responsive قبلی: `docs/2026-10-02-FINAL-RESPONSIVE.md`
+- بازبینی جاری پترن و کارت‌ها: `docs/2026-10-02-PATTERNS-CARDS.md`
+- آپدیت ثابت Windows: `PUSH-GITHUB.cmd`؛ راهنما: `GITHUB-UPLOAD.md`
 - گزارش قبلی: `docs/2026-10-01-FOOTER-STUDIO.md`
 - ادیتور پترن: `tools/footer-pattern-studio.html` (مستقیم و آفلاین باز می‌شود)؛ راهنمای اعمال خروجی در `tools/README.md`
 - اصلاحات پترن/هیرو/لینک‌ها: `docs/2026-10-01-PATTERN-HERO-LINKS.md`
