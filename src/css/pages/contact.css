@@ -101,7 +101,7 @@
 
 /* Branch typography tuned to the supplied desktop reference. */
 .branch-card__address {
-    font-size: 14px !important;
+    font-size: var(--card-description);
     line-height: 1.9;
 }
 
@@ -277,7 +277,6 @@ textarea.contact-control {
         min-height: 100% !important;
     }
 
-    .branch-card__address,
     .branch-card dl {
         font-size: 14px !important;
     }
@@ -348,7 +347,7 @@ textarea.contact-control {
     }
 
     .branch-card__address {
-        font-size: 14px !important;
+        font-size: var(--card-description);
         line-height: 1.95;
     }
 
@@ -568,7 +567,7 @@ textarea.contact-control {
 
 @media (min-width: 1180px) {
     .branch-card__address {
-        font-size: 14px;
+        font-size: var(--card-description);
         line-height: 1.9;
     }
 
@@ -588,7 +587,6 @@ textarea.contact-control {
         margin-top: 2px;
     }
 
-    .branch-card__address,
     .branch-card__details {
         font-size: 14px !important;
         line-height: 1.85;

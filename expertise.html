@@ -14,7 +14,7 @@
         <!-- Shared header stays outside hero stacking/clipping contexts. -->
         <!-- @include header -->
 
-        <div class="relative bg-brand-navy text-white site-hero" data-site-hero>
+        <div class="relative bg-brand-navy text-white site-hero" data-site-hero id="hero-expertise">
 
 
             <!-- Hero: shared animated header pattern is mounted globally; page geometry stays local. -->
@@ -52,7 +52,7 @@
                 <div class="mx-auto w-full max-w-[1320px] space-y-4 px-4 sm:px-6 lg:space-y-5 lg:px-8">
                     <!-- 01 - Assessment / consulting -->
                     <article id="field-assessment"
-                        class="expertise-page__card expertise-page__card--featured overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px]"
+                        class="expertise-page__card expertise-page__card--featured overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
                     >
                         <div
                             class="expertise-page__media expertise-page__media--featured relative h-[150px] overflow-hidden md:h-[255px]"
@@ -67,13 +67,13 @@
                                 class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[58%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[47%] md:px-8 lg:px-10"
                             >
                                 <h2
-                                    class="text-[15px] font-bold leading-[1.8] text-text-dark sm:text-[18px] md:text-[27px]"
+                                    class="font-bold text-text-dark site-card__title"
                                 >
                                     ارزیابی میدانی و مشاوره تخصصی
                                 </h2>
                                 <span class="mt-2 block h-px w-[30px] bg-brand-blue sm:mt-3 md:w-[36px]"></span>
                                 <p
-                                    class="mt-2 line-clamp-4 text-[14px] leading-[1.9] text-text-dark/85 sm:text-[14px] md:mt-3 md:text-[14px] md:leading-[2] site-prose"
+                                    class="mt-2 text-text-dark/85 md:mt-3 site-prose site-card__description"
                                 >
                                     در پروژه‌های کلان صنعتی، هر سیستم تهویه باید دقیقاً با شرایط ترمودینامیکی و معماری
                                     همان سایت کالیبره شود. در این فاز، تیم مهندسی ما با حضور در سایت پروژه، داده‌های
@@ -81,9 +81,9 @@
                                 </p>
                                 <a
                                     href="#assessment-details"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link"
+                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
                                 >
-                                    <span class="site-text-link__label">مطالعه بیشتر</span>
+                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
                                     <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -91,7 +91,7 @@
 
                         <div id="assessment-details" class="px-4 py-5 sm:px-6 md:px-10 md:py-7 lg:px-12 lg:py-8">
                             <p
-                                class="text-[14px] leading-[2.05] text-text-dark/90 sm:text-[14px] md:text-[14px] lg:text-[14px] site-prose"
+                                class="text-text-dark/90 site-prose site-card__description"
                             >
                                 حضور مستقیم متخصصان ما در محل پروژه، گام نخست برای تضمین موفقیت شماست. ما با بررسی دقیق
                                 شرایط محیطی و عملیاتی، چالش‌های پنهان را شناسایی کرده و راهکارهایی کاملاً منطبق بر
@@ -113,7 +113,7 @@
                                             alt=""
                                             class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
                                         />
-                                        <p class="text-[14px] leading-[1.8] text-text-dark sm:text-[14px] md:text-[14px] site-prose">
+                                        <p class="text-text-dark site-prose site-card__description">
                                             بازدید تخصصی و تحلیل موشکافانه شرایط در محل پروژه
                                         </p>
                                     </div>
@@ -124,7 +124,7 @@
                                             alt=""
                                             class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
                                         />
-                                        <p class="text-[14px] leading-[1.8] text-text-dark sm:text-[14px] md:text-[14px] site-prose">
+                                        <p class="text-text-dark site-prose site-card__description">
                                             طراحی راهکارهای سفارشی مبتنی بر داده‌های واقعی و میدانی
                                         </p>
                                     </div>
@@ -135,7 +135,7 @@
                                             alt=""
                                             class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
                                         />
-                                        <p class="text-[14px] leading-[1.8] text-text-dark sm:text-[14px] md:text-[14px] site-prose">
+                                        <p class="text-text-dark site-prose site-card__description">
                                             عارضه‌یابی و شناسایی ریسک‌های پنهان و موانع پیش از اجرا
                                         </p>
                                     </div>
@@ -146,7 +146,7 @@
                                             alt=""
                                             class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
                                         />
-                                        <p class="text-[14px] leading-[1.8] text-text-dark sm:text-[14px] md:text-[14px] site-prose">
+                                        <p class="text-text-dark site-prose site-card__description">
                                             بهینه‌سازی زمان‌بندی و مدیریت هوشمندانه هزینه‌های اجرایی
                                         </p>
                                     </div>
@@ -155,7 +155,7 @@
 
                             <div class="mt-6 grid gap-5 md:mt-8 md:grid-cols-[1fr_1fr] md:items-center md:gap-10">
                                 <p
-                                    class="text-[14px] font-medium leading-[2] text-text-dark sm:text-[14px] md:text-[14px] site-prose"
+                                    class="font-medium text-text-dark site-prose site-card__description"
                                 >
                                     پس از پایان ارزیابی، یک گزارش جامع و مکتوب شامل تحلیل وضعیت موجود، بررسی محدودیت‌ها
                                     و یک «نقشه راه اجرایی» دقیق به شما تقدیم می‌گردد تا تصمیمات خود را با اطمینان کامل
@@ -164,9 +164,9 @@
 
                                 <a
                                     href="#consultation"
-                                    class="expertise-page__project-cta flex h-[36px] w-full items-center justify-center rounded-[8px] border border-[#F76E11] px-4 text-center text-[14px] font-medium text-[#F76E11] transition-colors hover:bg-[#F76E11] hover:text-white sm:h-[40px] sm:text-[14px] md:h-[46px] md:rounded-[12px] md:text-[14px] site-text-link"
+                                    class="expertise-page__project-cta flex h-[36px] w-full items-center justify-center rounded-[8px] border border-[#F76E11] px-4 text-center text-[14px] font-medium text-[#F76E11] transition-colors hover:bg-[#F76E11] hover:text-white sm:h-[40px] sm:text-[14px] md:h-[46px] md:rounded-[12px] md:text-[14px] site-text-link site-card__cta"
                                 >
-                                    <span class="site-text-link__label">برنامه‌ریزی بازدید و کارشناسی پروژه</span>
+                                    <span class="site-text-link__label site-card__cta-label">برنامه‌ریزی بازدید و کارشناسی پروژه</span>
                                 </a>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
 
                     <!-- 02 -->
                     <article id="engineering-design"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px]"
+                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
                     >
                         <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
                             <img
@@ -186,12 +186,12 @@
                                 class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
                             >
                                 <h2
-                                    class="text-[15px] font-bold leading-[1.8] text-text-dark sm:text-[18px] md:text-[28px]"
+                                    class="font-bold text-text-dark site-card__title"
                                 >
                                     مهندسی، طراحی و شبیه سازی
                                 </h2>
                                 <p
-                                    class="mt-2 text-[14px] leading-[1.9] text-text-dark/85 sm:text-[14px] md:mt-4 md:text-[14px] md:leading-[2] site-prose"
+                                    class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description"
                                 >
                                     طراحی سیستم‌های یکپارچه نیازمند محاسبات دقیق سیالاتی است تا افت فشار به حداقل برسد و
                                     توزیع هوا یکنواخت باشد. ما بر اساس استانداردهای بین‌المللی نظیر ASHRAE و SMACNA
@@ -199,9 +199,9 @@
                                 </p>
                                 <a
                                     href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link"
+                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
                                 >
-                                    <span class="site-text-link__label">مطالعه بیشتر</span>
+                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
                                     <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -210,7 +210,7 @@
 
                     <!-- 03 -->
                     <article id="advanced-production"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px]"
+                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
                     >
                         <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
                             <img
@@ -222,21 +222,21 @@
                                 class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
                             >
                                 <h2
-                                    class="text-[15px] font-bold leading-[1.8] text-text-dark sm:text-[18px] md:text-[28px]"
+                                    class="font-bold text-text-dark site-card__title"
                                 >
                                     ساخت و تولید پیشرفته
                                 </h2>
                                 <p
-                                    class="mt-2 text-[14px] leading-[1.9] text-text-dark/85 sm:text-[14px] md:mt-4 md:text-[14px] md:leading-[2] site-prose"
+                                    class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description"
                                 >
                                     تولید تجهیزات در مارپیچ صنعت نوین پویا بر پایه ماشین‌آلات تمام‌اتوماتیک و کنترل
                                     کیفیت سخت‌گیرانه است تا تلورانس‌های ابعادی به حداقل ممکن برسد.
                                 </p>
                                 <a
                                     href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link"
+                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
                                 >
-                                    <span class="site-text-link__label">مطالعه بیشتر</span>
+                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
                                     <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -245,7 +245,7 @@
 
                     <!-- 04 -->
                     <article id="site-execution"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px]"
+                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
                     >
                         <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
                             <img
@@ -257,12 +257,12 @@
                                 class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
                             >
                                 <h2
-                                    class="text-[15px] font-bold leading-[1.8] text-text-dark sm:text-[18px] md:text-[28px]"
+                                    class="font-bold text-text-dark site-card__title"
                                 >
                                     اجرای سایت و مدیریت پروژه
                                 </h2>
                                 <p
-                                    class="mt-2 text-[14px] leading-[1.9] text-text-dark/85 sm:text-[14px] md:mt-4 md:text-[14px] md:leading-[2] site-prose"
+                                    class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description"
                                 >
                                     نصب تاسیسات صنعتی یک فرایند حساس است که مستقیماً بر راندمان نهایی سیستم تأثیر
                                     می‌گذارد. تیم‌های اجرایی ما با رعایت دقیق پروتکل‌های ایمنی، بهداشت و محیط زیست
@@ -270,9 +270,9 @@
                                 </p>
                                 <a
                                     href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link"
+                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
                                 >
-                                    <span class="site-text-link__label">مطالعه بیشتر</span>
+                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
                                     <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -281,7 +281,7 @@
 
                     <!-- 05 -->
                     <article id="commissioning"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px]"
+                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
                     >
                         <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
                             <img
@@ -293,20 +293,20 @@
                                 class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
                             >
                                 <h2
-                                    class="text-[15px] font-bold leading-[1.8] text-text-dark sm:text-[18px] md:text-[28px]"
+                                    class="font-bold text-text-dark site-card__title"
                                 >
                                     تست، راه‌اندازی و پشتیبانی پایدار
                                 </h2>
                                 <p
-                                    class="mt-2 text-[14px] leading-[1.9] text-text-dark/85 sm:text-[14px] md:mt-4 md:text-[14px] md:leading-[2] site-prose"
+                                    class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description"
                                 >
                                     تضمین عملکرد صحیح سیستم نیازمند تست‌های بالانسینگ و راه‌اندازی اصولی است.
                                 </p>
                                 <a
                                     href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link"
+                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
                                 >
-                                    <span class="site-text-link__label">مطالعه بیشتر</span>
+                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
                                     <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
                                 </a>
                             </div>

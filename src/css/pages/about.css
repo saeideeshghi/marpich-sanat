@@ -1274,7 +1274,7 @@
     }
 }
 
-/* First-screen team image. Actual remaining viewport space is measured in about.js. */
+/* Full team photograph at its original ratio; its height follows its width. */
 .about-hero-shell { min-height: 0; padding-bottom: 64px; }
 .about-main { z-index: 1; }
 .about-hero { padding-top: 100px; }
@@ -1283,7 +1283,7 @@
 .about-team-wrap { z-index: 2; transform: translateY(-36px); margin-bottom: -36px; }
 .about-team-media { aspect-ratio: auto; height: auto; background: transparent; box-shadow: none; }
 .about-team-wrap { width: min(calc(100% - 64px), 1760px); }
-.about-team-media__image { position: static; width: 100%; height: auto; max-width: 100%; margin-inline: auto; max-height: var(--about-image-space, calc(100svh - 300px)); object-fit: cover; object-position: center top; border-radius: inherit; }
+.about-team-media__image { display: block; position: static; width: 100%; height: auto; max-width: 100%; margin-inline: auto; max-height: none; object-fit: contain; object-position: center; border-radius: inherit; }
 @media (min-width: 1600px) {
     .about-container.about-team-wrap { width: min(calc(100% - 64px), 1760px) !important; }
 }
@@ -1294,7 +1294,6 @@
     .about-hero__description { font-size: var(--hero-description); }
     .about-team-wrap { transform: translateY(-24px); margin-bottom: -24px; }
     .about-team-wrap { width: calc(100% - 24px); }
-    .about-team-media__image { max-height: var(--about-image-space, calc(100svh - 330px)); }
     .about-gallery__content { width: 58%; padding-block: 24px; }
     .about-gallery, .about-gallery__content-wrap { min-height: 280px; }
 }

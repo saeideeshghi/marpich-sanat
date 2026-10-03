@@ -1,0 +1,1123 @@
+{
+  "cases": 108,
+  "pages": 12,
+  "widths": [
+    320,
+    390,
+    639,
+    640,
+    900,
+    1179,
+    1180,
+    1440,
+    1920
+  ],
+  "errors": [],
+  "failures": [],
+  "interactions": [
+    "Long descriptions clamp to two lines; short descriptions stay one line; full text remains in DOM.",
+    "Every CTA family: hidden default underline, visible card-hover/keyboard underline, arrows remain undecorated.",
+    "Per-page card title variable override updates computed size.",
+    "Touch-only phone has no sticky card-hover underline."
+  ],
+  "metrics": [
+    {
+      "page": "index",
+      "width": 320,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 15
+    },
+    {
+      "page": "projects",
+      "width": 320,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 15
+    },
+    {
+      "page": "products",
+      "width": 320,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 17
+    },
+    {
+      "page": "industries",
+      "width": 320,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 18
+    },
+    {
+      "page": "contact",
+      "width": 320,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 320,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 5
+    },
+    {
+      "page": "articles",
+      "width": 320,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 10
+    },
+    {
+      "page": "expertise",
+      "width": 320,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 8
+    },
+    {
+      "page": "project-details",
+      "width": 320,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 10
+    },
+    {
+      "page": "product-details",
+      "width": 320,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 1
+    },
+    {
+      "page": "industry-textile",
+      "width": 320,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 10
+    },
+    {
+      "page": "air-handling",
+      "width": 320,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 11
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 12
+    },
+    {
+      "page": "projects",
+      "width": 390,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 15
+    },
+    {
+      "page": "products",
+      "width": 390,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 5
+    },
+    {
+      "page": "industries",
+      "width": 390,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 12
+    },
+    {
+      "page": "contact",
+      "width": 390,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 5
+    },
+    {
+      "page": "articles",
+      "width": 390,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 8
+    },
+    {
+      "page": "expertise",
+      "width": 390,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 7
+    },
+    {
+      "page": "project-details",
+      "width": 390,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 6
+    },
+    {
+      "page": "product-details",
+      "width": 390,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 1
+    },
+    {
+      "page": "industry-textile",
+      "width": 390,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 3
+    },
+    {
+      "page": "air-handling",
+      "width": 390,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "index",
+      "width": 639,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 12
+    },
+    {
+      "page": "projects",
+      "width": 639,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "products",
+      "width": 639,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 5
+    },
+    {
+      "page": "industries",
+      "width": 639,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 5
+    },
+    {
+      "page": "contact",
+      "width": 639,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 639,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 3
+    },
+    {
+      "page": "articles",
+      "width": 639,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 639,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 7
+    },
+    {
+      "page": "project-details",
+      "width": 639,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 6
+    },
+    {
+      "page": "product-details",
+      "width": 639,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 639,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 8
+    },
+    {
+      "page": "air-handling",
+      "width": 639,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "index",
+      "width": 640,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 9
+    },
+    {
+      "page": "projects",
+      "width": 640,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "products",
+      "width": 640,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 1
+    },
+    {
+      "page": "industries",
+      "width": 640,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 1
+    },
+    {
+      "page": "contact",
+      "width": 640,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 640,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 3
+    },
+    {
+      "page": "articles",
+      "width": 640,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 640,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 5
+    },
+    {
+      "page": "project-details",
+      "width": 640,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 2
+    },
+    {
+      "page": "product-details",
+      "width": 640,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 640,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 3
+    },
+    {
+      "page": "air-handling",
+      "width": 640,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "index",
+      "width": 900,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 0
+    },
+    {
+      "page": "projects",
+      "width": 900,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "products",
+      "width": 900,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 6
+    },
+    {
+      "page": "industries",
+      "width": 900,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 4
+    },
+    {
+      "page": "contact",
+      "width": 900,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 900,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 1
+    },
+    {
+      "page": "articles",
+      "width": 900,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 900,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 6
+    },
+    {
+      "page": "project-details",
+      "width": 900,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 6
+    },
+    {
+      "page": "product-details",
+      "width": 900,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 900,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "air-handling",
+      "width": 900,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "index",
+      "width": 1179,
+      "cards": 15,
+      "titles": 14,
+      "descriptions": 14,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 0
+    },
+    {
+      "page": "projects",
+      "width": 1179,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 3
+    },
+    {
+      "page": "products",
+      "width": 1179,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 5
+    },
+    {
+      "page": "industries",
+      "width": 1179,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 3
+    },
+    {
+      "page": "contact",
+      "width": 1179,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 1179,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "articles",
+      "width": 1179,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 1179,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 4
+    },
+    {
+      "page": "project-details",
+      "width": 1179,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 3
+    },
+    {
+      "page": "product-details",
+      "width": 1179,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 1179,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "air-handling",
+      "width": 1179,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "index",
+      "width": 1180,
+      "cards": 15,
+      "titles": 14,
+      "descriptions": 14,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 8
+    },
+    {
+      "page": "projects",
+      "width": 1180,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 15
+    },
+    {
+      "page": "products",
+      "width": 1180,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 4
+    },
+    {
+      "page": "industries",
+      "width": 1180,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 13
+    },
+    {
+      "page": "contact",
+      "width": 1180,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 1180,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 3
+    },
+    {
+      "page": "articles",
+      "width": 1180,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 1180,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 4
+    },
+    {
+      "page": "project-details",
+      "width": 1180,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 4
+    },
+    {
+      "page": "product-details",
+      "width": 1180,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 1180,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 3
+    },
+    {
+      "page": "air-handling",
+      "width": 1180,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 10
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "cards": 15,
+      "titles": 14,
+      "descriptions": 14,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 6
+    },
+    {
+      "page": "projects",
+      "width": 1440,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 15
+    },
+    {
+      "page": "products",
+      "width": 1440,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 1
+    },
+    {
+      "page": "industries",
+      "width": 1440,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 1
+    },
+    {
+      "page": "contact",
+      "width": 1440,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "articles",
+      "width": 1440,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 1440,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 3
+    },
+    {
+      "page": "project-details",
+      "width": 1440,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 1
+    },
+    {
+      "page": "product-details",
+      "width": 1440,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 1440,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "air-handling",
+      "width": 1440,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "index",
+      "width": 1920,
+      "cards": 15,
+      "titles": 14,
+      "descriptions": 14,
+      "ctas": 18,
+      "tags": 6,
+      "clamped": 0
+    },
+    {
+      "page": "projects",
+      "width": 1920,
+      "cards": 15,
+      "titles": 15,
+      "descriptions": 15,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    },
+    {
+      "page": "products",
+      "width": 1920,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 12,
+      "tags": 54,
+      "clamped": 0
+    },
+    {
+      "page": "industries",
+      "width": 1920,
+      "cards": 18,
+      "titles": 18,
+      "descriptions": 18,
+      "ctas": 18,
+      "tags": 36,
+      "clamped": 0
+    },
+    {
+      "page": "contact",
+      "width": 1920,
+      "cards": 6,
+      "titles": 6,
+      "descriptions": 6,
+      "ctas": 4,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "about",
+      "width": 1920,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 5,
+      "ctas": 3,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "articles",
+      "width": 1920,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 10,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "expertise",
+      "width": 1920,
+      "cards": 5,
+      "titles": 5,
+      "descriptions": 11,
+      "ctas": 6,
+      "tags": 0,
+      "clamped": 0
+    },
+    {
+      "page": "project-details",
+      "width": 1920,
+      "cards": 10,
+      "titles": 10,
+      "descriptions": 10,
+      "ctas": 4,
+      "tags": 24,
+      "clamped": 0
+    },
+    {
+      "page": "product-details",
+      "width": 1920,
+      "cards": 1,
+      "titles": 1,
+      "descriptions": 1,
+      "ctas": 2,
+      "tags": 1,
+      "clamped": 0
+    },
+    {
+      "page": "industry-textile",
+      "width": 1920,
+      "cards": 11,
+      "titles": 11,
+      "descriptions": 11,
+      "ctas": 8,
+      "tags": 40,
+      "clamped": 0
+    },
+    {
+      "page": "air-handling",
+      "width": 1920,
+      "cards": 12,
+      "titles": 12,
+      "descriptions": 12,
+      "ctas": 12,
+      "tags": 48,
+      "clamped": 0
+    }
+  ],
+  "status": "passed",
+  "base_commit": "847187dac196ac8e2f6a2be0635d15d2bf4911e3",
+  "regression_interactions": [
+    "All 4 desktop dropdowns in all 12 pages at 1180 and 1440px: visible and above page content",
+    "Per-page font variable updates the computed size and preserves clearance above summary",
+    "Article 10 images: 390px grid/list cover",
+    "Article 10 images: 900px grid/list cover",
+    "Article 10 images: 1440px grid/list cover",
+    "Article search and reset regression",
+    "Editable products: phone/desktop typing, selection, Persian/Arabic spelling, keyboard and clear",
+    "Project logo hover and industry zoom preserved",
+    "Mobile menu after header relocation"
+  ],
+  "manual_hero_description_preserved": {
+    "desktop": "22px",
+    "tablet": "18px",
+    "mobile": "18px"
+  }
+}

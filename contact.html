@@ -13,7 +13,7 @@
 
         <div id="top" class="contact-page relative overflow-hidden">
             <!-- CONTACT HERO + HEADER -->
-            <section class="contact-hero relative site-hero" aria-labelledby="contact-title" data-site-hero>
+            <section class="contact-hero relative site-hero" aria-labelledby="contact-title" data-site-hero id="hero-contact">
                 <!-- Header: aligned with the shared Products/Landing header -->
 
 
@@ -44,7 +44,7 @@
                     class="contact-branches mx-auto grid w-full max-w-[1320px] grid-cols-1 gap-3 px-5 sm:px-6 md:px-8 min-[1180px]:grid-cols-2 min-[1180px]:gap-5"
                 >
                     <article
-                        class="branch-card grid min-h-[150px] grid-cols-[1fr_112px] overflow-hidden rounded-[8px] bg-[#F8FAFF] shadow-[0_8px_22px_rgba(15,25,47,.12)] sm:grid-cols-[1fr_150px] min-[1180px]:min-h-[295px] min-[1180px]:grid-cols-[1fr_44%] min-[1180px]:rounded-[16px]"
+                        class="branch-card grid min-h-[150px] grid-cols-[1fr_112px] overflow-hidden rounded-[8px] bg-[#F8FAFF] shadow-[0_8px_22px_rgba(15,25,47,.12)] sm:grid-cols-[1fr_150px] min-[1180px]:min-h-[295px] min-[1180px]:grid-cols-[1fr_44%] min-[1180px]:rounded-[16px] site-card"
                     >
                         <div class="flex min-w-0 flex-col p-3 sm:p-4 min-[1180px]:p-6">
                             <div class="branch-card__title-row flex items-center justify-start gap-2">
@@ -53,10 +53,10 @@
                                     alt=""
                                     class="branch-card__location-icon size-[18px] shrink-0 min-[1180px]:size-[28px]"
                                 />
-                                <h2 class="text-[14px] font-bold min-[1180px]:text-[20px]">دفتر تهران</h2>
+                                <h2 class="font-bold site-card__title">دفتر تهران</h2>
                             </div>
                             <p
-                                class="branch-card__address mt-1.5 text-[14px] leading-[1.9] text-[#172137]/85 sm:text-[14px] min-[1180px]:mt-4 min-[1180px]:text-[14px]"
+                                class="branch-card__address mt-1.5 text-[#172137]/85 min-[1180px]:mt-4 site-card__description"
                             >
                                 تهران، بلوار میرداماد، خیابان شریعتی، کوچه قاب، پلاک ۱۰، واحد ۵
                             </p>
@@ -84,19 +84,19 @@
                                 <a
                                     href="https://wa.me/989121004000"
                                     dir="ltr"
-                                    class="contact-whatsapp flex h-[24px] items-center justify-center gap-1.5 rounded-[4px] bg-[#FF7428] px-1 text-[14px] text-white min-[1180px]:h-[34px] min-[1180px]:text-[14px]"
+                                    class="contact-whatsapp flex h-[24px] items-center justify-center gap-1.5 rounded-[4px] bg-[#FF7428] px-1 text-[14px] text-white min-[1180px]:h-[34px] min-[1180px]:text-[14px] site-card__cta"
                                 >
                                     <img
                                         src="/assets/icons/contact/whatsapp.svg"
                                         alt=""
                                         class="contact-whatsapp__icon size-3 shrink-0 min-[1180px]:size-4"
                                     />
-                                    <span dir="rtl" class="text-white">گفت‌وگو در واتساپ</span>
+                                    <span dir="rtl" class="text-white site-card__cta-label">گفت‌وگو در واتساپ</span>
                                 </a>
                                 <a
                                     href="#"
-                                    class="contact-location-button flex h-[24px] items-center justify-center rounded-[4px] border border-[#FF7428] px-1 text-[14px] text-[#FF7428] min-[1180px]:h-[34px] min-[1180px]:text-[14px]"
-                                    >ارسال لوکیشن</a
+                                    class="contact-location-button flex h-[24px] items-center justify-center rounded-[4px] border border-[#FF7428] px-1 text-[14px] text-[#FF7428] min-[1180px]:h-[34px] min-[1180px]:text-[14px] site-card__cta"
+                                    ><span class="site-card__cta-label">ارسال لوکیشن</span></a
                                 >
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                     </article>
 
                     <article
-                        class="branch-card grid min-h-[150px] grid-cols-[1fr_112px] overflow-hidden rounded-[8px] bg-[#F8FAFF] shadow-[0_8px_22px_rgba(15,25,47,.12)] sm:grid-cols-[1fr_150px] min-[1180px]:min-h-[295px] min-[1180px]:grid-cols-[1fr_44%] min-[1180px]:rounded-[16px]"
+                        class="branch-card grid min-h-[150px] grid-cols-[1fr_112px] overflow-hidden rounded-[8px] bg-[#F8FAFF] shadow-[0_8px_22px_rgba(15,25,47,.12)] sm:grid-cols-[1fr_150px] min-[1180px]:min-h-[295px] min-[1180px]:grid-cols-[1fr_44%] min-[1180px]:rounded-[16px] site-card"
                     >
                         <div class="flex min-w-0 flex-col p-3 sm:p-4 min-[1180px]:p-6">
                             <div class="branch-card__title-row flex items-center justify-start gap-2">
@@ -117,10 +117,10 @@
                                     alt=""
                                     class="branch-card__location-icon size-[18px] shrink-0 min-[1180px]:size-[28px]"
                                 />
-                                <h2 class="text-[14px] font-bold min-[1180px]:text-[20px]">دفتر مشهد</h2>
+                                <h2 class="font-bold site-card__title">دفتر مشهد</h2>
                             </div>
                             <p
-                                class="branch-card__address mt-1.5 text-[14px] leading-[1.9] text-[#172137]/85 sm:text-[14px] min-[1180px]:mt-4 min-[1180px]:text-[14px]"
+                                class="branch-card__address mt-1.5 text-[#172137]/85 min-[1180px]:mt-4 site-card__description"
                             >
                                 مشهد، کیلومتر ۲۵ جاده آسیایی، شهرک صنعتی ماشین‌سازی
                             </p>
@@ -148,19 +148,19 @@
                                 <a
                                     href="https://wa.me/989152003000"
                                     dir="ltr"
-                                    class="contact-whatsapp flex h-[24px] items-center justify-center gap-1.5 rounded-[4px] bg-[#FF7428] px-1 text-[14px] text-white min-[1180px]:h-[34px] min-[1180px]:text-[14px]"
+                                    class="contact-whatsapp flex h-[24px] items-center justify-center gap-1.5 rounded-[4px] bg-[#FF7428] px-1 text-[14px] text-white min-[1180px]:h-[34px] min-[1180px]:text-[14px] site-card__cta"
                                 >
                                     <img
                                         src="/assets/icons/contact/whatsapp.svg"
                                         alt=""
                                         class="contact-whatsapp__icon size-3 shrink-0 min-[1180px]:size-4"
                                     />
-                                    <span dir="rtl" class="text-white">گفت‌وگو در واتساپ</span>
+                                    <span dir="rtl" class="text-white site-card__cta-label">گفت‌وگو در واتساپ</span>
                                 </a>
                                 <a
                                     href="#"
-                                    class="contact-location-button flex h-[24px] items-center justify-center rounded-[4px] border border-[#FF7428] px-1 text-[14px] text-[#FF7428] min-[1180px]:h-[34px] min-[1180px]:text-[14px]"
-                                    >ارسال لوکیشن</a
+                                    class="contact-location-button flex h-[24px] items-center justify-center rounded-[4px] border border-[#FF7428] px-1 text-[14px] text-[#FF7428] min-[1180px]:h-[34px] min-[1180px]:text-[14px] site-card__cta"
+                                    ><span class="site-card__cta-label">ارسال لوکیشن</span></a
                                 >
                             </div>
                         </div>
@@ -298,69 +298,69 @@
                         class="contact-benefits__grid mx-auto grid w-full max-w-[1320px] grid-cols-1 px-5 sm:px-6 md:px-8 min-[1180px]:grid-cols-4"
                     >
                         <article
-                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0"
+                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0 site-card"
                         >
                             <img
                                 src="/assets/icons/contact/response-time.svg"
                                 alt=""
                                 class="mb-2 h-[48px] w-[48px] object-contain min-[1180px]:mb-4 min-[1180px]:size-[62px]"
                             />
-                            <h3 class="text-[14px] font-semibold min-[1180px]:text-[14px]">
+                            <h3 class="font-semibold site-card__title">
                                 پاسخگویی حداکثر طی یک روز کاری
                             </h3>
                             <p
-                                class="mt-1 text-[14px] leading-[1.9] text-[#121C31]/75 min-[1180px]:mt-2 min-[1180px]:text-[14px] site-prose"
+                                class="mt-1 text-[#121C31]/75 min-[1180px]:mt-2 site-prose site-card__description"
                             >
                                 احترام به زمان شما با فرآیندهای سریع اداری و فنی.
                             </p>
                         </article>
                         <article
-                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0"
+                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0 site-card"
                         >
                             <img
                                 src="/assets/icons/contact/technical-review.svg"
                                 alt=""
                                 class="mb-2 h-[48px] w-[48px] object-contain min-[1180px]:mb-4 min-[1180px]:size-[62px]"
                             />
-                            <h3 class="text-[14px] font-semibold min-[1180px]:text-[14px]">
+                            <h3 class="font-semibold site-card__title">
                                 بررسی و ارائه راهکار فنی اختصاصی
                             </h3>
                             <p
-                                class="mt-1 text-[14px] leading-[1.9] text-[#121C31]/75 min-[1180px]:mt-2 min-[1180px]:text-[14px] site-prose"
+                                class="mt-1 text-[#121C31]/75 min-[1180px]:mt-2 site-prose site-card__description"
                             >
                                 تحلیل دقیق نیازها برای طراحی هوشمندانه و بهینه.
                             </p>
                         </article>
                         <article
-                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0"
+                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0 site-card"
                         >
                             <img
                                 src="/assets/icons/contact/confidential.svg"
                                 alt=""
                                 class="mb-2 h-[48px] w-[48px] object-contain min-[1180px]:mb-4 min-[1180px]:size-[62px]"
                             />
-                            <h3 class="text-[14px] font-semibold min-[1180px]:text-[14px]">
+                            <h3 class="font-semibold site-card__title">
                                 اطلاعات شما محرمانه می‌ماند
                             </h3>
                             <p
-                                class="mt-1 text-[14px] leading-[1.9] text-[#121C31]/75 min-[1180px]:mt-2 min-[1180px]:text-[14px] site-prose"
+                                class="mt-1 text-[#121C31]/75 min-[1180px]:mt-2 site-prose site-card__description"
                             >
                                 امنیت داده‌های شما در اولویت تعهدات حرفه‌ای ماست.
                             </p>
                         </article>
                         <article
-                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0"
+                            class="benefit-item flex flex-col items-center px-4 py-3 text-center min-[1180px]:py-0 site-card"
                         >
                             <img
                                 src="/assets/icons/contact/support.svg"
                                 alt=""
                                 class="mb-2 h-[48px] w-[48px] object-contain min-[1180px]:mb-4 min-[1180px]:size-[62px]"
                             />
-                            <h3 class="text-[14px] font-semibold min-[1180px]:text-[14px]">
+                            <h3 class="font-semibold site-card__title">
                                 پشتیبانی فنی و خدمات پس از فروش
                             </h3>
                             <p
-                                class="mt-1 text-[14px] leading-[1.9] text-[#121C31]/75 min-[1180px]:mt-2 min-[1180px]:text-[14px] site-prose"
+                                class="mt-1 text-[#121C31]/75 min-[1180px]:mt-2 site-prose site-card__description"
                             >
                                 همراهی پایدار ما تا بهره‌برداری کامل و موفق پروژه.
                             </p>

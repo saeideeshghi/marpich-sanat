@@ -2,11 +2,8 @@
  * Mobile <= 639px; tablet 640–1179px; desktop >= 1180px.
  * Values ending in -desktop/-tablet/-mobile are inputs. The active variables
  * below switch at the breakpoints; page styles consume them without hardcoding.
- * Heights are minimums: longer text and search forms must remain visible. */
+ * Hero heights are configured by ID in hero-heights.css. */
 body[data-page] {
-    --hero-height-desktop: 31rem;
-    --hero-height-tablet: 31rem;
-    --hero-height-mobile: 25svh;
     --hero-eyebrow-desktop: 28px;
     --hero-eyebrow-tablet: 20px;
     --hero-eyebrow-mobile: 20px;
@@ -26,6 +23,19 @@ body[data-page] {
     --hero-eyebrow-leading: 1.5;
     --hero-title-leading: 1.4;
     --hero-description-leading: 1.55;
+    /* Card roles are independent from hero/section typography.
+     * Tablet/mobile CTA and desktop/tablet tags keep their page styles. */
+    --card-title-desktop: 17px;
+    --card-title-tablet: 17px;
+    --card-title-mobile: 20px;
+    --card-description-desktop: 14px;
+    --card-description-tablet: 14px;
+    --card-description-mobile: 18px;
+    --card-cta-desktop: 12px;
+    --card-tag-mobile: 10px;
+    --card-description-lines: 2;
+    --card-title-leading: 1.7;
+    --card-description-leading: 1.85;
     --text-body-desktop: 16px;
     --text-body-tablet: 16px;
     --text-body-mobile: 15px;
@@ -69,24 +79,26 @@ body[data-page="industry-textile"] {
 }
 
 body[data-page] {
-    --hero-height: var(--hero-height-desktop);
     --hero-eyebrow: var(--hero-eyebrow-desktop);
     --hero-title: var(--hero-title-desktop);
     --hero-description: var(--hero-description-desktop);
     --hero-top: var(--hero-top-desktop);
     --hero-summary-preferred: var(--hero-summary-desktop);
+    --card-title: var(--card-title-desktop);
+    --card-description: var(--card-description-desktop);
     --text-body: var(--text-body-desktop);
     --text-card: var(--text-card-desktop);
     --text-section: var(--text-section-desktop);
 }
 @media (min-width: 640px) and (max-width: 1179px) {
     body[data-page] {
-        --hero-height: var(--hero-height-tablet);
         --hero-eyebrow: var(--hero-eyebrow-tablet);
         --hero-title: var(--hero-title-tablet);
         --hero-description: var(--hero-description-tablet);
         --hero-top: var(--hero-top-tablet);
         --hero-summary-preferred: var(--hero-summary-tablet);
+        --card-title: var(--card-title-tablet);
+        --card-description: var(--card-description-tablet);
         --text-body: var(--text-body-tablet);
         --text-card: var(--text-card-tablet);
         --text-section: var(--text-section-tablet);
@@ -94,12 +106,13 @@ body[data-page] {
 }
 @media (max-width: 639px) {
     body[data-page] {
-        --hero-height: var(--hero-height-mobile);
         --hero-eyebrow: var(--hero-eyebrow-mobile);
         --hero-title: var(--hero-title-mobile);
         --hero-description: var(--hero-description-mobile);
         --hero-top: var(--hero-top-mobile);
         --hero-summary-preferred: var(--hero-summary-mobile);
+        --card-title: var(--card-title-mobile);
+        --card-description: var(--card-description-mobile);
         --text-body: var(--text-body-mobile);
         --text-card: var(--text-card-mobile);
         --text-section: var(--text-section-mobile);

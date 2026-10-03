@@ -57,7 +57,7 @@ export function renderComponent(name, data, root) {
                         "product-card",
                         { ...card, loading: card.loading ?? "lazy" },
                         {
-                            specs: card.specs.map((spec) => `<span class="product-card__spec">${e(spec)}</span>`).join(""),
+                            specs: card.specs.map((spec) => `<span class="product-card__spec site-card__tag">${e(spec)}</span>`).join(""),
                         },
                     ),
                 )

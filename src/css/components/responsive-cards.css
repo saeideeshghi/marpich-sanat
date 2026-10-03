@@ -1,4 +1,5 @@
-/* Shared image cards: natural text height, equal rows and predictable media.
+/* Shared image cards: equal rows and predictable media.
+ * Semantic title/description styles are owned by card-type.css.
  * Below 560px one column leaves enough room for Persian titles and metadata.
  * List mode stacks below 640px; wider screens retain the horizontal layout. */
 body[data-page] main :is(.home-expertise-grid,.home-projects-grid,.home-products-grid,.products-grid,.projects-page__grid,.articles-grid,.about-expertise__grid,.industry-textile__products-grid,.industry-textile__projects-grid,.project-details__products-grid) {
@@ -9,19 +10,9 @@ body[data-page] main :is(.home-expertise-grid > article,.home-projects-grid > ar
     min-width: 0;
 }
 body[data-page] main .about-expertise-card { display: flex; flex-direction: column; }
-body[data-page] main :is(.product-card__title,.article-card__title,.home-products-grid h3) { font-size: var(--text-card); line-height: 1.7; }
-body[data-page] main .home-products-grid .site-prose { font-size: var(--text-body); line-height: 1.9; }
 body[data-page] main :is(.product-card__body,.projects-page__card-body,.article-card__body,.about-expertise-card__body,.industry-textile__product-body,.industry-textile__project-body,.project-details__product-body) {
     min-width: 0;
     flex: 1;
-}
-body[data-page] main :is(.product-card__description,.projects-page__card-description,.article-card__description) {
-    display: block;
-    height: auto;
-    max-height: none;
-    overflow: visible;
-    font-size: var(--text-body);
-    line-height: 1.9;
 }
 body[data-page] main :is(.product-card__spec,.article-card__meta span,.projects-page__card-meta span,.industry-textile__product-specs span,.industry-textile__project-meta span,.project-details__product-specs span) {
     min-width: 0;
@@ -86,10 +77,6 @@ body[data-page] main .article-card__link { margin-top: 4px; padding-top: 4px; }
         min-height: 0;
         padding: 16px;
     }
-    body[data-page] main :is(.product-card__title,.projects-page__card-title,.article-card__title,.about-expertise-card h3,.industry-textile__product-body h3,.industry-textile__project-body h3,.project-details__product-body h3,.home-expertise-grid h3,.home-projects-grid h3,.home-products-grid h3) {
-        font-size: var(--text-card);
-        line-height: 1.7;
-    }
     body[data-page] main .home-products-grid > article > div:first-child > img { position: absolute; inset: 0; object-fit: cover; padding: 0; }
     body[data-page] main .home-products-actions { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); align-items: stretch; gap: 10px; line-height: 1.7; }
     body[data-page] main .home-products-actions a { min-height: 44px; justify-content: space-between; white-space: normal; font-size: 14px; }
@@ -106,11 +93,8 @@ body[data-page] main .article-card__link { margin-top: 4px; padding-top: 4px; }
         line-height: 1.6;
     }
     body[data-page] main :is(.industry-textile__product-body > p,.industry-textile__project-body > p,.project-details__product-body > p) {
-        display: block;
         margin-top: 8px;
         color: #5a6677;
-        font-size: 15px;
-        line-height: 1.9;
     }
     body[data-page] main :is(.industry-textile__product-tags,.project-details__product-tags) {
         display: flex;
@@ -196,4 +180,12 @@ body[data-page] main :is(.home-expertise-grid > article > div:first-child > img,
     body[data-page] main .industry-textile__project-card:hover .industry-textile__project-media img,
     body[data-page] main .project-details__product-card:hover .project-details__product-media img,
     body[data-page] main .expertise-page__card:hover .expertise-page__media-image { scale: 1.06; }
+}
+
+/* The category mosaic must grow when its new titles wrap. Fixed rows clipped
+ * the count/tag at tablet widths; keep the same areas and natural row sizing. */
+@media (min-width: 768px) {
+    body[data-page="products"] .featured-products {
+        grid-template-rows: repeat(3, minmax(200px, auto));
+    }
 }

@@ -1,4 +1,4 @@
-<article class="product-card">
+<article class="product-card site-card">
                                 <div class="product-card__media">
                                     <img
                                         src="{{image}}"
@@ -9,14 +9,14 @@
                                     <span class="product-card__badge" aria-hidden="true">
                                         <i class="fa-regular fa-file-pdf"></i>
                                     </span>
-                                    <span class="product-card__category">{{category}}</span>
+                                    <span class="product-card__category site-card__tag">{{category}}</span>
                                 </div>
                                 <div class="product-card__body">
-                                    <h3 class="product-card__title">{{title}}</h3>
-                                    <p class="product-card__description site-prose">{{description}}</p>
+                                    <h3 class="product-card__title site-card__title">{{title}}</h3>
+                                    <p class="product-card__description site-prose site-card__description">{{description}}</p>
                                     <div class="product-card__specs">{{{specs}}}</div>
-                                    <a href="{{href}}" class="product-card__link site-text-link">
-                                        <span class="site-text-link__label">{{linkText}}</span>
+                                    <a href="{{href}}" class="product-card__link site-text-link site-card__cta">
+                                        <span class="site-text-link__label site-card__cta-label">{{linkText}}</span>
                                         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                                     </a>
                                 </div>

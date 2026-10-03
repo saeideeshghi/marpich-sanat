@@ -134,6 +134,31 @@
     .home-hero-action { justify-content: center; gap: 24px; }
 }
 
+/* Only the hero reaches the physical left edge. Keep the existing right
+ * gutter; lower home sections retain their own containers and margins. */
+body[data-page="home"] .hero-shell {
+    --home-hero-right-gutter: max(60px, calc((100vw - 1680px) / 2));
+    margin-left: 0;
+    padding-left: 0;
+}
+body[data-page="home"] .hero-content-wrapper {
+    width: calc(100% - var(--home-hero-right-gutter));
+    max-width: none;
+    margin-left: 0;
+    margin-right: var(--home-hero-right-gutter);
+    padding-left: 0;
+}
+body[data-page="home"] .hero-content { margin-left: 0; }
+@media (min-width: 640px) and (max-width: 1179px) {
+    body[data-page="home"] .hero-shell { --home-hero-right-gutter: 44px; }
+}
+@media (max-width: 639px) {
+    body[data-page="home"] .hero-shell { --home-hero-right-gutter: 20px; }
+}
+@media (max-width: 359px) {
+    body[data-page="home"] .hero-shell { --home-hero-right-gutter: 16px; }
+}
+
 /* Intrinsic logo widths avoid empty stretched tiles. Every loop group includes
  * its trailing gap; JS measures that exact width and supplies enough copies. */
 .home-partners { --logo-height: 80px; --logo-max-width: 150px; --logo-gap: 45px; --marquee-time: 48s; --marquee-distance: 0px; background: #d3eaff; }

@@ -1070,8 +1070,8 @@
     }
 }
 
-/* Product filters accept typing directly in the existing dropdown field. */
-.products-page .product-search__dropdown--searchable .product-search__dropdown-toggle {
+/* Every catalog filter accepts typing in the existing dropdown field. */
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown--searchable .product-search__dropdown-toggle {
     gap: 0;
     padding: 0;
 }
@@ -1101,7 +1101,7 @@
     background: transparent;
     color: #64758b;
 }
-.products-page .product-search__dropdown--searchable .product-search__dropdown-panel {
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown--searchable .product-search__dropdown-panel {
     width: 100%;
     max-width: none;
     max-height: min(280px, 45svh);
@@ -1111,10 +1111,17 @@
 }
 .product-search__dropdown-list { margin: 0; padding: 0; list-style: none; }
 .product-search__dropdown--searchable .product-search__dropdown-option { cursor: pointer; padding-block: 8px; }
-.products-page .product-search__dropdown-option.is-active { background: #d3eaff; color: #2f75ab; }
+:where(.products-page, .air-handling-page, .industries-page) .product-search__dropdown-option.is-active { background: #d3eaff; color: #2f75ab; }
 .product-search__dropdown-option[aria-disabled="true"] { opacity: .5; cursor: default; }
 .product-search__dropdown-empty { margin: 0; padding: 16px 12px; color: #64758b; font-size: 14px; }
 .product-search__dropdown--searchable .product-search__dropdown-toggle:focus-within {
     border-color: #79b6ed;
     box-shadow: 0 0 0 2px rgb(121 182 237 / .2);
+}
+
+/* A search panel may extend into the next section. Raise only the active
+ * hero, while keeping the shared header and its navigation above it. */
+body[data-page] .site-hero:has(.product-search__dropdown.is-open) {
+    z-index: 30;
+    overflow: visible;
 }
