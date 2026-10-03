@@ -597,18 +597,27 @@ textarea.contact-control {
     }
 }
 
-.contact-page .contact-hero::before { height: var(--contact-intro-background, 354px); }
+.contact-page .contact-hero::before {
+    height: var(--contact-intro-background, 354px);
+}
 
 /* Contact references: shared gutters, side-by-side maps and cards crossing the
  * dark/light boundary. Values stay readable when office details wrap. */
-.contact-page { background: #ebeff8; }
-.contact-hero, .contact-main { background: #ebeff8; }
+.contact-page {
+    background: #ebeff8;
+}
+.contact-hero,
+.contact-main {
+    background: #ebeff8;
+}
 .contact-page :is(.contact-intro, .contact-branches, .contact-form-section, .contact-benefits__grid) {
     width: min(calc(100% - 120px), 1680px);
     max-width: none;
     padding-inline: 0;
 }
-.contact-intro { padding-top: 148px; }
+.contact-intro {
+    padding-top: 148px;
+}
 .contact-intro h1 {
     margin-top: 20px;
     font-size: var(--hero-title);
@@ -620,87 +629,222 @@ body[data-page="contact"] .contact-intro p.site-prose {
     font-size: var(--hero-description);
     line-height: 1.9;
 }
-.contact-branches { margin-top: 24px; gap: 18px; padding-bottom: 0; }
+.contact-branches {
+    margin-top: 24px;
+    gap: 18px;
+    padding-bottom: 0;
+}
 .contact-branches > .branch-card {
     min-height: 310px;
     grid-template-columns: minmax(0, 1fr) 36%;
 }
-.branch-card > div { padding: 24px; }
-.branch-card h2 { font-size: 24px; line-height: 1.5; }
-.branch-card__location-icon { width: 30px; height: 30px; }
-.branch-card__detail-row { grid-template-columns: 72px minmax(0, 1fr); }
-.branch-card__detail-row dt { font-weight: 500; white-space: nowrap; }
-.branch-card__address, .branch-card__details { line-height: 1.85; }
-.contact-whatsapp__icon { width: 20px; height: 20px; }
-.contact-form-section { padding-block: 40px 64px; }
-body[data-page="contact"] .contact-form-section > div > p.site-prose { font-size: 16px; }
-.contact-control { text-align: right; }
-.contact-benefits__grid { gap: 24px; }
-body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) { text-align: center; }
-.contact-benefits .benefit-item h3 { font-size: 17px; }
-.contact-benefits .benefit-item p { max-width: 275px; margin-inline: auto; }
+.branch-card > div {
+    padding: 24px;
+}
+.branch-card h2 {
+    font-size: 24px;
+    line-height: 1.5;
+}
+.branch-card__location-icon {
+    width: 30px;
+    height: 30px;
+}
+.branch-card__detail-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+}
+.branch-card__detail-row dt {
+    font-weight: 500;
+    white-space: nowrap;
+}
+.branch-card__address,
+.branch-card__details {
+    line-height: 1.85;
+}
+.contact-whatsapp__icon {
+    width: 20px;
+    height: 20px;
+}
+.contact-form-section {
+    padding-block: 40px 64px;
+}
+body[data-page="contact"] .contact-form-section > div > p.site-prose {
+    font-size: 16px;
+}
+.contact-control {
+    text-align: right;
+}
+.contact-benefits__grid {
+    gap: 24px;
+}
+body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
+    text-align: center;
+}
+.contact-benefits .benefit-item h3 {
+    font-size: 17px;
+}
+.contact-benefits .benefit-item p {
+    max-width: 275px;
+    margin-inline: auto;
+}
 @media (min-width: 1180px) {
-    .select-wrap[for="request-type"] { grid-column: 1 / span 2; grid-row: 2; }
-    .select-wrap[for="branch"] { grid-column: 3 / span 2; grid-row: 2; }
-    .contact-form-section h2 { font-size: 28px; }
+    .select-wrap[for="request-type"] {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+    .select-wrap[for="branch"] {
+        grid-column: 3 / span 2;
+        grid-row: 2;
+    }
+    .contact-form-section h2 {
+        font-size: 28px;
+    }
 }
 @media (max-width: 1179px) {
     .contact-page :is(.contact-intro, .contact-branches, .contact-form-section, .contact-benefits__grid) {
         width: calc(100% - 40px);
     }
-    .contact-intro { padding-top: 140px; }
-    .contact-intro h1 { margin-top: 12px; font-size: var(--hero-title); }
-    body[data-page="contact"] .contact-intro p.site-prose { font-size: var(--hero-description); }
-    .contact-branches { width: min(calc(100% - 40px), 760px); margin-top: 20px; }
-    .contact-branches > .branch-card { min-height: 260px; grid-template-columns: minmax(0, 1fr) 36%; }
-    .branch-card > div { padding: 16px; }
-    .branch-card h2 { font-size: 20px; }
-    .branch-card a { min-height: 48px; padding: 8px 6px; line-height: 1.6; }
-    .contact-form-section { padding-block: 32px 40px; }
-    .contact-control { height: 50px; min-height: 50px; padding-inline: 12px; }
-    textarea.contact-control { height: 120px; min-height: 120px; }
-    .contact-submit { min-height: 52px; }
-    .contact-benefits__grid { gap: 24px; padding-block: 24px; }
-    .contact-benefits .benefit-item { min-height: 145px; }
-    .contact-benefits .benefit-item > img { width: 54px; height: 54px; }
+    .contact-intro {
+        padding-top: 140px;
+    }
+    .contact-intro h1 {
+        margin-top: 12px;
+        font-size: var(--hero-title);
+    }
+    body[data-page="contact"] .contact-intro p.site-prose {
+        font-size: var(--hero-description);
+    }
+    .contact-branches {
+        width: min(calc(100% - 40px), 760px);
+        margin-top: 20px;
+    }
+    .contact-branches > .branch-card {
+        min-height: 260px;
+        grid-template-columns: minmax(0, 1fr) 36%;
+    }
+    .branch-card > div {
+        padding: 16px;
+    }
+    .branch-card h2 {
+        font-size: 20px;
+    }
+    .branch-card a {
+        min-height: 48px;
+        padding: 8px 6px;
+        line-height: 1.6;
+    }
+    .contact-form-section {
+        padding-block: 32px 40px;
+    }
+    .contact-control {
+        height: 50px;
+        min-height: 50px;
+        padding-inline: 12px;
+    }
+    textarea.contact-control {
+        height: 120px;
+        min-height: 120px;
+    }
+    .contact-submit {
+        min-height: 52px;
+    }
+    .contact-benefits__grid {
+        gap: 24px;
+        padding-block: 24px;
+    }
+    .contact-benefits .benefit-item {
+        min-height: 145px;
+    }
+    .contact-benefits .benefit-item > img {
+        width: 54px;
+        height: 54px;
+    }
 }
 @media (max-width: 639px) {
-    .contact-intro { padding-top: 132px; }
-    .contact-intro h1 { font-size: var(--hero-title); line-height: 1.65; }
-    .contact-branches { gap: 16px; }
-    .contact-branches > .branch-card { min-height: 300px; grid-template-columns: minmax(0, 1fr) 32%; }
-    .branch-card > div { padding: 12px; }
-    .branch-card h2 { font-size: 18px; }
-    .branch-card__location-icon { width: 22px; height: 22px; }
-    .branch-card__detail-row { grid-template-columns: 74px minmax(0, 1fr); column-gap: 6px; }
-    .branch-card__detail-row + .branch-card__detail-row { margin-top: 5px; }
-    .branch-card a { font-size: 13px; }
-    .contact-whatsapp__icon { width: 22px; height: 22px; }
-    .contact-benefits__grid { gap: 16px; }
-    body[data-page="contact"] .contact-form-section > div > p.site-prose { text-align: center; font-size: 15px; }
+    .contact-intro {
+        padding-top: 132px;
+    }
+    .contact-intro h1 {
+        font-size: var(--hero-title);
+        line-height: 1.65;
+    }
+    .contact-branches {
+        gap: 16px;
+    }
+    .contact-branches > .branch-card {
+        min-height: 300px;
+        grid-template-columns: minmax(0, 1fr) 32%;
+    }
+    .branch-card > div {
+        padding: 12px;
+    }
+    .branch-card h2 {
+        font-size: 18px;
+    }
+    .branch-card__location-icon {
+        width: 22px;
+        height: 22px;
+    }
+    .branch-card__detail-row {
+        grid-template-columns: 74px minmax(0, 1fr);
+        column-gap: 6px;
+    }
+    .branch-card__detail-row + .branch-card__detail-row {
+        margin-top: 5px;
+    }
+    .branch-card a {
+        font-size: 13px;
+    }
+    .contact-whatsapp__icon {
+        width: 22px;
+        height: 22px;
+    }
+    .contact-benefits__grid {
+        gap: 16px;
+    }
+    body[data-page="contact"] .contact-form-section > div > p.site-prose {
+        text-align: center;
+        font-size: 15px;
+    }
 }
 
 /* Faint side waves continue through the light surface, as in the references. */
-.contact-hero::after, .contact-main::before {
+.contact-hero::after,
+.contact-main::before {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: url('/assets/decorations/contact-surface.svg') center / 100% 100% no-repeat;
-    content: '';
+    background: url("/assets/decorations/contact-surface.svg") center / 100% 100% no-repeat;
+    content: "";
     pointer-events: none;
 }
-.contact-hero::after { top: var(--contact-intro-background, 354px); }
-.contact-main { padding-bottom: 64px; }
+.contact-hero::after {
+    top: var(--contact-intro-background, 354px);
+}
+.contact-main {
+    padding-bottom: 64px;
+}
 @media (max-width: 1179px) {
-    .contact-main { padding-bottom: 24px; }
+    .contact-main {
+        padding-bottom: 24px;
+    }
 }
 
 /* Keep the intrinsic portrait maps from setting the height of tablet cards. */
 @media (max-width: 1179px) {
-    .contact-page .contact-branches { width: min(calc(100% - 40px), 760px); }
-    .contact-branches > .branch-card { position: relative; min-height: 0; }
-    .branch-card > div { grid-column: 1; grid-row: 1; }
-    .branch-card > div > .mt-auto { margin-top: 12px; }
+    .contact-page .contact-branches {
+        width: min(calc(100% - 40px), 760px);
+    }
+    .contact-branches > .branch-card {
+        position: relative;
+        min-height: 0;
+    }
+    .branch-card > div {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .branch-card > div > .mt-auto {
+        margin-top: 12px;
+    }
     .branch-card__map {
         position: absolute;
         inset: 0 auto 0 0;
@@ -709,15 +853,25 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) { text-alig
     }
 }
 @media (min-width: 617px) and (max-width: 639px) {
-    .branch-card__map { width: 32%; }
+    .branch-card__map {
+        width: 32%;
+    }
 }
 @media (min-width: 617px) and (max-width: 1179px) {
-    .contact-benefits__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-benefits__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 /* On phones the map fills the first row, followed by all office information. */
 @media (max-width: 616px) {
-    .contact-branches > .branch-card { grid-template-columns: minmax(0, 1fr); }
-    .branch-card > div { grid-column: 1; grid-row: 2; padding: 16px; }
+    .contact-branches > .branch-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .branch-card > div {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 16px;
+    }
     .branch-card__map {
         position: static;
         grid-column: 1;

@@ -55,4 +55,3 @@ fullscreenButton?.addEventListener("click", async () => {
         // Fullscreen can be blocked by the browser; the normal image remains usable.
     }
 });
-

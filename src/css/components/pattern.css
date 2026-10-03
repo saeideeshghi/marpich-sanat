@@ -49,4 +49,8 @@
     /* Short intro surfaces fade the wave before the light page starts. */
     mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - 36px), transparent 100%);
 }
-@media (max-width: 639px) { .site-pattern-layer--header { --site-pattern-scene-height: 404px; } }
+@media (max-width: 639px) {
+    .site-pattern-layer--header {
+        --site-pattern-scene-height: 404px;
+    }
+}

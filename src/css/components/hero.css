@@ -44,16 +44,30 @@ body[data-page] .site-hero :is(.projects-page__hero-content, .expertise-page__he
     width: 100%;
     max-width: none;
 }
-body[data-page] .site-hero :is(.products-hero__heading, .industries-hero__heading, .air-handling__hero-heading, .articles-hero__heading) { padding-top: 0; }
-body[data-page] .site-hero :is(.product-search, .articles-search) { margin-top: 24px; }
+body[data-page]
+    .site-hero
+    :is(.products-hero__heading, .industries-hero__heading, .air-handling__hero-heading, .articles-hero__heading) {
+    padding-top: 0;
+}
+body[data-page] .site-hero :is(.product-search, .articles-search) {
+    margin-top: 24px;
+}
 /* Light form surfaces keep their own colors; the dark canvas covers the hero. */
-body[data-page] :is(.products-hero, .industries-hero, .air-handling__hero)::before { height: 100%; }
+body[data-page] :is(.products-hero, .industries-hero, .air-handling__hero)::before {
+    height: 100%;
+}
 
 /* Home keeps its image and gradient within its own canvas; the header is a
  * direct body child, so this clipping cannot cut off navigation dropdowns. */
-body[data-page="home"] .hero-shell { overflow: hidden; }
-body[data-page="home"] .hero-content-wrapper { min-height: var(--hero-height); }
-body[data-page="home"] .hero-content { width: min(100%, 920px); }
+body[data-page="home"] .hero-shell {
+    overflow: hidden;
+}
+body[data-page="home"] .hero-content-wrapper {
+    min-height: var(--hero-height);
+}
+body[data-page="home"] .hero-content {
+    width: min(100%, 920px);
+}
 
 /* Overlapping summaries remain below the title even as the new type wraps. */
 body[data-page="product-details"] main > section:first-child {

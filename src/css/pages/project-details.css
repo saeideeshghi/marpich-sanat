@@ -1335,7 +1335,7 @@
         width: 40px;
     }
 
-   .project-details__testimonial {
+    .project-details__testimonial {
         margin-top: 20px;
         padding: 40px 4px 13px;
     }
@@ -1550,4 +1550,3 @@
         font-size: 14px;
     }
 }
-

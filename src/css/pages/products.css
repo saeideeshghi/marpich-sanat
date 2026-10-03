@@ -25,7 +25,12 @@
 }
 
 .products-pattern {
-    background-image: repeating-linear-gradient(102deg, transparent 0 86px, rgb(121 182 237 / 0.05) 86px 87px, transparent 87px 174px);
+    background-image: repeating-linear-gradient(
+        102deg,
+        transparent 0 86px,
+        rgb(121 182 237 / 0.05) 86px 87px,
+        transparent 87px 174px
+    );
 
     background-position: center top;
 
@@ -860,8 +865,6 @@
     font-size: 14px;
 
     line-height: 1.9;
-
-
 }
 
 .product-card__specs {
@@ -1593,7 +1596,6 @@
         font-size: 14px;
 
         line-height: 1.8;
-
     }
 
     .product-card__specs {

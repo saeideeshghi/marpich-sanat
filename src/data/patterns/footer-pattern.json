@@ -1121,12 +1121,7 @@
   ],
   "artworks": {
     "header": {
-      "viewBox": [
-        0,
-        0,
-        1008,
-        494
-      ],
+      "viewBox": [0, 0, 1008, 494],
       "lines": [
         {
           "id": "line-1",
@@ -2083,12 +2078,7 @@
       "lightAxis": "x"
     },
     "mobile": {
-      "viewBox": [
-        0,
-        0,
-        363,
-        900
-      ],
+      "viewBox": [0, 0, 363, 900],
       "lines": [
         {
           "id": "footer-fan-1",

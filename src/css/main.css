@@ -24,7 +24,13 @@
         max-width: 1680px !important;
     }
 
-    :where(.site-container, .about-container, .projects-page__container, .industry-textile__container, .articles-container) {
+    :where(
+        .site-container,
+        .about-container,
+        .projects-page__container,
+        .industry-textile__container,
+        .articles-container
+    ) {
         width: min(calc(100% - 120px), 1680px) !important;
         max-width: none !important;
     }

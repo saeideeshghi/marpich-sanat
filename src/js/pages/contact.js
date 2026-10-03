@@ -51,6 +51,11 @@ function initFileUpload() {
     input.addEventListener("change", () => {
         showFile(input.files?.[0]);
     });
+    input.form?.addEventListener("reset", (event) => {
+        queueMicrotask(() => {
+            if (!event.defaultPrevented) showFile(input.files?.[0]);
+        });
+    });
 
     ["dragenter", "dragover"].forEach((eventName) => {
         dropZone.addEventListener(eventName, (event) => {
@@ -132,9 +137,12 @@ if (contactIntro && contactHero && contactBranches) {
         const top = contactHero.getBoundingClientRect().top;
         const introBottom = contactIntro.getBoundingClientRect().bottom - top;
         const firstCard = contactBranches.querySelector(".branch-card")?.getBoundingClientRect();
-        const overlap = window.innerWidth < 1180 ? .5 : .42;
+        const overlap = window.innerWidth < 1180 ? 0.5 : 0.42;
         const bottom = firstCard ? firstCard.top - top + firstCard.height * overlap : introBottom + 28;
-        contactHero.style.setProperty("--contact-intro-background", `${Math.ceil(Math.max(introBottom + 28, bottom))}px`);
+        contactHero.style.setProperty(
+            "--contact-intro-background",
+            `${Math.ceil(Math.max(introBottom + 28, bottom))}px`,
+        );
     };
     new ResizeObserver(fitContactBackdrop).observe(contactIntro);
     new ResizeObserver(fitContactBackdrop).observe(contactBranches);

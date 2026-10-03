@@ -232,9 +232,7 @@ export function mountPattern(root, initialConfig) {
 
             let coordinateIndex = 0;
             const tokens = (line.d.match(/[MLCZ]|-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map((token) =>
-                /^[MLCZ]$/.test(token)
-                    ? token
-                    : { value: Number(token), x: coordinateIndex++ % 2 === 0 },
+                /^[MLCZ]$/.test(token) ? token : { value: Number(token), x: coordinateIndex++ % 2 === 0 },
             );
 
             return {
@@ -259,8 +257,8 @@ export function mountPattern(root, initialConfig) {
         // Use the original mobile geometry below 640px; no interpolation of the authored profiles.
         const breakpoint = root.dataset.sitePattern === "header" ? 640 : config.breakpoint;
         const compact = root.clientWidth < breakpoint;
-        const profileName = compact && root.clientWidth >= 640 && config.profiles.tablet
-            ? "tablet" : compact ? "mobile" : "desktop";
+        const profileName =
+            compact && root.clientWidth >= 640 && config.profiles.tablet ? "tablet" : compact ? "mobile" : "desktop";
         profile = config.profiles[profileName];
         animation = { ...config.animation, ...profile.animation };
         root.dataset.patternProfile = profileName;
@@ -311,39 +309,29 @@ export function mountPattern(root, initialConfig) {
         blur.setAttribute("stdDeviation", animation.glow);
     }
 
-    const eased = (value) =>
-        animation.easing === "smooth" ? value * value * (3 - 2 * value) : value;
+    const eased = (value) => (animation.easing === "smooth" ? value * value * (3 - 2 * value) : value);
 
     function paint(now = performance.now()) {
         if (!profile) return;
-        time = heldTime ?? Math.max(0, (now - patternClockStart) / 1000 * animation.speed * profile.motionSpeed + timeOffset);
+        time =
+            heldTime ??
+            Math.max(0, ((now - patternClockStart) / 1000) * animation.speed * profile.motionSpeed + timeOffset);
         const p = profile;
         const calm = prefersReducedMotion();
         const wave = !calm && (animation.mode === "wave" || animation.mode === "combined");
         const lightActive = !calm && (animation.mode === "light" || animation.mode === "combined");
         const pulse =
             !calm && animation.pulse > 0
-                ? 1 -
-                  (animation.pulse / 100) *
-                      (0.5 + 0.5 * Math.cos((time * 2 * Math.PI) / animation.pulsePeriod))
+                ? 1 - (animation.pulse / 100) * (0.5 + 0.5 * Math.cos((time * 2 * Math.PI) / animation.pulsePeriod))
                 : 1;
         const reveal =
             calm || animation.entrance === "none"
                 ? 1
-                : Math.max(
-                      0,
-                      Math.min(
-                          1,
-                          (time - animation.entranceDelay) / animation.entranceDuration,
-                      ),
-                  );
+                : Math.max(0, Math.min(1, (time - animation.entranceDelay) / animation.entranceDuration));
 
-        pattern.style.opacity =
-            (p.opacity / 100) * pulse * (animation.entrance === "fade" ? eased(reveal) : 1);
+        pattern.style.opacity = (p.opacity / 100) * pulse * (animation.entrance === "fade" ? eased(reveal) : 1);
         pattern.style.clipPath =
-            animation.entrance === "reveal" && !calm
-                ? `inset(0 ${100 - eased(reveal) * 100}% 0 0)`
-                : "none";
+            animation.entrance === "reveal" && !calm ? `inset(0 ${100 - eased(reveal) * 100}% 0 0)` : "none";
 
         nodes.forEach((node) => {
             const line = node.line;
@@ -362,9 +350,7 @@ export function mountPattern(root, initialConfig) {
                             u * Math.PI * 2 * animation.cycles +
                             node.index * animation.phaseStep +
                             (line.phase * Math.PI) / 180;
-                        const phase =
-                            basePhase -
-                            (localTime * 2 * Math.PI * animation.direction) / animation.period;
+                        const phase = basePhase - (localTime * 2 * Math.PI * animation.direction) / animation.period;
                         const delta =
                             animation.amplitude *
                             (line.wave / 100) *
@@ -377,9 +363,7 @@ export function mountPattern(root, initialConfig) {
                     .join(" ");
             }
 
-            [node.basePath, node.brightPath, node.glowPath].forEach((path) =>
-                path.setAttribute("d", d),
-            );
+            [node.basePath, node.brightPath, node.glowPath].forEach((path) => path.setAttribute("d", d));
 
             const total = animation.lightPeriod + animation.lightPause;
             const localTime = Math.max(0, time - line.delay) * line.speed;
@@ -387,9 +371,7 @@ export function mountPattern(root, initialConfig) {
             const active = lightActive && line.light > 0 && progress <= 1 && time >= line.delay;
             const center =
                 -animation.lightWidth +
-                (animation.lightDirection === 1
-                    ? eased(Math.min(1, progress))
-                    : 1 - eased(Math.min(1, progress))) *
+                (animation.lightDirection === 1 ? eased(Math.min(1, progress)) : 1 - eased(Math.min(1, progress))) *
                     ((artwork.lightAxis === "y" ? sceneHeight : sceneWidth) + 2 * animation.lightWidth);
 
             const lightAxis = artwork.lightAxis === "y" ? "y" : "x";
@@ -399,16 +381,13 @@ export function mountPattern(root, initialConfig) {
             node.light.setAttribute(`${lightAxis}1`, center - animation.lightWidth / 2);
             node.light.setAttribute(`${lightAxis}2`, center + animation.lightWidth / 2);
 
-            const intensity =
-                (animation.lightIntensity / 100) *
-                (line.light / 100) *
-                (p.light / 100);
+            const intensity = (animation.lightIntensity / 100) * (line.light / 100) * (p.light / 100);
             node.brightPath.setAttribute("opacity", active ? intensity : 0);
             node.glowPath.setAttribute("opacity", active ? intensity * 0.7 : 0);
             node.glowWrapper.style.display = line.visible && animation.glow > 0 ? "" : "none";
             const emphasis = selected === null || selected === node.index ? 1 : 0.08;
-            node.group.setAttribute("opacity", line.opacity / 100 * emphasis);
-            node.glowWrapper.setAttribute("opacity", line.opacity / 100 * emphasis);
+            node.group.setAttribute("opacity", (line.opacity / 100) * emphasis);
+            node.glowWrapper.setAttribute("opacity", (line.opacity / 100) * emphasis);
         });
     }
 
@@ -420,21 +399,23 @@ export function mountPattern(root, initialConfig) {
             !prefersReducedMotion() &&
             (animation.mode !== "static" ||
                 animation.pulse > 0 ||
-                (animation.entrance !== "none" &&
-                    time < animation.entranceDelay + animation.entranceDuration))
+                (animation.entrance !== "none" && time < animation.entranceDelay + animation.entranceDuration))
         );
     }
 
     // One scheduler paints every visible layer in the same authored FPS slot.
     // Independent loops could display adjacent samples after a layer re-entered view.
     // Keep this state on mountPattern so standalone Studio exports remain self-contained.
-    const frames = mountPattern.frames ??= { entries: new Set(), frame: 0 };
+    const frames = (mountPattern.frames ??= { entries: new Set(), frame: 0 });
     const entry = { paint, isAnimating, fps: () => animation.fps, slot: -1 };
 
     function tick(now) {
         frames.frame = 0;
         for (const item of frames.entries) {
-            if (!item.isAnimating()) { frames.entries.delete(item); continue; }
+            if (!item.isAnimating()) {
+                frames.entries.delete(item);
+                continue;
+            }
             const interval = 1000 / Math.max(1, item.fps());
             const slot = Math.floor((now - patternClockStart) / interval);
             if (slot !== item.slot) {
@@ -489,20 +470,36 @@ export function mountPattern(root, initialConfig) {
     return {
         pause(value) {
             if (Boolean(value) === paused) return;
-            if (value) { paint(); heldTime = time; }
-            else { timeOffset = heldTime - (performance.now() - patternClockStart) / 1000 * animation.speed * profile.motionSpeed; heldTime = null; }
+            if (value) {
+                paint();
+                heldTime = time;
+            } else {
+                timeOffset =
+                    heldTime - ((performance.now() - patternClockStart) / 1000) * animation.speed * profile.motionSpeed;
+                heldTime = null;
+            }
             paused = Boolean(value);
             sync();
         },
         seek(value) {
             const target = Math.max(0, Number(value) || 0);
             if (paused) heldTime = target;
-            else timeOffset = target - (performance.now() - patternClockStart) / 1000 * animation.speed * profile.motionSpeed;
+            else
+                timeOffset =
+                    target - ((performance.now() - patternClockStart) / 1000) * animation.speed * profile.motionSpeed;
             paint();
         },
-        restart() { this.seek(0); sync(); },
-        solo(index) { selected = index; paint(); },
-        get time() { return time; },
+        restart() {
+            this.seek(0);
+            sync();
+        },
+        solo(index) {
+            selected = index;
+            paint();
+        },
+        get time() {
+            return time;
+        },
         snapshot() {
             const clone = svg.cloneNode(true);
             clone.setAttribute("style", `opacity:${pattern.style.opacity}`);

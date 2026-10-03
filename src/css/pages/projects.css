@@ -58,7 +58,7 @@
     color: #fff;
     /* font-size: var(--hero-title);
      */
-     font-size: var(--hero-title);
+    font-size: var(--hero-title);
     line-height: 1.55;
     font-weight: 800;
 }
@@ -194,7 +194,9 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    transition: transform 300ms ease, filter 300ms ease;
+    transition:
+        transform 300ms ease,
+        filter 300ms ease;
 }
 
 /* Match the home project's centered overlay, blur and darkened photograph. */
@@ -206,7 +208,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: rgb(15 23 43 / .2);
+    background: rgb(15 23 43 / 0.2);
     color: #fff;
     text-align: center;
     opacity: 0;
@@ -222,20 +224,32 @@ body[data-page] main .projects-page__card-brand img {
     transform: translateY(8px);
     transition: transform 300ms ease;
 }
-.projects-page__card-brand-label { font-size: 14px; font-weight: 500; line-height: 1.8; }
+.projects-page__card-brand-label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+}
 .projects-page__card:focus-within .projects-page__card-media > img {
     transform: scale(1.02);
-    filter: blur(2px) brightness(.65);
+    filter: blur(2px) brightness(0.65);
 }
-.projects-page__card:focus-within .projects-page__card-brand { opacity: 1; }
-.projects-page__card:focus-within .projects-page__card-brand > * { transform: none; }
+.projects-page__card:focus-within .projects-page__card-brand {
+    opacity: 1;
+}
+.projects-page__card:focus-within .projects-page__card-brand > * {
+    transform: none;
+}
 @media (hover: hover) {
     .projects-page__card:hover .projects-page__card-media > img {
         transform: scale(1.02);
-        filter: blur(2px) brightness(.65);
+        filter: blur(2px) brightness(0.65);
     }
-    .projects-page__card:hover .projects-page__card-brand { opacity: 1; }
-    .projects-page__card:hover .projects-page__card-brand > * { transform: none; }
+    .projects-page__card:hover .projects-page__card-brand {
+        opacity: 1;
+    }
+    .projects-page__card:hover .projects-page__card-brand > * {
+        transform: none;
+    }
 }
 
 .projects-page__card-category {

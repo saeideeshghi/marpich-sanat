@@ -16,7 +16,9 @@
         display: flex;
         padding-left: clamp(64px, 5.6vw, 80px);
     }
-    .site-navigation { margin-left: 16px; }
+    .site-navigation {
+        margin-left: 16px;
+    }
     .site-header__mobile {
         display: none;
     }
@@ -29,7 +31,10 @@
 }
 
 /* A one-pixel blue gradient stroke follows the login button's radius. */
-.site-header__auth { position: relative; border: 0; }
+.site-header__auth {
+    position: relative;
+    border: 0;
+}
 .site-header__auth::before {
     content: "";
     position: absolute;
@@ -37,7 +42,9 @@
     padding: 1px;
     border-radius: inherit;
     /* background: linear-gradient(90deg, rgb(121 182 237 / .35), #65b1f5 52%, rgb(121 182 237 / .6)); */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
@@ -67,7 +74,9 @@
     opacity: 0;
     transform: translateX(-50%) scaleX(0.45);
     transform-origin: center;
-    transition: opacity 150ms ease, transform 150ms ease;
+    transition:
+        opacity 150ms ease,
+        transform 150ms ease;
     content: "";
 }
 
@@ -471,13 +480,26 @@ body.menu-open {
 }
 
 /* Shared navigation typography. Footer styles live in footer.css. */
-.site-navigation > ul { font-size: var(--text-navigation, 14px); }
+.site-navigation > ul {
+    font-size: var(--text-navigation, 14px);
+}
 @media (min-width: 1180px) and (max-width: 1279px) {
-    .site-header__desktop { padding-right: 24px; padding-left: 40px; }
-    .site-navigation { margin-right: 22px; }
-    .site-navigation > ul { gap: 11px; }
+    .site-header__desktop {
+        padding-right: 24px;
+        padding-left: 40px;
+    }
+    .site-navigation {
+        margin-right: 22px;
+    }
+    .site-navigation > ul {
+        gap: 11px;
+    }
 }
 
 /* The small brand tagline is secondary to the navigation and the body copy. */
-.site-header a > div > span:last-child { font-size: 11px; }
-.site-footer a[aria-label="مارپیچ صنعت"] > div > span:last-child { font-size: 12px; }
+.site-header a > div > span:last-child {
+    font-size: 11px;
+}
+.site-footer a[aria-label="مارپیچ صنعت"] > div > span:last-child {
+    font-size: 12px;
+}

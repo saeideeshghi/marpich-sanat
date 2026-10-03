@@ -2,15 +2,18 @@
  * Copies only complete the visual loop and are hidden from assistive technology.
  */
 export function initPartners() {
-    document.querySelectorAll('[data-partners]').forEach((root) => {
+    document.querySelectorAll("[data-partners]").forEach((root) => {
         if (root.dataset.initialized) return;
-        root.dataset.initialized = 'true';
-        const viewport = root.querySelector('[data-partner-viewport]');
-        const track = root.querySelector('[data-partner-track]');
-        const group = root.querySelector('[data-partner-group]');
+        root.dataset.initialized = "true";
+        const viewport = root.querySelector("[data-partner-viewport]");
+        const track = root.querySelector("[data-partner-track]");
+        const group = root.querySelector("[data-partner-group]");
         if (!viewport || !track || !group || !group.children.length) return;
         const copies = [...track.children].filter((child) => child !== group);
-        const loadCopy = (copy) => copy.querySelectorAll('img').forEach((image) => { image.loading = 'eager'; });
+        const loadCopy = (copy) =>
+            copy.querySelectorAll("img").forEach((image) => {
+                image.loading = "eager";
+            });
         copies.forEach(loadCopy);
         let visible = false;
         function measure() {
@@ -21,22 +24,25 @@ export function initPartners() {
             const needed = Math.max(1, Math.ceil(viewport.clientWidth / distance));
             while (copies.length < needed) {
                 const copy = group.cloneNode(true);
-                copy.removeAttribute('data-partner-group');
-                copy.removeAttribute('aria-label');
-                copy.setAttribute('aria-hidden', 'true');
+                copy.removeAttribute("data-partner-group");
+                copy.removeAttribute("aria-label");
+                copy.setAttribute("aria-hidden", "true");
                 loadCopy(copy);
                 track.append(copy);
                 copies.push(copy);
             }
             while (copies.length > needed) copies.pop().remove();
-            root.style.setProperty('--marquee-distance', `${distance}px`);
-            root.style.setProperty('--marquee-time', `${Math.max(24, distance / 26)}s`);
+            root.style.setProperty("--marquee-distance", `${distance}px`);
+            root.style.setProperty("--marquee-time", `${Math.max(24, distance / 26)}s`);
         }
-        const sync = () => track.style.animationPlayState = visible && !document.hidden ? 'running' : 'paused';
+        const sync = () => (track.style.animationPlayState = visible && !document.hidden ? "running" : "paused");
         new ResizeObserver(measure).observe(viewport);
         new ResizeObserver(measure).observe(group);
-        new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }).observe(root);
-        document.addEventListener('visibilitychange', sync);
+        new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+            sync();
+        }).observe(root);
+        document.addEventListener("visibilitychange", sync);
         measure();
     });
 }

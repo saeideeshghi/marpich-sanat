@@ -369,7 +369,11 @@
     object-fit: cover;
     object-position: center;
 }
-.about-expertise-card__media { min-height: 0; overflow: hidden; flex: 0 0 auto; }
+.about-expertise-card__media {
+    min-height: 0;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
 
 .about-expertise-card__body {
     display: flex;
@@ -1275,38 +1279,103 @@
 }
 
 /* Full team photograph at its original ratio; its height follows its width. */
-.about-hero-shell { min-height: 0; padding-bottom: 64px; }
-.about-main { z-index: 1; }
-.about-hero { padding-top: 100px; }
-.about-hero__title { margin-top: 12px; }
-.about-hero__description { margin-top: 8px; font-size: var(--hero-description); line-height: 1.8; }
-.about-team-wrap { z-index: 2; transform: translateY(-36px); margin-bottom: -36px; }
-.about-team-media { aspect-ratio: auto; height: auto; background: transparent; box-shadow: none; }
-.about-team-wrap { width: min(calc(100% - 64px), 1760px); }
-.about-team-media__image { display: block; position: static; width: 100%; height: auto; max-width: 100%; margin-inline: auto; max-height: none; object-fit: contain; object-position: center; border-radius: inherit; }
+.about-hero-shell {
+    min-height: 0;
+    padding-bottom: 64px;
+}
+.about-main {
+    z-index: 1;
+}
+.about-hero {
+    padding-top: 100px;
+}
+.about-hero__title {
+    margin-top: 12px;
+}
+.about-hero__description {
+    margin-top: 8px;
+    font-size: var(--hero-description);
+    line-height: 1.8;
+}
+.about-team-wrap {
+    z-index: 2;
+    transform: translateY(-36px);
+    margin-bottom: -36px;
+}
+.about-team-media {
+    aspect-ratio: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+}
+.about-team-wrap {
+    width: min(calc(100% - 64px), 1760px);
+}
+.about-team-media__image {
+    display: block;
+    position: static;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-inline: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    border-radius: inherit;
+}
 @media (min-width: 1600px) {
-    .about-container.about-team-wrap { width: min(calc(100% - 64px), 1760px) !important; }
+    .about-container.about-team-wrap {
+        width: min(calc(100% - 64px), 1760px) !important;
+    }
 }
 @media (max-width: 767px) {
-    .about-hero { padding-top: 94px; }
-    .about-hero-shell { padding-bottom: 48px; }
-    .about-hero__title { font-size: var(--hero-title); }
-    .about-hero__description { font-size: var(--hero-description); }
-    .about-team-wrap { transform: translateY(-24px); margin-bottom: -24px; }
-    .about-team-wrap { width: calc(100% - 24px); }
-    .about-gallery__content { width: 58%; padding-block: 24px; }
-    .about-gallery, .about-gallery__content-wrap { min-height: 280px; }
+    .about-hero {
+        padding-top: 94px;
+    }
+    .about-hero-shell {
+        padding-bottom: 48px;
+    }
+    .about-hero__title {
+        font-size: var(--hero-title);
+    }
+    .about-hero__description {
+        font-size: var(--hero-description);
+    }
+    .about-team-wrap {
+        transform: translateY(-24px);
+        margin-bottom: -24px;
+    }
+    .about-team-wrap {
+        width: calc(100% - 24px);
+    }
+    .about-gallery__content {
+        width: 58%;
+        padding-block: 24px;
+    }
+    .about-gallery,
+    .about-gallery__content-wrap {
+        min-height: 280px;
+    }
 }
 @media (max-width: 479px) {
-    .about-expertise__grid { grid-template-columns: 1fr; }
-    .about-expertise-card__image { height: 180px; }
-    .about-certificate-card { height: auto; min-height: 240px; }
+    .about-expertise__grid {
+        grid-template-columns: 1fr;
+    }
+    .about-expertise-card__image {
+        height: 180px;
+    }
+    .about-certificate-card {
+        height: auto;
+        min-height: 240px;
+    }
 }
 
 /* The exported gallery SVG has transparent shadow gutters. Overscan those
  * gutters so its photograph reaches both edges of the smaller media boxes. */
 @media (max-width: 1395px) {
-    .about-gallery__media { overflow: hidden; }
+    .about-gallery__media {
+        overflow: hidden;
+    }
     .about-gallery__media img {
         position: absolute;
         inset: -4%;

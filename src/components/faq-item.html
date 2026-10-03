@@ -1,20 +1,22 @@
 <article class="industry-textile__faq-item {{openClass}}" data-faq-item>
-                            <h3>
-                                <button
-                                    type="button"
-                                    data-faq-trigger
-                                    aria-expanded="{{expanded}}"
-                                    aria-controls="{{id}}-answer"
-                                    id="{{id}}-trigger"
-                                >
-                                    <span>{{question}}</span>
-                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                                </button>
-                            </h3>
-                            <div
-                                id="{{id}}-answer"
-                                class="industry-textile__faq-answer" {{{hidden}}}
-                                role="region"
-                                aria-labelledby="{{id}}-trigger"
-                            >{{answer}}</div>
-                        </article>
+    <h3>
+        <button
+            type="button"
+            data-faq-trigger
+            aria-expanded="{{expanded}}"
+            aria-controls="{{id}}-answer"
+            id="{{id}}-trigger"
+        >
+            <span>{{question}}</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+    </h3>
+    <div
+        id="{{id}}-answer"
+        class="industry-textile__faq-answer"
+        {{{hidden}}}
+        role="region"
+        aria-labelledby="{{id}}-trigger"
+        >{{answer}}</div
+    >
+</article>

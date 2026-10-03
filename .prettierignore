@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-ssr/
+.cache/
+assets/
+fonts/
+public/
+docs/
+tools/
+package-lock.json
+PAGES-FIXES-MANIFEST.json
+*.md

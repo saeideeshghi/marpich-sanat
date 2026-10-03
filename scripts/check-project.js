@@ -34,6 +34,10 @@ for (const page of pages) {
     assert(!html.includes("/src/assets/"), prefix + "old asset path");
     assert.equal((html.match(/<header\b/g) || []).length, 1, prefix + "duplicate/missing header");
     assert.equal((html.match(/<footer\b/g) || []).length, 1, prefix + "duplicate/missing footer");
+    const heroTags = [...html.matchAll(/<(?:section|div)\b[^>]*\bdata-site-hero(?=\s|=|>)[^>]*>/gs)];
+    assert.equal(heroTags.length, 1, prefix + "use one shared hero root");
+    const heroId = `hero-${page.file.replace(/\.html$/, "")}`;
+    assert(heroTags[0][0].includes(`id="${heroId}"`), prefix + "wrong per-page hero ID");
     assert.equal((html.match(/\bdata-mobile-menu(?:\s|=|>)/g) || []).length, 1, prefix + "duplicate/missing menu");
     assert.equal(
         (html.match(/\bdata-auth-modal(?:\s|=|>)/g) || []).length,

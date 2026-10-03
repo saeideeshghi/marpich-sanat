@@ -35,7 +35,10 @@ async function request(action, payload, signal) {
         response = await fetch(`${baseURL}/${action}`, {
             method: "POST",
             credentials: "same-origin",
-            headers: { "Content-Type": "application/json", ...(csrfToken ? { "X-CSRF-TOKEN": csrfToken } : {}) },
+            headers: {
+                "Content-Type": "application/json",
+                ...(csrfToken ? { "X-CSRF-TOKEN": csrfToken } : {}),
+            },
             body: JSON.stringify(payload),
             signal,
         });

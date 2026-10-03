@@ -197,7 +197,8 @@
     position: relative;
     padding: 0 0 54px;
     background:
-        linear-gradient(102deg, transparent 0 92%, rgb(121 182 237 / 0.04) 92% 92.12%, transparent 92.12%) 0 0 / 88px 100%,
+        linear-gradient(102deg, transparent 0 92%, rgb(121 182 237 / 0.04) 92% 92.12%, transparent 92.12%) 0 0 / 88px
+            100%,
         var(--articles-page-bg);
 }
 
@@ -306,7 +307,9 @@
 }
 /* These exported SVGs include 4px/12px vertical shadow gutters and an inset
  * rounded frame. Crop the export's gutters in grid and list layouts alike. */
-.article-card__media img[src$=".svg"] { --article-image-scale: 1.16; }
+.article-card__media img[src$=".svg"] {
+    --article-image-scale: 1.16;
+}
 
 body[data-page="articles"] .site-hero .articles-hero__heading .site-hero__description,
 body[data-page="articles"] .articles-page main :is(p.site-prose, .article-card__description) {
@@ -506,7 +509,9 @@ body[data-page="articles"] .articles-page main :is(p.site-prose, .article-card__
         min-height: 390px;
     }
 
-    .articles-hero { --articles-backdrop-min-height: 315px; }
+    .articles-hero {
+        --articles-backdrop-min-height: 315px;
+    }
 
     .articles-hero__heading {
         padding-top: 145px;
@@ -549,7 +554,9 @@ body[data-page="articles"] .articles-page main :is(p.site-prose, .article-card__
         min-height: 318px;
     }
 
-    .articles-hero { --articles-backdrop-min-height: 252px; }
+    .articles-hero {
+        --articles-backdrop-min-height: 252px;
+    }
 
     .articles-hero__heading {
         padding-top: 122px;

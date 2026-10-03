@@ -13,7 +13,8 @@ export function initHeroLayout() {
         "industry-textile": ".industry-textile__summary",
     };
     const summary = document.querySelector(summaries[document.body.dataset.page] || "[data-hero-summary]");
-    if (!summary) return;
+    if (!summary || hero.dataset.heroLayoutInitialized) return;
+    hero.dataset.heroLayoutInitialized = "true";
 
     const fitOverlap = () => {
         const text = hero.querySelector(".site-hero__description") || hero.querySelector(".site-hero__title");
@@ -23,7 +24,9 @@ export function initHeroLayout() {
         // Respect the actual root size when the preferred value uses rem.
         const raw = getComputedStyle(document.body).getPropertyValue("--hero-summary-preferred").trim();
         const preferred = parseFloat(raw) || 0;
-        const pixels = raw.endsWith("rem") ? preferred * parseFloat(getComputedStyle(document.documentElement).fontSize) : preferred;
+        const pixels = raw.endsWith("rem")
+            ? preferred * parseFloat(getComputedStyle(document.documentElement).fontSize)
+            : preferred;
         const available = Math.max(0, heroBottom - textBottom - 24);
         const value = `${Math.min(pixels, available)}px`;
         if (document.body.style.getPropertyValue("--hero-summary-overlap") !== value) {

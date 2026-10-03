@@ -9,7 +9,7 @@ export function publicAssetBase(base) {
             order: "post",
             handler(html) {
                 return html.replace(
-                    /\b(src|href|poster|srcset|data-image-candidates)=(['"])(.*?)\2/gs,
+                    /\b(src|href|poster|srcset|data-image-candidates|data-fallback)=(['"])(.*?)\2/gs,
                     (_, attribute, quote, value) => `${attribute}=${quote}${prefix(value)}${quote}`,
                 );
             },

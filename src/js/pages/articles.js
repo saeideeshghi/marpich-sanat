@@ -4,6 +4,7 @@ import "../../css/layout-checks.css";
 import "../../css/components/catalog.css";
 import "../../css/responsive.css";
 import { initSite } from "../main.js";
+import { normalizeSearchText } from "../utils/search-text.js";
 
 initSite();
 
@@ -24,20 +25,26 @@ function initArticlesPage() {
     const allArticles = page.querySelector("[data-articles-more-filters]");
     let category = "all";
 
-    const normalize = (value) => String(value || "").trim().toLocaleLowerCase("fa");
+    const syncCategoryFilters = () => {
+        filters.forEach((button) => {
+            const active = button.dataset.articleFilter === category;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+        });
+    };
 
     // The handoff ships all current article cards in HTML. Never leave stale hidden
     // attributes from a previous filter/render state on initial load.
     cards.forEach((card) => card.removeAttribute("hidden"));
 
     const applyFilters = () => {
-        const needle = normalize(query?.value);
+        const needle = normalizeSearchText(query?.value);
         let visible = 0;
 
         cards.forEach((card) => {
             const categories = (card.dataset.category || "").split(/\s+/);
             const categoryMatch = category === "all" || categories.includes(category);
-            const text = normalize(`${card.dataset.search || ""} ${card.textContent}`);
+            const text = normalizeSearchText(`${card.dataset.search || ""} ${card.textContent}`);
             const queryMatch = !needle || text.includes(needle);
             const show = categoryMatch && queryMatch;
             card.hidden = !show;
@@ -51,7 +58,7 @@ function initArticlesPage() {
     filters.forEach((button) => {
         button.addEventListener("click", () => {
             category = button.dataset.articleFilter || "all";
-            filters.forEach((other) => other.classList.toggle("is-active", other === button));
+            syncCategoryFilters();
             applyFilters();
         });
     });
@@ -68,9 +75,7 @@ function initArticlesPage() {
     allArticles?.addEventListener("click", () => {
         category = "all";
         if (query) query.value = "";
-        filters.forEach((button) =>
-            button.classList.toggle("is-active", button.dataset.articleFilter === "all"),
-        );
+        syncCategoryFilters();
         applyFilters();
     });
 
@@ -95,6 +100,7 @@ function initArticlesPage() {
         if (image.complete && image.naturalWidth === 0) fallback();
     });
 
+    syncCategoryFilters();
     applyFilters();
 
     loadMore?.addEventListener("click", () => {

@@ -688,5 +688,8 @@
 }
 @media (prefers-reduced-motion: reduce) {
     .industries-page .industry-card .product-card__image,
-    .industries-page .industry-feature__image { transition: none; transform: none; }
+    .industries-page .industry-feature__image {
+        transition: none;
+        transform: none;
+    }
 }
