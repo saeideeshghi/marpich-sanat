@@ -44,7 +44,7 @@ export function renderComponent(name, data, root) {
     switch (name) {
         case "partners":
             return render(name, data, {
-                logos: data.logos.map((logo) => `<li class="home-partners__item"><img src="${e(validateContentUrl(logo.image, true))}" alt="${e(logo.name)}" width="180" height="88" loading="lazy" decoding="async" /></li>`).join("\n"),
+                logos: data.logos.map((logo) => `<li class="home-partners__item"><img src="${e(validateContentUrl(logo.image, true))}" alt="${e(logo.name)}" width="${e(logo.width ?? 180)}" height="${e(logo.height ?? 88)}" loading="lazy" decoding="async" /></li>`).join("\n"),
             });
         case "consultation":
             return render(name, data);

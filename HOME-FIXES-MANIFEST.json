@@ -1,15 +1,25 @@
 {
   "base_commit": "a911266acb8ce70c608c1cf5d809f4eb8510028b",
   "date": "2026-10-03",
-  "package_type": "source_update",
+  "package_type": "cumulative_source_update",
+  "revision": "v2",
+  "includes_previous_home_fixes": true,
   "files": [
     {
       "path": "APPLY-HOME-FIXES.txt",
-      "sha256": "9c868b430aef6d29349fa8483508d73bf534c031b2e8769b0876a3fc496a23d7"
+      "sha256": "60e5a75656872ffa9b08e0f7642b6907a544c9d5953e35d93abf73c55ac08ed5"
     },
     {
       "path": "README.md",
-      "sha256": "e0a8fabdc1f6e5c56e58df93ead710236b4215035e9b400ff82ebb680d47fba1"
+      "sha256": "e736f35b1635012b2cfef1c4af25ac464a7b3b076b3e4463388d40b8f7d8ac15"
+    },
+    {
+      "path": "build/components.js",
+      "sha256": "d4b6bdb9c987ca51af1f09e55aee054c2d2fc427f130290b93183e33564b10dd"
+    },
+    {
+      "path": "docs/2026-10-03-HOME-POLISH-V2.md",
+      "sha256": "6a0fb6e23d16fdc542f58836154bbcd8006eb184fb9064ba49f67bbd94b10adc"
     },
     {
       "path": "docs/2026-10-03-HOME-POLISH.md",
@@ -17,15 +27,39 @@
     },
     {
       "path": "docs/assets-manifest.json",
-      "sha256": "2896b1b003e411e19e6a283c01209e9994439b2ece3da2dca2d02196a8a9c8b9"
+      "sha256": "7183e0671f9000aadead9fdf747d26d4d6cdcd2474d40efd15ec0b8bd0a918d3"
+    },
+    {
+      "path": "docs/previews/home-v2/header-1440.png",
+      "sha256": "14ceaf1d36027c68365cd88351a6315e77bbf664e9f70ac72d30b0f1c915c7f7"
+    },
+    {
+      "path": "docs/previews/home-v2/partners-1440.png",
+      "sha256": "201687c95f23e864714bc062a87142f883b11adc835217470043629b425e0661"
+    },
+    {
+      "path": "docs/previews/home-v2/partners-375.png",
+      "sha256": "1081582fe8c84bba903a395012a5e2615dee0fa7a1c88230f11ab9c1c8086a7b"
+    },
+    {
+      "path": "docs/previews/home-v2/partners-768.png",
+      "sha256": "04d50077123bab0255901f59de2dc48ffc69ef4f42d7ba7a0073090d6fae2a9d"
     },
     {
       "path": "index.html",
       "sha256": "3cc7a95a13a24557df49dd15f4ce53045c51c598e08116eb91345e35c241065e"
     },
     {
+      "path": "public/assets/icons/ui/nav-active-line.png",
+      "sha256": "12e57da15d49b267890b63bd1377841f98389a3290c6d3860e67b1cb11611f3a"
+    },
+    {
       "path": "public/assets/icons/ui/nav-active-line.svg",
       "sha256": "21245af2cc8b92910be21191881c06c4cf24c5ee601afa6092321758bc474045"
+    },
+    {
+      "path": "public/assets/icons/ui/partners-separator.png",
+      "sha256": "e10e6cf11a04c480cf133f494214a570825f5376826bd53ae3b5c9a86b79a3d0"
     },
     {
       "path": "public/assets/icons/ui/partners-separator.svg",
@@ -45,7 +79,7 @@
     },
     {
       "path": "src/components/partners.html",
-      "sha256": "218aca9ef84756ecd6b39f5ae95795fcbc7246347cf55435a44e2e706fe21c81"
+      "sha256": "ac740abbc51cc50d349282fe5803ed2fdcf956f706b62165fa66430a97692ab1"
     },
     {
       "path": "src/css/components/footer.css",
@@ -57,7 +91,7 @@
     },
     {
       "path": "src/css/components/site.css",
-      "sha256": "93391600474656a1b9c3c81c789d4d7b227a4b7e97d1cdabd37eb36abf65a1e0"
+      "sha256": "049dad0293448756a9eb4fae0e54fd1ee5a8472d2202b1b236aad0aacb0b2246"
     },
     {
       "path": "src/css/layout-checks.css",
@@ -65,15 +99,19 @@
     },
     {
       "path": "src/css/pages/home.css",
-      "sha256": "4a7b87f2c677a188b4cc2165a79f037afaccae25d9455b7935b970a1e4c8bd34"
+      "sha256": "cad44bab1347e5828eba7f524f464e7c0fef69806b531d905e39f8e7113d3139"
     },
     {
       "path": "src/css/responsive.css",
       "sha256": "8565d38ce7af466b997bae7568291954cf841732ac3c794f74dc6d6d7842aa78"
     },
     {
+      "path": "src/data/pages/home.json",
+      "sha256": "b4eccff32cc30ed1125008c365c4a158628f6fca38583c9be8ee83aefea7087e"
+    },
+    {
       "path": "src/js/components/partners.js",
-      "sha256": "f3f2d3fe52d305ea706f186dca4f0b2cb76e022ebea81191dd42177a1db15ef4"
+      "sha256": "c13fac0e94fa0fb7d275f0f8f739f5d0063332e7f138dbebf81b46b87f132505"
     }
   ]
 }

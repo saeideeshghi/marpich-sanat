@@ -32,7 +32,7 @@
     inset: 0;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(90deg, rgb(121 182 237 / .35), #65b1f5 52%, rgb(121 182 237 / .6));
+    /* background: linear-gradient(90deg, rgb(121 182 237 / .35), #65b1f5 52%, rgb(121 182 237 / .6)); */
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -59,7 +59,7 @@
     left: 50%;
     width: 38px;
     height: 1px;
-    background: url("/assets/icons/ui/nav-active-line.svg") center / 38px 1px no-repeat;
+    background: url("/assets/icons/ui/nav-active-line.png") center / 38px 1px no-repeat;
     opacity: 0;
     transform: translateX(-50%) scaleX(0.45);
     transform-origin: center;

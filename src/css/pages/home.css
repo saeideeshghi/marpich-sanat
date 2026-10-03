@@ -134,29 +134,36 @@
     .home-hero-action { justify-content: center; gap: 24px; }
 }
 
-/* Continuous logos: both groups have equal width, including the trailing gap. */
-.home-partners { --logo-width: 160px; --logo-gap: 20px; --marquee-time: 48s; background: #d3eaff; }
-.home-partners__inner { width: min(100% - 40px, 1320px); margin-inline: auto; display: flex; align-items: center; gap: 20px; padding-block: 22px; }
+/* Intrinsic logo widths avoid empty stretched tiles. Every loop group includes
+ * its trailing gap; JS measures that exact width and supplies enough copies. */
+.home-partners { --logo-height: 80px; --logo-max-width: 150px; --logo-gap: 45px; --marquee-time: 48s; --marquee-distance: 0px; background: #d3eaff; }
+.home-partners__inner { width: min(100% - 40px, 1320px); margin-inline: auto; display: flex; align-items: center; gap: 16px; padding-block: 22px; }
 .home-partners__separator { display: block; width: 1px; height: 83px; flex: 0 0 1px; object-fit: fill; }
 .home-partners__title { flex: 0 0 190px; margin: 0; font-size: 15px; line-height: 1.85; }
 .home-partners__title span, .home-partners__title strong { display: block; }
 .home-partners__viewport { flex: 1; min-width: 0; overflow: hidden; direction: ltr; }
 .home-partners__track { display: flex; width: max-content; animation: partner-flow var(--marquee-time) linear infinite; }
 .home-partners__logos { display: flex; flex: 0 0 auto; align-items: center; gap: var(--logo-gap); margin: 0; padding: 0 var(--logo-gap) 0 0; list-style: none; direction: rtl; }
-.home-partners__item { width: var(--logo-width); flex: 0 0 var(--logo-width); display: flex; justify-content: center; }
-.home-partners__logos img { width: 100%; max-width: 180px; height: 80px; object-fit: contain; }
+.home-partners__item { width: auto; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+.home-partners__logos img { width: auto; max-width: var(--logo-max-width); height: var(--logo-height); object-fit: contain; }
 @media (hover: hover) { .home-partners:hover .home-partners__track { animation-play-state: paused !important; } }
-@keyframes partner-flow { to { transform: translateX(-50%); } }
+@keyframes partner-flow { to { transform: translateX(calc(-1 * var(--marquee-distance))); } }
 .home-partners--static .home-partners__track { width: 100%; animation: none; }
-.home-partners--static .home-partners__logos { justify-content: space-evenly; width: 100%; padding: 0; }
+.home-partners--static .home-partners__logos { justify-content: center; width: 100%; padding: 0; }
 .home-partners--static .home-partners__logos[aria-hidden="true"] { display: none; }
 @media (max-width: 639px) {
-    .home-partners__inner { width: calc(100% - 24px); gap: 12px; padding-block: 16px; }
+    .home-partners { --logo-height: 56px; --logo-max-width: 110px; --logo-gap: 8px; }
+    .home-partners__inner { width: calc(100% - 24px); gap: 10px; padding-block: 16px; }
     .home-partners__title { flex-basis: 96px; font-size: 11px; }
-    .home-partners__logos img { height: 56px; }
     .home-partners__separator { height: 64px; }
 }
-@media (min-width: 1600px) { .home-partners__inner { width: min(100% - 120px, 1680px); } .home-partners__logos img { height: 88px; } }
+@media (min-width: 640px) and (max-width: 1179px) {
+    .home-partners { --logo-height: 72px; --logo-max-width: 132px; --logo-gap: 10px; }
+}
+@media (min-width: 1600px) {
+    .home-partners { --logo-height: 88px; --logo-max-width: 168px; }
+    .home-partners__inner { width: min(100% - 120px, 1680px); }
+}
 @media (prefers-reduced-motion: reduce) {
     .home-partners__track { width: 100%; animation: none; }
     .home-partners__logos { width: 100%; flex-wrap: wrap; justify-content: center; padding: 0; row-gap: 16px; }

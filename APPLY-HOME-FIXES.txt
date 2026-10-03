@@ -1,6 +1,7 @@
-اصلاحات صفحه اصلی مارپیچ صنعت — ۳ اکتبر ۲۰۲۶
+نسخه نهایی اصلاحات صفحه اصلی مارپیچ صنعت — ۳ اکتبر ۲۰۲۶ — v2
 
 این ZIP بسته اصلاحات سورس فعلی پروژه است.
+اصلاحات بسته قبلی هم در این نسخه هستند؛ همین بسته برای جایگزینی کافی است.
 محتویات ZIP را داخل ریشه پروژه، کنار package.json، کپی کنید.
 فایل‌های هم‌نام را Replace کنید؛ پوشه پروژه و assets موجود را حذف نکنید.
 
@@ -8,14 +9,14 @@
 npm run check
 npm run build:pages
 git add .
-git commit -m "Polish home page, footer and responsive cards"
+git commit -m "Finalize home page reference lines and compact partner strip"
 git push origin main
 
 انتشار با workflow فعلی GitHub Actions انجام می‌شود.
 پس از موفق‌شدن Actions، سایت را با Ctrl+F5 تازه کنید.
 
 گزارش تغییرات و نتایج بررسی:
-docs/2026-10-03-HOME-POLISH.md
+docs/2026-10-03-HOME-POLISH-V2.md
 
 بسته بر اساس commit زیر آماده شده است:
 a911266acb8ce70c608c1cf5d809f4eb8510028b
