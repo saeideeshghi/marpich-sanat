@@ -54,7 +54,7 @@ body[data-page] [data-consultation] h2 { line-height: 1.7; }
     body[data-page] .product-search__clear { margin-right: auto; }
     body[data-page="home"] .home-process-steps { --icon-size: 48px; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 16px; padding: 24px 12px; }
     body[data-page="home"] .home-process-step h3 { font-size: 16px; margin-top: 12px; }
-    body[data-page="home"] .home-process-step p { display: block; font-size: 14px; line-height: 1.8; }
+    body[data-page="home"] .home-process-step p { display: none; }
     body[data-page="home"] .home-process-step:nth-child(2n) .home-process-arrow { display: none; }
     body[data-page="home"] .home-process-arrow { padding-inline: calc(var(--icon-size) / 2 + 12px); }
     body[data-page="home"] .home-partners__title { font-size: 14px; flex-basis: 112px; }

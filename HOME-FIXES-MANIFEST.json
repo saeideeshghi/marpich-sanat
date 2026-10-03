@@ -1,0 +1,79 @@
+{
+  "base_commit": "a911266acb8ce70c608c1cf5d809f4eb8510028b",
+  "date": "2026-10-03",
+  "package_type": "source_update",
+  "files": [
+    {
+      "path": "APPLY-HOME-FIXES.txt",
+      "sha256": "9c868b430aef6d29349fa8483508d73bf534c031b2e8769b0876a3fc496a23d7"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e0a8fabdc1f6e5c56e58df93ead710236b4215035e9b400ff82ebb680d47fba1"
+    },
+    {
+      "path": "docs/2026-10-03-HOME-POLISH.md",
+      "sha256": "7fec2b0b814a4e9274132d5fa88e64ba93f6c403d6073302e9a1705522816613"
+    },
+    {
+      "path": "docs/assets-manifest.json",
+      "sha256": "2896b1b003e411e19e6a283c01209e9994439b2ece3da2dca2d02196a8a9c8b9"
+    },
+    {
+      "path": "index.html",
+      "sha256": "3cc7a95a13a24557df49dd15f4ce53045c51c598e08116eb91345e35c241065e"
+    },
+    {
+      "path": "public/assets/icons/ui/nav-active-line.svg",
+      "sha256": "21245af2cc8b92910be21191881c06c4cf24c5ee601afa6092321758bc474045"
+    },
+    {
+      "path": "public/assets/icons/ui/partners-separator.svg",
+      "sha256": "5d009e5176e739be6b95d19e1304a4b4957e749a4c5d11f0d0321bdaaea768db"
+    },
+    {
+      "path": "src/components/consultation.html",
+      "sha256": "b0228ab45ae180eee6bbc5380523e922d2e09097dc898353479f3ea182abedbb"
+    },
+    {
+      "path": "src/components/footer.html",
+      "sha256": "76015be5999d89d447c36aa6b7bd5d7f5679bdabce7ee9c954edccf1d656d070"
+    },
+    {
+      "path": "src/components/header.html",
+      "sha256": "ab0426f2f250d4fd40564d45f26a3d7d7a04bc4a3938fe840cb9f99120f400df"
+    },
+    {
+      "path": "src/components/partners.html",
+      "sha256": "218aca9ef84756ecd6b39f5ae95795fcbc7246347cf55435a44e2e706fe21c81"
+    },
+    {
+      "path": "src/css/components/footer.css",
+      "sha256": "195ff455bd66a80f2751fc51c6fc6b15f8366ffdf8318e0a0de8d5e86037caa9"
+    },
+    {
+      "path": "src/css/components/responsive-cards.css",
+      "sha256": "362bc30638ebbc75d69244f68541053f10bbe96edd801c5c55c916e0f66ceac5"
+    },
+    {
+      "path": "src/css/components/site.css",
+      "sha256": "93391600474656a1b9c3c81c789d4d7b227a4b7e97d1cdabd37eb36abf65a1e0"
+    },
+    {
+      "path": "src/css/layout-checks.css",
+      "sha256": "7e9a5cf5a7682c51f77d11729e4b067a9ca70922e9805e2044390ae230aa91f3"
+    },
+    {
+      "path": "src/css/pages/home.css",
+      "sha256": "4a7b87f2c677a188b4cc2165a79f037afaccae25d9455b7935b970a1e4c8bd34"
+    },
+    {
+      "path": "src/css/responsive.css",
+      "sha256": "8565d38ce7af466b997bae7568291954cf841732ac3c794f74dc6d6d7842aa78"
+    },
+    {
+      "path": "src/js/components/partners.js",
+      "sha256": "f3f2d3fe52d305ea706f186dca4f0b2cb76e022ebea81191dd42177a1db15ef4"
+    }
+  ]
+}

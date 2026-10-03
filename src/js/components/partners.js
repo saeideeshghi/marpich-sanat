@@ -12,8 +12,8 @@ export function initPartners() {
         let visible = false;
         function measure() {
             const width = window.innerWidth;
-            const count = width < 640 ? 2 : width < 1180 ? 3 : width < 1600 ? 4 : 5;
-            const gap = width < 640 ? 24 : 32;
+            const count = width < 640 ? 2 : width < 1180 ? 3 : width < 1600 ? 5 : 6;
+            const gap = width < 640 ? 12 : 20;
             const itemWidth = Math.max(90, (viewport.clientWidth - (count - 1) * gap) / count);
             root.style.setProperty('--logo-width', `${itemWidth}px`);
             root.style.setProperty('--logo-gap', `${gap}px`);

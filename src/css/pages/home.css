@@ -135,8 +135,9 @@
 }
 
 /* Continuous logos: both groups have equal width, including the trailing gap. */
-.home-partners { --logo-width: 160px; --logo-gap: 32px; --marquee-time: 48s; background: #d3eaff; }
-.home-partners__inner { width: min(100% - 40px, 1320px); margin-inline: auto; display: flex; align-items: center; gap: 28px; padding-block: 22px; }
+.home-partners { --logo-width: 160px; --logo-gap: 20px; --marquee-time: 48s; background: #d3eaff; }
+.home-partners__inner { width: min(100% - 40px, 1320px); margin-inline: auto; display: flex; align-items: center; gap: 20px; padding-block: 22px; }
+.home-partners__separator { display: block; width: 1px; height: 83px; flex: 0 0 1px; object-fit: fill; }
 .home-partners__title { flex: 0 0 190px; margin: 0; font-size: 15px; line-height: 1.85; }
 .home-partners__title span, .home-partners__title strong { display: block; }
 .home-partners__viewport { flex: 1; min-width: 0; overflow: hidden; direction: ltr; }
@@ -148,11 +149,12 @@
 @keyframes partner-flow { to { transform: translateX(-50%); } }
 .home-partners--static .home-partners__track { width: 100%; animation: none; }
 .home-partners--static .home-partners__logos { justify-content: space-evenly; width: 100%; padding: 0; }
-.home-partners--static [aria-hidden="true"] { display: none; }
+.home-partners--static .home-partners__logos[aria-hidden="true"] { display: none; }
 @media (max-width: 639px) {
-    .home-partners__inner { width: calc(100% - 24px); gap: 14px; padding-block: 16px; }
+    .home-partners__inner { width: calc(100% - 24px); gap: 12px; padding-block: 16px; }
     .home-partners__title { flex-basis: 96px; font-size: 11px; }
     .home-partners__logos img { height: 56px; }
+    .home-partners__separator { height: 64px; }
 }
 @media (min-width: 1600px) { .home-partners__inner { width: min(100% - 120px, 1680px); } .home-partners__logos img { height: 88px; } }
 @media (prefers-reduced-motion: reduce) {
@@ -178,3 +180,45 @@
     .home-process-arrow img { height: 6px; }
 }
 @media (min-width: 1600px) { .home-process-steps { width: min(100% - 120px, 1680px); } }
+
+/* The whole Why Marpich section is one link; both layouts share its destination. */
+.home-why__link { display: block; color: inherit; }
+.home-why__link:focus-visible { outline-offset: -4px; }
+.home-why__desktop > div:first-child img { min-height: 372px; }
+.home-why__desktop img[src*="/stats/"] { width: 46px; height: 46px; }
+@media (max-width: 1179px) {
+    .home-why__desktop { display: none; }
+    .home-why__mobile { display: block; padding-block: 32px 36px; }
+    .home-why__stats { min-height: 150px; padding-block: 24px; }
+    .home-why__stat > img { width: 44px; height: 44px; }
+    .home-why__stat strong { font-size: 28px; line-height: 1.2; }
+    .home-why__stat span { white-space: normal; font-size: 15px; line-height: 1.7; }
+}
+@media (min-width: 1180px) {
+    .home-why__desktop { display: flex; }
+    .home-why__mobile { display: none; }
+}
+@media (max-width: 639px) {
+    .home-why__stats { min-height: 172px; padding: 24px 8px; }
+    .home-why__stat { flex-direction: column; gap: 12px; padding-inline: 4px; text-align: center; }
+    .home-why__stat > img { width: 38px; height: 38px; }
+    .home-why__stat strong { font-size: 24px; }
+    .home-why__stat span { font-size: 14px; }
+
+    /* Keep the full paragraph in the DOM; show a two-line excerpt on phones. */
+    body[data-page="home"] main .home-article__row { grid-template-columns: clamp(96px, 27vw, 128px) minmax(0,1fr) 44px; gap: 8px; padding-block: 16px; }
+    .home-article__media { aspect-ratio: 1; }
+    .home-article__media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    body[data-page="home"] main .home-article__description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .home-article__row > a { min-width: 44px; min-height: 44px; }
+}
+@media (max-width: 359px) {
+    body[data-page="home"] main .home-article__row { grid-template-columns: 88px minmax(0,1fr) 44px; }
+}
