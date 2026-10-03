@@ -1,0 +1,108 @@
+/* EDIT SIZES HERE.
+ * Mobile <= 639px; tablet 640–1179px; desktop >= 1180px.
+ * Values ending in -desktop/-tablet/-mobile are inputs. The active variables
+ * below switch at the breakpoints; page styles consume them without hardcoding.
+ * Heights are minimums: longer text and search forms must remain visible. */
+body[data-page] {
+    --hero-height-desktop: 31rem;
+    --hero-height-tablet: 31rem;
+    --hero-height-mobile: 25svh;
+    --hero-eyebrow-desktop: 28px;
+    --hero-eyebrow-tablet: 20px;
+    --hero-eyebrow-mobile: 20px;
+    --hero-title-desktop: 42px;
+    --hero-title-tablet: 38px;
+    --hero-title-mobile: 25px;
+    --hero-description-desktop: 22px;
+    --hero-description-tablet: 18px;
+    --hero-description-mobile: 18px;
+    --hero-top-desktop: 120px;
+    --hero-top-tablet: 144px;
+    --hero-top-mobile: 132px;
+    --hero-bottom: 40px;
+    --hero-summary-desktop: 0px;
+    --hero-summary-tablet: 0px;
+    --hero-summary-mobile: 0px;
+    --hero-eyebrow-leading: 1.5;
+    --hero-title-leading: 1.4;
+    --hero-description-leading: 1.55;
+    --text-body-desktop: 16px;
+    --text-body-tablet: 16px;
+    --text-body-mobile: 15px;
+    --text-card-desktop: 18px;
+    --text-card-tablet: 17px;
+    --text-card-mobile: 16px;
+    --text-section-desktop: 28px;
+    --text-section-tablet: 26px;
+    --text-section-mobile: 22px;
+    --text-control: 16px;
+    --text-label: 14px;
+    --text-navigation: 14px;
+}
+
+/* PAGE OVERRIDES: add only the values that differ from the shared defaults.
+ * Example: body[data-page="projects"] { --hero-title-desktop: 44px; }
+ * Set all page overrides here, above the breakpoint resolvers. */
+body[data-page="home"] {
+    --hero-top-tablet: 168px;
+}
+body[data-page="about"] {
+    --hero-bottom: 64px;
+    --hero-summary-desktop: 36px;
+    --hero-summary-tablet: 36px;
+    --hero-summary-mobile: 24px;
+}
+body[data-page="project-details"] {
+    --hero-summary-desktop: 150px;
+    --hero-summary-tablet: 142px;
+    --hero-summary-mobile: 144px;
+}
+body[data-page="product-details"] {
+    --hero-summary-desktop: 176px;
+    --hero-summary-tablet: 176px;
+    --hero-summary-mobile: 24px;
+}
+body[data-page="industry-textile"] {
+    --hero-summary-desktop: 9.2rem;
+    --hero-summary-tablet: 8rem;
+    --hero-summary-mobile: 12.2rem;
+}
+
+body[data-page] {
+    --hero-height: var(--hero-height-desktop);
+    --hero-eyebrow: var(--hero-eyebrow-desktop);
+    --hero-title: var(--hero-title-desktop);
+    --hero-description: var(--hero-description-desktop);
+    --hero-top: var(--hero-top-desktop);
+    --hero-summary-preferred: var(--hero-summary-desktop);
+    --text-body: var(--text-body-desktop);
+    --text-card: var(--text-card-desktop);
+    --text-section: var(--text-section-desktop);
+}
+@media (min-width: 640px) and (max-width: 1179px) {
+    body[data-page] {
+        --hero-height: var(--hero-height-tablet);
+        --hero-eyebrow: var(--hero-eyebrow-tablet);
+        --hero-title: var(--hero-title-tablet);
+        --hero-description: var(--hero-description-tablet);
+        --hero-top: var(--hero-top-tablet);
+        --hero-summary-preferred: var(--hero-summary-tablet);
+        --text-body: var(--text-body-tablet);
+        --text-card: var(--text-card-tablet);
+        --text-section: var(--text-section-tablet);
+    }
+}
+@media (max-width: 639px) {
+    body[data-page] {
+        --hero-height: var(--hero-height-mobile);
+        --hero-eyebrow: var(--hero-eyebrow-mobile);
+        --hero-title: var(--hero-title-mobile);
+        --hero-description: var(--hero-description-mobile);
+        --hero-top: var(--hero-top-mobile);
+        --hero-summary-preferred: var(--hero-summary-mobile);
+        --text-body: var(--text-body-mobile);
+        --text-card: var(--text-card-mobile);
+        --text-section: var(--text-section-mobile);
+    }
+    body[data-page="about"] { --hero-bottom: 48px; }
+}

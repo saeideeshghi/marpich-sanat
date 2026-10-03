@@ -82,7 +82,7 @@
 
     color: #79b6ed;
 
-    font-size: 14px;
+    font-size: var(--hero-eyebrow);
 
     font-weight: 500;
 
@@ -94,7 +94,7 @@
 
     color: #ffffff;
 
-    font-size: max(14px, clamp(27px, 2.25vw, 36px));
+    font-size: var(--hero-title);
 
     font-weight: 700;
 
@@ -1259,13 +1259,13 @@
     }
 
     .products-hero__eyebrow {
-        font-size: 14px;
+        font-size: var(--hero-eyebrow);
     }
 
     .products-hero__title {
         margin-top: 4px;
 
-        font-size: 20px;
+        font-size: var(--hero-title);
 
         line-height: 1.55;
     }
@@ -1732,7 +1732,7 @@
     }
 
     .products-hero__title {
-        font-size: 18px;
+        font-size: var(--hero-title);
     }
 
     .product-card__media {

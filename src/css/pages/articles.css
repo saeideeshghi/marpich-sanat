@@ -52,7 +52,7 @@
     display: inline-block;
     margin: 0 0 8px;
     color: var(--articles-blue);
-    font-size: 18px;
+    font-size: var(--hero-eyebrow);
     font-weight: 600;
     line-height: 1.6;
 }
@@ -70,7 +70,7 @@
 
 .articles-hero__title {
     margin: 0;
-    font-size: max(14px, clamp(31px, 2.6vw, 43px));
+    font-size: var(--hero-title);
     font-weight: 800;
     line-height: 1.35;
 }
@@ -79,7 +79,7 @@
     max-width: 940px;
     margin: 11px 0 0;
     color: rgb(255 255 255 / 0.9);
-    font-size: 14px;
+    font-size: var(--hero-description);
     line-height: 1.95;
 }
 
@@ -301,8 +301,19 @@
     min-height: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    transform: scale(1.025);
+    transform: scale(var(--article-image-scale, 1.025));
     transform-origin: center;
+}
+/* These exported SVGs include 4px/12px vertical shadow gutters and an inset
+ * rounded frame. Crop the export's gutters in grid and list layouts alike. */
+.article-card__media img[src$=".svg"] { --article-image-scale: 1.16; }
+
+body[data-page="articles"] .site-hero .articles-hero__heading .site-hero__description,
+body[data-page="articles"] .articles-page main :is(p.site-prose, .article-card__description) {
+    text-align: justify;
+    text-align-last: right;
+    text-justify: inter-word;
+    text-wrap: wrap;
 }
 
 .article-card__media.is-image-fallback::after {
@@ -546,7 +557,7 @@
 
     .articles-hero__eyebrow {
         margin-bottom: 5px;
-        font-size: 14px;
+        font-size: var(--hero-eyebrow);
     }
 
     .articles-hero__eyebrow::after {
@@ -556,14 +567,14 @@
     }
 
     .articles-hero__title {
-        font-size: 25px;
+        font-size: var(--hero-title);
         line-height: 1.5;
     }
 
     .articles-hero__description {
         max-width: 94%;
         margin-top: 6px;
-        font-size: 14px;
+        font-size: var(--hero-description);
         line-height: 1.9;
     }
 
@@ -728,7 +739,7 @@
         width: min(calc(100% - 20px), 560px);
     }
     .articles-hero__title {
-        font-size: 22px;
+        font-size: var(--hero-title);
     }
     .article-card__media,
     .articles-grid.is-list .article-card__media {

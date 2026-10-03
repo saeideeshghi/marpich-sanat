@@ -1,6 +1,8 @@
 /* Header geometry is shared across every page; 1180px matches menu.js. */
 .site-header {
     direction: rtl;
+    /* Direct body child: never trapped under a hero or summary-card layer. */
+    z-index: 40;
 }
 .site-header__desktop {
     display: none;
@@ -469,7 +471,7 @@ body.menu-open {
 }
 
 /* Shared navigation typography. Footer styles live in footer.css. */
-.site-navigation > ul { font-size: 14px; }
+.site-navigation > ul { font-size: var(--text-navigation, 14px); }
 @media (min-width: 1180px) and (max-width: 1279px) {
     .site-header__desktop { padding-right: 24px; padding-left: 40px; }
     .site-navigation { margin-right: 22px; }

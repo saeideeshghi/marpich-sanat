@@ -15,17 +15,20 @@
     </head>
 
     <body data-page="industries" dir="rtl">
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
+
         <div id="top" class="industries-page" data-industries-page>
             <!-- HERO / SHARED HEADER -->
 
-            <section class="industries-hero" aria-labelledby="industries-page-title">
-                <!-- @include header -->
+            <section class="industries-hero site-hero" aria-labelledby="industries-page-title" data-site-hero>
 
-                <div class="site-container">
+
+                <div class="site-container site-hero__content">
                     <div class="industries-hero__heading">
-                        <p class="industries-hero__eyebrow">دسته‌بندی محصولات مرتبط با هر صنعت</p>
+                        <p class="industries-hero__eyebrow site-hero__eyebrow">دسته‌بندی محصولات مرتبط با هر صنعت</p>
 
-                        <h1 id="industries-page-title" class="industries-hero__title">
+                        <h1 id="industries-page-title" class="industries-hero__title site-hero__title">
                             تجهیزات مهندسی و تأسیسات یکپارچه صنایع تحت پوشش
                         </h1>
                     </div>

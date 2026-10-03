@@ -41,7 +41,7 @@
 .projects-page__eyebrow {
     margin: 0;
     color: var(--color-brand-blue, #79b6ed);
-    font-size: 28px;
+    font-size: var(--hero-eyebrow);
     font-weight: 600;
 }
 
@@ -56,9 +56,9 @@
 .projects-page__hero-title {
     margin: 1.6rem 0 0;
     color: #fff;
-    /* font-size: max(14px, clamp(2rem, 3vw, 2.75rem));
+    /* font-size: var(--hero-title);
      */
-     font-size: 42px;
+     font-size: var(--hero-title);
     line-height: 1.55;
     font-weight: 800;
 }
@@ -67,7 +67,7 @@
     max-width: 42rem;
     margin: 1rem 0 0;
     color: rgb(255 255 255 / 0.82);
-    font-size: 2rem;
+    font-size: var(--hero-description);
     line-height: 2;
 }
 
@@ -525,7 +525,7 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
     }
 
     .projects-page__eyebrow {
-        font-size: 20px;
+        font-size: var(--hero-eyebrow);
     }
 
     .projects-page__eyebrow-line {
@@ -535,13 +535,13 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
 
     .projects-page__hero-title {
         margin-top: 1.15rem;
-        font-size: 1.35rem;
+        font-size: var(--hero-title);
         line-height: 1.8;
     }
 
     .projects-page__hero-description {
         margin-top: 0.55rem;
-        font-size: 0.875rem;
+        font-size: var(--hero-description);
         line-height: 2;
     }
 
@@ -690,7 +690,7 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
     }
 
     .projects-page__hero-title {
-        font-size: 1.2rem;
+        font-size: var(--hero-title);
     }
 
     .projects-page__card-title {

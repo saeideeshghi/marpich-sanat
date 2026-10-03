@@ -56,7 +56,7 @@
 
 .about-hero__title {
     margin: 22px 0 0;
-    font-size: max(14px, clamp(37px, 3vw, 44px));
+    font-size: var(--hero-title);
     font-weight: 700;
     line-height: 1.32;
     letter-spacing: -0.025em;
@@ -66,7 +66,7 @@
     max-width: 1210px;
     margin: 13px 0 0;
     color: rgb(255 255 255 / 0.92);
-    font-size: 14px;
+    font-size: var(--hero-description);
     font-weight: 400;
     line-height: 2;
 }
@@ -833,7 +833,7 @@
 
     .about-hero__title {
         margin-top: 15px;
-        font-size: max(14px, clamp(21px, 6.2vw, 24px));
+        font-size: var(--hero-title);
         line-height: 1.4;
     }
 
@@ -841,7 +841,7 @@
         max-width: 100%;
         margin-top: 5px;
         color: rgb(255 255 255 / 0.92);
-        font-size: max(14px, clamp(7.5px, 2.2vw, 8.6px));
+        font-size: var(--hero-description);
         line-height: 1.8;
     }
 
@@ -1249,11 +1249,11 @@
     }
 
     .about-hero__title {
-        font-size: 20px;
+        font-size: var(--hero-title);
     }
 
     .about-hero__description {
-        font-size: 14px;
+        font-size: var(--hero-description);
     }
 
     .about-team-wrap {
@@ -1276,24 +1276,22 @@
 
 /* First-screen team image. Actual remaining viewport space is measured in about.js. */
 .about-hero-shell { min-height: 0; padding-bottom: 64px; }
-.about-hero-shell { isolation: auto; }
-.about-hero-shell > .site-pattern-layer { z-index: 0; }
 .about-main { z-index: 1; }
 .about-hero { padding-top: 100px; }
 .about-hero__title { margin-top: 12px; }
-.about-hero__description { margin-top: 8px; font-size: 16px; line-height: 1.8; }
+.about-hero__description { margin-top: 8px; font-size: var(--hero-description); line-height: 1.8; }
 .about-team-wrap { z-index: 2; transform: translateY(-36px); margin-bottom: -36px; }
 .about-team-media { aspect-ratio: auto; height: auto; background: transparent; box-shadow: none; }
 .about-team-wrap { width: min(calc(100% - 64px), 1760px); }
-.about-team-media__image { position: static; width: 100%; height: auto; max-width: 100%; margin-inline: auto; max-height: var(--about-image-space, calc(100svh - 300px)); object-fit: cover; object-position: center; border-radius: inherit; }
+.about-team-media__image { position: static; width: 100%; height: auto; max-width: 100%; margin-inline: auto; max-height: var(--about-image-space, calc(100svh - 300px)); object-fit: cover; object-position: center top; border-radius: inherit; }
 @media (min-width: 1600px) {
     .about-container.about-team-wrap { width: min(calc(100% - 64px), 1760px) !important; }
 }
 @media (max-width: 767px) {
     .about-hero { padding-top: 94px; }
     .about-hero-shell { padding-bottom: 48px; }
-    .about-hero__title { font-size: clamp(24px, 6vw, 32px); }
-    .about-hero__description { font-size: 14px; }
+    .about-hero__title { font-size: var(--hero-title); }
+    .about-hero__description { font-size: var(--hero-description); }
     .about-team-wrap { transform: translateY(-24px); margin-bottom: -24px; }
     .about-team-wrap { width: calc(100% - 24px); }
     .about-team-media__image { max-height: var(--about-image-space, calc(100svh - 330px)); }

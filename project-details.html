@@ -11,11 +11,14 @@
     </head>
 
     <body id="top" data-page="project-details" class="bg-page-bg text-text-dark">
-        <div class="project-details__hero relative bg-brand-navy text-white">
-            <!-- @include header -->
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
 
-            <div class="project-details__hero-inner mx-auto w-full max-w-[82.5rem] px-4 sm:px-6 lg:px-8">
-                <nav aria-label="مسیر صفحه" class="project-details__breadcrumb">
+        <div class="project-details__hero relative bg-brand-navy text-white site-hero" data-site-hero>
+
+
+            <div class="project-details__hero-inner mx-auto w-full max-w-[82.5rem] px-4 sm:px-6 lg:px-8 site-hero__content">
+                <nav aria-label="مسیر صفحه" class="project-details__breadcrumb site-hero__eyebrow">
                     <ol class="flex flex-wrap items-center gap-2">
                         <li><a href="index.html">خانه</a></li>
                         <li aria-hidden="true">/</li>
@@ -26,8 +29,8 @@
                 </nav>
 
                 <div class="project-details__hero-copy">
-                    <h1>گروه کارخانجات چرم مشهد</h1>
-                    <p class="site-prose">طراحی، ساخت و اجرای سیستم اگزاست صنعتی، اسکرابر و تهویه هوشمند سالن‌های دباغی و پرداخت</p>
+                    <h1 class="site-hero__title">گروه کارخانجات چرم مشهد</h1>
+                    <p class="site-prose site-hero__description">طراحی، ساخت و اجرای سیستم اگزاست صنعتی، اسکرابر و تهویه هوشمند سالن‌های دباغی و پرداخت</p>
                 </div>
             </div>
         </div>

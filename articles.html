@@ -11,15 +11,18 @@
     </head>
 
     <body data-page="articles" dir="rtl">
-        <div id="top" class="articles-page" data-articles-page>
-            <section class="articles-hero" aria-labelledby="articles-page-title">
-                <!-- @include header -->
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
 
-                <div class="articles-container">
+        <div id="top" class="articles-page" data-articles-page>
+            <section class="articles-hero site-hero" aria-labelledby="articles-page-title" data-site-hero>
+
+
+                <div class="articles-container site-hero__content">
                     <div class="articles-hero__heading">
-                        <p class="articles-hero__eyebrow">مقالات</p>
-                        <h1 id="articles-page-title" class="articles-hero__title">دانش مهندسی و بینش صنعتی</h1>
-                        <p class="articles-hero__description site-prose">
+                        <p class="articles-hero__eyebrow site-hero__eyebrow">مقالات</p>
+                        <h1 id="articles-page-title" class="articles-hero__title site-hero__title">دانش مهندسی و بینش صنعتی</h1>
+                        <p class="articles-hero__description site-prose site-hero__description">
                             مقالات، تحلیل‌ها و تجربیات فنی مارپیچ در زمینه تهویه صنعتی، انتقال هوا، تولید تجهیزات و اجرای
                             پروژه‌های مهندسی.
                         </p>

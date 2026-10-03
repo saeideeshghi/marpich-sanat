@@ -1,0 +1,8601 @@
+{
+  "cases": 108,
+  "pages": 12,
+  "widths": [
+    320,
+    390,
+    639,
+    640,
+    900,
+    1179,
+    1180,
+    1440,
+    1920
+  ],
+  "errors": [],
+  "failures": [],
+  "interactions": [
+    "All 4 desktop dropdowns in all 12 pages at 1180 and 1440px: visible and above page content",
+    "Per-page font variable updates the computed size and preserves clearance above summary",
+    "Article 10 images: 390px grid/list cover",
+    "Article 10 images: 900px grid/list cover",
+    "Article 10 images: 1440px grid/list cover",
+    "Article search and reset regression",
+    "Editable products: phone/desktop typing, selection, Persian/Arabic spelling, keyboard and clear",
+    "Project logo hover and industry zoom preserved",
+    "Mobile menu after header relocation"
+  ],
+  "metrics": [
+    {
+      "page": "index",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 767.75,
+        "bottom": 767.75,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 288,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 288,
+          "height": 105,
+          "bottom": 279,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 315,
+          "width": 288,
+          "height": 272.75,
+          "bottom": 587.75,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 448.375,
+        "bottom": 448.375,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 10,
+          "y": 132,
+          "width": 300,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 10,
+          "y": 186,
+          "width": 300,
+          "height": 70,
+          "bottom": 256,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 10,
+          "y": 272,
+          "width": 300,
+          "height": 136.375,
+          "bottom": 408.375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 694.671875,
+        "bottom": 694.671875,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 12,
+          "y": 132,
+          "width": 296,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 12,
+          "y": 174,
+          "width": 296,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 726.453125,
+        "bottom": 726.453125,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 292,
+          "height": 60,
+          "bottom": 192,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 14,
+          "y": 204,
+          "width": 292,
+          "height": 70,
+          "bottom": 274,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 1543.6875,
+        "bottom": 1543.6875,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 223,
+          "y": 132,
+          "width": 77,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 20,
+          "y": 185,
+          "width": 280,
+          "height": 105,
+          "bottom": 290,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 20,
+          "y": 306,
+          "width": 280,
+          "height": 167.1875,
+          "bottom": 473.1875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 533.1875,
+            "width": 280,
+            "height": 497.25,
+            "bottom": 1030.4375,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 533.1875,
+            "width": 280,
+            "height": 180,
+            "bottom": 713.1875,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 20,
+            "y": 713.1875,
+            "width": 280,
+            "height": 317.25,
+            "bottom": 1030.4375,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 1046.4375,
+            "width": 280,
+            "height": 497.25,
+            "bottom": 1543.6875,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 1046.4375,
+            "width": 280,
+            "height": 180,
+            "bottom": 1226.4375,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 20,
+            "y": 1226.4375,
+            "width": 280,
+            "height": 317.25,
+            "bottom": 1543.6875,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 449.96875,
+        "bottom": 449.96875,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 10,
+          "y": 132,
+          "width": 300,
+          "height": 36.5,
+          "bottom": 168.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 10,
+          "y": 180.5,
+          "width": 300,
+          "height": 35,
+          "bottom": 215.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 10,
+          "y": 231.5,
+          "width": 300,
+          "height": 170.46875,
+          "bottom": 401.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 12,
+        "y": 425.96875,
+        "width": 296,
+        "height": 141.78125,
+        "bottom": 567.75,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 649.765625,
+        "bottom": 649.765625,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 257,
+          "y": 132,
+          "width": 53,
+          "height": 35.5,
+          "bottom": 167.5,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 10,
+          "y": 189.5,
+          "width": 300,
+          "height": 35,
+          "bottom": 224.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 10,
+          "y": 240.5,
+          "width": 300,
+          "height": 136.375,
+          "bottom": 376.875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 488.46875,
+        "bottom": 488.46875,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 288,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 288,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 278,
+          "width": 288,
+          "height": 170.46875,
+          "bottom": 448.46875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 401.375,
+        "bottom": 401.375,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 288,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 288,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 225,
+          "width": 288,
+          "height": 136.375,
+          "bottom": 361.375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 16,
+        "y": 385.375,
+        "width": 288,
+        "height": 250,
+        "bottom": 635.375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 287,
+        "bottom": 287,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 288,
+          "height": 68,
+          "bottom": 200,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 212,
+          "width": 288,
+          "height": 35,
+          "bottom": 247,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 271,
+        "width": 320,
+        "height": 812.28125,
+        "bottom": 1083.28125,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 439.46875,
+        "bottom": 439.46875,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 10,
+          "y": 132,
+          "width": 300,
+          "height": 67.1875,
+          "bottom": 199.1875,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "25px",
+          "x": 10,
+          "y": 211.1875,
+          "width": 300,
+          "height": 70,
+          "bottom": 281.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 10,
+          "y": 297.1875,
+          "width": 300,
+          "height": 102.28125,
+          "bottom": 399.46875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 10,
+        "y": 423.46875,
+        "width": 300,
+        "height": 320,
+        "bottom": 743.46875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 320,
+      "scrollWidth": 320,
+      "rootSize": 16,
+      "height": 568,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 705.234375,
+        "bottom": 705.234375,
+        "min": "142px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 292,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 14,
+          "y": 174,
+          "width": 292,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 162,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 615.34375,
+        "bottom": 615.34375,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 20,
+          "y": 132,
+          "width": 350,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 20,
+          "y": 174,
+          "width": 350,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 20,
+          "y": 280,
+          "width": 350,
+          "height": 204.5625,
+          "bottom": 484.5625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 414.28125,
+        "bottom": 414.28125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 362,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 14,
+          "y": 186,
+          "width": 362,
+          "height": 70,
+          "bottom": 256,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 14,
+          "y": 272,
+          "width": 362,
+          "height": 102.28125,
+          "bottom": 374.28125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 694.671875,
+        "bottom": 694.671875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 358,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 358,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 690.671875,
+        "bottom": 690.671875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 362,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 360,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1447.703125,
+        "bottom": 1447.703125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 293,
+          "y": 132,
+          "width": 77,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 20,
+          "y": 185,
+          "width": 350,
+          "height": 70,
+          "bottom": 255,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 20,
+          "y": 271,
+          "width": 350,
+          "height": 125.390625,
+          "bottom": 396.390625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 456.390625,
+            "width": 350,
+            "height": 487.65625,
+            "bottom": 944.046875,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 456.390625,
+            "width": 350,
+            "height": 180,
+            "bottom": 636.390625,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 20,
+            "y": 636.390625,
+            "width": 350,
+            "height": 307.65625,
+            "bottom": 944.046875,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 960.046875,
+            "width": 350,
+            "height": 487.65625,
+            "bottom": 1447.703125,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 960.046875,
+            "width": 350,
+            "height": 180,
+            "bottom": 1140.046875,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 20,
+            "y": 1140.046875,
+            "width": 350,
+            "height": 307.65625,
+            "bottom": 1447.703125,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 415.875,
+        "bottom": 415.875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 12,
+          "y": 132,
+          "width": 366,
+          "height": 36.5,
+          "bottom": 168.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 12,
+          "y": 180.5,
+          "width": 366,
+          "height": 35,
+          "bottom": 215.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 12,
+          "y": 231.5,
+          "width": 366,
+          "height": 136.375,
+          "bottom": 367.875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 12,
+        "y": 391.875,
+        "width": 366,
+        "height": 175.3125,
+        "bottom": 567.1875,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 615.671875,
+        "bottom": 615.671875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 325,
+          "y": 132,
+          "width": 53,
+          "height": 35.5,
+          "bottom": 167.5,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 12,
+          "y": 189.5,
+          "width": 366,
+          "height": 35,
+          "bottom": 224.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 12,
+          "y": 240.5,
+          "width": 366,
+          "height": 102.28125,
+          "bottom": 342.78125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 454.375,
+        "bottom": 454.375,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 358,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 358,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 278,
+          "width": 358,
+          "height": 136.375,
+          "bottom": 414.375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 367.28125,
+        "bottom": 367.28125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 358,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 358,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 225,
+          "width": 358,
+          "height": 102.28125,
+          "bottom": 327.28125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 16,
+        "y": 351.28125,
+        "width": 358,
+        "height": 250,
+        "bottom": 601.28125,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 249,
+        "bottom": 249,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 358,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 358,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 233,
+        "width": 390,
+        "height": 743.90625,
+        "bottom": 976.90625,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 402.28125,
+        "bottom": 402.28125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 362,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "25px",
+          "x": 14,
+          "y": 174,
+          "width": 362,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 14,
+          "y": 260,
+          "width": 362,
+          "height": 102.28125,
+          "bottom": 362.28125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 14,
+        "y": 386.28125,
+        "width": 362,
+        "height": 320,
+        "bottom": 706.28125,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 390,
+      "scrollWidth": 390,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 699.453125,
+        "bottom": 699.453125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 362,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 46,
+          "y": 174,
+          "width": 330,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 232,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 499.375,
+        "bottom": 499.375,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 20,
+          "y": 132,
+          "width": 599,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 20,
+          "y": 174,
+          "width": 599,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 20,
+          "y": 245,
+          "width": 599,
+          "height": 136.375,
+          "bottom": 381.375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 345.1875,
+        "bottom": 345.1875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 611,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 14,
+          "y": 186,
+          "width": 611,
+          "height": 35,
+          "bottom": 221,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 14,
+          "y": 237,
+          "width": 611,
+          "height": 68.1875,
+          "bottom": 305.1875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 620.78125,
+        "bottom": 620.78125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 59.5,
+          "y": 132,
+          "width": 520,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 59.5,
+          "y": 174,
+          "width": 520,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 616.890625,
+        "bottom": 616.890625,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 611,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 265,
+          "y": 174,
+          "width": 360,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 943.125,
+        "bottom": 943.125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 542,
+          "y": 132,
+          "width": 77,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 20,
+          "y": 185,
+          "width": 599,
+          "height": 35,
+          "bottom": 220,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 20,
+          "y": 236,
+          "width": 599,
+          "height": 83.59375,
+          "bottom": 319.59375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 379.59375,
+            "width": 599,
+            "height": 273.765625,
+            "bottom": 653.359375,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 379.59375,
+            "width": 191.671875,
+            "height": 273.765625,
+            "bottom": 653.359375,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 211.671875,
+            "y": 379.59375,
+            "width": 407.328125,
+            "height": 273.765625,
+            "bottom": 653.359375,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 669.359375,
+            "width": 599,
+            "height": 273.765625,
+            "bottom": 943.125,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 669.359375,
+            "width": 191.671875,
+            "height": 273.765625,
+            "bottom": 943.125,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 211.671875,
+            "y": 669.359375,
+            "width": 407.328125,
+            "height": 273.765625,
+            "bottom": 943.125,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 381.78125,
+        "bottom": 381.78125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 12,
+          "y": 132,
+          "width": 615,
+          "height": 36.5,
+          "bottom": 168.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 12,
+          "y": 180.5,
+          "width": 615,
+          "height": 35,
+          "bottom": 215.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 12,
+          "y": 231.5,
+          "width": 615,
+          "height": 102.28125,
+          "bottom": 333.78125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 12,
+        "y": 357.78125,
+        "width": 615,
+        "height": 294.59375,
+        "bottom": 652.375,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 581.578125,
+        "bottom": 581.578125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 546.5,
+          "y": 132,
+          "width": 53,
+          "height": 35.5,
+          "bottom": 167.5,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 39.5,
+          "y": 189.5,
+          "width": 560,
+          "height": 35,
+          "bottom": 224.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 39.5,
+          "y": 240.5,
+          "width": 560,
+          "height": 68.1875,
+          "bottom": 308.6875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 351.1875,
+        "bottom": 351.1875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 607,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 607,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 243,
+          "width": 607,
+          "height": 68.1875,
+          "bottom": 311.1875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 333.1875,
+        "bottom": 333.1875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 132,
+          "width": 607,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 16,
+          "y": 174,
+          "width": 607,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 16,
+          "y": 225,
+          "width": 607,
+          "height": 68.1875,
+          "bottom": 293.1875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 16,
+        "y": 333.1875,
+        "width": 607,
+        "height": 250,
+        "bottom": 583.1875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 249,
+        "bottom": 249,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 20,
+          "y": 132,
+          "width": 599,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "25px",
+          "x": 20,
+          "y": 174,
+          "width": 599,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 233,
+        "width": 639,
+        "height": 653.578125,
+        "bottom": 886.578125,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 333.1875,
+        "bottom": 333.1875,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 611,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "25px",
+          "x": 14,
+          "y": 174,
+          "width": 611,
+          "height": 35,
+          "bottom": 209,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "22px",
+          "x": 14,
+          "y": 225,
+          "width": 611,
+          "height": 68.1875,
+          "bottom": 293.1875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 14,
+        "y": 317.1875,
+        "width": 611,
+        "height": 320,
+        "bottom": 637.1875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 639,
+      "scrollWidth": 639,
+      "rootSize": 16,
+      "height": 812,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 639,
+        "height": 651.78125,
+        "bottom": 651.78125,
+        "min": "203px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 132,
+          "width": 611,
+          "height": 30,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "25px",
+          "x": 295,
+          "y": 174,
+          "width": 330,
+          "height": 70,
+          "bottom": 244,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 481,
+        "y": 50,
+        "width": 142,
+        "height": 55.09375,
+        "bottom": 105.09375,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 890.609375,
+        "bottom": 890.609375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 44,
+          "y": 168,
+          "width": 552,
+          "height": 30,
+          "bottom": 198,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 44,
+          "y": 210,
+          "width": 552,
+          "height": 106.375,
+          "bottom": 316.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 44,
+          "y": 358.375,
+          "width": 552,
+          "height": 412.234375,
+          "bottom": 770.609375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 426,
+        "y": 86,
+        "width": 170,
+        "height": 65.96875,
+        "bottom": 151.96875,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 539.84375,
+        "bottom": 539.84375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 144,
+          "width": 608,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 16,
+          "y": 200.796875,
+          "width": 608,
+          "height": 106.375,
+          "bottom": 307.171875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 16,
+          "y": 323.171875,
+          "width": 608,
+          "height": 176.671875,
+          "bottom": 499.84375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 701.15625,
+        "bottom": 701.15625,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 60,
+          "y": 144,
+          "width": 520,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 60,
+          "y": 186,
+          "width": 520,
+          "height": 106.375,
+          "bottom": 292.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 716.453125,
+        "bottom": 716.453125,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 144,
+          "width": 612,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 266,
+          "y": 186,
+          "width": 360,
+          "height": 159.5625,
+          "bottom": 345.5625,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 1177.46875,
+        "bottom": 1177.46875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 543,
+          "y": 144,
+          "width": 77,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 20,
+          "y": 197,
+          "width": 600,
+          "height": 106.375,
+          "bottom": 303.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 20,
+          "y": 319.375,
+          "width": 600,
+          "height": 216.5625,
+          "bottom": 535.9375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 20,
+            "y": 595.9375,
+            "width": 600,
+            "height": 281.765625,
+            "bottom": 877.703125,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 595.9375,
+            "width": 216,
+            "height": 281.765625,
+            "bottom": 877.703125,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 236,
+            "y": 595.9375,
+            "width": 384,
+            "height": 281.765625,
+            "bottom": 877.703125,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 20,
+            "y": 895.703125,
+            "width": 600,
+            "height": 281.765625,
+            "bottom": 1177.46875,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 20,
+            "y": 895.703125,
+            "width": 216,
+            "height": 281.765625,
+            "bottom": 1177.46875,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 236,
+            "y": 895.703125,
+            "width": 384,
+            "height": 281.765625,
+            "bottom": 1177.46875,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 561.25,
+        "bottom": 561.25,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 12,
+          "y": 144,
+          "width": 616,
+          "height": 36.5,
+          "bottom": 180.5,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 12,
+          "y": 192.5,
+          "width": 616,
+          "height": 53.1875,
+          "bottom": 245.6875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 12,
+          "y": 261.6875,
+          "width": 616,
+          "height": 235.5625,
+          "bottom": 497.25,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 12,
+        "y": 525.25,
+        "width": 616,
+        "height": 295.078125,
+        "bottom": 820.328125,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 779.140625,
+        "bottom": 779.140625,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 547,
+          "y": 144,
+          "width": 53,
+          "height": 35.5,
+          "bottom": 179.5,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 40,
+          "y": 201.5,
+          "width": 560,
+          "height": 53.1875,
+          "bottom": 254.6875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 40,
+          "y": 270.6875,
+          "width": 560,
+          "height": 235.5625,
+          "bottom": 506.25,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 601.9375,
+        "bottom": 601.9375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 592,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 592,
+          "height": 106.375,
+          "bottom": 292.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 326.375,
+          "width": 592,
+          "height": 235.5625,
+          "bottom": 561.9375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 592,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 592,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 255.1875,
+          "width": 592,
+          "height": 176.671875,
+          "bottom": 431.859375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 24,
+        "y": 455.859375,
+        "width": 592,
+        "height": 250,
+        "bottom": 705.859375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 592,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 592,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 320,
+        "width": 640,
+        "height": 685.46875,
+        "bottom": 1005.46875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 525.046875,
+        "bottom": 525.046875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 144,
+          "width": 608,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "38px",
+          "x": 16,
+          "y": 186,
+          "width": 608,
+          "height": 106.375,
+          "bottom": 292.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 16,
+          "y": 308.375,
+          "width": 608,
+          "height": 176.671875,
+          "bottom": 485.046875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 16,
+        "y": 509.046875,
+        "width": 608,
+        "height": 432,
+        "bottom": 941.046875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 640,
+      "scrollWidth": 640,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 697.15625,
+        "bottom": 697.15625,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 14,
+          "y": 144,
+          "width": 612,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 296,
+          "y": 186,
+          "width": 330,
+          "height": 106.375,
+          "bottom": 292.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 448,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "none"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 772.828125,
+        "bottom": 772.828125,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 44,
+          "y": 168,
+          "width": 812,
+          "height": 30,
+          "bottom": 198,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 44,
+          "y": 210,
+          "width": 812,
+          "height": 106.375,
+          "bottom": 316.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 44,
+          "y": 358.375,
+          "width": 812,
+          "height": 294.453125,
+          "bottom": 652.828125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 686,
+        "y": 86,
+        "width": 170,
+        "height": 65.96875,
+        "bottom": 151.96875,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 82,
+          "y": 144,
+          "width": 736,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 82,
+          "y": 200.796875,
+          "width": 736,
+          "height": 53.1875,
+          "bottom": 253.984375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 82,
+          "y": 269.984375,
+          "width": 736,
+          "height": 176.671875,
+          "bottom": 446.65625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 82,
+        "y": 549.59375,
+        "width": 95.1875,
+        "height": 44,
+        "bottom": 593.59375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 681.1875,
+        "bottom": 681.1875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 24,
+        "y": 1355.1875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1399.1875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 730.375,
+        "bottom": 730.375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 852,
+          "height": 106.375,
+          "bottom": 292.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 24,
+        "y": 1354.625,
+        "width": 96,
+        "height": 44,
+        "bottom": 1398.625,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 1052.09375,
+        "bottom": 1052.09375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 803,
+          "y": 144,
+          "width": 77,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 20,
+          "y": 197,
+          "width": 860,
+          "height": 53.1875,
+          "bottom": 250.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 20,
+          "y": 266.1875,
+          "width": 860,
+          "height": 144.375,
+          "bottom": 410.5625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 70,
+            "y": 470.5625,
+            "width": 760,
+            "height": 281.765625,
+            "bottom": 752.328125,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 70,
+            "y": 470.5625,
+            "width": 273.59375,
+            "height": 281.765625,
+            "bottom": 752.328125,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 343.59375,
+            "y": 470.5625,
+            "width": 486.40625,
+            "height": 281.765625,
+            "bottom": 752.328125,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 70,
+            "y": 770.328125,
+            "width": 760,
+            "height": 281.765625,
+            "bottom": 1052.09375,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 70,
+            "y": 770.328125,
+            "width": 273.59375,
+            "height": 281.765625,
+            "bottom": 1052.09375,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 343.59375,
+            "y": 770.328125,
+            "width": 486.40625,
+            "height": 281.765625,
+            "bottom": 1052.09375,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 505.859375,
+        "bottom": 505.859375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 40,
+          "bottom": 184,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 196,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 249.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 265.1875,
+          "width": 852,
+          "height": 176.671875,
+          "bottom": 441.859375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 32,
+        "y": 469.859375,
+        "width": 836,
+        "height": 374.140625,
+        "bottom": 844,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 760.859375,
+        "bottom": 760.859375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 823,
+          "y": 144,
+          "width": 53,
+          "height": 39,
+          "bottom": 183,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 205,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 258.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 274.1875,
+          "width": 852,
+          "height": 176.671875,
+          "bottom": 450.859375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 24,
+        "y": 784.859375,
+        "width": 96,
+        "height": 44,
+        "bottom": 828.859375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 273.1875,
+          "width": 852,
+          "height": 176.671875,
+          "bottom": 449.859375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 255.1875,
+          "width": 852,
+          "height": 117.78125,
+          "bottom": 372.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 24,
+        "y": 396.96875,
+        "width": 852,
+        "height": 390,
+        "bottom": 786.96875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 320,
+        "width": 900,
+        "height": 685.46875,
+        "bottom": 1005.46875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 16,
+          "y": 144,
+          "width": 868,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "38px",
+          "x": 16,
+          "y": 186,
+          "width": 868,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 16,
+          "y": 255.1875,
+          "width": 868,
+          "height": 117.78125,
+          "bottom": 372.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 16,
+        "y": 396.96875,
+        "width": 868,
+        "height": 432,
+        "bottom": 828.96875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 900,
+      "scrollWidth": 900,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 677.1875,
+        "bottom": 677.1875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 852,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 186,
+          "width": 852,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 708,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 24,
+        "y": 935.9375,
+        "width": 96,
+        "height": 44,
+        "bottom": 979.9375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 713.9375,
+        "bottom": 713.9375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 215,
+          "y": 168,
+          "width": 920,
+          "height": 30,
+          "bottom": 198,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 215,
+          "y": 210,
+          "width": 920,
+          "height": 106.375,
+          "bottom": 316.375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 215,
+          "y": 358.375,
+          "width": 920,
+          "height": 235.5625,
+          "bottom": 593.9375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 965,
+        "y": 86,
+        "width": 170,
+        "height": 65.96875,
+        "bottom": 151.96875,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 24,
+          "y": 144,
+          "width": 1131,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 24,
+          "y": 200.796875,
+          "width": 1131,
+          "height": 53.1875,
+          "bottom": 253.984375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 24,
+          "y": 269.984375,
+          "width": 1131,
+          "height": 117.78125,
+          "bottom": 387.765625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 24,
+        "y": 549.59375,
+        "width": 95.1875,
+        "height": 44,
+        "bottom": 593.59375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 681.1875,
+        "bottom": 681.1875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 69.5,
+          "y": 144,
+          "width": 1040,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 69.5,
+          "y": 186,
+          "width": 1040,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 69.5,
+        "y": 1355.1875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1399.1875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 677.1875,
+        "bottom": 677.1875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 49.5,
+          "y": 144,
+          "width": 1080,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 149.5,
+          "y": 186,
+          "width": 980,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 49.5,
+        "y": 1301.4375,
+        "width": 96,
+        "height": 44,
+        "bottom": 1345.4375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 1052.09375,
+        "bottom": 1052.09375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 1082,
+          "y": 144,
+          "width": 77,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 20,
+          "y": 197,
+          "width": 1139,
+          "height": 53.1875,
+          "bottom": 250.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 20,
+          "y": 266.1875,
+          "width": 1139,
+          "height": 144.375,
+          "bottom": 410.5625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 209.5,
+            "y": 470.5625,
+            "width": 760,
+            "height": 281.765625,
+            "bottom": 752.328125,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 209.5,
+            "y": 470.5625,
+            "width": 273.59375,
+            "height": 281.765625,
+            "bottom": 752.328125,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 483.09375,
+            "y": 470.5625,
+            "width": 486.40625,
+            "height": 281.765625,
+            "bottom": 752.328125,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 209.5,
+            "y": 770.328125,
+            "width": 760,
+            "height": 281.765625,
+            "bottom": 1052.09375,
+            "min": "0px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 209.5,
+            "y": 770.328125,
+            "width": 273.59375,
+            "height": 281.765625,
+            "bottom": 1052.09375,
+            "min": "0px",
+            "display": "block"
+          },
+          "details": {
+            "x": 483.09375,
+            "y": 770.328125,
+            "width": 486.40625,
+            "height": 281.765625,
+            "bottom": 1052.09375,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 505.859375,
+        "bottom": 505.859375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 69.5,
+          "y": 144,
+          "width": 1040,
+          "height": 40,
+          "bottom": 184,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 69.5,
+          "y": 196,
+          "width": 1040,
+          "height": 53.1875,
+          "bottom": 249.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 69.5,
+          "y": 265.1875,
+          "width": 1040,
+          "height": 176.671875,
+          "bottom": 441.859375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 32,
+        "y": 469.859375,
+        "width": 1115,
+        "height": 374.140625,
+        "bottom": 844,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 701.96875,
+        "bottom": 701.96875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 1076.5,
+          "y": 144,
+          "width": 53,
+          "height": 39,
+          "bottom": 183,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 49.5,
+          "y": 205,
+          "width": 1080,
+          "height": 53.1875,
+          "bottom": 258.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 49.5,
+          "y": 274.1875,
+          "width": 1080,
+          "height": 117.78125,
+          "bottom": 391.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 49.5,
+        "y": 725.96875,
+        "width": 96,
+        "height": 44,
+        "bottom": 769.96875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 32,
+          "y": 144,
+          "width": 1115,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 32,
+          "y": 186,
+          "width": 1115,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 32,
+          "y": 277.1875,
+          "width": 1115,
+          "height": 117.78125,
+          "bottom": 394.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 32,
+          "y": 144,
+          "width": 1115,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 287,
+          "y": 186,
+          "width": 860,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 287,
+          "y": 255.1875,
+          "width": 860,
+          "height": 117.78125,
+          "bottom": 372.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 32,
+        "y": 396.96875,
+        "width": 1115,
+        "height": 390,
+        "bottom": 786.96875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 32,
+          "y": 144,
+          "width": 1115,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "38px",
+          "x": 32,
+          "y": 186,
+          "width": 1115,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 320,
+        "width": 1179,
+        "height": 402.46875,
+        "bottom": 722.46875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 189.5,
+          "y": 144,
+          "width": 912,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "38px",
+          "x": 189.5,
+          "y": 186,
+          "width": 912,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "38px",
+          "x": 189.5,
+          "y": 255.1875,
+          "width": 912,
+          "height": 117.78125,
+          "bottom": 372.96875,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 77.5,
+        "y": 396.96875,
+        "width": 1024,
+        "height": 432,
+        "bottom": 828.96875,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 1179,
+      "scrollWidth": 1179,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1179,
+        "height": 677.1875,
+        "bottom": 677.1875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "20px",
+          "x": 49.5,
+          "y": 144,
+          "width": 1080,
+          "height": 30,
+          "bottom": 174,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "38px",
+          "x": 49.5,
+          "y": 186,
+          "width": 1080,
+          "height": 53.1875,
+          "bottom": 239.1875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 987,
+        "y": 54,
+        "width": 160,
+        "height": 62.078125,
+        "bottom": 116.078125,
+        "min": "auto",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 49.5,
+        "y": 913.1875,
+        "width": 96,
+        "height": 44,
+        "bottom": 957.1875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 720.265625,
+        "bottom": 720.265625,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 200,
+          "y": 120,
+          "width": 920,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 200,
+          "y": 174,
+          "width": 920,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 200,
+          "y": 274.796875,
+          "width": 920,
+          "height": 325.46875,
+          "bottom": 600.265625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 24,
+          "y": 120,
+          "width": 1132,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 24,
+          "y": 188.796875,
+          "width": 1132,
+          "height": 58.796875,
+          "bottom": 247.59375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 24,
+          "y": 263.59375,
+          "width": 1132,
+          "height": 130.1875,
+          "bottom": 393.78125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 24,
+        "y": 549.59375,
+        "width": 95.1875,
+        "height": 44,
+        "bottom": 593.59375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 16,
+          "y": 120,
+          "width": 1148,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 16,
+          "y": 174,
+          "width": 1148,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 16,
+        "y": 1310.796875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1354.796875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1060,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 140,
+          "y": 174,
+          "width": 980,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 1272.046875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1316.046875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 846.328125,
+        "bottom": 846.328125,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 1009,
+          "y": 120,
+          "width": 111,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 185,
+          "width": 1060,
+          "height": 58.796875,
+          "bottom": 243.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 60,
+          "y": 259.796875,
+          "width": 1060,
+          "height": 159.59375,
+          "bottom": 419.390625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 599,
+            "y": 483.390625,
+            "width": 521,
+            "height": 362.9375,
+            "bottom": 846.328125,
+            "min": "310px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 599,
+            "y": 483.390625,
+            "width": 187.546875,
+            "height": 362.9375,
+            "bottom": 846.328125,
+            "min": "100%",
+            "display": "block"
+          },
+          "details": {
+            "x": 786.546875,
+            "y": 483.390625,
+            "width": 333.453125,
+            "height": 362.9375,
+            "bottom": 846.328125,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 60,
+            "y": 483.390625,
+            "width": 521,
+            "height": 362.9375,
+            "bottom": 846.328125,
+            "min": "310px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 60,
+            "y": 483.390625,
+            "width": 187.546875,
+            "height": 362.9375,
+            "bottom": 846.328125,
+            "min": "100%",
+            "display": "block"
+          },
+          "details": {
+            "x": 247.546875,
+            "y": 483.390625,
+            "width": 333.453125,
+            "height": 362.9375,
+            "bottom": 846.328125,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 518.078125,
+        "bottom": 518.078125,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1060,
+          "height": 52,
+          "bottom": 172,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 184,
+          "width": 1060,
+          "height": 58.796875,
+          "bottom": 242.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 60,
+          "y": 258.796875,
+          "width": 1060,
+          "height": 195.28125,
+          "bottom": 454.078125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 32,
+        "y": 482.078125,
+        "width": 1116,
+        "height": 361.921875,
+        "bottom": 844,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 609.984375,
+        "bottom": 609.984375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 1046,
+          "y": 120,
+          "width": 74,
+          "height": 51,
+          "bottom": 171,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 193,
+          "width": 1060,
+          "height": 58.796875,
+          "bottom": 251.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 60,
+          "y": 267.796875,
+          "width": 1060,
+          "height": 130.1875,
+          "bottom": 397.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 637.984375,
+        "width": 96,
+        "height": 44,
+        "bottom": 681.984375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 32,
+          "y": 120,
+          "width": 1116,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 32,
+          "y": 174,
+          "width": 1116,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 32,
+          "y": 270.796875,
+          "width": 1116,
+          "height": 130.1875,
+          "bottom": 400.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 32,
+          "y": 120,
+          "width": 1116,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 288,
+          "y": 174,
+          "width": 860,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 288,
+          "y": 248.796875,
+          "width": 860,
+          "height": 130.1875,
+          "bottom": 378.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 32,
+        "y": 402.984375,
+        "width": 1116,
+        "height": 500,
+        "bottom": 902.984375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 32,
+          "y": 120,
+          "width": 1116,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "42px",
+          "x": 32,
+          "y": 174,
+          "width": 1116,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 0,
+        "y": 320,
+        "width": 1180,
+        "height": 470,
+        "bottom": 790,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 244,
+          "y": 120,
+          "width": 912,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "42px",
+          "x": 244,
+          "y": 174,
+          "width": 912,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 244,
+          "y": 248.796875,
+          "width": 912,
+          "height": 130.1875,
+          "bottom": 378.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 24,
+        "y": 402.984375,
+        "width": 1132,
+        "height": 496,
+        "bottom": 898.984375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 1180,
+      "scrollWidth": 1180,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1060,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 174,
+          "width": 1060,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 806.796875,
+        "width": 96,
+        "height": 44,
+        "bottom": 850.796875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 720.265625,
+        "bottom": 720.265625,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 460,
+          "y": 120,
+          "width": 920,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 460,
+          "y": 174,
+          "width": 920,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 460,
+          "y": 274.796875,
+          "width": 920,
+          "height": 325.46875,
+          "bottom": 600.265625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 130,
+          "y": 120,
+          "width": 1180,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 130,
+          "y": 188.796875,
+          "width": 1180,
+          "height": 58.796875,
+          "bottom": 247.59375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 130,
+          "y": 263.59375,
+          "width": 1180,
+          "height": 130.1875,
+          "bottom": 393.78125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 130,
+        "y": 552.53125,
+        "width": 95.1875,
+        "height": 44,
+        "bottom": 596.53125,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1320,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 174,
+          "width": 1320,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 1310.796875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1354.796875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1320,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 400,
+          "y": 174,
+          "width": 980,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 1272.046875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1316.046875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 820.46875,
+        "bottom": 820.46875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 1269,
+          "y": 120,
+          "width": 111,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 185,
+          "width": 1320,
+          "height": 58.796875,
+          "bottom": 243.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 60,
+          "y": 259.796875,
+          "width": 1320,
+          "height": 159.59375,
+          "bottom": 419.390625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 729,
+            "y": 483.390625,
+            "width": 651,
+            "height": 337.078125,
+            "bottom": 820.46875,
+            "min": "310px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 729,
+            "y": 483.390625,
+            "width": 234.359375,
+            "height": 337.078125,
+            "bottom": 820.46875,
+            "min": "100%",
+            "display": "block"
+          },
+          "details": {
+            "x": 963.359375,
+            "y": 483.390625,
+            "width": 416.640625,
+            "height": 337.078125,
+            "bottom": 820.46875,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 60,
+            "y": 483.390625,
+            "width": 651,
+            "height": 337.078125,
+            "bottom": 820.46875,
+            "min": "310px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 60,
+            "y": 483.390625,
+            "width": 234.359375,
+            "height": 337.078125,
+            "bottom": 820.46875,
+            "min": "100%",
+            "display": "block"
+          },
+          "details": {
+            "x": 294.359375,
+            "y": 483.390625,
+            "width": 416.640625,
+            "height": 337.078125,
+            "bottom": 820.46875,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1320,
+          "height": 52,
+          "bottom": 172,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 184,
+          "width": 1320,
+          "height": 58.796875,
+          "bottom": 242.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 60,
+          "y": 258.796875,
+          "width": 1320,
+          "height": 130.1875,
+          "bottom": 388.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 32,
+        "y": 460,
+        "width": 1376,
+        "height": 384,
+        "bottom": 844,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 609.984375,
+        "bottom": 609.984375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 1306,
+          "y": 120,
+          "width": 74,
+          "height": 51,
+          "bottom": 171,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 193,
+          "width": 1320,
+          "height": 58.796875,
+          "bottom": 251.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 60,
+          "y": 267.796875,
+          "width": 1320,
+          "height": 130.1875,
+          "bottom": 397.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 637.984375,
+        "width": 96,
+        "height": 44,
+        "bottom": 681.984375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 92,
+          "y": 120,
+          "width": 1256,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 92,
+          "y": 174,
+          "width": 1256,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 92,
+          "y": 270.796875,
+          "width": 1256,
+          "height": 130.1875,
+          "bottom": 400.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 92,
+          "y": 120,
+          "width": 1256,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 488,
+          "y": 174,
+          "width": 860,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 488,
+          "y": 248.796875,
+          "width": 860,
+          "height": 130.1875,
+          "bottom": 378.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 92,
+        "y": 402.984375,
+        "width": 1256,
+        "height": 500,
+        "bottom": 902.984375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 92,
+          "y": 120,
+          "width": 1256,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "42px",
+          "x": 92,
+          "y": 174,
+          "width": 1256,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 60,
+        "y": 320,
+        "width": 1320,
+        "height": 470,
+        "bottom": 790,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 468,
+          "y": 120,
+          "width": 912,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "42px",
+          "x": 468,
+          "y": 174,
+          "width": 912,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 468,
+          "y": 248.796875,
+          "width": 912,
+          "height": 130.1875,
+          "bottom": 378.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 60,
+        "y": 402.984375,
+        "width": 1320,
+        "height": 496,
+        "bottom": 898.984375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 60,
+          "y": 120,
+          "width": 1320,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 60,
+          "y": 174,
+          "width": 1320,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 60,
+        "y": 806.796875,
+        "width": 96,
+        "height": 44,
+        "bottom": 850.796875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "index",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 720.265625,
+        "bottom": 720.265625,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 880,
+          "y": 120,
+          "width": 920,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 880,
+          "y": 174,
+          "width": 920,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 880,
+          "y": 274.796875,
+          "width": 920,
+          "height": 325.46875,
+          "bottom": 600.265625,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 0,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "projects",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 120,
+          "y": 120,
+          "width": 1680,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 120,
+          "y": 188.796875,
+          "width": 1680,
+          "height": 58.796875,
+          "bottom": 247.59375,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 120,
+          "y": 263.59375,
+          "width": 1680,
+          "height": 130.1875,
+          "bottom": 393.78125,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 120,
+        "y": 552.53125,
+        "width": 95.1875,
+        "height": 44,
+        "bottom": 596.53125,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "products",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 120,
+          "y": 120,
+          "width": 1680,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 120,
+          "y": 174,
+          "width": 1680,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 120,
+        "y": 1310.796875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1354.796875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "industries",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 120,
+          "y": 120,
+          "width": 1680,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 820,
+          "y": 174,
+          "width": 980,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 120,
+        "y": 1272.046875,
+        "width": 96,
+        "height": 44,
+        "bottom": 1316.046875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    },
+    {
+      "page": "contact",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 833.859375,
+        "bottom": 833.859375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 1689,
+          "y": 120,
+          "width": 111,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 120,
+          "y": 185,
+          "width": 1680,
+          "height": 58.796875,
+          "bottom": 243.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 120,
+          "y": 259.796875,
+          "width": 1680,
+          "height": 79.796875,
+          "bottom": 339.59375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [
+        {
+          "card": {
+            "x": 969,
+            "y": 403.59375,
+            "width": 831,
+            "height": 430.265625,
+            "bottom": 833.859375,
+            "min": "310px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 969,
+            "y": 403.59375,
+            "width": 299.15625,
+            "height": 430.265625,
+            "bottom": 833.859375,
+            "min": "100%",
+            "display": "block"
+          },
+          "details": {
+            "x": 1268.15625,
+            "y": 403.59375,
+            "width": 531.84375,
+            "height": 430.265625,
+            "bottom": 833.859375,
+            "min": "auto",
+            "display": "flex"
+          }
+        },
+        {
+          "card": {
+            "x": 120,
+            "y": 403.59375,
+            "width": 831,
+            "height": 430.265625,
+            "bottom": 833.859375,
+            "min": "310px",
+            "display": "grid"
+          },
+          "map": {
+            "x": 120,
+            "y": 403.59375,
+            "width": 299.15625,
+            "height": 430.265625,
+            "bottom": 833.859375,
+            "min": "100%",
+            "display": "block"
+          },
+          "details": {
+            "x": 419.15625,
+            "y": 403.59375,
+            "width": 531.84375,
+            "height": 430.265625,
+            "bottom": 833.859375,
+            "min": "auto",
+            "display": "flex"
+          }
+        }
+      ],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "about",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 120,
+          "y": 120,
+          "width": 1680,
+          "height": 52,
+          "bottom": 172,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 120,
+          "y": 184,
+          "width": 1680,
+          "height": 58.796875,
+          "bottom": 242.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 120,
+          "y": 258.796875,
+          "width": 1680,
+          "height": 130.1875,
+          "bottom": 388.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": {
+        "x": 80,
+        "y": 460,
+        "width": 1760,
+        "height": 384,
+        "bottom": 844,
+        "min": "0px",
+        "display": "block"
+      },
+      "teamCovering": "about-team-media__image",
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "articles",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 609.984375,
+        "bottom": 609.984375,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 1726,
+          "y": 120,
+          "width": 74,
+          "height": 51,
+          "bottom": 171,
+          "min": "0px",
+          "display": "inline-block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 120,
+          "y": 193,
+          "width": 1680,
+          "height": 58.796875,
+          "bottom": 251.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 120,
+          "y": 267.796875,
+          "width": 1680,
+          "height": 130.1875,
+          "bottom": 397.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 120,
+        "y": 637.984375,
+        "width": 96,
+        "height": 44,
+        "bottom": 681.984375,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": [
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ],
+        [
+          "justify",
+          "right"
+        ]
+      ]
+    },
+    {
+      "page": "expertise",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 4,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 152,
+          "y": 120,
+          "width": 1616,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 152,
+          "y": 174,
+          "width": 1616,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 152,
+          "y": 270.796875,
+          "width": 1616,
+          "height": 130.1875,
+          "bottom": 400.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "project-details",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 152,
+          "y": 120,
+          "width": 1616,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 908,
+          "y": 174,
+          "width": 860,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 908,
+          "y": 248.796875,
+          "width": 860,
+          "height": 130.1875,
+          "bottom": 378.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 152,
+        "y": 402.984375,
+        "width": 1616,
+        "height": 500,
+        "bottom": 902.984375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "product-details",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 152,
+          "y": 120,
+          "width": 1616,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "42px",
+          "x": 152,
+          "y": 174,
+          "width": 1616,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 120,
+        "y": 320,
+        "width": 1680,
+        "height": 470,
+        "bottom": 790,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "industry-textile",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 6,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 496,
+        "bottom": 496,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 888,
+          "y": 120,
+          "width": 912,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "flex"
+        },
+        "title": {
+          "font": "42px",
+          "x": 888,
+          "y": 174,
+          "width": 912,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": {
+          "font": "42px",
+          "x": 888,
+          "y": 248.796875,
+          "width": 912,
+          "height": 130.1875,
+          "bottom": 378.984375,
+          "min": "0px",
+          "display": "block"
+        }
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": {
+        "x": 120,
+        "y": 402.984375,
+        "width": 1680,
+        "height": 496,
+        "bottom": 898.984375,
+        "min": "0px",
+        "display": "block"
+      },
+      "cards": [],
+      "view": null,
+      "articleAlign": []
+    },
+    {
+      "page": "air-handling",
+      "width": 1920,
+      "scrollWidth": 1920,
+      "rootSize": 16,
+      "height": 900,
+      "broken": [],
+      "overflow": [],
+      "fonts": 5,
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 570.796875,
+        "bottom": 570.796875,
+        "min": "496px",
+        "display": "block"
+      },
+      "roles": {
+        "eyebrow": {
+          "font": "28px",
+          "x": 120,
+          "y": 120,
+          "width": 1680,
+          "height": 42,
+          "bottom": 162,
+          "min": "0px",
+          "display": "block"
+        },
+        "title": {
+          "font": "42px",
+          "x": 120,
+          "y": 174,
+          "width": 1680,
+          "height": 58.796875,
+          "bottom": 232.796875,
+          "min": "0px",
+          "display": "block"
+        },
+        "description": null
+      },
+      "headerParent": "BODY",
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0,
+        "min": "0px",
+        "display": "block"
+      },
+      "patterns": 1,
+      "team": null,
+      "teamCovering": null,
+      "summary": null,
+      "cards": [],
+      "view": {
+        "x": 120,
+        "y": 806.796875,
+        "width": 96,
+        "height": 44,
+        "bottom": 850.796875,
+        "min": "auto",
+        "display": "flex"
+      },
+      "articleAlign": []
+    }
+  ],
+  "status": "passed",
+  "base_commit": "f2a92125903b7feeda2a5c5905afefec38d29583",
+  "desktop_dropdown_cases": 96
+}

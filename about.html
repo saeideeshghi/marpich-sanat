@@ -11,18 +11,21 @@
     </head>
 
     <body id="top" data-page="about">
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
+
         <div class="about-page">
             <!-- Hero -->
-            <div class="about-hero-shell">
-                <!-- @include header -->
+            <div class="about-hero-shell site-hero" data-site-hero>
 
-                <section class="about-hero" aria-labelledby="about-hero-title">
+
+                <section class="about-hero site-hero__content" aria-labelledby="about-hero-title">
                     <div class="about-container about-hero__content">
-                        <p class="about-eyebrow about-eyebrow--hero">درباره‌ی ما</p>
+                        <p class="about-eyebrow about-eyebrow--hero site-hero__eyebrow">درباره‌ی ما</p>
 
-                        <h1 id="about-hero-title" class="about-hero__title">۲۰ سال تجربه، تخصص، تحول</h1>
+                        <h1 id="about-hero-title" class="about-hero__title site-hero__title">۲۰ سال تجربه، تخصص، تحول</h1>
 
-                        <p class="about-hero__description site-prose">
+                        <p class="about-hero__description site-prose site-hero__description">
                             دانش و تجربه‌ی دو دهه فعالیت، در کنار تیمی جوان و متخصص، ما را قادر کرده راهکارهایی دقیق،
                             منعطف و متناسب با نیازهای متغیر صنعت ارائه کنیم.
                         </p>

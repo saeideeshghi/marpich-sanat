@@ -11,15 +11,18 @@
     </head>
 
     <body data-page="air-handling" dir="rtl">
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
+
         <div id="top" class="air-handling-page" data-air-handling-page>
             <!-- HERO / SHARED HEADER -->
-            <section class="air-handling__hero" aria-labelledby="air-handling-page-title">
-                <!-- @include header -->
+            <section class="air-handling__hero site-hero" aria-labelledby="air-handling-page-title" data-site-hero>
 
-                <div class="site-container">
+
+                <div class="site-container site-hero__content">
                     <div class="air-handling__hero-heading">
-                        <p class="air-handling__eyebrow">دسته‌بندی محصولات تهویه صنعتی</p>
-                        <h1 id="air-handling-page-title" class="air-handling__title">
+                        <p class="air-handling__eyebrow site-hero__eyebrow">دسته‌بندی محصولات تهویه صنعتی</p>
+                        <h1 id="air-handling-page-title" class="air-handling__title site-hero__title">
                             تجهیزات مهندسی و تأسیسات یکپارچه
                         </h1>
                     </div>

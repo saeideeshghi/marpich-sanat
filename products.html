@@ -12,17 +12,20 @@
     </head>
 
     <body data-page="products" dir="rtl">
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
+
         <div id="top" class="products-page" data-products-page dir="rtl">
             <!-- HERO / HEADER -->
 
-            <section class="products-hero" aria-labelledby="products-page-title">
+            <section class="products-hero site-hero" aria-labelledby="products-page-title" data-site-hero>
                 <!-- Desktop / Laptop header -->
-                <!-- @include header -->
 
-                <div class="site-container">
+
+                <div class="site-container site-hero__content">
                     <div class="products-hero__heading">
-                        <p class="products-hero__eyebrow">دسته‌بندی محصولات تهویه صنعتی</p>
-                        <h1 id="products-page-title" class="products-hero__title">تجهیزات مهندسی و تأسیسات یکپارچه</h1>
+                        <p class="products-hero__eyebrow site-hero__eyebrow">دسته‌بندی محصولات تهویه صنعتی</p>
+                        <h1 id="products-page-title" class="products-hero__title site-hero__title">تجهیزات مهندسی و تأسیسات یکپارچه</h1>
                     </div>
 
                     <!-- Advanced product search -->

@@ -12,9 +12,12 @@
     </head>
 
     <body id="top" data-page="home">
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
+
         <!-- HERO / HEADER WRAPPER -->
 
-        <div id="hero" class="hero-shell">
+        <div id="hero" class="hero-shell site-hero" data-site-hero>
             <!-- HERO IMAGE -->
 
             <img src="/assets/images/hero/hero-engineers.png" alt="" class="hero-image" aria-hidden="true" />
@@ -25,22 +28,21 @@
 
             <!-- HEADER -->
 
-            <!-- @include header -->
 
             <!-- HERO CONTENT -->
 
-            <div class="hero-content-wrapper">
+            <div class="hero-content-wrapper site-hero__content">
                 <div class="hero-content">
                     <!-- Eyebrow -->
                     <p
-                        class="home-hero-eyebrow mb-2 text-[15px] font-medium leading-[1.6] text-brand-blue sm:text-[17px] md:text-[18px] min-[1180px]:text-[20px]"
+                        class="home-hero-eyebrow mb-2 font-medium text-brand-blue site-hero__eyebrow"
                     >
                         از طراحی تا پشتیبانی
                     </p>
 
                     <!-- Heading -->
                     <h1
-                        class="home-hero-title text-[20px] font-bold leading-[1.55] text-white sm:text-[24px] md:text-[27px] min-[1180px]:text-[30px]"
+                        class="home-hero-title font-bold text-white site-hero__title"
                     >
                         شریک مهندسی شما در سیستم‌های
                         <span class="home-hero-title__ending">تولید و انتقال هوا</span>
@@ -54,7 +56,7 @@
 
                     <!-- Description -->
                     <p
-                        class="home-hero-description mt-3 max-w-[610px] text-[14px] font-normal leading-[2] text-white/95 sm:mt-4 sm:text-[14px] md:text-[14px] min-[1180px]:text-[14px] site-prose"
+                        class="home-hero-description mt-3 max-w-[610px] font-normal text-white/95 sm:mt-4 site-prose site-hero__description"
                     >
                         مارپیچ صنعت نوین پویا با دو دهه تجربه، چرخه کامل طراحی، مهندسی و تولید سفارشی تجهیزات تولید و
                         انتقال هوا را بدون محدودیت ظرفیت، با مدیریت فنی یکپارچه و تضمین تداوم عملکرد، تا مرحله استقرار و

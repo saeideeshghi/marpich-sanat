@@ -33,7 +33,7 @@
 .project-details__breadcrumb {
     margin-bottom: 9px;
     color: var(--color-brand-blue, #79b6ed);
-    font-size: 14px;
+    font-size: var(--hero-eyebrow);
     line-height: 1.8;
 }
 
@@ -53,7 +53,7 @@
 
 .project-details__hero-copy h1 {
     margin: 0;
-    font-size: 23px;
+    font-size: var(--hero-title);
     font-weight: 800;
     line-height: 1.5;
 }
@@ -61,7 +61,7 @@
 .project-details__hero-copy p {
     margin-top: 5px;
     color: rgb(255 255 255 / 0.82);
-    font-size: 14px;
+    font-size: var(--hero-description);
     font-weight: 400;
     line-height: 2;
 }
@@ -835,11 +835,11 @@
     }
 
     .project-details__hero-copy h1 {
-        font-size: 30px;
+        font-size: var(--hero-title);
     }
 
     .project-details__hero-copy p {
-        font-size: 14px;
+        font-size: var(--hero-description);
     }
 
     .project-details__summary {
@@ -1088,17 +1088,17 @@
 
     .project-details__breadcrumb {
         margin-bottom: 13px;
-        font-size: 14px;
+        font-size: var(--hero-eyebrow);
     }
 
     .project-details__hero-copy h1 {
-        font-size: 38px;
+        font-size: var(--hero-title);
         line-height: 1.45;
     }
 
     .project-details__hero-copy p {
         margin-top: 7px;
-        font-size: 15px;
+        font-size: var(--hero-description);
     }
 
     .project-details__summary {

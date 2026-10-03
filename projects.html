@@ -11,18 +11,21 @@
     </head>
 
     <body id="top" data-page="projects">
-        <div class="projects-page__hero-wrap bg-brand-navy text-white">
-            <!-- @include header -->
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
 
-            <section class="projects-page__hero" aria-labelledby="projects-page-title">
+        <div class="projects-page__hero-wrap bg-brand-navy text-white site-hero" data-site-hero>
+
+
+            <section class="projects-page__hero site-hero__content" aria-labelledby="projects-page-title">
                 <div class="projects-page__container">
                     <div class="projects-page__hero-content">
-                        <p class="projects-page__eyebrow">پروژه‌های ما</p>
+                        <p class="projects-page__eyebrow site-hero__eyebrow">پروژه‌های ما</p>
                         <span class="projects-page__eyebrow-line" aria-hidden="true"></span>
-                        <h1 id="projects-page-title" class="projects-page__hero-title">
+                        <h1 id="projects-page-title" class="projects-page__hero-title site-hero__title">
                             پروژه‌های اجرا شده و دستاوردهای مهندسی
                         </h1>
-                        <p class="projects-page__hero-description site-prose">
+                        <p class="projects-page__hero-description site-prose site-hero__description">
                             مروری بر پروژه‌های شاخصی که با طراحی مهندسی، تولید سفارشی و اجرای یکپارچه، به راهکارهای
                             پایدار صنعتی تبدیل شده‌اند.
                         </p>

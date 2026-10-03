@@ -6,11 +6,13 @@ import { initTestimonials } from "./components/testimonials.js";
 import { initCatalogs } from "./components/catalog.js";
 import { initConsultationForms } from "./components/consultation.js";
 import { initSitePatterns } from "./components/site-pattern.js";
+import { initHeroLayout } from "./components/hero.js";
 
 // Shared behavior only. Never import a page module here.
 export function initSite() {
     // Mount decoration independently before interactive enhancements initialize.
     initSitePatterns();
+    initHeroLayout();
     initMobileMenu();
     initAuth();
     initPendingForms();

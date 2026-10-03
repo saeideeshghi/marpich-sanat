@@ -538,7 +538,7 @@ export function initSitePatterns() {
     // header pattern. Every internal page mounts the approved pattern once.
     if (page !== "home") {
         const header = document.querySelector(".site-header");
-        const headerHost = header?.parentElement;
+        const headerHost = document.querySelector("[data-site-hero]") || header?.parentElement;
         if (headerHost && !headerHost.querySelector(":scope > [data-site-pattern='header']")) {
             headerHost.classList.add("site-pattern-host");
             const layer = createPatternLayer("header");

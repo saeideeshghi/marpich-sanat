@@ -1,17 +1,14 @@
 @import "./components/responsive-cards.css";
+@import "./type-settings.css";
+@import "./components/hero.css";
 
 /* Final shared responsive layer, imported after each page stylesheet.
  * Keep prose readable; change the available layout instead of shrinking type.
  * Page-specific artwork and the approved technical-table structure stay local. */
-:root {
-    --type-body: 1rem;
-    --type-caption: .875rem;
-    --type-card-title: 1rem;
-}
-body { font-size: 16px; line-height: 1.85; }
-body[data-page] :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),select,textarea) { font-size: 16px; }
+body { font-size: var(--text-body, 16px); line-height: 1.85; }
+body[data-page] :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),select,textarea) { font-size: var(--text-control); }
 body[data-page] :is(p.site-prose, .industry-textile__faq-answer) {
-    font-size: 22px;
+    font-size: var(--text-body);
     line-height: 1.95;
     text-align: right;
     word-break: normal;
@@ -40,13 +37,7 @@ body[data-page] [data-consultation] h2 { line-height: 1.7; }
     body[data-page="home"] [data-menu-open] { width: 56px; height: 56px; gap: 10px; }
     body[data-page="home"] [data-menu-open] span { width: 50px; height: 4px; border-radius: 0; }
 }
-/* A taller compact header needs corresponding clearance on internal pages. */
 @media (max-width: 1179px) {
-    body[data-page] :is(.about-hero, .industries-hero, .air-handling__hero, .expertise-page__hero, .industry-textile__hero, .project-details__hero-inner) {
-        padding-top: 140px;
-    }
-    body[data-page="product-details"] #hero > div { padding-top: 140px; }
-    body[data-page] .articles-hero__heading { padding-top: 148px; }
     body[data-page] form :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), select:not(.product-search__select--native)) {
         min-height: 48px;
     }
@@ -54,10 +45,10 @@ body[data-page] [data-consultation] h2 { line-height: 1.7; }
     body[data-page] form textarea { min-height: 112px; }
 }
 @media (max-width: 639px) {
-    body[data-page] main p { font-size: 15px; line-height: 1.9; }
-    body[data-page] main h2 { font-size: 22px; line-height: 1.6; }
-    body[data-page] main h3 { font-size: 16px; line-height: 1.7; }
-    body[data-page] :is(p.site-prose,.industry-textile__faq-answer) { font-size: 18px; line-height: 1.95; text-align: right; text-align-last: auto; }
+    body[data-page] main p { font-size: var(--text-body); line-height: 1.9; }
+    body[data-page] main h2 { font-size: var(--text-section); line-height: 1.6; }
+    body[data-page] main h3 { font-size: var(--text-card); line-height: 1.7; }
+    body[data-page] :is(p.site-prose,.industry-textile__faq-answer) { font-size: var(--text-body); line-height: 1.95; text-align: right; text-align-last: auto; }
     body[data-page] main :is(.site-text-link,.about-card-link,.industry-textile__card-link) { font-size: 14px; min-height: 40px; }
     body[data-page] .product-search__filters { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
     body[data-page] .product-search__select { width: 100%; min-height: 48px; font-size: 14px; }

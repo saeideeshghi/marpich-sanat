@@ -11,22 +11,25 @@
     </head>
 
     <body id="top" data-page="expertise" class="bg-page-bg text-text-dark">
-        <div class="relative bg-brand-navy text-white">
-            <!-- @include header -->
+        <!-- Shared header stays outside hero stacking/clipping contexts. -->
+        <!-- @include header -->
+
+        <div class="relative bg-brand-navy text-white site-hero" data-site-hero>
+
 
             <!-- Hero: shared animated header pattern is mounted globally; page geometry stays local. -->
             <section
-                class="expertise-page__hero mx-auto flex w-full max-w-[1320px] items-end px-4 pb-[52px] pt-[150px] sm:px-6 md:pb-[60px] lg:px-8 lg:pb-[76px] lg:pt-[168px]"
+                class="expertise-page__hero mx-auto flex w-full max-w-[1320px] items-end px-4 pb-[52px] pt-[150px] sm:px-6 md:pb-[60px] lg:px-8 lg:pb-[76px] lg:pt-[168px] site-hero__content"
                 aria-labelledby="expertise-page-title"
             >
                 <div class="w-full max-w-[700px] text-right lg:mr-0 lg:ml-auto">
-                    <p class="text-[14px] font-normal text-brand-blue md:text-[16px] lg:text-[18px]">
+                    <p class="font-normal text-brand-blue site-hero__eyebrow">
                         حوزه های تخصص ما
                     </p>
 
                     <h1
                         id="expertise-page-title"
-                        class="mt-3 text-[25px] font-bold leading-[1.7] text-white sm:text-[29px] md:text-[34px] lg:text-[38px]"
+                        class="mt-3 font-bold text-white site-hero__title"
                     >
                         از ایده تا بهره برداری، در کنار شما هستیم.
                     </h1>
@@ -34,7 +37,7 @@
                     <span class="mt-4 block h-[2px] w-[36px] bg-brand-orange lg:mt-5 lg:w-[42px]"></span>
 
                     <p
-                        class="mt-5 max-w-[680px] text-[14px] font-normal leading-[2.05] text-white/88 sm:text-[14px] md:text-[15px] lg:mt-6 lg:text-[17px] site-prose"
+                        class="mt-5 max-w-[680px] font-normal text-white/88 lg:mt-6 site-prose site-hero__description"
                     >
                         تیم متخصص مارپیچ صنعت در تمام مراحل پروژه، از مشاوره و طراحی تا تولید، اجرا و پشتیبانی، پاسخگوی
                         نیازهای شما خواهد بود.

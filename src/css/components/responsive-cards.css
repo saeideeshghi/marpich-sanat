@@ -9,8 +9,8 @@ body[data-page] main :is(.home-expertise-grid > article,.home-projects-grid > ar
     min-width: 0;
 }
 body[data-page] main .about-expertise-card { display: flex; flex-direction: column; }
-body[data-page] main :is(.product-card__title,.article-card__title,.home-products-grid h3) { font-size: 18px; line-height: 1.7; }
-body[data-page] main .home-products-grid .site-prose { font-size: 15px; line-height: 1.9; }
+body[data-page] main :is(.product-card__title,.article-card__title,.home-products-grid h3) { font-size: var(--text-card); line-height: 1.7; }
+body[data-page] main .home-products-grid .site-prose { font-size: var(--text-body); line-height: 1.9; }
 body[data-page] main :is(.product-card__body,.projects-page__card-body,.article-card__body,.about-expertise-card__body,.industry-textile__product-body,.industry-textile__project-body,.project-details__product-body) {
     min-width: 0;
     flex: 1;
@@ -20,7 +20,7 @@ body[data-page] main :is(.product-card__description,.projects-page__card-descrip
     height: auto;
     max-height: none;
     overflow: visible;
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 1.9;
 }
 body[data-page] main :is(.product-card__spec,.article-card__meta span,.projects-page__card-meta span,.industry-textile__product-specs span,.industry-textile__project-meta span,.project-details__product-specs span) {
@@ -87,7 +87,7 @@ body[data-page] main .article-card__link { margin-top: 4px; padding-top: 4px; }
         padding: 16px;
     }
     body[data-page] main :is(.product-card__title,.projects-page__card-title,.article-card__title,.about-expertise-card h3,.industry-textile__product-body h3,.industry-textile__project-body h3,.project-details__product-body h3,.home-expertise-grid h3,.home-projects-grid h3,.home-products-grid h3) {
-        font-size: 17px;
+        font-size: var(--text-card);
         line-height: 1.7;
     }
     body[data-page] main .home-products-grid > article > div:first-child > img { position: absolute; inset: 0; object-fit: cover; padding: 0; }

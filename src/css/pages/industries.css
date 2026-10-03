@@ -60,7 +60,7 @@
 .industries-hero__eyebrow {
     margin: 0 0 8px;
     color: var(--ind-blue);
-    font-size: 20px;
+    font-size: var(--hero-eyebrow);
     font-weight: 600;
     line-height: 1.65;
 }
@@ -68,7 +68,7 @@
 .industries-hero__title {
     max-width: 980px;
     margin: 0;
-    font-size: max(14px, clamp(34px, 2.7vw, 42px));
+    font-size: var(--hero-title);
     font-weight: 800;
     line-height: 1.35;
 }
@@ -444,11 +444,11 @@
     }
 
     .industries-hero__eyebrow {
-        font-size: 17px;
+        font-size: var(--hero-eyebrow);
     }
 
     .industries-hero__title {
-        font-size: 34px;
+        font-size: var(--hero-title);
     }
 
     .industries-featured {
@@ -490,13 +490,13 @@
 
     .industries-hero__eyebrow {
         margin-bottom: 4px;
-        font-size: 14px;
+        font-size: var(--hero-eyebrow);
         line-height: 1.6;
     }
 
     .industries-hero__title {
         max-width: 360px;
-        font-size: 24px;
+        font-size: var(--hero-title);
         line-height: 1.4;
     }
 

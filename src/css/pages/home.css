@@ -46,9 +46,9 @@
     direction: rtl;
     text-align: right;
 }
-.hero-content .home-hero-eyebrow { font-size: clamp(24px, 1.95vw, 30px); line-height: 1.6; }
-.hero-content .home-hero-title { font-size: clamp(28px, 2.18vw, 34px); line-height: 1.65; text-wrap: wrap; }
-.hero-content .home-hero-description { max-width: 700px; margin-top: 20px; font-size: 16px; line-height: 1.95; }
+.hero-content .home-hero-eyebrow { font-size: var(--hero-eyebrow); line-height: 1.6; }
+.hero-content .home-hero-title { font-size: var(--hero-title); line-height: 1.65; text-wrap: wrap; }
+.hero-content .home-hero-description { max-width: 700px; margin-top: 20px; font-size: var(--hero-description); line-height: 1.95; }
 .hero-content .home-hero-divider { width: 64px; margin-top: 24px; }
 
 /* RTL grid keeps the approved primary/outline order. Button content stays in
@@ -102,10 +102,10 @@
     .hero-content-wrapper { width: calc(100% - 88px); padding-top: 144px; }
     .hero-content { width: min(100%, 740px); }
     .hero-overlay { background: linear-gradient(90deg, rgb(15 23 43 / 0.05), rgb(15 23 43 / 0.4) 25%, rgb(15 23 43 / 0.86) 48%, #0f172b 72%); }
-    .hero-content .home-hero-eyebrow { font-size: 26px; }
-    .hero-content .home-hero-title { font-size: 32px; line-height: 1.6; }
+    .hero-content .home-hero-eyebrow { font-size: var(--hero-eyebrow); }
+    .hero-content .home-hero-title { font-size: var(--hero-title); line-height: 1.6; }
     .home-hero-title__ending { display: block; }
-    .hero-content .home-hero-description { font-size: 16px; }
+    .hero-content .home-hero-description { font-size: var(--hero-description); }
     .home-hero-actions { width: min(100%, 540px); max-width: 540px; margin-top: 24px; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 20px; }
     .home-hero-action { min-height: 56px; padding-inline: 22px; font-size: 17px; }
     .home-hero-action > span { white-space: nowrap; }
@@ -119,9 +119,9 @@
     .hero-overlay { background: linear-gradient(90deg, rgb(15 23 43 / 0.42), rgb(15 23 43 / 0.78) 35%, rgb(15 23 43 / 0.94) 68%, #0f172b); }
     .hero-content-wrapper { width: calc(100% - 40px); padding-top: 76px; }
     .hero-content { width: 100%; }
-    .hero-content .home-hero-eyebrow { font-size: 20px; }
-    .hero-content .home-hero-title { font-size: clamp(26px, 6.6vw, 32px); line-height: 1.6; }
-    .hero-content .home-hero-description { margin-top: 18px; font-size: 15px; line-height: 1.95; }
+    .hero-content .home-hero-eyebrow { font-size: var(--hero-eyebrow); }
+    .hero-content .home-hero-title { font-size: var(--hero-title); line-height: 1.6; }
+    .hero-content .home-hero-description { margin-top: 18px; font-size: var(--hero-description); line-height: 1.95; }
     .hero-content .home-hero-divider { margin-top: 18px; width: 48px; }
     .home-hero-actions { margin-top: 26px; gap: 10px; }
     .home-hero-action { min-height: 52px; padding: 10px; font-size: 14px; gap: 8px; }
