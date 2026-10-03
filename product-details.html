@@ -18,15 +18,15 @@
             data-site-hero
         >
             <div
-                class="relative z-10 mx-auto w-full max-w-[1320px] px-5 pt-[112px] max-[430px]:px-4 sm:px-6 md:pt-[116px] lg:px-8 min-[1180px]:pt-[120px] site-hero__content"
+                class="relative z-10 mx-auto w-full max-w-[1320px] px-5 pt-[112px] max-[430px]:px-4 sm:px-6 md:pt-[116px] lg:px-8 min-[1180px]:pt-[120px] site-hero__content site-frame"
             >
                 <nav
                     class="product-details__breadcrumb flex flex-wrap items-center gap-2 text-brand-blue site-hero__eyebrow"
                     aria-label="مسیر صفحه"
                 >
-                    <a href="#" class="transition-colors hover:text-brand-blue">خانه</a>
+                    <a href="index.html" class="transition-colors hover:text-brand-blue">خانه</a>
                     <i class="fa-solid fa-chevron-left text-[6px] text-brand-blue" aria-hidden="true"></i>
-                    <a href="#" class="transition-colors hover:text-brand-blue">محصولات</a>
+                    <a href="products.html" class="transition-colors hover:text-brand-blue">محصولات</a>
                     <i class="fa-solid fa-chevron-left text-[6px] text-brand-blue" aria-hidden="true"></i>
                     <span class="text-brand-blue">تهویه مطبوع و هواسازها</span>
                 </nav>
@@ -38,7 +38,7 @@
         <main class="relative bg-[#eef2f8] pb-12 min-[1180px]:pb-[72px]">
             <!-- PRODUCT SUMMARY CARD -->
             <section
-                class="relative z-20 mx-auto w-full max-w-[1320px] -translate-y-[350px] px-3 max-[430px]:px-3 md:-translate-y-[290px] md:px-6 min-[1180px]:-translate-y-[176px] min-[1180px]:px-8"
+                class="relative z-20 mx-auto w-full max-w-[1320px] px-3 max-[430px]:px-3 md:px-6 min-[1180px]:px-8 site-frame"
                 aria-labelledby="product-title"
             >
                 <article
@@ -172,11 +172,11 @@
                 </article>
             </section>
 
-            <!-- Pull the following content back up after the translated product card -->
-            <div class="-mt-[318px] md:-mt-[245px] min-[1180px]:-mt-[132px]">
+            <!-- Normal content flow after the shared, measured hero overlap. -->
+            <div class="product-details__content">
                 <!-- KEY SPECIFICATIONS -->
                 <section
-                    class="mx-auto w-full max-w-[1320px] px-3 max-[430px]:px-3 md:px-6 min-[1180px]:px-8"
+                    class="mx-auto w-full max-w-[1320px] px-3 max-[430px]:px-3 md:px-6 min-[1180px]:px-8 site-frame"
                     aria-labelledby="specifications-title"
                 >
                     <h2
@@ -255,7 +255,7 @@
 
                 <!-- COMPLEMENTARY DESCRIPTION -->
                 <section
-                    class="mx-auto mt-10 w-full max-w-[1320px] px-4 sm:px-6 min-[1180px]:mt-14 min-[1180px]:px-8"
+                    class="mx-auto mt-10 w-full max-w-[1320px] px-4 sm:px-6 min-[1180px]:mt-14 min-[1180px]:px-8 site-frame"
                     aria-labelledby="description-title"
                 >
                     <h2
@@ -295,7 +295,7 @@
 
                 <!-- SHARED CONSULTATION CTA -->
                 <section
-                    class="product-details__consultation-shell mx-auto mt-10 w-full max-w-[1320px] px-3 max-[430px]:px-3 sm:px-6 min-[1180px]:mt-12 min-[1180px]:px-8"
+                    class="product-details__consultation-shell mx-auto mt-10 w-full max-w-[1320px] px-3 max-[430px]:px-3 sm:px-6 min-[1180px]:mt-12 min-[1180px]:px-8 site-frame"
                     aria-label="مشاوره مهندسی"
                 >
                     <!-- @include catalog-consultation consultation -->

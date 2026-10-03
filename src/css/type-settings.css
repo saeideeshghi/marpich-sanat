@@ -13,7 +13,7 @@ body[data-page] {
     --hero-description-desktop: 22px;
     --hero-description-tablet: 18px;
     --hero-description-mobile: 18px;
-    --hero-top-desktop: 120px;
+    --hero-top-desktop: 164px;
     --hero-top-tablet: 144px;
     --hero-top-mobile: 132px;
     --hero-bottom: 40px;
@@ -23,8 +23,7 @@ body[data-page] {
     --hero-eyebrow-leading: 1.5;
     --hero-title-leading: 1.4;
     --hero-description-leading: 1.55;
-    /* Card roles are independent from hero/section typography.
-     * Tablet/mobile CTA and desktop/tablet tags keep their page styles. */
+    /* Card roles are independent from hero/section typography. */
     --card-title-desktop: 17px;
     --card-title-tablet: 17px;
     --card-title-mobile: 20px;
@@ -32,6 +31,10 @@ body[data-page] {
     --card-description-tablet: 14px;
     --card-description-mobile: 18px;
     --card-cta-desktop: 12px;
+    --card-cta-tablet: 14px;
+    --card-cta-mobile: 14px;
+    --card-tag-desktop: 10px;
+    --card-tag-tablet: 10px;
     --card-tag-mobile: 10px;
     --card-description-lines: 2;
     --card-title-leading: 1.7;
@@ -48,15 +51,21 @@ body[data-page] {
     --text-control: 16px;
     --text-label: 14px;
     --text-navigation: 14px;
+    --text-table: 14px;
+    --text-table-heading: 14px;
 }
 
 /* PAGE OVERRIDES: add only the values that differ from the shared defaults.
  * Example: body[data-page="projects"] { --hero-title-desktop: 44px; }
  * Set all page overrides here, above the breakpoint resolvers. */
 body[data-page="home"] {
+    --hero-top-desktop: 120px;
     --hero-top-tablet: 168px;
     /* Preserve the owner's extra top margin; height lives in hero-heights.css. */
     --home-hero-content-margin-top: 105px;
+}
+body[data-page="contact"] {
+    --hero-top-desktop: 120px;
 }
 body[data-page="about"] {
     --hero-bottom: 64px;
@@ -88,6 +97,8 @@ body[data-page] {
     --hero-summary-preferred: var(--hero-summary-desktop);
     --card-title: var(--card-title-desktop);
     --card-description: var(--card-description-desktop);
+    --card-cta: var(--card-cta-desktop);
+    --card-tag: var(--card-tag-desktop);
     --text-body: var(--text-body-desktop);
     --text-card: var(--text-card-desktop);
     --text-section: var(--text-section-desktop);
@@ -101,6 +112,8 @@ body[data-page] {
         --hero-summary-preferred: var(--hero-summary-tablet);
         --card-title: var(--card-title-tablet);
         --card-description: var(--card-description-tablet);
+        --card-cta: var(--card-cta-tablet);
+        --card-tag: var(--card-tag-tablet);
         --text-body: var(--text-body-tablet);
         --text-card: var(--text-card-tablet);
         --text-section: var(--text-section-tablet);
@@ -115,6 +128,8 @@ body[data-page] {
         --hero-summary-preferred: var(--hero-summary-mobile);
         --card-title: var(--card-title-mobile);
         --card-description: var(--card-description-mobile);
+        --card-cta: var(--card-cta-mobile);
+        --card-tag: var(--card-tag-mobile);
         --text-body: var(--text-body-mobile);
         --text-card: var(--text-card-mobile);
         --text-section: var(--text-section-mobile);

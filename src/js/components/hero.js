@@ -28,7 +28,14 @@ export function initHeroLayout() {
             ? preferred * parseFloat(getComputedStyle(document.documentElement).fontSize)
             : preferred;
         const available = Math.max(0, heroBottom - textBottom - 24);
-        const value = `${Math.min(pixels, available)}px`;
+        const overlap = Math.min(pixels, available);
+        const value = `${overlap}px`;
+        if (document.body.dataset.page === "about") {
+            // Use document coordinates: scrolling must not enlarge the team image.
+            const heroDocumentBottom = heroBottom + window.scrollY;
+            const imageHeight = Math.max(140, window.innerHeight - heroDocumentBottom + overlap - 24);
+            document.body.style.setProperty("--about-team-max-height", `${Math.floor(imageHeight)}px`);
+        }
         if (document.body.style.getPropertyValue("--hero-summary-overlap") !== value) {
             document.body.style.setProperty("--hero-summary-overlap", value);
         }

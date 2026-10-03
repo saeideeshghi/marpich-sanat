@@ -30,7 +30,7 @@
 
             <!-- HERO CONTENT -->
 
-            <div class="hero-content-wrapper site-hero__content">
+            <div class="hero-content-wrapper site-hero__content site-frame">
                 <div class="hero-content">
                     <!-- Eyebrow -->
                     <p class="home-hero-eyebrow mb-2 font-medium text-brand-blue site-hero__eyebrow">
@@ -105,7 +105,7 @@
             <!-- EXPERTISE -->
 
             <section id="expertise" class="bg-[#F4F7FC] pt-6 pb-3 sm:pt-8 sm:pb-4 lg:pt-10 lg:pb-5">
-                <div class="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8 site-frame">
                     <!-- Section Header -->
 
                     <div class="mb-5 flex items-center justify-between sm:mb-6 lg:mb-7">
@@ -288,7 +288,7 @@
             <!-- FEATURED PROJECTS -->
 
             <section id="projects" class="bg-[#F4F7FC] pt-6 pb-3 sm:pt-8 sm:pb-4 lg:pt-10 lg:pb-5">
-                <div class="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8 site-frame">
                     <!-- Section Header -->
 
                     <div class="mb-5 flex items-center justify-between sm:mb-6 lg:mb-7">
@@ -332,9 +332,11 @@
                                     <div
                                         class="flex translate-y-2 flex-col items-center justify-center gap-3 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                                     >
-                                        <div class="h-10 w-20"></div>
-
-                                        <p class="text-[14px] font-medium leading-[1.8]">جزئیات پروژه</p>
+                                        <img
+                                            class="home-project__client-logo"
+                                            src="/assets/logos/partners/partner-03.svg"
+                                            alt="لوگوی ایران شیشه تکنولوژی"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -391,9 +393,11 @@
                                     <div
                                         class="flex translate-y-2 flex-col items-center gap-3 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                                     >
-                                        <div class="h-10 w-20"></div>
-
-                                        <p class="text-[14px] font-medium">جزئیات پروژه</p>
+                                        <img
+                                            class="home-project__client-logo"
+                                            src="/assets/logos/projects/blue-waves.png"
+                                            alt="لوگوی سرزمین موج‌های آبی مشهد"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -444,9 +448,11 @@
                                     <div
                                         class="flex translate-y-2 flex-col items-center gap-3 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                                     >
-                                        <div class="h-10 w-20"></div>
-
-                                        <p class="text-[14px] font-medium">جزئیات پروژه</p>
+                                        <img
+                                            class="home-project__client-logo"
+                                            src="/assets/logos/partners/partner-02.svg"
+                                            alt="لوگوی عطرین نخ قم"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -499,9 +505,11 @@
                                     <div
                                         class="flex translate-y-2 flex-col items-center gap-3 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                                     >
-                                        <div class="h-10 w-20"></div>
-
-                                        <p class="text-[14px] font-medium">جزئیات پروژه</p>
+                                        <img
+                                            class="home-project__client-logo"
+                                            src="/assets/logos/partners/partner-01.svg"
+                                            alt="لوگوی ترام چاپ"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -546,7 +554,7 @@
                     <!-- DESKTOP -->
 
                     <div
-                        class="home-why__desktop mx-auto hidden w-full max-w-[1320px] px-8 py-8 lg:flex lg:items-stretch lg:gap-10"
+                        class="home-why__desktop mx-auto hidden w-full max-w-[1320px] px-8 py-8 lg:flex lg:items-stretch lg:gap-10 site-frame"
                     >
                         <!-- Factory Image -->
 
@@ -570,7 +578,7 @@
 
                                     <!-- Figma Gradient Line -->
                                     <span
-                                        class="mt-2 ml-auto block h-[0.5px] w-[64px] opacity-[0.76] bg-[linear-gradient(to_left,#F76E11_38%,#F76E11_61%,#ECF0F8_100%)]"
+                                        class="home-why__accent mt-2 ml-auto block h-[0.5px] w-[64px] opacity-[0.76] bg-[linear-gradient(to_left,#F76E11_38%,#F76E11_61%,#ECF0F8_100%)]"
                                         aria-hidden="true"
                                     ></span>
                                 </div>
@@ -673,7 +681,7 @@
 
                     <!-- MOBILE / TABLET -->
 
-                    <div class="home-why__mobile mx-auto w-full px-4 py-6 sm:px-6 sm:py-8 lg:hidden">
+                    <div class="home-why__mobile mx-auto w-full px-4 py-6 sm:px-6 sm:py-8 lg:hidden site-frame">
                         <!-- Header -->
 
                         <div class="text-right">
@@ -685,7 +693,7 @@
 
                             <!-- Orange Accent -->
                             <span
-                                class="mt-3 block h-[3px] w-[64px] rounded-full bg-[linear-gradient(to_left,#F76E11_38%,#F76E11_61%,#ECF0F8_100%)] opacity-[0.76] max-[450px]:w-[56px]"
+                                class="home-why__accent mt-3 block h-[3px] w-[64px] rounded-full bg-[linear-gradient(to_left,#F76E11_38%,#F76E11_61%,#ECF0F8_100%)] opacity-[0.76] max-[450px]:w-[56px]"
                                 aria-hidden="true"
                             ></span>
                         </div>
@@ -788,7 +796,7 @@
             <section id="process" class="bg-[#F4F7FC] pt-6 sm:pt-8 lg:pt-8">
                 <!-- Section Header -->
 
-                <div class="mx-auto w-full max-w-[1320px] px-4 pb-4 sm:px-6 sm:pb-5 lg:px-8 lg:pb-6">
+                <div class="mx-auto w-full max-w-[1320px] px-4 pb-4 sm:px-6 sm:pb-5 lg:px-8 lg:pb-6 site-frame">
                     <h2
                         class="text-right text-[18px] font-bold text-text-dark max-[505px]:text-[17px] max-[390px]:text-[16px] sm:text-[21px] lg:text-[26px]"
                     >
@@ -883,7 +891,7 @@
             >
                 <!-- Background Pattern بعداً asset اصلی Figma اضافه می‌شود. -->
 
-                <div class="mx-auto w-full max-w-[1320px] px-3 max-[410px]:px-2 sm:px-5 lg:px-8">
+                <div class="mx-auto w-full max-w-[1320px] px-3 max-[410px]:px-2 sm:px-5 lg:px-8 site-frame">
                     <!-- Section Header -->
 
                     <div class="mb-5 flex items-center justify-between sm:mb-6 lg:mb-7">
@@ -1197,7 +1205,7 @@
             >
                 <!-- Background Pattern بعداً asset اصلی Figma اضافه می‌شود. -->
 
-                <div class="mx-auto w-full max-w-[1320px] px-4 max-[430px]:px-3 sm:px-6 lg:px-8">
+                <div class="mx-auto w-full max-w-[1320px] px-4 max-[430px]:px-3 sm:px-6 lg:px-8 site-frame">
                     <!-- Section Header -->
 
                     <div class="mb-5 flex items-center justify-between max-[430px]:mb-4 sm:mb-6 lg:mb-7">

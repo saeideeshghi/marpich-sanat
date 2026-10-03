@@ -17,7 +17,7 @@
         <div class="relative bg-brand-navy text-white site-hero" data-site-hero id="hero-expertise">
             <!-- Hero: shared animated header pattern is mounted globally; page geometry stays local. -->
             <section
-                class="expertise-page__hero mx-auto flex w-full max-w-[1320px] items-end px-4 pb-[52px] pt-[150px] sm:px-6 md:pb-[60px] lg:px-8 lg:pb-[76px] lg:pt-[168px] site-hero__content"
+                class="expertise-page__hero mx-auto flex w-full max-w-[1320px] items-end px-4 pb-[52px] pt-[150px] sm:px-6 md:pb-[60px] lg:px-8 lg:pb-[76px] lg:pt-[168px] site-hero__content site-frame"
                 aria-labelledby="expertise-page-title"
             >
                 <div class="w-full max-w-[700px] text-right lg:mr-0 lg:ml-auto">
@@ -40,246 +40,370 @@
         <main class="bg-page-bg">
             <!-- Expertise cards -->
             <section class="expertise-page__services py-7 sm:py-9 lg:py-14" aria-label="خدمات تخصصی مارپیچ صنعت">
-                <div class="mx-auto w-full max-w-[1320px] space-y-4 px-4 sm:px-6 lg:space-y-5 lg:px-8">
+                <div class="mx-auto w-full max-w-[1320px] space-y-4 px-4 sm:px-6 lg:space-y-5 lg:px-8 site-frame">
                     <!-- 01 - Assessment / consulting -->
-                    <article
-                        id="field-assessment"
-                        class="expertise-page__card expertise-page__card--featured overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
-                    >
-                        <div
-                            class="expertise-page__media expertise-page__media--featured relative h-[150px] overflow-hidden md:h-[255px]"
-                        >
+                    <article id="field-assessment" class="expertise-page__card site-card" data-service>
+                        <div class="expertise-page__media">
                             <img
                                 src="/assets/images/expertise/assessment-consulting.png"
                                 alt="جلسه ارزیابی میدانی و مشاوره تخصصی پروژه صنعتی"
-                                class="expertise-page__media-image expertise-page__media-image--flip absolute inset-0 h-full w-full object-cover object-center"
+                                class="expertise-page__media-image expertise-page__media-image--flip"
                             />
-
-                            <div
-                                class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[58%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[47%] md:px-8 lg:px-10"
-                            >
-                                <h2 class="font-bold text-text-dark site-card__title">
-                                    ارزیابی میدانی و مشاوره تخصصی
-                                </h2>
-                                <span class="mt-2 block h-px w-[30px] bg-brand-blue sm:mt-3 md:w-[36px]"></span>
-                                <p class="mt-2 text-text-dark/85 md:mt-3 site-prose site-card__description">
-                                    در پروژه‌های کلان صنعتی، هر سیستم تهویه باید دقیقاً با شرایط ترمودینامیکی و معماری
+                            <div class="expertise-page__media-content">
+                                <h2 class="site-card__title">ارزیابی میدانی و مشاوره تخصصی</h2>
+                                <span class="expertise-page__divider" aria-hidden="true"></span>
+                                <p class="site-card__description"
+                                    >در پروژه‌های کلان صنعتی، هر سیستم تهویه باید دقیقاً با شرایط ترمودینامیکی و معماری
                                     همان سایت کالیبره شود. در این فاز، تیم مهندسی ما با حضور در سایت پروژه، داده‌های
-                                    پایه‌ای را جمع‌آوری می‌کند.
-                                </p>
+                                    پایه‌ای را جمع‌آوری می‌کند.</p
+                                >
                                 <a
                                     href="#assessment-details"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
+                                    class="expertise-page__more-link site-text-link site-card__cta"
+                                    data-service-toggle
+                                    aria-controls="assessment-details"
                                 >
-                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
-                                    <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
+                                    <span class="site-text-link__label site-card__cta-label" data-service-label
+                                        >مطالعه بیشتر</span
+                                    >
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
-
-                        <div id="assessment-details" class="px-4 py-5 sm:px-6 md:px-10 md:py-7 lg:px-12 lg:py-8">
-                            <p class="text-text-dark/90 site-prose site-card__description">
-                                حضور مستقیم متخصصان ما در محل پروژه، گام نخست برای تضمین موفقیت شماست. ما با بررسی دقیق
-                                شرایط محیطی و عملیاتی، چالش‌های پنهان را شناسایی کرده و راهکارهایی کاملاً منطبق بر
-                                نیازمندی‌های اختصاصی شما ارائه می‌دهیم. هدف ما، تبدیل عدم قطعیت‌ها به برنامه‌ای شفاف،
-                                کاهش ریسک‌های احتمالی و هدایت پروژه به سمت اجرای اصولی و بهینه است.
-                            </p>
-
-                            <div
-                                class="expertise-page__benefits mt-5 grid gap-4 md:mt-7 md:grid-cols-[220px_minmax(0,1fr)] md:items-start lg:grid-cols-[250px_minmax(0,1fr)]"
+                        <div
+                            id="assessment-details"
+                            class="expertise-page__details"
+                            data-service-details
+                            role="region"
+                            aria-label="جزئیات ارزیابی میدانی و مشاوره تخصصی"
+                        >
+                            <p class="site-prose"
+                                >حضور مستقیم متخصصان ما در محل پروژه، گام نخست برای انتخاب یک راهکار قابل اجراست. با
+                                بررسی شرایط محیطی و عملیاتی، محدودیت‌های سایت را مشخص می‌کنیم و داده‌های لازم برای طراحی
+                                را جمع‌آوری می‌کنیم. این ارزیابی کمک می‌کند پیش از شروع اجرا، ریسک‌ها، ظرفیت مورد نیاز و
+                                اولویت‌های پروژه روشن شوند.</p
                             >
-                                <h3
-                                    class="expertise-page__benefits-title text-[14px] font-semibold text-brand-blue sm:text-[14px] md:text-[16px]"
+                            <div class="expertise-page__benefits">
+                                <h3 class="expertise-page__benefits-title">مزایای کلیدی این خدمت:</h3>
+                                <div class="expertise-page__benefits-grid"
+                                    ><div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/site-analysis.png" alt="" />
+                                        <p class="site-prose">بازدید تخصصی و تحلیل شرایط واقعی محل پروژه</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/custom-solution.png" alt="" />
+                                        <p class="site-prose">تعریف راهکار متناسب با فرآیند و ظرفیت سایت</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/risk-analysis.png" alt="" />
+                                        <p class="site-prose">شناسایی ریسک‌های اجرایی و محدودیت‌های موجود</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/schedule-cost.png" alt="" />
+                                        <p class="site-prose">تهیه برآورد اولیه زمان‌بندی و منابع مورد نیاز</p>
+                                    </div></div
                                 >
-                                    مزایای کلیدی این خدمت:
-                                </h3>
-
-                                <div
-                                    class="expertise-page__benefits-grid grid gap-x-8 gap-y-3 sm:grid-cols-2 md:gap-y-4"
-                                >
-                                    <div class="flex items-center gap-3">
-                                        <img
-                                            src="/assets/icons/expertise/site-analysis.png"
-                                            alt=""
-                                            class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
-                                        />
-                                        <p class="text-text-dark site-prose site-card__description">
-                                            بازدید تخصصی و تحلیل موشکافانه شرایط در محل پروژه
-                                        </p>
-                                    </div>
-
-                                    <div class="flex items-center gap-3">
-                                        <img
-                                            src="/assets/icons/expertise/custom-solution.png"
-                                            alt=""
-                                            class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
-                                        />
-                                        <p class="text-text-dark site-prose site-card__description">
-                                            طراحی راهکارهای سفارشی مبتنی بر داده‌های واقعی و میدانی
-                                        </p>
-                                    </div>
-
-                                    <div class="flex items-center gap-3">
-                                        <img
-                                            src="/assets/icons/expertise/risk-analysis.png"
-                                            alt=""
-                                            class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
-                                        />
-                                        <p class="text-text-dark site-prose site-card__description">
-                                            عارضه‌یابی و شناسایی ریسک‌های پنهان و موانع پیش از اجرا
-                                        </p>
-                                    </div>
-
-                                    <div class="flex items-center gap-3">
-                                        <img
-                                            src="/assets/icons/expertise/schedule-cost.png"
-                                            alt=""
-                                            class="h-6 w-6 shrink-0 object-contain md:h-8 md:w-8"
-                                        />
-                                        <p class="text-text-dark site-prose site-card__description">
-                                            بهینه‌سازی زمان‌بندی و مدیریت هوشمندانه هزینه‌های اجرایی
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
-
-                            <div class="mt-6 grid gap-5 md:mt-8 md:grid-cols-[1fr_1fr] md:items-center md:gap-10">
-                                <p class="font-medium text-text-dark site-prose site-card__description">
-                                    پس از پایان ارزیابی، یک گزارش جامع و مکتوب شامل تحلیل وضعیت موجود، بررسی محدودیت‌ها
-                                    و یک «نقشه راه اجرایی» دقیق به شما تقدیم می‌گردد تا تصمیمات خود را با اطمینان کامل
-                                    اتخاذ کنید.
-                                </p>
-
-                                <a
-                                    href="#consultation"
-                                    class="expertise-page__project-cta flex h-[36px] w-full items-center justify-center rounded-[8px] border border-[#F76E11] px-4 text-center text-[14px] font-medium text-[#F76E11] transition-colors hover:bg-[#F76E11] hover:text-white sm:h-[40px] sm:text-[14px] md:h-[46px] md:rounded-[12px] md:text-[14px] site-text-link site-card__cta"
+                            <div class="expertise-page__deliverable">
+                                <p class="site-prose"
+                                    >خروجی این مرحله، گزارش وضعیت موجود و نقشه راه اجرایی است تا کارفرما بتواند درباره
+                                    طراحی و مراحل بعدی تصمیم بگیرد.</p
                                 >
-                                    <span class="site-text-link__label site-card__cta-label"
-                                        >برنامه‌ریزی بازدید و کارشناسی پروژه</span
-                                    >
+                                <a href="#consultation" class="expertise-page__project-cta site-text-link">
+                                    <span class="site-text-link__label">برنامه‌ریزی بازدید و کارشناسی پروژه</span>
                                 </a>
                             </div>
                         </div>
                     </article>
 
                     <!-- 02 -->
-                    <article
-                        id="engineering-design"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
-                    >
-                        <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
+                    <article id="engineering-design" class="expertise-page__card site-card" data-service>
+                        <div class="expertise-page__media">
                             <img
                                 src="/assets/images/expertise/engineering-design.png"
                                 alt="طراحی و شبیه‌سازی تجهیزات صنعتی"
-                                class="expertise-page__media-image absolute inset-0 h-full w-full object-cover object-center"
+                                class="expertise-page__media-image"
                             />
-                            <div
-                                class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
-                            >
-                                <h2 class="font-bold text-text-dark site-card__title"> مهندسی، طراحی و شبیه سازی </h2>
-                                <p class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description">
-                                    طراحی سیستم‌های یکپارچه نیازمند محاسبات دقیق سیالاتی است تا افت فشار به حداقل برسد و
-                                    توزیع هوا یکنواخت باشد. ما بر اساس استانداردهای بین‌المللی نظیر ASHRAE و SMACNA
-                                    طراحی را انجام می‌دهیم.
-                                </p>
-                                <a
-                                    href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
+                            <div class="expertise-page__media-content">
+                                <h2 class="site-card__title">مهندسی، طراحی و شبیه سازی</h2>
+                                <span class="expertise-page__divider" aria-hidden="true"></span>
+                                <p class="site-card__description"
+                                    >طراحی سیستم‌های یکپارچه نیازمند محاسبات دقیق سیالاتی است تا افت فشار به حداقل برسد
+                                    و توزیع هوا یکنواخت باشد. ما بر اساس استانداردهای بین‌المللی نظیر ASHRAE و SMACNA
+                                    طراحی را انجام می‌دهیم.</p
                                 >
-                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
-                                    <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
+                                <a
+                                    href="#engineering-design-details"
+                                    class="expertise-page__more-link site-text-link site-card__cta"
+                                    data-service-toggle
+                                    aria-controls="engineering-design-details"
+                                >
+                                    <span class="site-text-link__label site-card__cta-label" data-service-label
+                                        >مطالعه بیشتر</span
+                                    >
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            id="engineering-design-details"
+                            class="expertise-page__details"
+                            data-service-details
+                            role="region"
+                            aria-label="جزئیات مهندسی، طراحی و شبیه سازی"
+                        >
+                            <p class="site-prose"
+                                >در مرحله مهندسی، داده‌های ارزیابی به یک طرح قابل ساخت تبدیل می‌شوند. مسیر انتقال هوا،
+                                ظرفیت تجهیزات و افت فشار شبکه بررسی می‌شود و جانمایی با محدودیت‌های معماری و تأسیسات
+                                هماهنگ می‌شود. نقشه‌ها و مشخصات فنی، مرجع مشترک تیم طراحی، تولید و اجرا خواهند بود.</p
+                            >
+                            <div class="expertise-page__benefits">
+                                <h3 class="expertise-page__benefits-title">مزایای کلیدی این خدمت:</h3>
+                                <div class="expertise-page__benefits-grid"
+                                    ><div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/site-analysis.png" alt="" />
+                                        <p class="site-prose">محاسبه دبی، افت فشار و انتخاب ظرفیت تجهیزات</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/custom-solution.png" alt="" />
+                                        <p class="site-prose">طراحی مسیر کانال و هماهنگی جانمایی تأسیسات</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/risk-analysis.png" alt="" />
+                                        <p class="site-prose">بررسی سناریوهای عملکرد و مصرف انرژی</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/schedule-cost.png" alt="" />
+                                        <p class="site-prose">تهیه نقشه‌های اجرایی و مشخصات فنی ساخت</p>
+                                    </div></div
+                                >
+                            </div>
+                            <div class="expertise-page__deliverable">
+                                <p class="site-prose"
+                                    >بسته طراحی شامل نقشه‌ها، مشخصات تجهیزات و فهرست اقلام مورد نیاز است؛ این مستندات
+                                    مبنای برآورد، تولید و کنترل اجرای پروژه قرار می‌گیرند.</p
+                                >
+                                <a href="#consultation" class="expertise-page__project-cta site-text-link">
+                                    <span class="site-text-link__label">درخواست بررسی و طراحی مهندسی</span>
                                 </a>
                             </div>
                         </div>
                     </article>
 
                     <!-- 03 -->
-                    <article
-                        id="advanced-production"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
-                    >
-                        <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
+                    <article id="advanced-production" class="expertise-page__card site-card" data-service>
+                        <div class="expertise-page__media">
                             <img
                                 src="/assets/images/expertise/advanced-manufacturing.png"
                                 alt="ساخت و تولید پیشرفته تجهیزات صنعتی"
-                                class="expertise-page__media-image absolute inset-0 h-full w-full object-cover object-center"
+                                class="expertise-page__media-image"
                             />
-                            <div
-                                class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
-                            >
-                                <h2 class="font-bold text-text-dark site-card__title"> ساخت و تولید پیشرفته </h2>
-                                <p class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description">
-                                    تولید تجهیزات در مارپیچ صنعت نوین پویا بر پایه ماشین‌آلات تمام‌اتوماتیک و کنترل
-                                    کیفیت سخت‌گیرانه است تا تلورانس‌های ابعادی به حداقل ممکن برسد.
-                                </p>
-                                <a
-                                    href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
+                            <div class="expertise-page__media-content">
+                                <h2 class="site-card__title">ساخت و تولید پیشرفته</h2>
+                                <span class="expertise-page__divider" aria-hidden="true"></span>
+                                <p class="site-card__description"
+                                    >تولید تجهیزات در مارپیچ صنعت نوین پویا بر پایه ماشین‌آلات تمام‌اتوماتیک و کنترل
+                                    کیفیت سخت‌گیرانه است تا تلورانس‌های ابعادی به حداقل ممکن برسد.</p
                                 >
-                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
-                                    <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
+                                <a
+                                    href="#advanced-production-details"
+                                    class="expertise-page__more-link site-text-link site-card__cta"
+                                    data-service-toggle
+                                    aria-controls="advanced-production-details"
+                                >
+                                    <span class="site-text-link__label site-card__cta-label" data-service-label
+                                        >مطالعه بیشتر</span
+                                    >
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            id="advanced-production-details"
+                            class="expertise-page__details"
+                            data-service-details
+                            role="region"
+                            aria-label="جزئیات ساخت و تولید پیشرفته"
+                        >
+                            <p class="site-prose"
+                                >پس از تأیید طراحی، ساخت قطعات و تجهیزات بر اساس نقشه‌های اجرایی آغاز می‌شود. انتخاب
+                                متریال، برش، شکل‌دهی، مونتاژ و کنترل ابعادی در یک مسیر مشخص انجام می‌شود. قطعات پیش از
+                                ارسال بررسی و دسته‌بندی می‌شوند تا نصب در سایت با خطای کمتر پیش برود.</p
+                            >
+                            <div class="expertise-page__benefits">
+                                <h3 class="expertise-page__benefits-title">مزایای کلیدی این خدمت:</h3>
+                                <div class="expertise-page__benefits-grid"
+                                    ><div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/site-analysis.png" alt="" />
+                                        <p class="site-prose">انتخاب متریال متناسب با شرایط بهره‌برداری</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/custom-solution.png" alt="" />
+                                        <p class="site-prose">ساخت کانال و اتصالات مطابق نقشه تأییدشده</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/risk-analysis.png" alt="" />
+                                        <p class="site-prose">کنترل ابعادی و کیفیت اتصال قطعات</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/schedule-cost.png" alt="" />
+                                        <p class="site-prose">آماده‌سازی و بسته‌بندی برای ارسال به سایت</p>
+                                    </div></div
+                                >
+                            </div>
+                            <div class="expertise-page__deliverable">
+                                <p class="site-prose"
+                                    >خروجی این مرحله، قطعات آماده نصب به همراه اطلاعات ساخت و کنترل کیفیت است. نمونه‌ها
+                                    و ظرفیت نهایی بر اساس مشخصات پروژه توافق می‌شوند.</p
+                                >
+                                <a href="#consultation" class="expertise-page__project-cta site-text-link">
+                                    <span class="site-text-link__label">مشاوره ساخت و تولید سفارشی</span>
                                 </a>
                             </div>
                         </div>
                     </article>
 
                     <!-- 04 -->
-                    <article
-                        id="site-execution"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
-                    >
-                        <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
+                    <article id="site-execution" class="expertise-page__card site-card" data-service>
+                        <div class="expertise-page__media">
                             <img
                                 src="/assets/images/expertise/site-project-management.png"
                                 alt="اجرای سایت و مدیریت پروژه صنعتی"
-                                class="expertise-page__media-image absolute inset-0 h-full w-full object-cover object-center"
+                                class="expertise-page__media-image"
                             />
-                            <div
-                                class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
-                            >
-                                <h2 class="font-bold text-text-dark site-card__title"> اجرای سایت و مدیریت پروژه </h2>
-                                <p class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description">
-                                    نصب تاسیسات صنعتی یک فرایند حساس است که مستقیماً بر راندمان نهایی سیستم تأثیر
+                            <div class="expertise-page__media-content">
+                                <h2 class="site-card__title">اجرای سایت و مدیریت پروژه</h2>
+                                <span class="expertise-page__divider" aria-hidden="true"></span>
+                                <p class="site-card__description"
+                                    >نصب تاسیسات صنعتی یک فرایند حساس است که مستقیماً بر راندمان نهایی سیستم تأثیر
                                     می‌گذارد. تیم‌های اجرایی ما با رعایت دقیق پروتکل‌های ایمنی، بهداشت و محیط زیست
-                                    عملیات نصب را پیش می‌برند.
-                                </p>
-                                <a
-                                    href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
+                                    عملیات نصب را پیش می‌برند.</p
                                 >
-                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
-                                    <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
+                                <a
+                                    href="#site-execution-details"
+                                    class="expertise-page__more-link site-text-link site-card__cta"
+                                    data-service-toggle
+                                    aria-controls="site-execution-details"
+                                >
+                                    <span class="site-text-link__label site-card__cta-label" data-service-label
+                                        >مطالعه بیشتر</span
+                                    >
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            id="site-execution-details"
+                            class="expertise-page__details"
+                            data-service-details
+                            role="region"
+                            aria-label="جزئیات اجرای سایت و مدیریت پروژه"
+                        >
+                            <p class="site-prose"
+                                >اجرای سایت با برنامه‌ریزی عملیات، هماهنگی تیم‌ها و کنترل کیفیت نصب پیش می‌رود. ترتیب
+                                حمل و نصب، مسیرهای دسترسی و نیازهای ایمنی قبل از شروع کار بررسی می‌شوند. پیشرفت اجرا ثبت
+                                می‌شود و مغایرت‌های احتمالی با نقشه برای تصمیم‌گیری به تیم مهندسی ارجاع می‌شوند.</p
+                            >
+                            <div class="expertise-page__benefits">
+                                <h3 class="expertise-page__benefits-title">مزایای کلیدی این خدمت:</h3>
+                                <div class="expertise-page__benefits-grid"
+                                    ><div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/site-analysis.png" alt="" />
+                                        <p class="site-prose">تهیه برنامه اجرایی و هماهنگی عملیات سایت</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/custom-solution.png" alt="" />
+                                        <p class="site-prose">کنترل جانمایی، تراز و اتصالات هنگام نصب</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/risk-analysis.png" alt="" />
+                                        <p class="site-prose">رعایت الزامات ایمنی متناسب با محیط پروژه</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/schedule-cost.png" alt="" />
+                                        <p class="site-prose">ثبت پیشرفت و بررسی مغایرت‌های اجرایی</p>
+                                    </div></div
+                                >
+                            </div>
+                            <div class="expertise-page__deliverable">
+                                <p class="site-prose"
+                                    >پس از نصب، چک‌لیست‌های اجرایی و مدارک مربوط به وضعیت نصب‌شده آماده می‌شوند تا مرحله
+                                    تست و تحویل با اطلاعات کامل آغاز شود.</p
+                                >
+                                <a href="#consultation" class="expertise-page__project-cta site-text-link">
+                                    <span class="site-text-link__label">بررسی برنامه نصب و اجرای پروژه</span>
                                 </a>
                             </div>
                         </div>
                     </article>
 
                     <!-- 05 -->
-                    <article
-                        id="commissioning"
-                        class="expertise-page__card overflow-hidden rounded-[8px] bg-white shadow-[0_5px_18px_rgba(15,23,43,0.10)] md:rounded-[16px] site-card"
-                    >
-                        <div class="expertise-page__media relative h-[128px] overflow-hidden sm:h-[150px] md:h-[270px]">
+                    <article id="commissioning" class="expertise-page__card site-card" data-service>
+                        <div class="expertise-page__media">
                             <img
                                 src="/assets/images/expertise/testing-commissioning.png"
                                 alt="تست و راه‌اندازی سیستم صنعتی"
-                                class="expertise-page__media-image absolute inset-0 h-full w-full object-cover object-center"
+                                class="expertise-page__media-image"
                             />
-                            <div
-                                class="expertise-page__media-content absolute inset-y-0 right-0 z-[2] flex w-[59%] flex-col justify-center px-4 text-right sm:w-[55%] sm:px-6 md:w-[46%] md:px-10 lg:px-12"
-                            >
-                                <h2 class="font-bold text-text-dark site-card__title">
-                                    تست، راه‌اندازی و پشتیبانی پایدار
-                                </h2>
-                                <p class="mt-2 text-text-dark/85 md:mt-4 site-prose site-card__description">
-                                    تضمین عملکرد صحیح سیستم نیازمند تست‌های بالانسینگ و راه‌اندازی اصولی است.
-                                </p>
-                                <a
-                                    href="#consultation"
-                                    class="expertise-page__more-link mt-2 inline-flex items-center gap-1.5 self-start text-[14px] font-medium transition-opacity hover:opacity-70 sm:text-[14px] md:mt-4 md:text-[14px] site-text-link site-card__cta"
+                            <div class="expertise-page__media-content">
+                                <h2 class="site-card__title">تست، راه‌اندازی و پشتیبانی پایدار</h2>
+                                <span class="expertise-page__divider" aria-hidden="true"></span>
+                                <p class="site-card__description"
+                                    >تضمین عملکرد صحیح سیستم نیازمند تست‌های بالانسینگ و راه‌اندازی اصولی است.</p
                                 >
-                                    <span class="site-text-link__label site-card__cta-label">مطالعه بیشتر</span>
-                                    <i class="fa-solid fa-chevron-left text-[8px]" aria-hidden="true"></i>
+                                <a
+                                    href="#commissioning-details"
+                                    class="expertise-page__more-link site-text-link site-card__cta"
+                                    data-service-toggle
+                                    aria-controls="commissioning-details"
+                                >
+                                    <span class="site-text-link__label site-card__cta-label" data-service-label
+                                        >مطالعه بیشتر</span
+                                    >
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            id="commissioning-details"
+                            class="expertise-page__details"
+                            data-service-details
+                            role="region"
+                            aria-label="جزئیات تست، راه‌اندازی و پشتیبانی پایدار"
+                        >
+                            <p class="site-prose"
+                                >در مرحله راه‌اندازی، تجهیزات و شبکه به صورت یک سیستم یکپارچه بررسی می‌شوند. تنظیمات
+                                اولیه، عملکرد کنترل‌ها و مقادیر جریان هوا ثبت می‌شوند و با اهداف طراحی مقایسه می‌شوند.
+                                سپس اطلاعات بهره‌برداری و نگهداری در اختیار تیم کارفرما قرار می‌گیرد.</p
+                            >
+                            <div class="expertise-page__benefits">
+                                <h3 class="expertise-page__benefits-title">مزایای کلیدی این خدمت:</h3>
+                                <div class="expertise-page__benefits-grid"
+                                    ><div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/site-analysis.png" alt="" />
+                                        <p class="site-prose">بررسی عملکرد و تنظیم اولیه تجهیزات</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/custom-solution.png" alt="" />
+                                        <p class="site-prose">اندازه‌گیری جریان هوا و بالانس شبکه</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/risk-analysis.png" alt="" />
+                                        <p class="site-prose">آزمون کنترل‌ها و سناریوهای راه‌اندازی</p>
+                                    </div>
+                                    <div class="expertise-page__benefit">
+                                        <img src="/assets/icons/expertise/schedule-cost.png" alt="" />
+                                        <p class="site-prose">آموزش بهره‌برداری و برنامه نگهداری</p>
+                                    </div></div
+                                >
+                            </div>
+                            <div class="expertise-page__deliverable">
+                                <p class="site-prose"
+                                    >گزارش تست، تنظیمات نهایی و راهنمای نگهداری، مبنای تحویل سیستم هستند. برنامه
+                                    پشتیبانی با توجه به نوع تجهیزات و شرایط پروژه مشخص می‌شود.</p
+                                >
+                                <a href="#consultation" class="expertise-page__project-cta site-text-link">
+                                    <span class="site-text-link__label">هماهنگی تست، راه‌اندازی و پشتیبانی</span>
                                 </a>
                             </div>
                         </div>

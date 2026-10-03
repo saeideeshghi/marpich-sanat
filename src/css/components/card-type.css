@@ -48,19 +48,18 @@ body[data-page] .site-card .site-card__cta > .site-card__cta-label {
 body[data-page] .site-card .site-card__cta:focus-visible > .site-card__cta-label {
     text-decoration: underline;
 }
-@media (min-width: 1180px) {
-    body[data-page] .site-card .site-card__cta {
-        font-size: var(--card-cta-desktop);
-    }
-    body[data-page] .site-card .site-card__cta > .site-card__cta-label {
-        font-size: inherit;
-    }
+body[data-page] .site-card .site-card__cta {
+    font-size: var(--card-cta);
 }
-@media (max-width: 639px) {
-    body[data-page] .site-card .site-card__tag {
-        font-size: var(--card-tag-mobile);
-    }
-    body[data-page] .site-card .site-card__tag :where(small) {
-        font-size: inherit;
-    }
+body[data-page] .site-card .site-card__cta > .site-card__cta-label {
+    font-size: inherit;
+}
+/* This rule follows responsive-cards.css, so category and specification chips
+ * use the same role on desktop, tablet and mobile. Keep their natural height. */
+body[data-page] .site-card .site-card__tag {
+    font-size: var(--card-tag);
+    line-height: 1.7;
+}
+body[data-page] .site-card .site-card__tag :where(small, span) {
+    font-size: inherit;
 }

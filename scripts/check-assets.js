@@ -10,7 +10,7 @@ const references = new Set();
 
 function collectReferences(source) {
     for (const match of source.matchAll(
-        /\/(?:assets|fonts)\/[^\s"'`<>;)|]+\.(?:svg|png|webp|jpe?g|gif|avif|ico|ttf|woff2?|otf|pdf|dwg|docx?)/g,
+        /\/(?:assets|fonts)\/[^\s"'`<>;)|]+\.(?:svg|png|webp|jpe?g|gif|avif|ico|ttf|woff2?|otf|pdf|dwg|docx?|zip)/g,
     )) {
         references.add(match[0]);
     }

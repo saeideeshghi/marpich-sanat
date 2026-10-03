@@ -184,47 +184,14 @@
     color: #0f172b;
 }
 
-.product-details__technical-box {
-    border: 1px solid #0f172b;
-    background: transparent;
-}
-
-/* Internal dividers stay lighter than the outer frame, matching the Figma tables. */
-.product-details__technical-features,
-.product-details__technical-table-wrap {
-    border-top: 1px solid rgb(15 23 43 / 0.42);
-}
-
-.product-details__specs-table {
-    border-collapse: collapse;
-}
-
-.product-details__specs-table thead tr > * {
-    border-bottom: 1px solid rgb(15 23 43 / 0.58);
-}
-
-.product-details__specs-table tr > * + * {
-    border-right: 1px solid rgb(15 23 43 / 0.52);
-}
-
-.product-details__specs-table tbody tr:not(:last-child) > * {
-    border-bottom: 1px solid rgb(15 23 43 / 0.24);
-}
-
-.product-details__technical-note {
-    border-top: 1px solid rgb(15 23 43 / 0.42);
-}
-
 /* Keep the download icon clearly separated from the left edge. */
 .product-details__download-button img {
     left: 16px;
     filter: brightness(0) invert(1);
 }
 
-@media (min-width: 1180px) {
-    .product-details__technical-features,
-    .product-details__technical-table-wrap {
-        border-top: 0;
-        border-right: 1px solid rgb(15 23 43 / 0.42);
-    }
+/* The hero overlap already reclaims its own space. Keep the next section in
+ * normal flow instead of compensating with a second negative margin. */
+.product-details__content {
+    margin-top: var(--details-section-gap);
 }

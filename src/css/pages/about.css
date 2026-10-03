@@ -1318,16 +1318,12 @@
     height: auto;
     max-width: 100%;
     margin-inline: auto;
-    max-height: none;
+    max-height: var(--about-team-max-height, 50svh);
     object-fit: contain;
     object-position: center;
     border-radius: inherit;
 }
-@media (min-width: 1600px) {
-    .about-container.about-team-wrap {
-        width: min(calc(100% - 64px), 1760px) !important;
-    }
-}
+
 @media (max-width: 767px) {
     .about-hero {
         padding-top: 94px;

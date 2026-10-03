@@ -532,8 +532,8 @@ export function initSitePatterns() {
     const page = document.body.dataset.page;
 
     // Home has its own image-led hero and intentionally does not use the shared
-    // header pattern. Every internal page mounts the approved pattern once.
-    if (page !== "home") {
+    // header pattern. Contact currently opts out; other internal pages mount it once.
+    if (page !== "home" && page !== "contact") {
         const header = document.querySelector(".site-header");
         const headerHost = document.querySelector("[data-site-hero]") || header?.parentElement;
         if (headerHost && !headerHost.querySelector(":scope > [data-site-pattern='header']")) {

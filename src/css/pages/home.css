@@ -270,39 +270,6 @@
     }
 }
 
-/* Only the hero reaches the physical left edge. Keep the existing right
- * gutter; lower home sections retain their own containers and margins. */
-body[data-page="home"] .hero-shell {
-    --home-hero-right-gutter: max(60px, calc((100vw - 1680px) / 2));
-    margin-left: 0;
-    padding-left: 0;
-}
-body[data-page="home"] .hero-content-wrapper {
-    width: calc(100% - var(--home-hero-right-gutter));
-    max-width: none;
-    margin-left: 0;
-    margin-right: var(--home-hero-right-gutter);
-    padding-left: 0;
-}
-body[data-page="home"] .hero-content {
-    margin-left: 0;
-}
-@media (min-width: 640px) and (max-width: 1179px) {
-    body[data-page="home"] .hero-shell {
-        --home-hero-right-gutter: 44px;
-    }
-}
-@media (max-width: 639px) {
-    body[data-page="home"] .hero-shell {
-        --home-hero-right-gutter: 20px;
-    }
-}
-@media (max-width: 359px) {
-    body[data-page="home"] .hero-shell {
-        --home-hero-right-gutter: 16px;
-    }
-}
-
 /* Intrinsic logo widths avoid empty stretched tiles. Every loop group includes
  * its trailing gap; JS measures that exact width and supplies enough copies. */
 .home-partners {
@@ -630,4 +597,23 @@ body[data-page="home"] .hero-content {
     body[data-page="home"] main .home-article__row {
         grid-template-columns: 88px minmax(0, 1fr) 44px;
     }
+}
+
+/* Company-logo hover uses the original blur/dim treatment, without extra copy. */
+.home-project__client-logo {
+    width: min(140px, 70%);
+    height: 80px;
+    object-fit: contain;
+}
+body[data-page="home"] .home-why__accent {
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin-top: 10px;
+    background: linear-gradient(to left, #f76e11 0%, #f76e11 70%, transparent 100%);
+    opacity: 1;
+}
+
+.home-project__client-logo[src$=".svg"] {
+    filter: brightness(0) invert(1);
 }

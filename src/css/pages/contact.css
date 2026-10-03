@@ -677,7 +677,7 @@ body[data-page="contact"] .contact-form-section > div > p.site-prose {
     gap: 24px;
 }
 body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
-    text-align: center;
+    text-align: right;
 }
 .contact-benefits .benefit-item h3 {
     font-size: 17px;
@@ -807,19 +807,6 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
     }
 }
 
-/* Faint side waves continue through the light surface, as in the references. */
-.contact-hero::after,
-.contact-main::before {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: url("/assets/decorations/contact-surface.svg") center / 100% 100% no-repeat;
-    content: "";
-    pointer-events: none;
-}
-.contact-hero::after {
-    top: var(--contact-intro-background, 354px);
-}
 .contact-main {
     padding-bottom: 64px;
 }
@@ -880,4 +867,25 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
         height: clamp(180px, 45vw, 260px) !important;
         min-height: 0 !important;
     }
+}
+
+/* The address cards start lower on phones; the hero decoration is disabled. */
+@media (max-width: 616px) {
+    body[data-page="contact"] .contact-branches {
+        margin-top: 48px;
+    }
+}
+body[data-page="contact"] .contact-benefits .benefit-item {
+    align-items: flex-start;
+    text-align: right;
+}
+body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
+    text-align: right;
+    margin-inline: 0;
+}
+
+/* An office address is complete contact information, not a clamped excerpt. */
+body[data-page="contact"] .branch-card__address {
+    font-size: var(--card-description);
+    line-height: 1.85;
 }

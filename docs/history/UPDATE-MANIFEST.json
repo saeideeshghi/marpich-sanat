@@ -1,0 +1,101 @@
+{
+  "package": "Marpich Sanat v2 patterns and cards update",
+  "base_commit": "50e755419aa45250792309add79033c6b33d0782",
+  "date": "2026-10-02",
+  "mode": "merge source update into existing repository root",
+  "upload_command": ".\\PUSH-GITHUB.cmd",
+  "files": [
+    {
+      "path": "GITHUB-PUSH.txt",
+      "sha256": "259664f32c0a7d05c362519f36b2cbcc6311f30b29653a6e873b74b167b963d9"
+    },
+    {
+      "path": "GITHUB-UPLOAD.md",
+      "sha256": "a2c511c4b30d609b40df299fee0f797ff5c7dbafa7ee80f3252beeadc5b1b611"
+    },
+    {
+      "path": "PUSH-GITHUB.cmd",
+      "sha256": "1520d4f427bb14ad15fe851095ca6f7d7c1a80c1f08b393381ed2dca17ac9fb3"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b0d96baa356a5e2ee35fb2f6f88a93a90ca6e9cdb512a9ab75dfb5368e827560"
+    },
+    {
+      "path": "REPLACE-V2.txt",
+      "sha256": "a7c283963f89a95f8fdce6a2d641ca4cf01409220644a967cc915dcd27e7fe06"
+    },
+    {
+      "path": "docs/2026-10-02-PATTERNS-CARDS.md",
+      "sha256": "40fc38d31971488563629606e2e9348b6092477e1948c35bb4762360f58899d7"
+    },
+    {
+      "path": "docs/previews/pass2/articles-mobile.png",
+      "sha256": "1f6088b48990cc03eb21d7b077480fcc4265a908fcd72ce1cfd311bd6533bf0b"
+    },
+    {
+      "path": "docs/previews/pass2/contact-mobile.png",
+      "sha256": "c90f5c8f64de6a0b3ab586ab3e66cc42e155d314deebf364578f1ba1f87eab14"
+    },
+    {
+      "path": "docs/previews/pass2/footer-desktop.png",
+      "sha256": "12958507b18a0c47c6adeb70d1e573a89d556d2edceaf0169a3b3bfd9b6444e9"
+    },
+    {
+      "path": "docs/previews/pass2/footer-mobile.png",
+      "sha256": "505e86a96de2b69ba8a55e23229526fefcbd4b17a083c42ef166d96e2fb8f6fd"
+    },
+    {
+      "path": "docs/previews/pass2/products-mobile.png",
+      "sha256": "88b10ad8d2df1f3bddc5c9a95dcc7d3291b0c2e4dbefb23ebcb891ee6e48bc5d"
+    },
+    {
+      "path": "src/css/components/catalog.css",
+      "sha256": "bc7700da10073d965e24669abf853e6ae5aaf0aaf5d99127ed3c02fcf9819627"
+    },
+    {
+      "path": "src/css/components/pattern.css",
+      "sha256": "270b7b809e8aa36c6841b3eaea46ace03431bdffc2d0caf5e974463fc8b06f70"
+    },
+    {
+      "path": "src/css/components/responsive-cards.css",
+      "sha256": "8213783a5ac6a7ea7370f3a3c308870120c30c42031e43de6f268ab127df8bca"
+    },
+    {
+      "path": "src/css/pages/air-handling.css",
+      "sha256": "a8a1e5faaff896a76b443073ee69e86b758d021d4742e5d3a449128dfccd0c89"
+    },
+    {
+      "path": "src/css/pages/articles.css",
+      "sha256": "b3657de3bb831c06f1eeb4a222da36d3bd22e7764ce4f1051509133b97cf399a"
+    },
+    {
+      "path": "src/css/pages/contact.css",
+      "sha256": "e15b37b11c442fddf89e361116693eb5d56e66d3c61592e42b5da7609a0e4bd9"
+    },
+    {
+      "path": "src/css/pages/products.css",
+      "sha256": "b0adeb4b834c903b87be5cd0aede705f6ddb087fbfb9becb1cdeae6c1eebe9ac"
+    },
+    {
+      "path": "src/css/pages/projects.css",
+      "sha256": "b6449aee90ddbd2ce010f555ca6be113414e65439cab361d444ff447beb09500"
+    },
+    {
+      "path": "src/css/responsive.css",
+      "sha256": "73d1021abbb31fb20344e85bd833e3df4bb6051acea45dbefa26d3ee22ae09e8"
+    },
+    {
+      "path": "src/data/patterns/footer-pattern.json",
+      "sha256": "66d8ae5d1d64b843e254ac4ec4ff95553e944fb79cc724c30b013ff07ecc05e8"
+    },
+    {
+      "path": "src/js/components/site-pattern.js",
+      "sha256": "889ff287f10341a97a8ab2867b44c57ec12c0c1b450ac7564e1c317fdd313cc5"
+    },
+    {
+      "path": "src/js/pages/contact.js",
+      "sha256": "a35c485a6f8068d6d1ca1799c1b4d0136b6cdaf5dc74d6facff6141329c8f6ae"
+    }
+  ]
+}
