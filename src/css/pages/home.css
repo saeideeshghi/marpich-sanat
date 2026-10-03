@@ -45,6 +45,7 @@
     margin-left: auto;
     direction: rtl;
     text-align: right;
+    margin-top: 105px;
 }
 .hero-content .home-hero-eyebrow { font-size: var(--hero-eyebrow); line-height: 1.6; }
 .hero-content .home-hero-title { font-size: var(--hero-title); line-height: 1.65; text-wrap: wrap; }

@@ -5,9 +5,9 @@
 
 /* index.html */
 #hero-index {
-    --hero-height-desktop: 41rem;
-    --hero-height-tablet: 41rem;
-    --hero-height-mobile: 41rem;
+    --hero-height-desktop: 44rem;
+    --hero-height-tablet: 44rem;
+    --hero-height-mobile: 44rem;
 }
 /* projects.html */
 #hero-projects {
