@@ -11,7 +11,7 @@
 body { font-size: 16px; line-height: 1.85; }
 body[data-page] :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),select,textarea) { font-size: 16px; }
 body[data-page] :is(p.site-prose, .industry-textile__faq-answer) {
-    font-size: 16px;
+    font-size: 22px;
     line-height: 1.95;
     text-align: right;
     word-break: normal;
@@ -57,7 +57,7 @@ body[data-page] [data-consultation] h2 { line-height: 1.7; }
     body[data-page] main p { font-size: 15px; line-height: 1.9; }
     body[data-page] main h2 { font-size: 22px; line-height: 1.6; }
     body[data-page] main h3 { font-size: 16px; line-height: 1.7; }
-    body[data-page] :is(p.site-prose,.industry-textile__faq-answer) { font-size: 15px; line-height: 1.95; text-align: right; text-align-last: auto; }
+    body[data-page] :is(p.site-prose,.industry-textile__faq-answer) { font-size: 18px; line-height: 1.95; text-align: right; text-align-last: auto; }
     body[data-page] main :is(.site-text-link,.about-card-link,.industry-textile__card-link) { font-size: 14px; min-height: 40px; }
     body[data-page] .product-search__filters { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
     body[data-page] .product-search__select { width: 100%; min-height: 48px; font-size: 14px; }

@@ -193,8 +193,8 @@
 
 .about-story__icon img {
     display: block;
-    width: 42px;
-    height: 42px;
+    width: 68px;
+    height: 68px;
     object-fit: contain;
 }
 
@@ -369,6 +369,7 @@
     object-fit: cover;
     object-position: center;
 }
+.about-expertise-card__media { min-height: 0; overflow: hidden; flex: 0 0 auto; }
 
 .about-expertise-card__body {
     display: flex;
@@ -889,8 +890,8 @@
     }
 
     .about-story__icon img {
-        width: 34px;
-        height: 34px;
+        width: 60px;
+        height: 60px;
     }
 
     .about-story__kicker {
@@ -1122,7 +1123,7 @@
     }
 
     .about-gallery__content {
-        width: 46%;
+        width: 88%;
     }
 
     .about-gallery__content h2 {
@@ -1275,10 +1276,13 @@
 
 /* First-screen team image. Actual remaining viewport space is measured in about.js. */
 .about-hero-shell { min-height: 0; padding-bottom: 64px; }
+.about-hero-shell { isolation: auto; }
+.about-hero-shell > .site-pattern-layer { z-index: 0; }
+.about-main { z-index: 1; }
 .about-hero { padding-top: 100px; }
 .about-hero__title { margin-top: 12px; }
 .about-hero__description { margin-top: 8px; font-size: 16px; line-height: 1.8; }
-.about-team-wrap { transform: translateY(-36px); margin-bottom: -36px; }
+.about-team-wrap { z-index: 2; transform: translateY(-36px); margin-bottom: -36px; }
 .about-team-media { aspect-ratio: auto; height: auto; background: transparent; box-shadow: none; }
 .about-team-wrap { width: min(calc(100% - 64px), 1760px); }
 .about-team-media__image { position: static; width: 100%; height: auto; max-width: 100%; margin-inline: auto; max-height: var(--about-image-space, calc(100svh - 300px)); object-fit: cover; object-position: center; border-radius: inherit; }
@@ -1300,4 +1304,18 @@
     .about-expertise__grid { grid-template-columns: 1fr; }
     .about-expertise-card__image { height: 180px; }
     .about-certificate-card { height: auto; min-height: 240px; }
+}
+
+/* The exported gallery SVG has transparent shadow gutters. Overscan those
+ * gutters so its photograph reaches both edges of the smaller media boxes. */
+@media (max-width: 1395px) {
+    .about-gallery__media { overflow: hidden; }
+    .about-gallery__media img {
+        position: absolute;
+        inset: -4%;
+        width: 108%;
+        max-width: none;
+        height: 108%;
+        object-fit: cover;
+    }
 }

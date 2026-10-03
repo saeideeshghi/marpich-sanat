@@ -12,7 +12,9 @@
 @media (min-width: 1180px) {
     .site-header__desktop {
         display: flex;
+        padding-left: clamp(64px, 5.6vw, 80px);
     }
+    .site-navigation { margin-left: 16px; }
     .site-header__mobile {
         display: none;
     }
@@ -469,7 +471,7 @@ body.menu-open {
 /* Shared navigation typography. Footer styles live in footer.css. */
 .site-navigation > ul { font-size: 14px; }
 @media (min-width: 1180px) and (max-width: 1279px) {
-    .site-header__desktop { padding-inline: 24px; }
+    .site-header__desktop { padding-right: 24px; padding-left: 40px; }
     .site-navigation { margin-right: 22px; }
     .site-navigation > ul { gap: 11px; }
 }

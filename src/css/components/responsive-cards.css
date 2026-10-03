@@ -152,11 +152,48 @@ body[data-page] main .article-card__link { margin-top: 4px; padding-top: 4px; }
         border-radius: 8px 8px 0 0;
     }
     body[data-page] main .articles-grid.is-list .article-card__media { aspect-ratio: 16 / 9; }
-    /* Office cards keep their map beside their details in contact.css. */
+    /* Office map placement is owned by contact.css. */
 }
 @media (max-width: 559px) {
     body[data-page] main :is(.home-expertise-grid,.home-projects-grid,.home-products-grid,.products-grid,.projects-page__grid,.articles-grid,.about-expertise__grid,.industry-textile__products-grid,.industry-textile__projects-grid,.project-details__products-grid) {
         grid-template-columns: minmax(0,1fr);
         gap: 20px;
     }
+}
+
+/* A single phone column needs no grid/list control. Keep both modes stacked
+ * when resizing from a desktop list view. */
+@media (max-width: 767px) {
+    body[data-page] :is(.projects-page__view-switch, .view-switcher, .articles-view-switcher) { display: none; }
+    body[data-page] main :is(.projects-page__grid, .products-grid, .articles-grid) { grid-template-columns: minmax(0, 1fr); }
+    body[data-page] main :is(.projects-page__grid.is-list, .products-grid.is-list, .products-grid.products-grid--list, .articles-grid.is-list) > article {
+        display: flex;
+        flex-direction: column;
+        direction: rtl;
+    }
+    body[data-page] main :is(.projects-page__grid.is-list, .products-grid.is-list, .products-grid.products-grid--list, .articles-grid.is-list) :is(.projects-page__card-media, .product-card__media, .article-card__media) {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        flex: 0 0 auto;
+        border-radius: 8px 8px 0 0;
+    }
+    body[data-page] main .articles-grid.is-list .article-card__media { aspect-ratio: 16 / 9; }
+}
+
+/* Animate only card photographs: logos, icons and labels keep their size.
+ * Individual scale preserves existing flips and article image overscan. */
+body[data-page] main :is(.home-expertise-grid > article > div:first-child > img, .home-products-grid > article > div:first-child > img, .product-card__image, .article-card__media img, .about-expertise-card__image, .industry-textile__product-media img, .industry-textile__project-media img, .project-details__product-media img, .expertise-page__media-image) {
+    transition: scale 320ms ease, transform 320ms ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    body[data-page] main :is(.home-expertise-grid, .home-products-grid) > article:hover > div:first-child > img,
+    body[data-page] main .product-card:not(.industry-card):hover .product-card__image,
+    body[data-page] main .article-card:hover .article-card__media img,
+    body[data-page] main .about-expertise-card:hover .about-expertise-card__image,
+    body[data-page] main .industry-textile__product-card:hover .industry-textile__product-media img,
+    body[data-page] main .industry-textile__project-card:hover .industry-textile__project-media img,
+    body[data-page] main .project-details__product-card:hover .project-details__product-media img,
+    body[data-page] main .expertise-page__card:hover .expertise-page__media-image { scale: 1.06; }
 }

@@ -696,3 +696,36 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) { text-alig
 @media (max-width: 1179px) {
     .contact-main { padding-bottom: 24px; }
 }
+
+/* Keep the intrinsic portrait maps from setting the height of tablet cards. */
+@media (max-width: 1179px) {
+    .contact-page .contact-branches { width: min(calc(100% - 40px), 760px); }
+    .contact-branches > .branch-card { position: relative; min-height: 0; }
+    .branch-card > div { grid-column: 1; grid-row: 1; }
+    .branch-card > div > .mt-auto { margin-top: 12px; }
+    .branch-card__map {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 36%;
+        min-height: 0 !important;
+    }
+}
+@media (min-width: 617px) and (max-width: 639px) {
+    .branch-card__map { width: 32%; }
+}
+@media (min-width: 617px) and (max-width: 1179px) {
+    .contact-benefits__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* On phones the map fills the first row, followed by all office information. */
+@media (max-width: 616px) {
+    .contact-branches > .branch-card { grid-template-columns: minmax(0, 1fr); }
+    .branch-card > div { grid-column: 1; grid-row: 2; padding: 16px; }
+    .branch-card__map {
+        position: static;
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: clamp(180px, 45vw, 260px) !important;
+        min-height: 0 !important;
+    }
+}

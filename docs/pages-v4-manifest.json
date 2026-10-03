@@ -1,0 +1,86 @@
+{
+  "base_commit": "bb0d3c3d68ed5da327fbfa9893c750678208773c",
+  "version": 4,
+  "files": [
+    {
+      "path": "APPLY-PAGES-FIXES.txt",
+      "size": 2593,
+      "sha256": "9ab9539044cc817acf32d364dffe6370e5ee95c09d02476e5cd4b815157bd46d"
+    },
+    {
+      "path": "README.md",
+      "size": 10281,
+      "sha256": "f83447499d410fda778e24fc11a35fd36d636b53722d0a9c2fe4d451fb0000ef"
+    },
+    {
+      "path": "about.html",
+      "size": 24010,
+      "sha256": "0ee44e1094691e88d7346624e4b7b3dbbd9b685f0e3f1d9920a3e7e1811b181b"
+    },
+    {
+      "path": "docs/2026-10-03-PAGES-POLISH-V4.md",
+      "size": 7063,
+      "sha256": "8bf632bccaca6dfd57a559d142ce9c2aaf5dcba15f1f8db7466825f4466bd280"
+    },
+    {
+      "path": "docs/previews/pages-v4/about-1395.png",
+      "size": 1155639,
+      "sha256": "f64e7c5764adcd4b286a9410d2caa243589c6b087c4209959de713b9eec450f4"
+    },
+    {
+      "path": "docs/previews/pages-v4/contact-1179.png",
+      "size": 548368,
+      "sha256": "cf656bb762bc33bec9be7a67e1bb33e85771d47429ca8eb684147fdfc02fc411"
+    },
+    {
+      "path": "docs/previews/pages-v4/contact-390.png",
+      "size": 382417,
+      "sha256": "62563874da25093035feceb412afbb305748fee7bb9aa0f1b11bcc98affd2142"
+    },
+    {
+      "path": "docs/previews/pages-v4/gallery-1395.png",
+      "size": 465176,
+      "sha256": "89c11ad12758061cb3f3c918a38797343837d9d80eeefef108458cae83a9317e"
+    },
+    {
+      "path": "docs/previews/pages-v4/project-card-hover.png",
+      "size": 72340,
+      "sha256": "734b56b89f0005b89dfb3a90974a2c7cf7f085a489ad7688a67cefa892d6b4a3"
+    },
+    {
+      "path": "docs/responsive-v4.json",
+      "size": 272064,
+      "sha256": "3f567941826917ec03cb94ee15111d45fb34fc4b8fbbedc85e6919aba22c343d"
+    },
+    {
+      "path": "projects.html",
+      "size": 30604,
+      "sha256": "dd8a07b365466b0f8edfff1d875e2a894d70d4a76b685fbe1ae510b4777de2d5"
+    },
+    {
+      "path": "src/css/components/responsive-cards.css",
+      "size": 12471,
+      "sha256": "be211bb80bfce0cb7ecf3fe3971b1e09c3abbf0c9f440fb84f85dc23fc264d88"
+    },
+    {
+      "path": "src/css/components/site.css",
+      "size": 10416,
+      "sha256": "47ee245044d02b990863a772ac239db07d906b1fcd4d8b096a97e889db61f891"
+    },
+    {
+      "path": "src/css/pages/about.css",
+      "size": 28950,
+      "sha256": "9ac82f86691cc58e7303ca33f1144657eefa1d52007b5049605763c7d91f09b3"
+    },
+    {
+      "path": "src/css/pages/contact.css",
+      "size": 18301,
+      "sha256": "0c0aa77224d8a18be02e285292e851c8127d3040528e440aabaa43609ba08dfa"
+    },
+    {
+      "path": "src/css/pages/projects.css",
+      "size": 15765,
+      "sha256": "821d9b583f4553976acec2b49a8f14847aa50e291b33f005ee43d41855f84940"
+    }
+  ]
+}

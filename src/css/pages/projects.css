@@ -25,7 +25,7 @@
 }
 
 .projects-page__hero {
-    min-height: 35rem;
+    min-height: 31rem;
     display: flex;
     align-items: flex-start;
     padding: 11rem 0 5rem;
@@ -41,7 +41,7 @@
 .projects-page__eyebrow {
     margin: 0;
     color: var(--color-brand-blue, #79b6ed);
-    font-size: 2.05rem;
+    font-size: 28px;
     font-weight: 600;
 }
 
@@ -56,7 +56,9 @@
 .projects-page__hero-title {
     margin: 1.6rem 0 0;
     color: #fff;
-    font-size: max(14px, clamp(2rem, 3vw, 2.75rem));
+    /* font-size: max(14px, clamp(2rem, 3vw, 2.75rem));
+     */
+     font-size: 42px;
     line-height: 1.55;
     font-weight: 800;
 }
@@ -187,41 +189,53 @@
     background: #dce6ef;
 }
 
-.projects-page__card-media img {
+.projects-page__card-media > img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+    transition: transform 300ms ease, filter 300ms ease;
 }
 
-/* The brand appears over the photograph on pointer hover or keyboard focus.
- * Touch screens keep it visible because they do not have a hover state. */
+/* Match the home project's centered overlay, blur and darkened photograph. */
 .projects-page__card-brand {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    display: grid;
-    width: 48px;
-    height: 48px;
-    place-items: center;
-    border-radius: 8px;
-    background: rgb(15 23 43 / .85);
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgb(15 23 43 / .2);
+    color: #fff;
+    text-align: center;
     opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 200ms ease, transform 200ms ease;
+    transition: opacity 300ms ease;
     pointer-events: none;
 }
 body[data-page] main .projects-page__card-brand img {
-    width: 34px;
-    height: 34px;
+    width: 110px;
+    height: 44px;
     object-fit: contain;
 }
-.projects-page__card:is(:hover, :focus-within) .projects-page__card-brand {
-    opacity: 1;
-    transform: none;
+.projects-page__card-brand > * {
+    transform: translateY(8px);
+    transition: transform 300ms ease;
 }
-@media (hover: none) {
-    .projects-page__card-brand { opacity: 1; transform: none; }
+.projects-page__card-brand-label { font-size: 14px; font-weight: 500; line-height: 1.8; }
+.projects-page__card:focus-within .projects-page__card-media > img {
+    transform: scale(1.02);
+    filter: blur(2px) brightness(.65);
+}
+.projects-page__card:focus-within .projects-page__card-brand { opacity: 1; }
+.projects-page__card:focus-within .projects-page__card-brand > * { transform: none; }
+@media (hover: hover) {
+    .projects-page__card:hover .projects-page__card-media > img {
+        transform: scale(1.02);
+        filter: blur(2px) brightness(.65);
+    }
+    .projects-page__card:hover .projects-page__card-brand { opacity: 1; }
+    .projects-page__card:hover .projects-page__card-brand > * { transform: none; }
 }
 
 .projects-page__card-category {
@@ -502,7 +516,7 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
     }
 
     .projects-page__hero {
-        min-height: max(36rem, 100svh);
+        min-height: max(36rem, 31svh);
         padding: max(10.5rem, 24svh) 0 3rem;
     }
 
@@ -511,7 +525,7 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
     }
 
     .projects-page__eyebrow {
-        font-size: 0.875rem;
+        font-size: 20px;
     }
 
     .projects-page__eyebrow-line {
