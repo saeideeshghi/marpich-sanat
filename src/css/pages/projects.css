@@ -25,10 +25,10 @@
 }
 
 .projects-page__hero {
-    min-height: 29.5rem;
+    min-height: 35rem;
     display: flex;
     align-items: flex-start;
-    padding: 7.5rem 0 4.6rem;
+    padding: 11rem 0 5rem;
 }
 
 .projects-page__hero-content {
@@ -194,6 +194,36 @@
     object-fit: cover;
 }
 
+/* The brand appears over the photograph on pointer hover or keyboard focus.
+ * Touch screens keep it visible because they do not have a hover state. */
+.projects-page__card-brand {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 8px;
+    background: rgb(15 23 43 / .85);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 200ms ease, transform 200ms ease;
+    pointer-events: none;
+}
+body[data-page] main .projects-page__card-brand img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+.projects-page__card:is(:hover, :focus-within) .projects-page__card-brand {
+    opacity: 1;
+    transform: none;
+}
+@media (hover: none) {
+    .projects-page__card-brand { opacity: 1; transform: none; }
+}
+
 .projects-page__card-category {
     position: absolute;
     right: 0;
@@ -319,6 +349,14 @@
     margin-top: 0.35rem;
 }
 
+/* This rule must also win when Vite extracts shared CSS before page CSS. */
+body[data-page="projects"] .projects-page__testimonials-subtitle p {
+    max-width: 100%;
+    white-space: normal;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
 .projects-page__testimonials-subtitle p {
     margin: 0;
     color: #7b8798;
@@ -422,8 +460,8 @@
     }
 
     .projects-page__hero {
-        min-height: 25.5rem;
-        padding: 7.25rem 0 3.5rem;
+        min-height: 32rem;
+        padding: 10.5rem 0 4rem;
     }
 
     .projects-page__grid {
@@ -464,8 +502,8 @@
     }
 
     .projects-page__hero {
-        min-height: 24.75rem;
-        padding: 7rem 0 2.8rem;
+        min-height: max(36rem, 100svh);
+        padding: max(10.5rem, 24svh) 0 3rem;
     }
 
     .projects-page__hero-content {

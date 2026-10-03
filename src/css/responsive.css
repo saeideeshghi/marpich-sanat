@@ -29,16 +29,29 @@ body[data-page] [data-consultation] input { min-height: 48px; text-align: right;
 body[data-page] [data-consultation] input::placeholder { text-align: right; }
 body[data-page] [data-consultation] h2 { line-height: 1.7; }
 .site-header__logo { display: block; width: 134px; height: 52px; object-fit: contain; }
-.site-header__mobile { padding-top: 28px; }
+.site-header__mobile { padding-top: 50px; }
 .site-header__mobile .site-header__logo { width: 142px; height: auto; }
 
 @media (min-width: 640px) and (max-width: 1179px) {
-    .site-header__mobile { padding-inline: 32px; padding-top: 40px; }
+    .site-header__mobile { padding-inline: 32px; padding-top: 54px; }
     .site-header__mobile .site-header__logo { width: 160px; }
     body[data-page="home"] .site-header__mobile { padding-inline: 44px; padding-top: 86px; }
     body[data-page="home"] .site-header__mobile .site-header__logo { width: 170px; }
     body[data-page="home"] [data-menu-open] { width: 56px; height: 56px; gap: 10px; }
     body[data-page="home"] [data-menu-open] span { width: 50px; height: 4px; border-radius: 0; }
+}
+/* A taller compact header needs corresponding clearance on internal pages. */
+@media (max-width: 1179px) {
+    body[data-page] :is(.about-hero, .industries-hero, .air-handling__hero, .expertise-page__hero, .industry-textile__hero, .project-details__hero-inner) {
+        padding-top: 140px;
+    }
+    body[data-page="product-details"] #hero > div { padding-top: 140px; }
+    body[data-page] .articles-hero__heading { padding-top: 148px; }
+    body[data-page] form :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), select:not(.product-search__select--native)) {
+        min-height: 48px;
+    }
+    body[data-page] .product-search__dropdown-toggle { min-height: 48px; }
+    body[data-page] form textarea { min-height: 112px; }
 }
 @media (max-width: 639px) {
     body[data-page] main p { font-size: 15px; line-height: 1.9; }

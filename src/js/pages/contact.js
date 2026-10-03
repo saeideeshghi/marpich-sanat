@@ -122,15 +122,23 @@ initSite();
 initFileUpload();
 initContactForm();
 
-// Keep the dark intro background behind all copy after font loading, wrapping or zoom.
+// Keep the dark surface behind the introduction and part of the first office
+// card, matching the overlap in both references after fonts load or text wraps.
 const contactIntro = document.querySelector(".contact-intro");
 const contactHero = document.querySelector(".contact-hero");
-if (contactIntro && contactHero) {
+const contactBranches = document.querySelector(".contact-branches");
+if (contactIntro && contactHero && contactBranches) {
     const fitContactBackdrop = () => {
-        const bottom = contactIntro.getBoundingClientRect().bottom - contactHero.getBoundingClientRect().top;
-        contactHero.style.setProperty("--contact-intro-background", `${Math.ceil(bottom + 28)}px`);
+        const top = contactHero.getBoundingClientRect().top;
+        const introBottom = contactIntro.getBoundingClientRect().bottom - top;
+        const firstCard = contactBranches.querySelector(".branch-card")?.getBoundingClientRect();
+        const overlap = window.innerWidth < 1180 ? .5 : .42;
+        const bottom = firstCard ? firstCard.top - top + firstCard.height * overlap : introBottom + 28;
+        contactHero.style.setProperty("--contact-intro-background", `${Math.ceil(Math.max(introBottom + 28, bottom))}px`);
     };
     new ResizeObserver(fitContactBackdrop).observe(contactIntro);
+    new ResizeObserver(fitContactBackdrop).observe(contactBranches);
+    window.addEventListener("resize", fitContactBackdrop, { passive: true });
     document.fonts.ready.then(fitContactBackdrop);
     fitContactBackdrop();
 }

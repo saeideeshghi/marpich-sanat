@@ -3,19 +3,27 @@
  * call preventDefault() synchronously to suppress the disconnected fallback.
  * Changing a select/chip does not request results. Pagination is not implemented.
  */
+import { enhanceSearchableSelect } from "./searchable-select.js";
 
 function closeCatalogDropdowns(except = null) {
     document.querySelectorAll("[data-catalog-dropdown].is-open").forEach((dropdown) => {
         if (dropdown === except) return;
+        dropdown.dispatchEvent(new Event("catalog:dropdown-close"));
         dropdown.classList.remove("is-open");
         dropdown.querySelector("[data-catalog-dropdown-toggle]")?.setAttribute("aria-expanded", "false");
     });
 }
 
-function enhanceCatalogSelect(select, index) {
+function enhanceCatalogSelect(select, index, searchable = false) {
+    if (searchable) {
+        enhanceSearchableSelect(select, index, closeCatalogDropdowns);
+        return;
+    }
     if (select.dataset.customized === "true") return;
     select.dataset.customized = "true";
     select.classList.add("product-search__select--native");
+    select.tabIndex = -1;
+    select.setAttribute("aria-hidden", "true");
 
     const dropdown = document.createElement("div");
     dropdown.className = `product-search__dropdown product-search__dropdown--${index + 1}`;
@@ -118,7 +126,7 @@ export function initCatalogs(scope = document) {
             );
             page.querySelectorAll("[data-product-search]").forEach((form) => {
                 [...form.querySelectorAll("select.product-search__select")].forEach((select, index) =>
-                    enhanceCatalogSelect(select, index),
+                    enhanceCatalogSelect(select, index, page.matches("[data-products-page]")),
                 );
                 const chips = form.querySelector("[data-active-filters]");
                 const status = form.querySelector("[data-search-status]");
@@ -177,7 +185,10 @@ export function initCatalogs(scope = document) {
                     const chip = event.target.closest("[data-remove-filter]")?.closest("[data-filter-chip]");
                     if (!chip) return;
                     const select = [...form.querySelectorAll("select")].find((s) => s.name === chip.dataset.filterName);
-                    if (select) select.value = "";
+                    if (select) {
+                        select.value = "";
+                        select.dispatchEvent(new Event("change", { bubbles: true }));
+                    }
                     chip.remove();
                 });
                 form.querySelector("[data-clear-filters]")?.addEventListener("click", () => {

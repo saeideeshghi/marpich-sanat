@@ -674,3 +674,19 @@
         grid-template-rows: 170px 124px 142px 138px 138px;
     }
 }
+
+/* A subtle photo zoom stays clipped inside the existing media frame. */
+.industries-page .industry-card .product-card__image,
+.industries-page .industry-feature__image {
+    transition: transform 320ms ease;
+}
+@media (hover: hover) {
+    .industries-page .industry-card:is(:hover, :focus-within) .product-card__image,
+    .industries-page .industry-feature:is(:hover, :focus-within) .industry-feature__image {
+        transform: scale(1.06);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .industries-page .industry-card .product-card__image,
+    .industries-page .industry-feature__image { transition: none; transform: none; }
+}
