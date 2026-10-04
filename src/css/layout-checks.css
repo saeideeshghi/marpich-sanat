@@ -65,7 +65,7 @@ body[data-page]
 }
 .home-products-actions a {
     min-height: 44px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     white-space: normal;
     line-height: 1.7;
 }
