@@ -876,11 +876,11 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
     }
 }
 body[data-page="contact"] .contact-benefits .benefit-item {
-    align-items: flex-start;
-    text-align: right;
+    align-items: center;
+    text-align: center;
 }
 body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
-    text-align: right;
+    text-align: center;
     margin-inline: 0;
 }
 
