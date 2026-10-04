@@ -13,11 +13,11 @@ body[data-page] .site-hero__description {
     text-align-last: right !important;
     direction: rtl !important;
 }
-body[data-page] main h2:not(.site-card__title):not(.project-details__testimonial-title) {
+body[data-page] main h2:not(.site-card__title):not(.project-details__testimonial-title):not(:where(.project-details__reference-heading)) {
     text-align: right !important;
     direction: rtl !important;
 }
-body[data-page] :is(main p, main li, .site-prose):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__tag):not(.project-details__testimonial-kicker-copy) {
+body[data-page] :is(main p, main li, .site-prose):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__tag):not(.project-details__testimonial-kicker-copy):not(:where(.project-details__reference-copy)) {
     text-align: justify !important;
     text-align-last: right !important;
     direction: rtl !important;
@@ -105,11 +105,6 @@ body[data-page="expertise"] .site-card__description {
     max-height: none !important;
 }
 }
-body[data-page="project-details"] .project-details__stat {
-    text-align: right !important;
-    align-items: flex-start !important;
-    direction: rtl !important;
-}
 @media (max-width: 639px) {
 body[data-page="product-details"] #product-title {
     font-size: 17px !important;
@@ -137,28 +132,6 @@ body[data-page="project-details"] .project-details__product-card .site-card__tit
 }
 @media (max-width: 639px) {
 body[data-page="project-details"] .project-details__product-card .site-card__description {
-    font-size: 14px !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat .site-card__title {
-    font-size: 14px !important;
-}
-}
-body[data-page="project-details"] .project-details__stat .site-card__description:not([hidden]) {
-    text-align: right !important;
-    text-align-last: right !important;
-    display: block !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-line-clamp: unset !important;
-    line-clamp: none !important;
-    max-height: none !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat .site-card__description {
     font-size: 14px !important;
 }
 }
@@ -232,11 +205,6 @@ body[data-page="contact"] .benefit-item {
 @media (min-width: 640px) and (max-width: 1179px) {
 body[data-page="contact"] .benefit-item > p.site-prose {
     font-size: 13px !important;
-}
-}
-@media (min-width: 640px) and (max-width: 1179px) {
-body[data-page="project-details"] .project-details__meta-item > strong {
-    font-size: 10px !important;
 }
 }
 @media (min-width: 640px) and (max-width: 1179px) {
@@ -367,11 +335,6 @@ body[data-page="contact"] .benefit-item > p.site-prose {
 }
 }
 @media (max-width: 639px) {
-body[data-page="project-details"] .project-details__meta-item > strong {
-    font-size: 10px !important;
-}
-}
-@media (max-width: 639px) {
 body[data-page="project-details"] .project-details__product-card > div.project-details__product-body:nth-of-type(2) > h3.site-card__title {
     font-size: 11px !important;
 }
@@ -389,39 +352,6 @@ body[data-page="project-details"] .project-details__product-card > div.project-d
 @media (max-width: 639px) {
 body[data-page="project-details"] .project-details__product-card > div.project-details__product-body:nth-of-type(2) > a.project-details__product-link > span.site-card__cta-label:nth-of-type(1) {
     font-size: 11px !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat > img.project-details__stat-icon {
-    align-self: center !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat > strong {
-    text-align-last: center !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat > h3.site-card__title {
-    font-size: 13px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    align-self: center !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat > p.site-prose {
-    font-size: 12px !important;
-    text-align: center !important;
-    align-items: center !important;
-    align-self: center !important;
-    white-space: normal !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stat {
-    align-items: center !important;
-    justify-content: center !important;
 }
 }
 @media (max-width: 639px) {
@@ -783,18 +713,6 @@ body[data-page="contact"] .contact-branches > article.branch-card:nth-of-type(1)
 @media (max-width: 639px) {
 body[data-page="project-details"] .project-details__breadcrumb > ol {
     font-size: 16px !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stats-grid > article.project-details__stat:nth-of-type(1) {
-    text-align-last: center !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="project-details"] .project-details__stats-grid > article.project-details__stat:nth-of-type(5) {
-    align-self: center !important;
-    justify-self: center !important;
-    text-align-last: center !important;
 }
 }
 @media (max-width: 639px) {

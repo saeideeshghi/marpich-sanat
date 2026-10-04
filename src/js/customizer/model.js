@@ -24,8 +24,8 @@ export const TARGETS = [
     { key: "hero-title", label: "هیرو · عنوان اصلی", selector: ".site-hero__title", group: "هیرو" },
     { key: "hero-description", label: "هیرو · توضیحات", selector: ".site-hero__description", group: "هیرو" },
     { key: "section", label: "بخش‌های محتوا · فاصله و ارتفاع", selector: "main section", group: "محتوا" },
-    { key: "section-title", label: "عنوان بخش‌ها", selector: "main h2:not(.site-card__title):not(.project-details__testimonial-title)", group: "محتوا" },
-    { key: "body-text", label: "متن‌ها و توضیحات کامل", selector: ":is(main p, main li, .site-prose):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__tag):not(.project-details__testimonial-kicker-copy)", group: "محتوا" },
+    { key: "section-title", label: "عنوان بخش‌ها", selector: "main h2:not(.site-card__title):not(.project-details__testimonial-title):not(:where(.project-details__reference-heading))", group: "محتوا" },
+    { key: "body-text", label: "متن‌ها و توضیحات کامل", selector: ":is(main p, main li, .site-prose):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__tag):not(.project-details__testimonial-kicker-copy):not(:where(.project-details__reference-copy))", group: "محتوا" },
     { key: "card", label: "همه باکس‌ها · ارتفاع و فاصله", selector: ".site-card", group: "باکس‌ها" },
     { key: "card-title", label: "عنوان باکس‌ها", selector: ".site-card__title", group: "باکس‌ها" },
     { key: "card-description", label: "توضیحات باکس‌ها", selector: ".site-card__description", group: "باکس‌ها" },
@@ -41,6 +41,8 @@ export const TARGETS = [
     { key: "project-stat", label: "دستاوردهای پروژه · باکس", selector: ".project-details__stat", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "project-stats-grid", label: "دستاوردهای پروژه · ستون‌ها و فاصله", selector: ".project-details__stats-grid", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "project-stat-icon", label: "دستاوردهای پروژه · آیکون", selector: ".project-details__stat-icon", pages: ["project-details"], group: "جزئیات پروژه" },
+    { key: "project-reference-heading", label: "عنوان بخش‌های بازگردانی‌شده", selector: ".project-details__reference-heading", pages: ["project-details"], group: "جزئیات پروژه" },
+    { key: "project-technical-note", label: "توضیح پایین جدول پروژه", selector: ".project-details__technical .details-card__note p", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "project-testimonial", label: "دیدگاه کارفرما · متن کامل", selector: ".project-details__testimonial-body", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "project-summary", label: "تصویر و اطلاعات پروژه", selector: ".project-details__summary", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "product-summary", label: "باکس اصلی محصول", selector: ".product-details__summary", pages: ["product-details"], group: "جزئیات محصول" },
@@ -48,8 +50,8 @@ export const TARGETS = [
     { key: "product-summary-description", label: "توضیح اصلی محصول", selector: ".product-details__summary .site-card__description", pages: ["product-details"], group: "جزئیات محصول" },
     { key: "project-product-title", label: "محصولات پروژه · عنوان", selector: ".project-details__product-card .site-card__title", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "project-product-description", label: "محصولات پروژه · توضیح", selector: ".project-details__product-card .site-card__description", pages: ["project-details"], group: "جزئیات پروژه" },
-    { key: "project-stat-title", label: "دستاوردها · عنوان", selector: ".project-details__stat .site-card__title", pages: ["project-details"], group: "جزئیات پروژه" },
-    { key: "project-stat-description", label: "دستاوردها · توضیح", selector: ".project-details__stat .site-card__description", pages: ["project-details"], group: "جزئیات پروژه" },
+    { key: "project-stat-title", label: "دستاوردها · عنوان", selector: ".project-details__stat > h3", pages: ["project-details"], group: "جزئیات پروژه" },
+    { key: "project-stat-description", label: "دستاوردها · توضیح", selector: ".project-details__stat > p", pages: ["project-details"], group: "جزئیات پروژه" },
     { key: "technical-card", label: "قاب جدول فنی", selector: ".details-card", group: "جدول فنی" },
     { key: "technical-cell", label: "سلول‌های جدول", selector: ".details-table td", group: "جدول فنی" },
     { key: "technical-heading", label: "عنوان ستون‌های جدول", selector: ".details-table th", group: "جدول فنی" },
@@ -117,10 +119,8 @@ export function defaultConfig() {
     add("card-tag", { "font-size": 10 }, "mobile");
     add("card-title", { "font-size": 16 }, "compact", "expertise");
     add("card-description", { "font-size": 14 }, "compact", "expertise");
-    add("project-stat", { "text-align": "right", "align-items": "flex-start", direction: "rtl" }, "all", "project-details");
-    for (const [page, key, size] of [["product-details", "product-summary-title", 17], ["product-details", "product-summary-description", 14], ["project-details", "project-product-title", 16], ["project-details", "project-product-description", 14], ["project-details", "project-stat-title", 14], ["project-details", "project-stat-description", 14]]) add(key, { "font-size": size }, "mobile", page);
+    for (const [page, key, size] of [["product-details", "product-summary-title", 17], ["product-details", "product-summary-description", 14], ["project-details", "project-product-title", 16], ["project-details", "project-product-description", 14]]) add(key, { "font-size": size }, "mobile", page);
     add("product-summary-description", { "description-lines": 0 }, "all", "product-details");
-    add("project-stat-description", { "description-lines": 0, "text-align": "right", "text-align-last": "right" }, "all", "project-details");
     return normalizeConfig({ version: 1, rules });
 }
 

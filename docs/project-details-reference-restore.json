@@ -1,0 +1,184 @@
+{
+  "baseCommit": "0261039bd09788a929efcc4369051c841d99f8f7",
+  "reference": "marpich-sanatf-07(1).zip",
+  "sections": [
+    "summary",
+    "technical",
+    "results",
+    "testimonial-section"
+  ],
+  "removedConflictingSettings": [
+    {
+      "page": "project-details",
+      "breakpoint": "all",
+      "target": {
+        "kind": "role",
+        "key": "project-stat"
+      },
+      "properties": {
+        "text-align": "right",
+        "align-items": "flex-start",
+        "direction": "rtl"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "role",
+        "key": "project-stat-title"
+      },
+      "properties": {
+        "font-size": 14
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "role",
+        "key": "project-stat-description"
+      },
+      "properties": {
+        "font-size": 14
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "all",
+      "target": {
+        "kind": "role",
+        "key": "project-stat-description"
+      },
+      "properties": {
+        "description-lines": 0,
+        "text-align": "right",
+        "text-align-last": "right"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__meta-item > strong",
+        "label": "باکس‌های تکراری · متن ضخیم · شهرک صنعتی چرمشهر"
+      },
+      "properties": {
+        "font-size": 10
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__stat > img.project-details__stat-icon",
+        "label": "باکس‌های تکراری · تصویر"
+      },
+      "properties": {
+        "align-self": "center"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__stat > strong",
+        "label": "باکس‌های تکراری · متن ضخیم · -۱۰۰٪"
+      },
+      "properties": {
+        "text-align-last": "center"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "element",
+        "selector": ".project-details__stats-grid > article.project-details__stat:nth-of-type(1)",
+        "label": "باکس · -۱۰۰٪ کاهش هزینه‌های نگهداری کاه"
+      },
+      "properties": {
+        "text-align-last": "center"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__stat > h3.site-card__title",
+        "label": "باکس‌های تکراری · عنوان باکس · کاهش هزینه‌های نگهداری"
+      },
+      "properties": {
+        "font-size": 13,
+        "justify-content": "center",
+        "align-items": "center",
+        "align-self": "center"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__stat > p.site-prose",
+        "label": "باکس‌های تکراری · متن · کاهش استهلاک تجهیزات و هزینه تعم"
+      },
+      "properties": {
+        "font-size": 12,
+        "text-align": "center",
+        "align-items": "center",
+        "align-self": "center",
+        "white-space": "normal"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__stat",
+        "label": "باکس‌های تکراری · باکس · ۰٪ پایداری و اطمینان سیستم کاهش "
+      },
+      "properties": {
+        "align-items": "center",
+        "justify-content": "center"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "element",
+        "selector": ".project-details__stats-grid > article.project-details__stat:nth-of-type(5)",
+        "label": "باکس · -۹۵٪ محیط کار پاک و ایمن کاهش بخ"
+      },
+      "properties": {
+        "align-self": "center",
+        "justify-self": "center",
+        "text-align-last": "center"
+      }
+    },
+    {
+      "page": "project-details",
+      "breakpoint": "tablet",
+      "target": {
+        "kind": "component",
+        "selector": ".project-details__meta-item > strong",
+        "label": "باکس‌های تکراری · متن ضخیم · طرح توسعه چرم مشهد"
+      },
+      "properties": {
+        "font-size": 10
+      }
+    }
+  ],
+  "preservedRuleCount": 159,
+  "integrationAdjustments": [
+    "Retain current hero clearance for the summary overlay",
+    "Let the technical card grow between 901 and 1179px so rows and note stay inside the border",
+    "Scope all reference styles to project-details; retain independent Customizer controls"
+  ]
+}

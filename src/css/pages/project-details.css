@@ -1,14 +1,5 @@
 @import "../components/catalog.css";
 @import "./project-details-settings.css";
-
-/* =========================================================
-   Project Details
-   Page-only styles. Shared header/footer/menu stay untouched.
-   The desktop geometry follows the 1440px reference:
-   hero ~500px, project card top ~356px, card width ~1320px.
-   ========================================================= */
-
-/* ---------- Hero ---------- */
 .project-details__hero {
     position: relative;
     z-index: 1;
@@ -66,8 +57,6 @@
     font-weight: 400;
     line-height: 2;
 }
-
-/* ---------- Main background ---------- */
 .project-details__surface {
     position: relative;
     z-index: 3;
@@ -112,111 +101,9 @@
     display: flow-root;
     z-index: 1;
 }
-
-/* ---------- Factory image + meta overlay ---------- */
-.project-details__summary {
-    position: relative;
-    z-index: 5;
-    margin-top: -150px;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: var(--shadow-card);
-}
-
-.project-details__cover {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    border-radius: inherit;
-    background: #e9edf3;
-}
-
-.project-details__cover > img {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.project-details__cover::after {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    border-radius: inherit;
-    content: "";
-    pointer-events: none;
-    background: linear-gradient(
-        180deg,
-        #f5f8ff 18.6%,
-        rgb(247 249 255 / 0.9) 29.78%,
-        rgb(249 251 255 / 0.8) 42%,
-        rgb(250 252 255 / 0.6) 52.12%,
-        rgb(252 253 255 / 0.4) 65.87%,
-        rgb(253 254 255 / 0.2) 81.25%,
-        rgb(255 255 255 / 0) 100%
-    );
-}
-
-.project-details__meta-grid {
-    position: absolute;
-    inset: 0 0 auto;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    height: 82px;
-    /* Same soft separator treatment used on industry-textile. */
-    background:
-        linear-gradient(90deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) center / 100% 1px no-repeat,
-        linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 33.333% center / 1px 100% no-repeat,
-        linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 66.666% center / 1px 100% no-repeat;
-}
-
-.project-details__meta-item {
-    display: grid;
-    align-content: center;
-    min-width: 0;
-    padding: 5px 5px 4px;
-    border: 0;
-    text-align: center;
-}
-
-.project-details__meta-item span,
-.project-details__meta-item strong {
-    display: block;
-    min-width: 0;
-}
-
-.project-details__meta-item span {
-    color: var(--color-brand-blue);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.45;
-}
-
-.project-details__meta-item strong {
-    margin-top: 3px;
-    overflow: hidden;
-    color: var(--color-text-dark);
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.5;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* ---------- Common typography ---------- */
 .project-details__section,
 .project-details__two-columns,
 .project-details__products,
-.project-details__technical,
-.project-details__results,
-.project-details__testimonial-section,
 .project-details__cta {
     position: relative;
     z-index: 1;
@@ -276,8 +163,6 @@
     font-size: 14px;
     line-height: 2.05;
 }
-
-/* ---------- Challenge / solution ---------- */
 .project-details__two-columns {
     display: grid;
     gap: 30px;
@@ -335,8 +220,6 @@
     font-size: 15px;
     font-weight: 900;
 }
-
-/* ---------- Products ---------- */
 .project-details__products {
     padding-top: 38px;
 }
@@ -380,7 +263,6 @@
     min-width: 0;
     flex-direction: column;
     overflow: hidden;
-    /* Border / radius / background / shadow come from .site-card-surface. */
 }
 
 .project-details__product-media {
@@ -449,258 +331,6 @@
     font-size: 14px;
     line-height: 1;
 }
-
-/* ---------- Technical specifications ---------- */
-.project-details__technical {
-    padding-top: 40px;
-}
-
-.project-details__technical > .project-details__section-title {
-    margin-bottom: 13px;
-}
-
-.project-details__technical-box {
-    display: grid;
-    grid-template-areas:
-        "diagram"
-        "table";
-    overflow: hidden;
-    border: 1px solid rgb(15 23 43 / 0.75);
-    border-radius: 8px;
-    background: transparent;
-}
-
-.project-details__diagram {
-    grid-area: diagram;
-    display: grid;
-    min-height: 300px;
-    place-items: center;
-    padding: 14px 12px;
-    border-bottom: 1px solid rgb(15 23 43 / 0.58);
-}
-
-.project-details__diagram img {
-    display: block;
-    width: 100%;
-    max-width: 520px;
-    height: 270px;
-    object-fit: contain;
-}
-
-.project-details__table-wrap {
-    grid-area: table;
-    min-width: 0;
-}
-
-.project-details__specs-table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    direction: ltr;
-    color: rgb(30 41 59);
-    font-size: 14px;
-}
-
-.project-details__specs-table th,
-.project-details__specs-table td {
-    height: 37px;
-    padding: 5px 7px;
-    border-bottom: 1px solid rgb(15 23 43 / 0.34);
-    font-weight: 500;
-    direction: rtl;
-    line-height: 1.55;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.project-details__specs-table tr > * + * {
-    border-left: 1px solid rgb(15 23 43 / 0.34);
-}
-
-.project-details__specs-table thead th {
-    height: 38px;
-    font-weight: 800;
-}
-
-.project-details__specs-table tbody th {
-    font-weight: 700;
-}
-
-.project-details__specs-table tbody tr:last-child > * {
-    border-bottom: 0;
-}
-
-.project-details__technical-note {
-    margin: 8px 0 0;
-    color: rgb(71 85 105);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.project-details__technical-note > span {
-    color: var(--color-text-dark);
-}
-
-.project-details__technical-note strong {
-    color: var(--color-brand-orange);
-    font-weight: 700;
-}
-
-/* ---------- Achievements ---------- */
-.project-details__results {
-    padding-top: 36px;
-}
-
-.project-details__results > .project-details__section-title {
-    margin-bottom: 22px;
-}
-
-.project-details__stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 12px;
-}
-
-.project-details__stat {
-    min-width: 0;
-    text-align: center;
-}
-
-.project-details__stat:last-child {
-    grid-column: 1 / -1;
-    width: min(190px, 100%);
-    justify-self: center;
-}
-
-.project-details__stat-icon {
-    display: block;
-    width: 52px;
-    height: 52px;
-    margin: 0 auto;
-    object-fit: contain;
-}
-
-.project-details__stat strong {
-    display: block;
-    margin-top: 7px;
-    color: var(--color-brand-orange);
-    font-size: 17px;
-    font-weight: 800;
-    line-height: 1.35;
-}
-
-.project-details__stat h3 {
-    margin-top: 4px;
-    color: var(--color-text-dark);
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 1.7;
-}
-
-.project-details__stat p {
-    margin-top: 4px;
-    color: rgb(71 85 105);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-/* ---------- Employer view ---------- */
-.project-details__testimonial-section {
-    padding-top: 40px;
-}
-
-.project-details__testimonial-kicker {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 7px;
-    color: rgb(100 116 139);
-    font-size: 14px;
-    line-height: 1.7;
-    text-align: center;
-}
-
-.project-details__testimonial-kicker span {
-    width: 28px;
-    height: 1px;
-    background: rgb(247 110 17 / 0.46);
-}
-
-.project-details__testimonial {
-    position: relative;
-    margin-top: 17px;
-    padding: 31px 0 10px;
-    border: 0;
-    direction: rtl;
-}
-
-/* Divider belongs after the employer quote and before the author metadata. */
-.project-details__testimonial-divider {
-    display: block;
-    width: 100%;
-    height: 1px;
-    margin-top: 16px;
-    background: linear-gradient(90deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%);
-    pointer-events: none;
-}
-
-.project-details__quote-icon {
-    position: absolute;
-    top: 8px;
-    right: 0;
-    display: block;
-    color: var(--color-brand-blue);
-    font-size: 26px;
-    line-height: 1;
-}
-
-.project-details__testimonial blockquote {
-    margin: 0;
-    padding-right: 0;
-    color: rgb(71 85 105);
-    font-size: 14px;
-    line-height: 2.15;
-    text-align: right;
-}
-
-.project-details__testimonial-footer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 14px;
-    direction: rtl;
-}
-
-.project-details__testimonial-person {
-    min-width: 0;
-    text-align: right;
-}
-
-.project-details__testimonial-person strong {
-    display: block;
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.project-details__testimonial-person span {
-    display: block;
-    margin-top: 2px;
-    color: rgb(100 116 139);
-    font-size: 14px;
-}
-
-.project-details__rating {
-    flex: 0 0 auto;
-    color: #f5be19;
-    font-size: 14px;
-    letter-spacing: 1px;
-    direction: ltr;
-    white-space: nowrap;
-}
-
-/* ---------- CTA ---------- */
 .project-details__cta {
     margin-top: 40px;
     overflow: hidden;
@@ -821,10 +451,6 @@
     object-fit: contain;
     object-position: center;
 }
-
-/* =========================================================
-   Tablet: 768px–1179px
-   ========================================================= */
 @media (min-width: 48rem) {
     .project-details__hero {
         height: 455px;
@@ -843,42 +469,13 @@
         font-size: var(--hero-description);
     }
 
-    .project-details__summary {
-        margin-top: -142px;
-        border-radius: 12px;
-    }
-
-    .project-details__cover {
-        height: 390px;
-    }
-
-    .project-details__meta-grid {
-        height: 80px;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        background:
-            linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 16.666% center / 1px 100% no-repeat,
-            linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 33.333% center / 1px 100% no-repeat,
-            linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 50% center / 1px 100% no-repeat,
-            linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 66.666% center / 1px 100% no-repeat,
-            linear-gradient(180deg, #f2f6ff 0%, #79b6ed 51%, #f2f6ff 100%) 83.333% center / 1px 100% no-repeat;
-    }
-
-    .project-details__meta-item {
-        padding: 8px 5px;
-    }
-
-    .project-details__meta-item span,
-    .project-details__meta-item strong {
-        font-size: 14px;
-    }
-
     .project-details__section-title {
         font-size: 22px;
     }
 
     .project-details__intro-list,
-    .project-details__importance p,
-    .project-details__content-column > p {
+.project-details__importance p,
+.project-details__content-column > p {
         font-size: 14px;
     }
 
@@ -888,7 +485,7 @@
     }
 
     .project-details__bullet-list,
-    .project-details__check-list {
+.project-details__check-list {
         font-size: 14px;
     }
 
@@ -957,80 +554,6 @@
         font-size: 14px;
     }
 
-    .project-details__technical-box {
-        grid-template-areas: "table diagram";
-        grid-template-columns: 1fr 1fr;
-        min-height: 420px;
-        direction: ltr;
-        border-radius: 12px;
-    }
-
-    .project-details__diagram {
-        min-height: 420px;
-        padding: 24px;
-        border-bottom: 0;
-        border-left: 1px solid rgb(15 23 43 / 0.58);
-        direction: rtl;
-    }
-
-    .project-details__diagram img {
-        height: 340px;
-    }
-
-    .project-details__table-wrap {
-        direction: rtl;
-    }
-
-    .project-details__specs-table {
-        height: 100%;
-        font-size: 14px;
-    }
-
-    .project-details__specs-table th,
-    .project-details__specs-table td,
-    .project-details__specs-table thead th {
-        height: auto;
-        padding: 7px 8px;
-    }
-
-    .project-details__technical-note {
-        width: 50%;
-        margin-left: auto;
-        padding-right: 12px;
-        font-size: 14px;
-    }
-
-    .project-details__stats-grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 18px;
-    }
-
-    .project-details__stat:last-child {
-        grid-column: auto;
-        width: auto;
-    }
-
-    .project-details__stat-icon {
-        width: 58px;
-        height: 58px;
-    }
-
-    .project-details__stat strong {
-        font-size: 20px;
-    }
-
-    .project-details__stat h3 {
-        font-size: 14px;
-    }
-
-    .project-details__stat p {
-        font-size: 14px;
-    }
-
-    .project-details__testimonial blockquote {
-        font-size: 14px;
-    }
-
     .project-details__cta-grid {
         grid-template-areas: "copy media";
         grid-template-columns: 1fr 1fr;
@@ -1039,7 +562,7 @@
     }
 
     .project-details__cta-copy,
-    .project-details__cta-media {
+.project-details__cta-media {
         direction: rtl;
     }
 
@@ -1073,10 +596,6 @@
         max-width: 520px;
     }
 }
-
-/* =========================================================
-   Desktop reference: 1180px+
-   ========================================================= */
 @media (min-width: 73.75rem) {
     .project-details__hero {
         height: 500px;
@@ -1102,32 +621,6 @@
         font-size: var(--hero-description);
     }
 
-    .project-details__summary {
-        margin-top: -144px;
-        border-radius: 16px;
-    }
-
-    .project-details__cover {
-        height: 500px;
-    }
-
-    .project-details__meta-grid {
-        height: 88px;
-    }
-
-    .project-details__meta-item {
-        padding: 13px 8px;
-    }
-
-    .project-details__meta-item span {
-        font-size: 14px;
-    }
-
-    .project-details__meta-item strong {
-        margin-top: 5px;
-        font-size: 14px;
-    }
-
     .project-details__section {
         padding-top: 40px;
     }
@@ -1148,7 +641,7 @@
     }
 
     .project-details__importance p,
-    .project-details__content-column > p {
+.project-details__content-column > p {
         margin-top: 11px;
         font-size: 14px;
         line-height: 2.15;
@@ -1164,7 +657,7 @@
     }
 
     .project-details__bullet-list,
-    .project-details__check-list {
+.project-details__check-list {
         gap: 9px;
         margin-top: 14px;
         font-size: 14px;
@@ -1247,127 +740,6 @@
         font-size: 14px;
     }
 
-    .project-details__technical {
-        padding-top: 58px;
-    }
-
-    .project-details__technical > .project-details__section-title {
-        margin-bottom: 18px;
-    }
-
-    .project-details__technical-box {
-        min-height: 500px;
-        border-radius: 16px;
-    }
-
-    .project-details__diagram {
-        min-height: 500px;
-        padding: 38px 42px;
-    }
-
-    .project-details__diagram img {
-        width: 92%;
-        max-width: 560px;
-        height: 390px;
-    }
-
-    .project-details__specs-table {
-        font-size: 14px;
-    }
-
-    .project-details__specs-table th,
-    .project-details__specs-table td,
-    .project-details__specs-table thead th {
-        height: 55px;
-        padding: 9px 12px;
-    }
-
-    .project-details__technical-note {
-        margin-top: 11px;
-        padding-right: 18px;
-        font-size: 14px;
-        line-height: 1.9;
-    }
-
-    .project-details__results {
-        padding-top: 50px;
-    }
-
-    .project-details__results > .project-details__section-title {
-        margin-bottom: 31px;
-    }
-
-    .project-details__stats-grid {
-        gap: 26px;
-    }
-
-    .project-details__stat-icon {
-        width: 70px;
-        height: 70px;
-    }
-
-    .project-details__stat strong {
-        margin-top: 10px;
-        font-size: 25px;
-    }
-
-    .project-details__stat h3 {
-        margin-top: 5px;
-        font-size: 14px;
-    }
-
-    .project-details__stat p {
-        margin-top: 5px;
-        font-size: 14px;
-        line-height: 1.95;
-    }
-
-    .project-details__testimonial-section {
-        padding-top: 55px;
-    }
-
-    .project-details__testimonial-kicker {
-        gap: 16px;
-        margin-top: 10px;
-        font-size: 14px;
-    }
-
-    .project-details__testimonial-kicker span {
-        width: 40px;
-    }
-
-    .project-details__testimonial {
-        margin-top: 20px;
-        padding: 40px 4px 13px;
-    }
-
-    .project-details__quote-icon {
-        top: 10px;
-        right: 0;
-        font-size: 34px;
-    }
-
-    .project-details__testimonial blockquote {
-        font-size: 14px;
-        line-height: 2.2;
-    }
-
-    .project-details__testimonial-footer {
-        margin-top: 18px;
-    }
-
-    .project-details__testimonial-person strong {
-        font-size: 14px;
-    }
-
-    .project-details__testimonial-person span {
-        font-size: 14px;
-    }
-
-    .project-details__rating {
-        font-size: 14px;
-    }
-
     .project-details__cta {
         margin-top: 55px;
         border-radius: 0;
@@ -1425,12 +797,6 @@
         height: 420px !important;
     }
 }
-
-/* =========================================================
-   Final shared-form + technical-table alignment
-   ========================================================= */
-
-/* The bottom consultation is now the same shared component used by the catalog pages. */
 .project-details__consultation-shell {
     position: relative;
     z-index: 1;
@@ -1441,63 +807,9 @@
     margin-top: 0;
 }
 
-/* Technical box follows the supplied reference: one dark outer frame,
-   lighter internal rules, diagram/table inside, and the note inside the frame. */
-.project-details__technical-box {
-    grid-template-areas:
-        "diagram"
-        "table"
-        "note";
-    border: 1px solid #0f172b;
-    background: transparent;
-}
-
-.project-details__diagram {
-    border-bottom: 1px solid rgb(15 23 43 / 0.42);
-}
-
-.project-details__specs-table {
-    border-collapse: collapse;
-}
-
-.project-details__specs-table th,
-.project-details__specs-table td {
-    border-bottom: 0;
-}
-
-.project-details__specs-table tr > * + * {
-    border-left: 1px solid rgb(15 23 43 / 0.52);
-}
-
-.project-details__specs-table thead th {
-    border-bottom: 1px solid rgb(15 23 43 / 0.58);
-}
-
-.project-details__specs-table tbody tr:not(:last-child) > * {
-    border-bottom: 1px solid rgb(15 23 43 / 0.24);
-}
-
-.project-details__technical-note {
-    grid-area: note;
-    width: 100%;
-    margin: 0;
-    padding: 10px 14px;
-    border-top: 1px solid rgb(15 23 43 / 0.42);
-    color: rgb(71 85 105);
-    font-size: 14px;
-    line-height: 1.8;
-    direction: rtl;
-    text-align: right;
-}
-
 @media (min-width: 48rem) {
     .project-details__consultation-shell {
         margin-top: 48px;
-    }
-
-    .project-details__technical-note {
-        padding: 11px 16px;
-        font-size: 14px;
     }
 }
 
@@ -1505,65 +817,7 @@
     .project-details__consultation-shell {
         margin-top: 55px;
     }
-
-    .project-details__technical-box {
-        grid-template-areas:
-            "table diagram"
-            "note note";
-        grid-template-columns: 0.46fr 0.54fr;
-        min-height: 0;
-        direction: ltr;
-        border-radius: 16px;
-    }
-
-    .project-details__diagram {
-        min-height: 390px;
-        padding: 30px 36px;
-        border-bottom: 0;
-        border-left: 1px solid rgb(15 23 43 / 0.42);
-        direction: rtl;
-    }
-
-    .project-details__diagram img {
-        width: 94%;
-        max-width: 560px;
-        height: 330px;
-    }
-
-    .project-details__table-wrap {
-        direction: rtl;
-    }
-
-    .project-details__specs-table {
-        height: 390px;
-        font-size: 14px;
-    }
-
-    .project-details__specs-table th,
-    .project-details__specs-table td,
-    .project-details__specs-table thead th {
-        height: auto;
-        padding: 8px 10px;
-    }
-
-    .project-details__technical-note {
-        padding: 10px 18px;
-        font-size: 14px;
-    }
 }
-
-/* Achievement content and its icon follow the RTL reading edge. */
-body[data-page="project-details"] .project-details__stat {
-    text-align: right;
-}
-body[data-page="project-details"] .project-details__stat-icon {
-    margin-inline-start: 0;
-    margin-inline-end: auto;
-}
-body[data-page="project-details"] .project-details__stat.site-card .site-card__description:not([hidden]) {
-    text-align: right;
-}
-/* Product artwork fills the media frame consistently at all breakpoints. */
 body[data-page="project-details"] main .project-details__product-card .project-details__product-media img {
     width: 100%;
     height: 100%;
@@ -1571,46 +825,11 @@ body[data-page="project-details"] main .project-details__product-card .project-d
     object-position: center;
     padding: 0;
 }
-
-/* Scoped rules win over the shared mobile h2/p fallbacks. Text can wrap
- * naturally after an owner changes the independent settings above. */
-body[data-page="project-details"] .project-details__cover {
-    height: auto;
-    min-height: var(--project-cover-min-height);
-}
-body[data-page="project-details"] .project-details__meta-grid {
-    position: absolute;
-    inset: 0 0 auto;
-    grid-template-columns: repeat(var(--project-meta-columns), minmax(0, 1fr));
-    height: auto;
-    min-height: 0;
-    padding: 4px;
-    background: linear-gradient(180deg, #f5f8ff 0%, rgb(245 248 255 / 0.95) 80%, rgb(245 248 255 / 0.8));
-}
-body[data-page="project-details"] .project-details__meta-item {
-    padding: var(--project-meta-padding);
-    text-align: center;
-    border-inline-end: 1px solid rgb(121 182 237 / 0.24);
-    align-content: start;
-}
-body[data-page="project-details"] .project-details__meta-item:last-child { border-inline-end: 0; }
-body[data-page="project-details"] .project-details__meta-item span {
-    font-size: var(--project-meta-label);
-    line-height: 1.6;
-}
-body[data-page="project-details"] .project-details__meta-item strong {
-    font-size: var(--project-meta-value);
-    line-height: 1.6;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    overflow-wrap: break-word;
-}
 body[data-page="project-details"] .project-details__section-title {
     font-size: var(--project-heading);
     line-height: var(--project-heading-leading);
 }
-body[data-page="project-details"] :is(.project-details__section, .project-details__two-columns, .project-details__results) {
+body[data-page="project-details"] :is(.project-details__section, .project-details__two-columns) {
     padding-top: var(--project-section-spacing);
 }
 body[data-page="project-details"] .project-details__two-columns {
@@ -1624,45 +843,7 @@ body[data-page="project-details"] :is(.project-details__importance, .project-det
     text-align: justify;
     text-align-last: right;
 }
-body[data-page="project-details"] .project-details__stats-grid {
-    grid-template-columns: repeat(var(--project-stats-columns), minmax(0, 1fr));
-    gap: var(--project-grid-gap);
-    direction: rtl;
-    align-items: start;
-}
-body[data-page="project-details"] .project-details__stat {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: right;
-}
-body[data-page="project-details"] .project-details__stat:last-child {
-    grid-column: auto;
-    width: 100%;
-    justify-self: start;
-}
-body[data-page="project-details"] .project-details__stat-icon {
-    width: var(--project-stat-icon-size);
-    height: var(--project-stat-icon-size);
-    margin: 0;
-}
-body[data-page="project-details"] .project-details__stat strong {
-    font-size: var(--project-stat-value-size);
-}
 @media (max-width: 639px) {
-    /* The reference keeps six fields over the factory image, in two rows. */
-    body[data-page="project-details"] .project-details__cover {
-        display: block;
-        min-height: var(--project-cover-min-height);
-    }
-    body[data-page="project-details"] .project-details__cover > img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    body[data-page="project-details"] .project-details__meta-item:nth-child(3n) { border-inline-end: 0; }
-    body[data-page="project-details"] .project-details__meta-item:nth-child(-n+3) { border-bottom: 1px solid rgb(121 182 237 / 0.24); }
     body[data-page="project-details"] main .project-details__products .project-details__products-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
@@ -1674,42 +855,14 @@ body[data-page="project-details"] .project-details__stat strong {
     body[data-page="project-details"] main .project-details__product-specs { grid-template-columns: minmax(0, 1fr); gap: 4px; }
     body[data-page="project-details"] main .project-details__product-specs span { min-height: 24px; padding: 3px 5px; line-height: 1.6; }
     body[data-page="project-details"] main .project-details__product-link { font-size: 12px; min-height: 36px; padding-top: 8px; }
-    body[data-page="project-details"] .project-details__stat-icon { width: 44px; height: 44px; }
-    body[data-page="project-details"] .project-details__stat:last-child { grid-column: auto; width: 100%; justify-self: start; }
 }
-/* Every achievement line follows the same physical RTL edge, including values
- * and icons. This is independent of the generic card title/description rules. */
-body[data-page="project-details"] .project-details__stat > :is(strong,h3,p),
-body[data-page="project-details"] .project-details__stat .site-card__description:not([hidden]) {
-    width: 100%;
-    direction: rtl;
-    text-align: right;
-    text-align-last: right;
-}
-body[data-page="project-details"] .project-details__stat-icon { align-self: flex-start; }
-@media (max-width: 359px) {
+@media (max-width: 500px) {
     body[data-page="project-details"] main .project-details__products .project-details__products-grid { grid-template-columns: minmax(0, 1fr); }
 }
-
-/* Employer copy is a full quote, separate from two-line presentation cards. */
-body[data-page="project-details"] .project-details__testimonial-title { text-align: center; }
-body[data-page="project-details"] .project-details__testimonial-kicker-copy { font-size: 14px; line-height: 1.8; text-align: center; }
-body[data-page="project-details"] .project-details__testimonial-body {
-    display: block;
-    height: auto;
-    max-height: none;
-    overflow: visible;
-    font-size: 14px;
-    line-height: 2;
-    text-align: justify;
-    text-align-last: right;
-}
-body[data-page="project-details"] .project-details__testimonial-footer { align-items: center; margin-top: 12px; }
-body[data-page="project-details"] .project-details__testimonial-author { font-size: 14px; }
 body[data-page="project-details"] .project-details__surface { background-color: #ecf0f8; }
-@media (max-width: 639px) {
-    body[data-page="project-details"] .project-details__testimonial-kicker { gap: 8px; }
-    body[data-page="project-details"] .project-details__testimonial-kicker span { flex: 0 0 20px; }
-    body[data-page="project-details"] .project-details__testimonial-kicker-copy { font-size: 12px; }
-    body[data-page="project-details"] .project-details__testimonial-person span { font-size: 12px; }
+
+@media (width < 50px) {
+    body[data-page="project-details"] main .project-details__product-card .project-details__product-specs {
+        display: none;
+    }
 }

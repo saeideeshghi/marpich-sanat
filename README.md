@@ -1,6 +1,8 @@
 # مارپیچ صنعت — فرانت‌اند
 
-نسخهٔ نهایی اصلاحات ۳ اکتبر ۲۰۲۶ بر اساس آخرین سورس شاخهٔ `main` ریپوی مارپیچ صنعت؛ مرجع ورودی `baad5768`.
+نسخهٔ ۴ اکتبر ۲۰۲۶ بر اساس سورس شاخهٔ `main` با Commit `0261039b`. باکس بالایی، جدول فنی، دستاوردها و دیدگاه کارفرمای `project-details` از فایل مرجع `marpich-sanatf-07(1).zip` بازگردانده شده‌اند. سایر بخش‌ها و ۱۵۹ تنظیم ذخیره‌شدهٔ Customizer حفظ شده‌اند.
+
+راهنمای این اصلاح: [APPLY-PROJECT-DETAILS-RESTORE.md](APPLY-PROJECT-DETAILS-RESTORE.md).
 
 ۱۲ صفحه با HTML، Tailwind CSS 4، ES Modules و Vite؛ بدون React یا Vue.
 Header، Footer، منوی موبایل و فرم‌های تکراری از `src/components` ساخته می‌شوند.
@@ -49,7 +51,7 @@ npm run preview:pages
 | ظاهر خاص هر صفحه | `src/css/pages/` |
 | محتوای componentها، محصولات و فیلترها | `src/data/pages/` |
 | متن، تصاویر و مزایای پنج خدمت بازشونده | `expertise.html` |
-| فونت و فاصلهٔ متن، اطلاعات و دستاوردهای جزئیات پروژه | `src/css/pages/project-details-settings.css` |
+| ظاهر مرجع باکس بالایی، جدول، دستاوردها و دیدگاه کارفرمای پروژه | `src/css/pages/project-details-reference.css` |
 | جای‌گذاری فوتر و طرح مرجع موبایل تا عرض ۵۰۰ پیکسل | `src/data/patterns/footer-pattern.json` |
 | پروفایل‌های مستقل هدر در دسکتاپ، تبلت و موبایل | `src/data/patterns/site-pattern.json` |
 
