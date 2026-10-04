@@ -1,4 +1,5 @@
 @import "../components/catalog.css";
+@import "./project-details-settings.css";
 
 /* =========================================================
    Project Details
@@ -1569,4 +1570,146 @@ body[data-page="project-details"] main .project-details__product-card .project-d
     object-fit: cover;
     object-position: center;
     padding: 0;
+}
+
+/* Scoped rules win over the shared mobile h2/p fallbacks. Text can wrap
+ * naturally after an owner changes the independent settings above. */
+body[data-page="project-details"] .project-details__cover {
+    height: auto;
+    min-height: var(--project-cover-min-height);
+}
+body[data-page="project-details"] .project-details__meta-grid {
+    position: absolute;
+    inset: 0 0 auto;
+    grid-template-columns: repeat(var(--project-meta-columns), minmax(0, 1fr));
+    height: auto;
+    min-height: 0;
+    padding: 4px;
+    background: linear-gradient(180deg, #f5f8ff 0%, rgb(245 248 255 / 0.95) 80%, rgb(245 248 255 / 0.8));
+}
+body[data-page="project-details"] .project-details__meta-item {
+    padding: var(--project-meta-padding);
+    text-align: center;
+    border-inline-end: 1px solid rgb(121 182 237 / 0.24);
+    align-content: start;
+}
+body[data-page="project-details"] .project-details__meta-item:last-child { border-inline-end: 0; }
+body[data-page="project-details"] .project-details__meta-item span {
+    font-size: var(--project-meta-label);
+    line-height: 1.6;
+}
+body[data-page="project-details"] .project-details__meta-item strong {
+    font-size: var(--project-meta-value);
+    line-height: 1.6;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+}
+body[data-page="project-details"] .project-details__section-title {
+    font-size: var(--project-heading);
+    line-height: var(--project-heading-leading);
+}
+body[data-page="project-details"] :is(.project-details__section, .project-details__two-columns, .project-details__results) {
+    padding-top: var(--project-section-spacing);
+}
+body[data-page="project-details"] .project-details__two-columns {
+    gap: var(--project-grid-gap);
+}
+body[data-page="project-details"] :is(.project-details__intro-list, .project-details__bullet-list, .project-details__check-list),
+body[data-page="project-details"] :is(.project-details__importance, .project-details__content-column) > p.site-prose {
+    font-size: var(--project-body);
+    line-height: var(--project-body-leading);
+    direction: rtl;
+    text-align: justify;
+    text-align-last: right;
+}
+body[data-page="project-details"] .project-details__stats-grid {
+    grid-template-columns: repeat(var(--project-stats-columns), minmax(0, 1fr));
+    gap: var(--project-grid-gap);
+    direction: rtl;
+    align-items: start;
+}
+body[data-page="project-details"] .project-details__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+}
+body[data-page="project-details"] .project-details__stat:last-child {
+    grid-column: auto;
+    width: 100%;
+    justify-self: start;
+}
+body[data-page="project-details"] .project-details__stat-icon {
+    width: var(--project-stat-icon-size);
+    height: var(--project-stat-icon-size);
+    margin: 0;
+}
+body[data-page="project-details"] .project-details__stat strong {
+    font-size: var(--project-stat-value-size);
+}
+@media (max-width: 639px) {
+    /* The reference keeps six fields over the factory image, in two rows. */
+    body[data-page="project-details"] .project-details__cover {
+        display: block;
+        min-height: var(--project-cover-min-height);
+    }
+    body[data-page="project-details"] .project-details__cover > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    body[data-page="project-details"] .project-details__meta-item:nth-child(3n) { border-inline-end: 0; }
+    body[data-page="project-details"] .project-details__meta-item:nth-child(-n+3) { border-bottom: 1px solid rgb(121 182 237 / 0.24); }
+    body[data-page="project-details"] main .project-details__products .project-details__products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        grid-auto-rows: auto;
+    }
+    body[data-page="project-details"] main .project-details__product-card .project-details__product-body { padding: 12px; }
+    body[data-page="project-details"] main .project-details__product-card .site-card__title { line-height: 1.75; min-height: 0; }
+    body[data-page="project-details"] main .project-details__product-card .site-card__description { line-height: 1.9; }
+    body[data-page="project-details"] main .project-details__product-specs { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+    body[data-page="project-details"] main .project-details__product-specs span { min-height: 24px; padding: 3px 5px; line-height: 1.6; }
+    body[data-page="project-details"] main .project-details__product-link { font-size: 12px; min-height: 36px; padding-top: 8px; }
+    body[data-page="project-details"] .project-details__stat-icon { width: 44px; height: 44px; }
+    body[data-page="project-details"] .project-details__stat:last-child { grid-column: auto; width: 100%; justify-self: start; }
+}
+/* Every achievement line follows the same physical RTL edge, including values
+ * and icons. This is independent of the generic card title/description rules. */
+body[data-page="project-details"] .project-details__stat > :is(strong,h3,p),
+body[data-page="project-details"] .project-details__stat .site-card__description:not([hidden]) {
+    width: 100%;
+    direction: rtl;
+    text-align: right;
+    text-align-last: right;
+}
+body[data-page="project-details"] .project-details__stat-icon { align-self: flex-start; }
+@media (max-width: 359px) {
+    body[data-page="project-details"] main .project-details__products .project-details__products-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Employer copy is a full quote, separate from two-line presentation cards. */
+body[data-page="project-details"] .project-details__testimonial-title { text-align: center; }
+body[data-page="project-details"] .project-details__testimonial-kicker-copy { font-size: 14px; line-height: 1.8; text-align: center; }
+body[data-page="project-details"] .project-details__testimonial-body {
+    display: block;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    font-size: 14px;
+    line-height: 2;
+    text-align: justify;
+    text-align-last: right;
+}
+body[data-page="project-details"] .project-details__testimonial-footer { align-items: center; margin-top: 12px; }
+body[data-page="project-details"] .project-details__testimonial-author { font-size: 14px; }
+body[data-page="project-details"] .project-details__surface { background-color: #ecf0f8; }
+@media (max-width: 639px) {
+    body[data-page="project-details"] .project-details__testimonial-kicker { gap: 8px; }
+    body[data-page="project-details"] .project-details__testimonial-kicker span { flex: 0 0 20px; }
+    body[data-page="project-details"] .project-details__testimonial-kicker-copy { font-size: 12px; }
+    body[data-page="project-details"] .project-details__testimonial-person span { font-size: 12px; }
 }

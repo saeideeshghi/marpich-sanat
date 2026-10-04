@@ -144,15 +144,26 @@
                 <span class="[direction:rtl]">ورود / ثبت نام</span>
             </button>
 
-            <button
-                aria-label="تغییر زبان"
-                class="flex items-center gap-[6px] text-[14px] font-semibold text-white transition-colors hover:text-brand-blue min-[1280px]:text-[14px] [direction:ltr]"
-                type="button"
-            >
-                <span>FA</span>
-                <i aria-hidden="true" class="fa-solid fa-chevron-down pt-[2px] text-[6px] leading-none"></i>
-                <img alt="" class="h-[16px] w-[20px] shrink-0 object-contain" src="/assets/icons/flags/iran.svg" />
-            </button>
+            <div class="site-language" data-language-selector>
+                <button class="site-language__toggle" type="button" aria-label="تغییر زبان"
+                    aria-expanded="false" aria-controls="language-menu-desktop" data-language-toggle>
+                    <span>FA</span>
+                    <i aria-hidden="true" class="site-language__chevron fa-solid fa-chevron-down"></i>
+                    <img class="site-language__flag" src="/assets/icons/flags/iran-circle.svg" alt="" />
+                </button>
+                <div class="site-language__menu" id="language-menu-desktop" aria-label="زبان‌های سایت" data-language-menu hidden>
+                    <button class="site-language__option" type="button" data-language-option="fa" aria-current="true">
+                        <img class="site-language__flag" src="/assets/icons/flags/iran-circle.svg" alt="" /><span lang="fa" dir="rtl">فارسی</span><span class="ml-auto">FA</span>
+                    </button>
+                    <button class="site-language__option" type="button" data-language-option="en">
+                        <img class="site-language__flag" src="/assets/icons/flags/usa-circle.svg" alt="" /><span lang="en">English</span><span class="ml-auto">EN</span>
+                    </button>
+                    <button class="site-language__option" type="button" data-language-option="ar">
+                        <img class="site-language__flag" src="/assets/icons/flags/saudi-arabia-circle.svg" alt="" /><span lang="ar" dir="rtl">العربية</span><span class="ml-auto">AR</span>
+                    </button>
+                </div>
+                <p class="site-language__status" role="status" data-language-status hidden></p>
+            </div>
 
             <span
                 aria-hidden="true"

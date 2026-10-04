@@ -1318,7 +1318,8 @@
     height: auto;
     max-width: 100%;
     margin-inline: auto;
-    max-height: var(--about-team-max-height, 50svh);
+    /* Natural SVG ratio fills the frame without letterboxing or viewport caps. */
+    max-height: none;
     object-fit: contain;
     object-position: center;
     border-radius: inherit;

@@ -3,6 +3,11 @@
  * Details are visible without JS and collapse after progressive enhancement.
  */
 .expertise-page__card {
+    --expertise-artwork-ratio: 1311 / 303;
+    --expertise-image-left: -0.7628%;
+    --expertise-image-top: -1.9802%;
+    --expertise-image-width: 101.5256%;
+    --expertise-image-height: 106.6007%;
     overflow: hidden;
     border-radius: var(--card-radius);
     background: #fff;
@@ -14,6 +19,8 @@
     min-height: 255px;
     overflow: hidden;
     isolation: isolate;
+    /* Keep the wide authored photograph at its own ratio on desktop. */
+    aspect-ratio: var(--expertise-artwork-ratio);
 }
 .expertise-page__media::after {
     position: absolute;
@@ -40,15 +47,43 @@
 }
 .expertise-page__media-image {
     position: absolute;
-    inset: -1%;
-    width: 102%;
+    left: var(--expertise-image-left);
+    top: var(--expertise-image-top);
+    width: var(--expertise-image-width);
     max-width: none;
-    height: 102%;
+    height: var(--expertise-image-height);
     object-fit: cover;
     object-position: center;
 }
+.expertise-page__artwork {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
 .expertise-page__media-image--flip {
+    transform: none;
+}
+.expertise-page__artwork:has(.expertise-page__media-image--flip) {
     transform: scaleX(-1);
+}
+/* PNGs include their own shadow gutters. Remove only those gutters, then
+ * mirror the cropped frame so the photo reaches both edges in either direction. */
+body[data-page="expertise"] #field-assessment {
+    --expertise-artwork-ratio: 1271 / 303;
+    --expertise-image-left: -0.7868%;
+    --expertise-image-width: 104.7207%;
+}
+body[data-page="expertise"] #advanced-production {
+    --expertise-artwork-ratio: 1308 / 303;
+    --expertise-image-left: -0.7645%;
+    --expertise-image-top: 0%;
+    --expertise-image-width: 100.9939%;
+    --expertise-image-height: 100%;
+}
+body[data-page="expertise"] #site-execution {
+    --expertise-artwork-ratio: 1310 / 303;
+    --expertise-image-left: -0.8397%;
+    --expertise-image-width: 101.6031%;
 }
 .expertise-page__media-content {
     position: relative;
@@ -152,6 +187,28 @@
     color: #fff;
 }
 @media (max-width: 1179px) {
+    /* Separate copy from the wide artwork when an overlay would crop most of
+     * the photograph. The media wrapper retains the original shadow gutters. */
+    body[data-page="expertise"] .expertise-page__media {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        aspect-ratio: auto;
+    }
+    body[data-page="expertise"] .expertise-page__media::after {
+        display: none;
+    }
+    body[data-page="expertise"] .expertise-page__artwork {
+        position: relative;
+        width: 100%;
+        aspect-ratio: var(--expertise-artwork-ratio);
+        overflow: hidden;
+    }
+    body[data-page="expertise"] .expertise-page__media-content {
+        width: 100%;
+        min-height: 0;
+        padding: 22px 24px;
+    }
     .expertise-page__media-content {
         width: 55%;
         padding-inline: 24px;
@@ -187,5 +244,17 @@
     }
     .expertise-page__project-cta {
         border-radius: 8px;
+    }
+}
+
+/* Title/description defaults differ only for this page at <=450px. Descender
+ * space and the two-line clamp still come from shared card-type.css. */
+@media (max-width: 450px) {
+    body[data-page="expertise"] .expertise-page__card {
+        --card-title: 16px;
+        --card-description: 14px;
+    }
+    body[data-page="expertise"] .expertise-page__media-content {
+        padding: 18px 16px;
     }
 }

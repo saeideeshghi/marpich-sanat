@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "customize": "node scripts/start-customizer.js",
     "build": "vite build",
     "build:pages": "vite build --mode pages",
     "preview": "vite preview",
     "preview:pages": "vite preview --mode pages",
-    "check": "node scripts/check-project.js && node scripts/check-components.js && node scripts/check-handoff.js",
+    "check": "node scripts/check-project.js && node scripts/check-components.js && node scripts/check-handoff.js && node scripts/check-customizer.js",
     "check:assets": "node scripts/check-assets.js"
   },
   "devDependencies": {

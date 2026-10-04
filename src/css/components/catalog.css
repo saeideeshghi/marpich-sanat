@@ -159,7 +159,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 16px;
-    padding: 0 28px 18px;
+    padding: 12px 28px 18px;
     background: #f8faff;
     direction: rtl;
     text-align: right;
@@ -716,7 +716,7 @@
     :where(.products-page, .air-handling-page, .industries-page) .product-search__bottom {
         min-height: auto;
         gap: 7px;
-        padding: 0 10px 10px;
+        padding: 12px 10px 14px;
     }
 
     :where(.products-page, .air-handling-page, .industries-page) .product-search__chips {

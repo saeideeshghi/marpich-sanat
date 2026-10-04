@@ -120,9 +120,19 @@ const articleHeading = articleHero?.querySelector(".articles-hero__heading");
 if (articleHero && articleHeading) {
     const fitArticleBackdrop = () => {
         const bottom = articleHeading.getBoundingClientRect().bottom - articleHero.getBoundingClientRect().top;
-        articleHero.style.setProperty("--articles-heading-bottom", `${Math.ceil(bottom + 32)}px`);
+        const value = `${Math.ceil(bottom + 32)}px`;
+        if (articleHero.style.getPropertyValue("--articles-heading-bottom") !== value) {
+            articleHero.style.setProperty("--articles-heading-bottom", value);
+        }
     };
-    new ResizeObserver(fitArticleBackdrop).observe(articleHeading);
+    let backdropFrame = 0;
+    new ResizeObserver(() => {
+        if (backdropFrame) return;
+        backdropFrame = requestAnimationFrame(() => {
+            backdropFrame = 0;
+            fitArticleBackdrop();
+        });
+    }).observe(articleHeading);
     document.fonts.ready.then(fitArticleBackdrop);
     fitArticleBackdrop();
 }

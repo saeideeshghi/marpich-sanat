@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "Exact selection isolates one title; repeated component unifies every matching title, including prior exact override",
+    "Independent tablet/mobile edits and custom 370–410px range, tested inside and outside range",
+    "Header/footer editors preview real SVG; desktop/tablet/mobile geometry, line thickness and gradient stops are independent",
+    "Confirmation atomically saves CSS, settings, header pattern and footer pattern; survives editor reload",
+    "Export ZIP applied to independent source folder; Pages build and clean browser retain responsive component styles and all SVG profiles; published editor loads exported values"
+  ],
+  "errors": []
+}

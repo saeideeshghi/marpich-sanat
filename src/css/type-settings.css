@@ -14,8 +14,8 @@ body[data-page] {
     --hero-description-tablet: 18px;
     --hero-description-mobile: 18px;
     --hero-top-desktop: 164px;
-    --hero-top-tablet: 144px;
-    --hero-top-mobile: 132px;
+    --hero-top-tablet: 168px;
+    --hero-top-mobile: 156px;
     --hero-bottom: 40px;
     --hero-summary-desktop: 0px;
     --hero-summary-tablet: 0px;
@@ -60,7 +60,7 @@ body[data-page] {
  * Set all page overrides here, above the breakpoint resolvers. */
 body[data-page="home"] {
     --hero-top-desktop: 120px;
-    --hero-top-tablet: 168px;
+    --hero-top-tablet: 192px;
     /* Preserve the owner's extra top margin; height lives in hero-heights.css. */
     --home-hero-content-margin-top: 105px;
 }
@@ -74,14 +74,26 @@ body[data-page="about"] {
     --hero-summary-mobile: 24px;
 }
 body[data-page="project-details"] {
+    --hero-eyebrow-desktop: 14px;
+    --hero-eyebrow-tablet: 14px;
+    --hero-eyebrow-mobile: 14px;
+    --hero-description-desktop: 18px;
+    --hero-description-tablet: 16px;
+    --hero-description-mobile: 14px;
+    --hero-top-mobile: 148px;
+    --hero-bottom: 100px;
     --hero-summary-desktop: 150px;
     --hero-summary-tablet: 142px;
     --hero-summary-mobile: 144px;
 }
 body[data-page="product-details"] {
+    --hero-eyebrow-desktop: 14px;
+    --hero-eyebrow-tablet: 14px;
+    --hero-eyebrow-mobile: 14px;
+    --hero-top-mobile: 168px;
     --hero-summary-desktop: 176px;
     --hero-summary-tablet: 176px;
-    --hero-summary-mobile: 24px;
+    --hero-summary-mobile: 140px;
 }
 body[data-page="industry-textile"] {
     --hero-summary-desktop: 9.2rem;

@@ -8,6 +8,7 @@
 @import "./components/footer.css";
 @import "./components/pattern.css";
 @import "./components/auth.css";
+@import "./components/language.css";
 
 /* Include utilities used by build-time HTML partials. */
 @source "../components";

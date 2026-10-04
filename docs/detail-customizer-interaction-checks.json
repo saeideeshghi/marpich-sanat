@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Actual local launcher installed/validated dependencies and started Vite",
+    "Mobile pattern follows footer height after content/spacing changes",
+    "Literal nested text selection, automatic focus and native Up/Down 1px steps",
+    "Parent/children path selects actual elements; resizing retains mobile scope",
+    "Icon edits are isolated from adjacent icons",
+    "Confirmation saves exact element CSS/JSON on disk; reload and direct page retain edits",
+    "After reload, control values and highlight match the actual preview element"
+  ],
+  "errors": []
+}

@@ -2,15 +2,19 @@
  * Shared decorative site pattern.
  *
  * Rendering and animation intentionally mirror the approved Pattern Studio export:
- * - header profiles switch at 640px; footer uses the same header artwork from 1180px
- * - compact footer profiles keep their separate fan artwork and animation
- * - authored geometry retains its aspect ratio; decorative layers never affect layout
+ * - header profiles switch at 640px; footer's authored mobile profile ends at 500px
+ * - each footer profile keeps its own artwork and animation
+ * - authored geometry retains its aspect ratio; mobile footer fills its host height
+ * - decorative layers never affect layout
  *
  * Only the Pattern Studio demo background/text are omitted here. The site host owns
  * its background/content; this module supplies the decorative SVG layer only.
  */
 import patternSettings from "../../data/patterns/site-pattern.json";
 import footerPatternSettings from "../../data/patterns/footer-pattern.json";
+import { normalizePattern } from "../customizer/pattern-model.js";
+const mountedPatterns = new Map();
+let previewListener = false;
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 // Both decorative layers use one clock; scroll visibility only controls rendering.
@@ -47,9 +51,8 @@ export function mountPattern(root, initialConfig) {
 
     root.replaceChildren();
 
-    // The exported demo uses a fixed authored scene height (430px desktop / 404px mobile).
-    // Keeping that stage inside the full site layer means percentage Y positions stay
-    // identical to the approved preview even when the real header/footer is taller.
+    // Header and desktop footer keep the authored stage. Mobile footer stretches
+    // vertically with the real content, so its portrait artwork fills the whole host.
     const stage = document.createElement("div");
     stage.className = "site-pattern-stage";
     root.append(stage);
@@ -254,11 +257,9 @@ export function mountPattern(root, initialConfig) {
     }
 
     function layout() {
-        // Use the original mobile geometry below 640px; no interpolation of the authored profiles.
+        // Header switches below 640px; footer follows its independent JSON breakpoint.
         const breakpoint = root.dataset.sitePattern === "header" ? 640 : config.breakpoint;
-        const compact = root.clientWidth < breakpoint;
-        const profileName =
-            compact && root.clientWidth >= 640 && config.profiles.tablet ? "tablet" : compact ? "mobile" : "desktop";
+        const profileName = root.clientWidth < breakpoint ? "mobile" : root.clientWidth < 1180 && config.profiles.tablet ? "tablet" : "desktop";
         profile = config.profiles[profileName];
         animation = { ...config.animation, ...profile.animation };
         root.dataset.patternProfile = profileName;
@@ -281,18 +282,24 @@ export function mountPattern(root, initialConfig) {
             root.style.setProperty("--site-pattern-scene-height", `${p.height}px`);
         }
 
-        setStyles(stage, {
-            height: `${p.height}px`,
-        });
+        const fillFooter = p.fillHost ?? (root.dataset.sitePattern === "footer" && profileName === "mobile");
+        root.dataset.patternFit = fillFooter ? "host" : "authored";
+        setStyles(stage, { height: fillFooter ? "100%" : `${p.height}px` });
+        // Mobile footer is taller than the authored portrait: let the same
+        // artwork span the host, including its contact/certificate/bottom rows.
+        svg.style.height = fillFooter ? "100%" : "auto";
+        svg.setAttribute("preserveAspectRatio", fillFooter ? "none" : "xMidYMid meet");
 
         setStyles(pattern, {
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: `${p.width}%`,
+            height: fillFooter ? "100%" : "auto",
             maxWidth: p.maxWidth ? `${p.maxWidth}px` : "none",
             transform: `rotate(${p.rotation}deg) scale(${p.flipX ? -1 : 1}, ${p.scaleY / 100})`,
-            transformOrigin: "center",
+            transformOrigin: "center center",
             opacity: p.opacity / 100,
+            clipPath: "none",
         });
 
         setGradientStops(maskGradient, [
@@ -444,9 +451,16 @@ export function mountPattern(root, initialConfig) {
         }
     }
 
+    // Stage/profile updates can change the header layer's own measured height.
+    // Paint them in the next frame instead of writing inside ResizeObserver.
+    let resizeFrame = 0;
     const resizeObserver = new ResizeObserver(() => {
-        layout();
-        sync();
+        if (resizeFrame) return;
+        resizeFrame = requestAnimationFrame(() => {
+            resizeFrame = 0;
+            layout();
+            sync();
+        });
     });
     resizeObserver.observe(root);
 
@@ -507,6 +521,7 @@ export function mountPattern(root, initialConfig) {
         },
         destroy() {
             unschedule();
+            cancelAnimationFrame(resizeFrame);
             resizeObserver.disconnect();
             intersectionObserver.disconnect();
             document.removeEventListener("visibilitychange", syncVisibility);
@@ -540,7 +555,8 @@ export function initSitePatterns() {
             headerHost.classList.add("site-pattern-host");
             const layer = createPatternLayer("header");
             headerHost.prepend(layer);
-            mountPattern(layer, cloneConfig());
+            const config = cloneConfig();
+            mountedPatterns.set("header", { root: layer, config: JSON.stringify(config), player: mountPattern(layer, config) });
         }
     }
 
@@ -549,7 +565,22 @@ export function initSitePatterns() {
         footer.classList.add("site-pattern-host");
         const layer = createPatternLayer("footer");
         footer.prepend(layer);
-        // Desktop shares header geometry/motion; compact profiles use the footer fan.
-        mountPattern(layer, cloneConfig(footerPatternSettings));
+        // Desktop placement and the <=500px mobile artwork come from the footer export.
+        const config = cloneConfig(footerPatternSettings);
+        mountedPatterns.set("footer", { root: layer, config: JSON.stringify(config), player: mountPattern(layer, config) });
+    }
+    if (!previewListener) {
+        previewListener = true;
+        window.addEventListener("site:pattern-preview", (event) => {
+            for (const [kind, entry] of mountedPatterns) {
+                if (!event.detail?.[kind]) continue;
+                const config = normalizePattern(event.detail[kind]);
+                const signature = JSON.stringify(config);
+                if (signature !== entry.config) {
+                    entry.player.destroy(); entry.player = mountPattern(entry.root, config); entry.config = signature;
+                }
+                entry.player.pause(Boolean(event.detail.paused));
+            }
+        });
     }
 }

@@ -1,0 +1,55 @@
+/* EDIT PROJECT DETAILS HERE. All variables are scoped to this page.
+ * Card roles use the general defaults in type-settings.css.
+ * Body copy and metadata stay full-length and never receive a two-line clamp. */
+body[data-page="project-details"] {
+    --project-heading-desktop: 28px;
+    --project-heading-tablet: 26px;
+    --project-heading-mobile: 22px;
+    --project-body-desktop: 14px;
+    --project-body-tablet: 14px;
+    --project-body-mobile: 14px;
+    --project-meta-label-desktop: 14px;
+    --project-meta-label-tablet: 14px;
+    --project-meta-label-mobile: 12px;
+    --project-meta-value-desktop: 14px;
+    --project-meta-value-tablet: 14px;
+    --project-meta-value-mobile: 12px;
+    --project-body-leading: 1.95;
+    --project-heading-leading: 1.65;
+    --project-section-spacing: 32px;
+    --project-grid-gap: 24px;
+    --project-meta-columns: 6;
+    --project-meta-padding: 12px;
+    --project-cover-min-height: 500px;
+    --project-stats-columns: 5;
+    --project-stat-icon-size: 52px;
+    --project-stat-value-size: 28px;
+    --project-heading: var(--project-heading-desktop);
+    --project-body: var(--project-body-desktop);
+    --project-meta-label: var(--project-meta-label-desktop);
+    --project-meta-value: var(--project-meta-value-desktop);
+}
+@media (min-width: 640px) and (max-width: 1179px) {
+    body[data-page="project-details"] {
+        --project-heading: var(--project-heading-tablet);
+        --project-body: var(--project-body-tablet);
+        --project-meta-label: var(--project-meta-label-tablet);
+        --project-meta-value: var(--project-meta-value-tablet);
+        --project-cover-min-height: 380px;
+        --project-stats-columns: 3;
+    }
+}
+@media (max-width: 639px) {
+    body[data-page="project-details"] {
+        --project-heading: var(--project-heading-mobile);
+        --project-body: var(--project-body-mobile);
+        --project-meta-label: var(--project-meta-label-mobile);
+        --project-meta-value: var(--project-meta-value-mobile);
+        --project-section-spacing: 28px;
+        --project-grid-gap: 20px;
+        --project-meta-columns: 3;
+        --project-meta-padding: 7px;
+        --project-cover-min-height: 250px;
+        --project-stats-columns: 2;
+    }
+}

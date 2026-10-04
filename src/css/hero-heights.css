@@ -19,7 +19,7 @@
 #hero-project-details {
     --hero-height-desktop: 31rem;
     --hero-height-tablet: 31rem;
-    --hero-height-mobile: 25svh;
+    --hero-height-mobile: 24rem;
 }
 /* products.html */
 #hero-products {
@@ -31,7 +31,7 @@
 #hero-product-details {
     --hero-height-desktop: 31rem;
     --hero-height-tablet: 31rem;
-    --hero-height-mobile: 25svh;
+    --hero-height-mobile: 26rem;
 }
 /* industries.html */
 #hero-industries {
