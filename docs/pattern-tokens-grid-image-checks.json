@@ -1,0 +1,12 @@
+{
+  "passed": [
+    "Products mosaic: reference areas, dust spans two mobile/tablet rows, image/copy orientation, no overflow at 9 widths; other catalog files unchanged",
+    "Contact, About, Articles: single header/footer pattern at desktop/tablet/mobile, reduced-motion support",
+    "About image: source, crop, object position, frame height by breakpoint and comparison reset",
+    "About source: inclusive custom range, new-tab preview, canonical writeback, approved reload and no source URL emitted as CSS",
+    "No browser JavaScript errors"
+  ],
+  "widths": [320, 390, 639, 640, 820, 1179, 1180, 1440, 1920],
+  "assetFixtures": true,
+  "errors": []
+}

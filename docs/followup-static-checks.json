@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-05",
+  "base": "/marpich-sanat/",
+  "passed": [
+    "Built Pages reference, assets and navigation use the /marpich-sanat/ base correctly",
+    "Static zoom and snapshot preview work; unsaved tag changes stay isolated from the approved website",
+    "Mobile customizer has no horizontal overflow with zoom controls and the dictionary; no browser errors"
+  ],
+  "errors": []
+}

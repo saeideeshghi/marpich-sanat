@@ -4,6 +4,7 @@
  * Keep type sizes in type-settings.css and per-hero heights in hero-heights.css.
  */
 body[data-page] {
+    --site-layout-max-width: 1920px;
     --site-gutter-desktop: clamp(40px, 4.45vw, 64px);
     --site-gutter-tablet: 32px;
     --site-gutter-mobile: 20px;

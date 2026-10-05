@@ -466,11 +466,3 @@ body[data-page]
         scale: 1.06;
     }
 }
-
-/* The category mosaic must grow when its new titles wrap. Fixed rows clipped
- * the count/tag at tablet widths; keep the same areas and natural row sizing. */
-@media (min-width: 768px) {
-    body[data-page="products"] .featured-products {
-        grid-template-rows: repeat(3, minmax(200px, auto));
-    }
-}

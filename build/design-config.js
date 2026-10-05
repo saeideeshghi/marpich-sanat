@@ -1,4 +1,4 @@
-// The pattern JSON files are canonical. settings.json stores CSS rules only.
+// The pattern JSON files are canonical. settings.json stores style rules and responsive image sources.
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { emptyConfig, normalizeConfig, persistedSettings } from "../src/js/customizer/model.js";

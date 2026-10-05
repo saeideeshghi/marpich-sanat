@@ -488,21 +488,21 @@ body[data-page="project-details"] .project-details__reference-heading {
    ========================================================= */
 
 body[data-page="project-details"] .project-details__technical {
-    --ink: #0f172b;
-    --panel: #ecf0f8;
-    --line: rgba(15, 23, 43, 0.2);
-    --line-soft: rgba(15, 23, 43, 0.14);
-    --line-strong: rgba(15, 23, 43, 0.78);
-    --accent: #ff7a24;
-    --check: #55a9f0;
+    --technical-text-color: #0f172b;
+    --technical-background-color: #ecf0f8;
+    --technical-border-color: rgba(15, 23, 43, 0.2);
+    --technical-border-soft-color: rgba(15, 23, 43, 0.14);
+    --technical-border-strong-color: rgba(15, 23, 43, 0.78);
+    --technical-accent-color: #ff7a24;
+    --technical-checkmark-color: #55a9f0;
 }
 
 body[data-page="project-details"] .project-details__technical .details-card {
     width: 100%;
     overflow: hidden;
-    border: 1px solid var(--line-strong);
+    border: 1px solid var(--technical-border-strong-color);
     border-radius: 16px;
-    background: var(--panel);
+    background: var(--technical-background-color);
 }
 
 body[data-page="project-details"] .project-details__technical .details-card--project,
@@ -529,7 +529,7 @@ body[data-page="project-details"] .project-details__technical .details-card__bod
 body[data-page="project-details"] .project-details__technical .details-table-wrap {
     min-width: 0;
     height: 100%;
-    border-right: 1px solid var(--line-strong);
+    border-right: 1px solid var(--technical-border-strong-color);
 }
 
 body[data-page="project-details"] .project-details__technical .details-table {
@@ -539,7 +539,7 @@ body[data-page="project-details"] .project-details__technical .details-table {
     border-collapse: separate;
     border-spacing: 0;
     direction: rtl;
-    color: var(--ink);
+    color: var(--technical-text-color);
 }
 
 body[data-page="project-details"] .project-details__technical .details-table col.col-label {
@@ -597,7 +597,7 @@ body[data-page="project-details"] .project-details__technical .details-table the
 
 body[data-page="project-details"] .project-details__technical .details-table th + th,
 body[data-page="project-details"] .project-details__technical .details-table td + td {
-    border-right: 1px solid var(--line-strong);
+    border-right: 1px solid var(--technical-border-strong-color);
 }
 
 body[data-page="project-details"] .project-details__technical .details-visual {
@@ -697,7 +697,7 @@ body[data-page="project-details"] .project-details__technical .extras-panel li::
     position: absolute;
     top: 0;
     right: 0;
-    color: var(--check);
+    color: var(--technical-checkmark-color);
     font-size: 18px;
     font-weight: 700;
     line-height: 1.35;
@@ -757,7 +757,7 @@ body[data-page="project-details"] .project-details__technical .details-card__not
 }
 
 body[data-page="project-details"] .project-details__technical .details-card__note a {
-    color: var(--accent);
+    color: var(--technical-accent-color);
     text-decoration: underline;
     text-underline-offset: 3px;
     font-weight: 500;
@@ -798,7 +798,7 @@ body[data-page="project-details"] .project-details__technical .details-card__not
     body[data-page="project-details"] .project-details__technical .details-table-wrap {
         height: auto;
         border-right: 0;
-        border-bottom: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--technical-border-strong-color);
     }
 
     body[data-page="project-details"] .project-details__technical .details-table thead tr,
@@ -824,7 +824,7 @@ body[data-page="project-details"] .project-details__technical .details-card__not
 
     body[data-page="project-details"] .project-details__technical .extras-panel {
         min-height: 250px;
-        border-bottom: 1px solid var(--line-soft);
+        border-bottom: 1px solid var(--technical-border-soft-color);
     }
 
     body[data-page="project-details"] .project-details__technical .details-visual {

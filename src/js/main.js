@@ -9,6 +9,7 @@ import { initSitePatterns } from "./components/site-pattern.js";
 import { initHeroLayout } from "./components/hero.js";
 import { initLanguageSelectors } from "./components/language.js";
 import { initTemplateStyles } from "./components/template-style.js";
+import { initFixedHeader } from "./components/fixed-header.js";
 
 // Shared behavior only. Never import a page module here.
 export function initSite() {
@@ -16,6 +17,7 @@ export function initSite() {
     // Mount decoration independently before interactive enhancements initialize.
     initSitePatterns();
     initHeroLayout();
+    initFixedHeader();
     initMobileMenu();
     initLanguageSelectors();
     initAuth();

@@ -1,28 +1,27 @@
 /*
  * Shared decorative site pattern.
  *
- * Rendering and animation intentionally mirror the approved Pattern Studio export:
+ * Placement and geometry retain the approved Pattern Studio export:
  * - header profiles switch at 640px; footer's authored mobile profile ends at 500px
  * - each footer profile keeps its own artwork and animation
  * - authored geometry retains its aspect ratio; mobile footer fills its host height
  * - decorative layers never affect layout
  *
+ * Motion uses native SVG interpolation; imported FPS metadata remains compatible.
  * Only the Pattern Studio demo background/text are omitted here. The site host owns
  * its background/content; this module supplies the decorative SVG layer only.
  */
 import patternSettings from "../../data/patterns/site-pattern.json";
 import footerPatternSettings from "../../data/patterns/footer-pattern.json";
-import { normalizePattern } from "../customizer/pattern-model.js";
+import { normalizePattern, PATTERN_RENDER_DEFAULTS } from "../customizer/pattern-model.js";
 const mountedPatterns = new Map();
 let previewListener = false;
 
 const SVG_NS = "http://www.w3.org/2000/svg";
-// Both decorative layers use one clock; scroll visibility only controls rendering.
-const patternClockStart = performance.now();
 
 const cloneConfig = (settings = patternSettings) => JSON.parse(JSON.stringify(settings));
 
-export function mountPattern(root, initialConfig) {
+export function mountPattern(root, initialConfig, initialTime = 0) {
     const uid = `mps-pattern-${Math.random().toString(36).slice(2, 10)}`;
     const create = (tag, attrs = {}, parent) => {
         const element = document.createElementNS(SVG_NS, tag);
@@ -34,10 +33,10 @@ export function mountPattern(root, initialConfig) {
     const config = initialConfig;
     // Profiles may override motion without affecting another artwork/profile.
     let animation = config.animation;
-    let time = 0;
+    let time = Math.max(0, initialTime);
+    let clockRate = 1;
+    let timelineReady = false;
     let paused = false;
-    let heldTime = null;
-    let timeOffset = 0;
     let selected = null;
     let artwork = null;
     let sceneWidth = 1008;
@@ -70,6 +69,7 @@ export function mountPattern(root, initialConfig) {
             width: 1008,
             height: 494,
             "aria-hidden": "true",
+            "shape-rendering": "geometricPrecision",
         },
         pattern,
     );
@@ -123,11 +123,20 @@ export function mountPattern(root, initialConfig) {
         defs,
     );
     const blur = create("feGaussianBlur", { stdDeviation: 0 }, filter);
+    mask.style.maskType = "alpha";
     const filtered = create("g", { mask: `url(#${uid}-mask)` }, svg);
     const normal = create("g", {}, filtered);
     const glowGroup = create("g", { filter: `url(#${uid}-glow)` }, filtered);
 
-    const setStyles = (element, values) => Object.assign(element.style, values);
+    const setStyles = (element, values) => {
+        for (const [name, value] of Object.entries(values))
+            if (element.style[name] !== String(value)) element.style[name] = value;
+    };
+    const setAttribute = (element, name, value) => {
+        const text = String(value);
+        if (element.getAttribute(name) !== text) element.setAttribute(name, text);
+    };
+    let fadeSignature = "";
     const setGradientStops = (gradient, stops) => {
         gradient.replaceChildren();
         [...stops]
@@ -151,6 +160,7 @@ export function mountPattern(root, initialConfig) {
         nodes.forEach((node) => {
             node.gradient.remove();
             node.light.remove();
+            node.basePath.remove();
         });
         normal.replaceChildren();
         glowGroup.replaceChildren();
@@ -203,8 +213,8 @@ export function mountPattern(root, initialConfig) {
                 item.setAttribute("opacity", line.opacity / 100);
             });
 
-            // Keep the source exactly as exported. In particular, do not impose a
-            // minimum stroke or non-scaling stroke: both visibly change this artwork.
+            // Preserve the filled source geometry; a configurable outline supports
+            // thin edges that would otherwise disappear between device pixels.
             const attrs = {
                 d: line.d,
                 fill: `url(#${uid}-gradient-${index})`,
@@ -213,48 +223,166 @@ export function mountPattern(root, initialConfig) {
                 "stroke-linejoin": "round",
             };
 
-            const basePath = create("path", attrs, group);
-            const brightPath = create(
+            const basePath = create(
                 "path",
                 {
-                    ...attrs,
+                    id: `${uid}-path-${index}`,
+                    d: line.d,
+                    "stroke-width": line.thickness,
+                    "stroke-linejoin": "round",
+                },
+                defs,
+            );
+            const normalPath = create(
+                "use",
+                { href: `#${uid}-path-${index}`, fill: attrs.fill, stroke: attrs.stroke },
+                group,
+            );
+            const brightPath = create(
+                "use",
+                {
+                    href: `#${uid}-path-${index}`,
                     fill: `url(#${uid}-light-${index})`,
                     stroke: `url(#${uid}-light-${index})`,
                 },
                 group,
             );
             const glowPath = create(
-                "path",
+                "use",
                 {
-                    ...attrs,
+                    href: `#${uid}-path-${index}`,
                     fill: `url(#${uid}-light-${index})`,
                     stroke: `url(#${uid}-light-${index})`,
                 },
                 glowWrapper,
             );
 
-            let coordinateIndex = 0;
-            const tokens = (line.d.match(/[MLCZ]|-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map((token) =>
-                /^[MLCZ]$/.test(token) ? token : { value: Number(token), x: coordinateIndex++ % 2 === 0 },
-            );
-
             return {
                 basePath,
+                normalPath,
                 brightPath,
                 glowPath,
                 gradient,
                 light,
                 group,
                 glowWrapper,
-                tokens,
                 line,
                 index,
             };
         });
 
         layout();
-        paint();
     }
+
+    // Warp the curve, not its control points independently. Applying a sine to
+    // every control point pinched the two edges of narrow filled ribbons. Short
+    // cubic spans plus the derivative of the warp preserve their common tangent.
+    function prepareMotion(node) {
+        const vertical = artwork.waveAxis === "x";
+        const axis = vertical ? 1 : 0;
+        const raw = node.line.d.match(/[a-z]|-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || [];
+        const commands = [];
+        let position = [0, 0];
+        let subpathStart = position;
+        const amplitude = animation.amplitude * (node.line.wave / 100) * (profile.motion / 100);
+        const spanLimit = 48 / Math.max(1, animation.cycles) / Math.pow(Math.max(1, amplitude / 17.5), 0.25);
+        let explicitCommands = raw.length > 0;
+        for (let i = 0; i < raw.length && explicitCommands;) {
+            const command = raw[i++];
+            if (!["M", "L", "C", "Z"].includes(command)) {
+                explicitCommands = false;
+                break;
+            }
+            const count = command === "Z" ? 0 : command === "C" ? 6 : 2;
+            if (
+                raw.slice(i, i + count).length !== count ||
+                raw.slice(i, i + count).some((value) => !Number.isFinite(Number(value)))
+            )
+                explicitCommands = false;
+            i += count;
+        }
+        const midpoint = (a, b) => a.map((value, i) => (value + b[i]) / 2);
+        function curve(a, b, c, d) {
+            const along = [a[axis], b[axis], c[axis], d[axis]];
+            if (Math.max(...along) - Math.min(...along) > spanLimit) {
+                const ab = midpoint(a, b),
+                    bc = midpoint(b, c),
+                    cd = midpoint(c, d);
+                const abc = midpoint(ab, bc),
+                    bcd = midpoint(bc, cd),
+                    middle = midpoint(abc, bcd);
+                curve(a, ab, abc, middle);
+                curve(middle, bcd, cd, d);
+            } else commands.push({ command: "C", points: [b, c, d], anchors: [a, d, d] });
+        }
+        // Authored artwork uses absolute M/L/C/Z. Imported SVG commands are
+        // sampled once by the browser, so relative/arcs are not misread as pairs.
+        if (explicitCommands) {
+            for (let i = 0; i < raw.length;) {
+                const command = raw[i++];
+                if (command === "Z") {
+                    commands.push({ command, points: [] });
+                    position = subpathStart;
+                    continue;
+                }
+                const count = command === "C" ? 3 : 1;
+                const points = Array.from({ length: count }, () => [Number(raw[i++]), Number(raw[i++])]);
+                if (command === "C") curve(position, ...points);
+                else commands.push({ command, points });
+                position = points.at(-1);
+                if (command === "M") subpathStart = position;
+            }
+        } else {
+            const length = node.basePath.getTotalLength();
+            const steps = Math.min(4096, Math.max(2, Math.ceil(length / 6)));
+            for (let i = 0; i <= steps; i++) {
+                const point = node.basePath.getPointAtLength((length * i) / steps);
+                commands.push({ command: i ? "L" : "M", points: [[point.x, point.y]] });
+            }
+            if (/[zZ]\s*$/.test(node.line.d)) commands.push({ command: "Z", points: [] });
+        }
+        const along = commands.flatMap((item) => item.points.map((point) => point[axis]));
+        const start = Math.min(...along),
+            end = Math.max(...along),
+            span = end - start || 1;
+        function coefficients(point) {
+            const u = Math.max(0, Math.min(1, (point[axis] - start) / span));
+            const phase =
+                u * Math.PI * 2 * animation.cycles +
+                node.index * animation.phaseStep +
+                (node.line.phase * Math.PI) / 180;
+            const envelope = u === 0 || u === 1 ? 0 : Math.sin(Math.PI * u) * 0.5;
+            const derivative = (Math.cos(Math.PI * u) * Math.PI * 0.5) / span;
+            const frequency = (Math.PI * 2 * animation.cycles) / span;
+            const sine = Math.sin(phase),
+                cosine = Math.cos(phase);
+            return {
+                sine: envelope * sine,
+                cosine: envelope * cosine,
+                sineDerivative: derivative * sine + envelope * frequency * cosine,
+                cosineDerivative: derivative * cosine - envelope * frequency * sine,
+            };
+        }
+        node.motionTokens = commands.flatMap((item) => [
+            item.command,
+            ...item.points.flatMap((point, index) => {
+                const anchor = item.anchors?.[index] || point;
+                const coefficientsAtAnchor = coefficients(anchor),
+                    distance = point[axis] - anchor[axis];
+                return point.map((value, coordinate) =>
+                    coordinate === axis
+                        ? String(value)
+                        : {
+                              value,
+                              sine: coefficientsAtAnchor.sine + distance * coefficientsAtAnchor.sineDerivative,
+                              cosine: coefficientsAtAnchor.cosine + distance * coefficientsAtAnchor.cosineDerivative,
+                          },
+                );
+            }),
+        ]);
+    }
+    let motionSignature = "";
+    let timelineSignature = "";
 
     function layout() {
         // Header switches below 640px; footer follows its independent JSON breakpoint.
@@ -265,12 +393,17 @@ export function mountPattern(root, initialConfig) {
                 : root.clientWidth < 1180 && config.profiles.tablet
                   ? "tablet"
                   : "desktop";
+        const elapsed = currentTime();
         profile = config.profiles[profileName];
         animation = { ...config.animation, ...profile.animation };
         root.dataset.patternProfile = profileName;
         root.dataset.patternArtwork = profile.artwork || profileName;
         const nextArtwork = config.artworks?.[profile.artwork || profileName] || defaultArtwork;
         if (artwork !== nextArtwork) {
+            svg.pauseAnimations();
+            time = elapsed;
+            timelineReady = false;
+            timelineSignature = "";
             artwork = nextArtwork;
             sceneWidth = artwork.viewBox[2];
             sceneHeight = artwork.viewBox[3];
@@ -280,6 +413,17 @@ export function mountPattern(root, initialConfig) {
             maskGradient.setAttribute("x2", sceneWidth);
             build();
             return;
+        }
+        const nextMotion = [
+            artwork.viewBox,
+            animation.cycles,
+            animation.phaseStep,
+            animation.amplitude,
+            profileName,
+        ].join("|");
+        if (motionSignature !== nextMotion || nodes.some((node) => !node.motionTokens)) {
+            nodes.forEach(prepareMotion);
+            motionSignature = nextMotion;
         }
         const p = profile;
         // The stage keeps authored geometry; CSS clips the layer to the host’s dark surface.
@@ -307,100 +451,213 @@ export function mountPattern(root, initialConfig) {
             clipPath: "none",
         });
 
-        setGradientStops(maskGradient, [
-            { offset: 0, color: "#ffffff", opacity: p.fadeLeft > 0 ? 0 : 1 },
-            { offset: p.fadeLeft, color: "#ffffff", opacity: 1 },
-            { offset: Math.max(p.fadeLeft, p.fadeStart), color: "#ffffff", opacity: 1 },
-            {
-                offset: Math.max(p.fadeStart, p.fadeEnd),
-                color: "#ffffff",
-                opacity: p.fadeEnd >= 100 && p.fadeStart === 100 ? 1 : 0,
-            },
-        ]);
+        const nextFade = [p.fadeLeft, p.fadeStart, p.fadeEnd].join("|");
+        if (fadeSignature !== nextFade) {
+            setGradientStops(maskGradient, [
+                { offset: 0, color: "#ffffff", opacity: p.fadeLeft > 0 ? 0 : 1 },
+                { offset: p.fadeLeft, color: "#ffffff", opacity: 1 },
+                { offset: Math.max(p.fadeLeft, p.fadeStart), color: "#ffffff", opacity: 1 },
+                {
+                    offset: Math.max(p.fadeStart, p.fadeEnd),
+                    color: "#ffffff",
+                    opacity: p.fadeEnd >= 100 && p.fadeStart === 100 ? 1 : 0,
+                },
+            ]);
 
-        blur.setAttribute("stdDeviation", animation.glow);
+            fadeSignature = nextFade;
+        }
+        setAttribute(blur, "stdDeviation", animation.glow);
+        glowGroup.style.display = animation.glow > 0 ? "" : "none";
+        for (const node of nodes) {
+            node.glowWrapper.style.display = node.line.visible && animation.glow > 0 ? "" : "none";
+            const crossAxis = artwork.lightAxis === "y" ? "x" : "y";
+            setAttribute(node.light, `${crossAxis}1`, 0);
+            setAttribute(node.light, `${crossAxis}2`, 0);
+        }
+        stabilizeStrokes();
+        prepareTimeline(elapsed);
+    }
+
+    function stabilizeStrokes() {
+        const minimum = animation.minStrokeWidth ?? PATTERN_RENDER_DEFAULTS.minStrokeWidth;
+        root.dataset.patternMinStroke = String(minimum);
+        for (const node of nodes) {
+            const matrix = node.normalPath.getScreenCTM();
+            let width = Math.max(0, node.line.thickness);
+            if (minimum > 0 && matrix) {
+                // The smallest singular scale handles rotation plus unequal
+                // portrait/footer scaling. Column lengths alone miss thin edges.
+                const { a, b, c, d } = matrix;
+                const squared = a * a + b * b + c * c + d * d;
+                const area = Math.abs(a * d - b * c);
+                const largest = Math.sqrt((squared + Math.sqrt(Math.max(0, squared * squared - 4 * area * area))) / 2);
+                const scale = largest > 0 ? area / largest : 0;
+                if (scale > 0) width = Math.max(width, minimum / scale);
+            }
+            // Layout-only work: the browser owns every animation frame.
+            setAttribute(node.basePath, "stroke-width", width.toFixed(4));
+        }
     }
 
     const eased = (value) => (animation.easing === "smooth" ? value * value * (3 - 2 * value) : value);
 
-    function paint(now = performance.now()) {
-        if (!profile) return;
-        time =
-            heldTime ??
-            Math.max(0, ((now - patternClockStart) / 1000) * animation.speed * profile.motionSpeed + timeOffset);
-        const p = profile;
+    function currentTime() {
+        return timelineReady ? svg.getCurrentTime() * clockRate : time;
+    }
+
+    function motionPath(node, phase) {
+        const amplitude = animation.amplitude * (node.line.wave / 100) * (profile.motion / 100);
+        const sine = Math.sin(phase),
+            cosine = Math.cos(phase) - 1;
+        return node.motionTokens
+            .map((token) =>
+                typeof token === "string"
+                    ? token
+                    : (token.value + amplitude * (token.sine * cosine - token.cosine * sine)).toFixed(4),
+            )
+            .join(" ");
+    }
+
+    // Native SVG interpolation runs at the browser's display cadence. Geometry is
+    // prepared once, rather than reallocated and rewritten in a 30 FPS JS loop.
+    // The closing sample is byte-identical to the first, including both ribbon edges.
+    function animate(element, attributeName, values, duration, options = {}) {
+        if (!(duration > 0)) return;
+        return create(
+            "animate",
+            {
+                attributeName,
+                values: values.join(";"),
+                dur: `${duration / clockRate}s`,
+                begin: `${(options.delay || 0) / clockRate}s`,
+                repeatCount: options.once ? 1 : "indefinite",
+                fill: "freeze",
+                calcMode: "linear",
+                ...(options.keyTimes ? { keyTimes: options.keyTimes.join(";") } : {}),
+            },
+            element,
+        );
+    }
+
+    function prepareTimeline(elapsed = currentTime()) {
+        const signature = JSON.stringify([
+            animation,
+            profile.motion,
+            profile.motionSpeed,
+            profile.light,
+            profile.opacity,
+            artwork,
+            nodes.map((node) => node.basePath.getAttribute("stroke-width")),
+            selected,
+            prefersReducedMotion(),
+        ]);
+        if (signature === timelineSignature) return;
+        svg.pauseAnimations();
+        svg.querySelectorAll("animate, clipPath[data-entrance]").forEach((item) => item.remove());
+        filtered.removeAttribute("clip-path");
+        filtered.removeAttribute("opacity");
+        svg.removeAttribute("opacity");
+        clockRate = Math.max(0, animation.speed * profile.motionSpeed) || 1;
         const calm = prefersReducedMotion();
-        const wave = !calm && (animation.mode === "wave" || animation.mode === "combined");
-        const lightActive = !calm && (animation.mode === "light" || animation.mode === "combined");
-        const pulse =
-            !calm && animation.pulse > 0
-                ? 1 - (animation.pulse / 100) * (0.5 + 0.5 * Math.cos((time * 2 * Math.PI) / animation.pulsePeriod))
-                : 1;
-        const reveal =
-            calm || animation.entrance === "none"
-                ? 1
-                : Math.max(0, Math.min(1, (time - animation.entranceDelay) / animation.entranceDuration));
-
-        pattern.style.opacity = (p.opacity / 100) * pulse * (animation.entrance === "fade" ? eased(reveal) : 1);
-        pattern.style.clipPath =
-            animation.entrance === "reveal" && !calm ? `inset(0 ${100 - eased(reveal) * 100}% 0 0)` : "none";
-
-        nodes.forEach((node) => {
+        const wave = !calm && ["wave", "combined"].includes(animation.mode);
+        const lightActive = !calm && ["light", "combined"].includes(animation.mode);
+        const samples = 64;
+        const fractions = Array.from({ length: samples + 1 }, (_, i) => i / samples);
+        const axis = artwork.lightAxis === "y" ? "y" : "x";
+        const extent = axis === "y" ? "height" : "width";
+        const bounds = nodes.map((node) => node.basePath.getBBox());
+        const guard =
+            Math.max(
+                ...nodes.map(
+                    (node) =>
+                        Math.abs((((animation.amplitude * node.line.wave) / 100) * profile.motion) / 100) +
+                        Math.max(0, Number(node.basePath.getAttribute("stroke-width")) || 0),
+                ),
+            ) +
+            Math.max(0, animation.glow) * 4;
+        const width = Math.max(1, animation.lightWidth);
+        // All lines share the moving light band, including paths outside viewBox.
+        const start = Math.min(0, ...bounds.map((b) => b[axis])) - guard - width;
+        const end =
+            Math.max(axis === "y" ? sceneHeight : sceneWidth, ...bounds.map((b) => b[axis] + b[extent])) +
+            guard +
+            width;
+        for (const node of nodes) {
             const line = node.line;
-            let d = line.d;
-
-            if (wave && line.wave > 0) {
-                const localTime = Math.max(0, time - line.delay) * line.speed;
-                d = node.tokens
-                    .map((token, index) => {
-                        if (typeof token === "string") return token;
-                        const vertical = artwork.waveAxis === "x";
-                        if (token.x !== vertical) return token.value;
-                        const along = node.tokens[index + (vertical ? 1 : -1)].value;
-                        const u = Math.max(0, Math.min(1, along / (vertical ? sceneHeight : sceneWidth)));
-                        const basePhase =
-                            u * Math.PI * 2 * animation.cycles +
-                            node.index * animation.phaseStep +
-                            (line.phase * Math.PI) / 180;
-                        const phase = basePhase - (localTime * 2 * Math.PI * animation.direction) / animation.period;
-                        const delta =
-                            animation.amplitude *
-                            (line.wave / 100) *
-                            (p.motion / 100) *
-                            Math.sin(Math.PI * u) *
-                            0.5 *
-                            (Math.sin(phase) - Math.sin(basePhase));
-                        return (token.value + delta).toFixed(3);
-                    })
-                    .join(" ");
+            setAttribute(node.basePath, "d", line.d);
+            if (line.visible && wave && line.wave > 0 && line.speed > 0) {
+                const paths = fractions.map((f) => motionPath(node, f * Math.PI * 2 * animation.direction));
+                paths[samples] = paths[0];
+                setAttribute(node.basePath, "d", paths[0]);
+                animate(node.basePath, "d", paths, animation.period / line.speed, { delay: line.delay });
             }
-
-            [node.basePath, node.brightPath, node.glowPath].forEach((path) => path.setAttribute("d", d));
-
-            const total = animation.lightPeriod + animation.lightPause;
-            const localTime = Math.max(0, time - line.delay) * line.speed;
-            const progress = (localTime % total) / animation.lightPeriod;
-            const active = lightActive && line.light > 0 && progress <= 1 && time >= line.delay;
-            const center =
-                -animation.lightWidth +
-                (animation.lightDirection === 1 ? eased(Math.min(1, progress)) : 1 - eased(Math.min(1, progress))) *
-                    ((artwork.lightAxis === "y" ? sceneHeight : sceneWidth) + 2 * animation.lightWidth);
-
-            const lightAxis = artwork.lightAxis === "y" ? "y" : "x";
-            const crossAxis = lightAxis === "y" ? "x" : "y";
-            node.light.setAttribute(`${crossAxis}1`, 0);
-            node.light.setAttribute(`${crossAxis}2`, 0);
-            node.light.setAttribute(`${lightAxis}1`, center - animation.lightWidth / 2);
-            node.light.setAttribute(`${lightAxis}2`, center + animation.lightWidth / 2);
-
-            const intensity = (animation.lightIntensity / 100) * (line.light / 100) * (p.light / 100);
-            node.brightPath.setAttribute("opacity", active ? intensity : 0);
-            node.glowPath.setAttribute("opacity", active ? intensity * 0.7 : 0);
-            node.glowWrapper.style.display = line.visible && animation.glow > 0 ? "" : "none";
+            const intensity = (animation.lightIntensity / 100) * (line.light / 100) * (profile.light / 100);
+            const active = lightActive && line.visible && line.light > 0 && line.speed > 0;
+            setAttribute(node.brightPath, "opacity", active ? intensity : 0);
+            setAttribute(node.glowPath, "opacity", active && animation.glow > 0 ? intensity * 0.7 : 0);
             const emphasis = selected === null || selected === node.index ? 1 : 0.08;
-            node.group.setAttribute("opacity", (line.opacity / 100) * emphasis);
-            node.glowWrapper.setAttribute("opacity", (line.opacity / 100) * emphasis);
-        });
+            setAttribute(node.group, "opacity", (line.opacity / 100) * emphasis);
+            setAttribute(node.glowWrapper, "opacity", (line.opacity / 100) * emphasis);
+            if (!active) continue;
+            // Lines can extend outside the authored viewBox. End the light beyond
+            // their actual bounds, so resetting the loop is completely invisible.
+            const center = fractions.map(
+                (f) => start + (end - start) * (animation.lightDirection === 1 ? eased(f) : 1 - eased(f)),
+            );
+            const total = animation.lightPeriod + Math.max(0, animation.lightPause);
+            const keyTimes = fractions.map((f) => (f * animation.lightPeriod) / total);
+            if (animation.lightPause > 0) {
+                center.push(center.at(-1));
+                keyTimes.push(1);
+            }
+            for (const [name, offset] of [
+                [`${axis}1`, -width / 2],
+                [`${axis}2`, width / 2],
+            ]) {
+                const values = center.map((v) => v + offset);
+                setAttribute(node.light, name, values[0]);
+                animate(node.light, name, values, total / line.speed, { delay: line.delay, keyTimes });
+            }
+        }
+        if (!calm && animation.pulse > 0) {
+            const values = fractions.map((f) => 1 - (animation.pulse / 100) * (0.5 + 0.5 * Math.cos(f * 2 * Math.PI)));
+            values[samples] = values[0];
+            animate(svg, "opacity", values, animation.pulsePeriod);
+        }
+        if (!calm && animation.entrance === "fade") {
+            filtered.setAttribute("opacity", 0);
+            animate(filtered, "opacity", fractions.map(eased), animation.entranceDuration, {
+                delay: animation.entranceDelay,
+                once: true,
+            });
+        } else if (!calm && animation.entrance === "reveal") {
+            const clip = create(
+                "clipPath",
+                { id: `${uid}-entrance`, clipPathUnits: "userSpaceOnUse", "data-entrance": "" },
+                defs,
+            );
+            const rect = create("rect", { x: sceneWidth, y: -2000, width: 0, height: 5000 }, clip);
+            animate(
+                rect,
+                "x",
+                fractions.map((f) => sceneWidth - eased(f) * (sceneWidth + 2000)),
+                animation.entranceDuration,
+                { delay: animation.entranceDelay, once: true },
+            );
+            animate(
+                rect,
+                "width",
+                fractions.map((f) => eased(f) * (sceneWidth + 2000)),
+                animation.entranceDuration,
+                { delay: animation.entranceDelay, once: true },
+            );
+            filtered.setAttribute("clip-path", `url(#${uid}-entrance)`);
+        }
+        timelineReady = true;
+        timelineSignature = signature;
+        time = elapsed;
+        svg.setCurrentTime(elapsed / clockRate);
+        root.dataset.patternRenderer = "native-svg";
     }
 
     function isAnimating() {
@@ -409,60 +666,33 @@ export function mountPattern(root, initialConfig) {
             !document.hidden &&
             visible &&
             !prefersReducedMotion() &&
-            (animation.mode !== "static" ||
+            animation.speed > 0 &&
+            profile.motionSpeed > 0 &&
+            (animation.mode !== "none" ||
                 animation.pulse > 0 ||
-                (animation.entrance !== "none" && time < animation.entranceDelay + animation.entranceDuration))
+                (animation.entrance !== "none" && currentTime() < animation.entranceDelay + animation.entranceDuration))
         );
     }
 
-    // One scheduler paints every visible layer in the same authored FPS slot.
-    // Independent loops could display adjacent samples after a layer re-entered view.
-    // Keep this state on mountPattern so standalone Studio exports remain self-contained.
-    const frames = (mountPattern.frames ??= { entries: new Set(), frame: 0 });
-    const entry = { paint, isAnimating, fps: () => animation.fps, slot: -1 };
-
-    function tick(now) {
-        frames.frame = 0;
-        for (const item of frames.entries) {
-            if (!item.isAnimating()) {
-                frames.entries.delete(item);
-                continue;
-            }
-            const interval = 1000 / Math.max(1, item.fps());
-            const slot = Math.floor((now - patternClockStart) / interval);
-            if (slot !== item.slot) {
-                item.paint(patternClockStart + slot * interval);
-                item.slot = slot;
-            }
-        }
-        if (frames.entries.size) frames.frame = requestAnimationFrame(tick);
-    }
-
-    function unschedule() {
-        frames.entries.delete(entry);
-        if (!frames.entries.size) {
-            cancelAnimationFrame(frames.frame);
-            frames.frame = 0;
-        }
-    }
-
     function sync() {
-        unschedule();
-        paint();
-        if (isAnimating()) {
-            entry.slot = -1;
-            frames.entries.add(entry);
-            if (!frames.frame) frames.frame = requestAnimationFrame(tick);
-        }
+        prepareTimeline();
+        // Pausing the native clock preserves the exact frame on scroll/tab hiding.
+        // Resuming never adds invisible wall-clock time to the next visible frame.
+        if (isAnimating()) svg.unpauseAnimations();
+        else svg.pauseAnimations();
     }
 
     // Stage/profile updates can change the header layer's own measured height.
     // Paint them in the next frame instead of writing inside ResizeObserver.
     let resizeFrame = 0;
+    let measuredSize = "";
     const resizeObserver = new ResizeObserver(() => {
         if (resizeFrame) return;
         resizeFrame = requestAnimationFrame(() => {
             resizeFrame = 0;
+            const size = `${root.clientWidth}|${root.clientHeight}`;
+            if (size === measuredSize) return;
+            measuredSize = size;
             layout();
             sync();
         });
@@ -488,25 +718,12 @@ export function mountPattern(root, initialConfig) {
 
     return {
         pause(value) {
-            if (Boolean(value) === paused) return;
-            if (value) {
-                paint();
-                heldTime = time;
-            } else {
-                timeOffset =
-                    heldTime - ((performance.now() - patternClockStart) / 1000) * animation.speed * profile.motionSpeed;
-                heldTime = null;
-            }
             paused = Boolean(value);
             sync();
         },
         seek(value) {
-            const target = Math.max(0, Number(value) || 0);
-            if (paused) heldTime = target;
-            else
-                timeOffset =
-                    target - ((performance.now() - patternClockStart) / 1000) * animation.speed * profile.motionSpeed;
-            paint();
+            time = Math.max(0, Number(value) || 0);
+            svg.setCurrentTime(time / clockRate);
         },
         restart() {
             this.seek(0);
@@ -514,18 +731,49 @@ export function mountPattern(root, initialConfig) {
         },
         solo(index) {
             selected = index;
-            paint();
+            sync();
         },
         get time() {
-            return time;
+            return currentTime();
         },
         snapshot() {
             const clone = svg.cloneNode(true);
-            clone.setAttribute("style", `opacity:${pattern.style.opacity}`);
+            const elapsed = currentTime();
+            const sources = [...svg.querySelectorAll("*")];
+            const copies = [...clone.querySelectorAll("*")];
+            for (let i = 0; i < sources.length; i++) {
+                const source = sources[i],
+                    copy = copies[i];
+                for (const name of ["x", "y", "width", "height", "x1", "x2", "y1", "y2"])
+                    if (source[name]?.animVal?.value !== undefined) copy.setAttribute(name, source[name].animVal.value);
+                if (source.querySelector(':scope > animate[attributeName="opacity"]'))
+                    copy.setAttribute("opacity", getComputedStyle(source).opacity);
+            }
+            nodes.forEach((node) => {
+                if (!prefersReducedMotion() && ["wave", "combined"].includes(animation.mode) && node.line.wave > 0)
+                    clone
+                        .querySelector(`[id="${node.basePath.id}"]`)
+                        .setAttribute(
+                            "d",
+                            motionPath(
+                                node,
+                                (Math.max(0, elapsed - node.line.delay) *
+                                    node.line.speed *
+                                    2 *
+                                    Math.PI *
+                                    animation.direction) /
+                                    animation.period,
+                            ),
+                        );
+            });
+            clone.querySelectorAll("animate").forEach((item) => item.remove());
+            clone.setAttribute(
+                "style",
+                `opacity:${Number(pattern.style.opacity) * Number(getComputedStyle(svg).opacity)}`,
+            );
             return new XMLSerializer().serializeToString(clone);
         },
         destroy() {
-            unschedule();
             cancelAnimationFrame(resizeFrame);
             resizeObserver.disconnect();
             intersectionObserver.disconnect();
@@ -552,8 +800,8 @@ export function initSitePatterns() {
     const page = document.body.dataset.page;
 
     // Home has its own image-led hero and intentionally does not use the shared
-    // header pattern. Contact currently opts out; other internal pages mount it once.
-    if (page !== "home" && page !== "contact") {
+    // header pattern. Every internal page, including Contact, mounts it once.
+    if (page !== "home") {
         const header = document.querySelector(".site-header");
         const headerHost = document.querySelector("[data-site-hero]") || header?.parentElement;
         if (headerHost && !headerHost.querySelector(":scope > [data-site-pattern='header']")) {
@@ -590,8 +838,9 @@ export function initSitePatterns() {
                 const config = normalizePattern(event.detail[kind]);
                 const signature = JSON.stringify(config);
                 if (signature !== entry.config) {
+                    const time = entry.player.time;
                     entry.player.destroy();
-                    entry.player = mountPattern(entry.root, config);
+                    entry.player = mountPattern(entry.root, config, time);
                     entry.config = signature;
                 }
                 entry.player.pause(Boolean(event.detail.paused));

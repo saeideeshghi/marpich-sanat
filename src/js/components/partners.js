@@ -32,8 +32,8 @@ export function initPartners() {
                 copies.push(copy);
             }
             while (copies.length > needed) copies.pop().remove();
-            root.style.setProperty("--marquee-distance", `${distance}px`);
-            root.style.setProperty("--marquee-time", `${Math.max(24, distance / 26)}s`);
+            root.style.setProperty("--partners-scroll-distance", `${distance}px`);
+            root.style.setProperty("--partners-scroll-duration", `${Math.max(24, distance / 26)}s`);
         }
         const sync = () => (track.style.animationPlayState = visible && !document.hidden ? "running" : "paused");
         new ResizeObserver(measure).observe(viewport);

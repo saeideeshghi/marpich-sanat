@@ -2,6 +2,8 @@
 import { normalizePatterns } from "./pattern-model.js";
 import { BREAKPOINTS, PAGE_NAMES, TARGETS, PROPERTIES, STATES } from "./schema.js";
 import { normalizeProperty, rangeQuery } from "./values.js";
+import { LEGACY_TOKEN_NAMES, TAG_TARGETS, migrateLegacyRules } from "./compatibility.js";
+import { TOKEN_CONTRACTS, normalizeTokenValue, tokenSelectors } from "./token-values.js";
 export { BREAKPOINTS, PAGE_NAMES, TARGETS, PROPERTIES, STATES } from "./schema.js";
 
 export function emptyConfig() {
@@ -18,10 +20,10 @@ export function defaultConfig() {
         "section-title",
         "card-title",
         "card-cta",
-        "card-tag",
+        ...TAG_TARGETS,
         "footer-title",
     ])
-        add(key, { "text-align": "right", direction: "rtl" });
+        add(key, { "text-align": "right", direction: "rtl", ...(key === "card-meta-tag" ? { "padding-top": 8 } : {}) });
     for (const key of ["body-text", "hero-description", "card-description"])
         add(key, {
             "text-align": "justify",
@@ -34,7 +36,7 @@ export function defaultConfig() {
         add("card-description", { "font-size": breakpoint === "mobile" ? 18 : 14 }, breakpoint);
     }
     add("card-cta", { "font-size": 12 }, "desktop");
-    add("card-tag", { "font-size": 10 }, "mobile");
+    for (const key of TAG_TARGETS) add(key, { "font-size": 10 }, "mobile");
     add("card-title", { "font-size": 16 }, "compact", "expertise");
     add("card-description", { "font-size": 14 }, "compact", "expertise");
     for (const [page, key, size] of [
@@ -66,14 +68,23 @@ export function normalizeConfig(input) {
     if (!input || input.version !== 1 || !Array.isArray(input.rules) || input.rules.length > 1000)
         throw new Error("فایل تنظیمات معتبر نیست.");
     const seen = new Set();
-    const rules = input.rules
+    const rules = migrateLegacyRules(input.rules)
         .map((source) => {
             if (!source || !["*", ...Object.keys(PAGE_NAMES)].includes(source.page))
                 throw new Error("صفحه نامعتبر است.");
             if (!BREAKPOINTS.some((item) => item.key === source.breakpoint)) throw new Error("اندازه نامعتبر است.");
             const target = source.target;
             let cleanTarget;
-            if (target?.kind === "role") {
+            if (target?.kind === "token") {
+                if (
+                    !Object.hasOwn(TOKEN_CONTRACTS, target.key) ||
+                    !TOKEN_CONTRACTS[target.key].editable ||
+                    Object.keys(source.properties || {}).some((name) => name !== target.key) ||
+                    (source.state && source.state !== "normal")
+                )
+                    throw new Error("انتخاب متغیر معتبر نیست.");
+                cleanTarget = { kind: "token", key: target.key };
+            } else if (target?.kind === "role") {
                 const role = TARGETS.find((item) => item.key === target.key);
                 if (!role || (role.pages && !role.pages.includes(source.page))) throw new Error("بخش نامعتبر است.");
                 cleanTarget = { kind: "role", key: role.key };
@@ -92,8 +103,29 @@ export function normalizeConfig(input) {
             if (!source.properties || Array.isArray(source.properties) || typeof source.properties !== "object")
                 throw new Error("مقادیر استایل معتبر نیستند.");
             const properties = {};
-            for (const [name, value] of Object.entries(source.properties))
-                properties[name] = normalizeProperty(name, value);
+            for (const [name, value] of Object.entries(source.properties)) {
+                const canonical = LEGACY_TOKEN_NAMES[name] || name;
+                if (
+                    PROPERTIES[canonical]?.target === "header-behavior" &&
+                    cleanTarget.kind !== "token" &&
+                    (cleanTarget.kind !== "role" ||
+                        cleanTarget.key !== "header-behavior" ||
+                        (source.state && source.state !== "normal"))
+                )
+                    throw new Error("تنظیم منوی ثابت را از بخش منوی بالای صفحه و حالت معمولی ویرایش کن.");
+                properties[canonical] =
+                    cleanTarget.kind === "token"
+                        ? normalizeTokenValue(canonical, value)
+                        : normalizeProperty(canonical, value);
+            }
+            if (
+                "image-source" in properties &&
+                (source.page !== "about" ||
+                    cleanTarget.kind !== "role" ||
+                    cleanTarget.key !== "about-image" ||
+                    (source.state && source.state !== "normal"))
+            )
+                throw new Error("تغییر فایل تصویر فقط برای تصویر اصلی درباره ما و حالت معمولی مجاز است.");
             const rule = { page: source.page, breakpoint: source.breakpoint, target: cleanTarget, properties };
             if (source.state !== undefined && !STATES.some((item) => item.key === source.state))
                 throw new Error("حالت المان معتبر نیست.");
@@ -120,6 +152,7 @@ export function normalizeConfig(input) {
             return rule;
         })
         .filter((rule) => Object.keys(rule.properties).length);
+    if (rules.length > 1000) throw new Error("تعداد قانون‌ها بیش از حد مجاز است.");
     return { version: 1, rules, ...(input.patterns ? { patterns: normalizePatterns(input.patterns) } : {}) };
 }
 
@@ -135,27 +168,31 @@ export function ruleKey(rule) {
 }
 
 export function targetSelector(target) {
+    if (target.kind === "token") return tokenSelectors(target.key);
     return target.kind === "role" ? TARGETS.find((item) => item.key === target.key)?.selector : target.selector;
 }
 
 export function propertyCSS(name, value) {
     if (name === "grid-template-columns" && typeof value === "number") return `repeat(${value}, minmax(0, 1fr))`;
     const spec = PROPERTIES[name];
-    return typeof value === "number" ? `${value}${spec.unit}` : value;
+    return typeof value === "number" ? `${value}${spec?.unit ?? ""}` : value;
 }
 
 export function compileCSS(input, { previewState } = {}) {
     const config = normalizeConfig(input);
     const priority = (rule) =>
-        (rule.target.kind === "element"
-            ? 400
-            : rule.target.kind === "component"
-              ? rule.page === "*"
-                  ? 200
-                  : 300
-              : rule.page === "*"
-                ? 0
-                : 100) + (rule.target.kind === "role" ? TARGETS.findIndex((item) => item.key === rule.target.key) : 0);
+        (rule.target.kind === "token"
+            ? 500
+            : rule.target.kind === "element"
+              ? 400
+              : rule.target.kind === "component"
+                ? rule.page === "*"
+                    ? 200
+                    : 300
+                : rule.page === "*"
+                  ? 0
+                  : 100) +
+        (rule.target.kind === "role" ? TARGETS.findIndex((item) => item.key === rule.target.key) : 0);
     const ordered = config.rules
         .filter((rule) => rule.enabled !== false)
         .sort(
@@ -168,6 +205,19 @@ export function compileCSS(input, { previewState } = {}) {
         "/* Marpich template styles. Generated by tools/customizer.html.\n * Edit with the customizer or src/data/customizer/settings.json. */\n";
     for (const rule of ordered) {
         const body = rule.page === "*" ? "body[data-page]" : `body[data-page="${rule.page}"]`;
+        if (rule.target.kind === "token") {
+            const selector = tokenSelectors(rule.target.key, body);
+            const declarations = Object.entries(rule.properties).map(
+                ([name, value]) => `    ${name}: ${value} !important;`,
+            );
+            let block = `${selector} {\n${declarations.join("\n")}\n}\n`;
+            const query = rule.range
+                ? rangeQuery(rule.range)
+                : BREAKPOINTS.find((item) => item.key === rule.breakpoint).query;
+            if (query) block = `@media ${query} {\n${block}}\n`;
+            css += block;
+            continue;
+        }
         const child = targetSelector(rule.target);
         const state = STATES.find((item) => item.key === (rule.state || "normal"));
         const suffix =
@@ -176,15 +226,21 @@ export function compileCSS(input, { previewState } = {}) {
                 : state.suffix;
         const selector = `${body}${child ? ` ${child}` : ""}${suffix}${"description-lines" in rule.properties ? ":not([hidden])" : ""}`;
         const declarations = Object.entries(rule.properties)
-            .filter(([name]) => name !== "description-lines" && !PROPERTIES[name].virtual)
+            .filter(([name]) => name !== "description-lines" && !PROPERTIES[name]?.virtual)
             .map(([name, value]) => `    ${name}: ${propertyCSS(name, value)} !important;`);
         const role = rule.target.kind === "role" ? rule.target.key : "";
-        // Home's inner canvas consumes the same variable as the hero root.
-        if ((role === "hero" || /^#hero-[\w-]+$/.test(child)) && rule.properties["min-height"] !== undefined) {
-            declarations.push(
-                `    --hero-height: ${propertyCSS("min-height", rule.properties["min-height"])} !important;`,
-                "    height: auto !important;",
-            );
+        // Keep home's inner canvas in sync without overriding an explicit height.
+        if (role === "hero" || /^#hero-[\w-]+$/.test(child)) {
+            const minimum = rule.properties["min-height"];
+            const height = rule.properties.height;
+            if (minimum !== undefined)
+                declarations.push(`    --hero-min-height: ${propertyCSS("min-height", minimum)} !important;`);
+            else if (height !== undefined && height !== "auto")
+                declarations.push(
+                    `    --hero-min-height: ${propertyCSS("height", height)} !important;`,
+                    "    min-height: 0 !important;",
+                );
+            if (minimum !== undefined && height === undefined) declarations.push("    height: auto !important;");
         }
         if (role === "card-description" && ("font-size" in rule.properties || "line-height" in rule.properties))
             declarations.push("    max-height: none !important;");
@@ -209,7 +265,15 @@ export function compileCSS(input, { previewState } = {}) {
             declarations.push(
                 `    translate: ${propertyCSS("translate-x", rule.properties["translate-x"] ?? 0)} ${propertyCSS("translate-y", rule.properties["translate-y"] ?? 0)} !important;`,
             );
+        if (!declarations.length) continue;
         let block = `${selector} {\n${declarations.join("\n")}\n}\n`;
+        // The active header row owns the visible height. Hidden device rows keep
+        // their display rules, while page/range/state scoping matches the root.
+        if (["header", "shared-header"].includes(role) || child === ".site-header") {
+            const sizes = ["height", "min-height", "max-height"].filter((name) => name in rule.properties);
+            if (sizes.length)
+                block += `${selector} :is(.site-header__desktop, .site-header__mobile) {\n${sizes.map((name) => `    ${name}: ${propertyCSS(name, rule.properties[name])} !important;`).join("\n")}\n}\n`;
+        }
         const query = rule.range
             ? rangeQuery(rule.range)
             : BREAKPOINTS.find((item) => item.key === rule.breakpoint).query;

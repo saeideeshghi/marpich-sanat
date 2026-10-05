@@ -1,4 +1,5 @@
 // Pure validation shared by local saving, export and the live pattern preview.
+export const PATTERN_RENDER_DEFAULTS = { minStrokeWidth: 0.85 };
 const finite = (v, min = -10000, max = 10000) => typeof v === "number" && Number.isFinite(v) && v >= min && v <= max;
 const color = (v) => typeof v === "string" && /^#[\da-f]{3}(?:[\da-f]{3})?$/i.test(v);
 const fail = () => {
@@ -32,6 +33,7 @@ const animation = (a) => {
     for (const key of ["period", "lightPeriod", "pulsePeriod", "entranceDuration"])
         if (!finite(a[key], 0.05, 600)) fail();
     if (!color(a.lightColor) || !color(a.coreColor) || !finite(a.fps, 1, 60) || !finite(a.speed, 0, 10)) fail();
+    if (a.minStrokeWidth !== undefined && !finite(a.minStrokeWidth, 0, 2)) fail();
     for (const key of ["direction", "lightDirection"]) if (![1, -1].includes(a[key])) fail();
 };
 const lines = (items) => {
@@ -76,6 +78,7 @@ export function normalizePattern(input) {
     animation(input.animation);
     lines(input.lines);
     const result = structuredClone(input);
+    result.animation = { ...PATTERN_RENDER_DEFAULTS, ...result.animation };
     for (const [key, p] of Object.entries(result.profiles)) {
         if (!["desktop", "tablet", "mobile"].includes(key)) fail();
         if (

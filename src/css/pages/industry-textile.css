@@ -60,7 +60,7 @@
     align-items: center;
     gap: 0.45rem;
     color: var(--color-brand-blue, #79b6ed);
-    font-size: var(--hero-eyebrow);
+    font-size: var(--hero-eyebrow-font-size);
     line-height: 1.8;
 }
 
@@ -74,7 +74,7 @@
 .industry-textile__hero-copy h1 {
     margin: 1.15rem 0 0;
     color: #fff;
-    font-size: var(--hero-title);
+    font-size: var(--hero-title-font-size);
     font-weight: 800;
     line-height: 1.55;
 }
@@ -83,7 +83,7 @@
     max-width: 51rem;
     margin: 0.65rem 0 0;
     color: rgb(255 255 255 / 0.84);
-    font-size: var(--hero-description);
+    font-size: var(--hero-description-font-size);
     line-height: 2;
 }
 
@@ -220,7 +220,7 @@
     min-width: 0;
 }
 
-.industry-textile__section-title--accent::after {
+.industry-textile__section-title--technical-accent-color::after {
     display: block;
     width: 2.3rem;
     height: 0.13rem;
@@ -710,12 +710,12 @@
     }
 
     .industry-textile__breadcrumb {
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
     }
 
     .industry-textile__hero-copy h1 {
         margin-top: 0.65rem;
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
         line-height: 1.65;
     }
 
@@ -998,7 +998,7 @@
     }
 
     .industry-textile__hero-copy h1 {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
     }
 
     .industry-textile__section-title {

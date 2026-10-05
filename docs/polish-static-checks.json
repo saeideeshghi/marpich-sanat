@@ -1,0 +1,9 @@
+{
+  "passed": [
+    "Built Pages embeds approved image sources and applies responsive/range sources with the repository asset prefix",
+    "Static customizer source edits appear in iframe/new tab; exiting draft restores approval and ordinary pages stay unchanged",
+    "Static settings export supports image sources; About shortcuts fit mobile tool layout; no JavaScript errors"
+  ],
+  "assetFixtures": true,
+  "errors": []
+}

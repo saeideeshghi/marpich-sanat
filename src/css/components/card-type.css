@@ -6,8 +6,8 @@ body[data-page] .site-card {
     min-width: 0;
 }
 body[data-page] .site-card .site-card__title {
-    font-size: var(--card-title);
-    line-height: var(--card-title-leading);
+    font-size: var(--card-title-font-size);
+    line-height: var(--card-title-line-height);
     text-align: right;
     overflow-wrap: break-word;
 }
@@ -18,11 +18,13 @@ body[data-page] .site-card .site-card__description:not([hidden]) {
     line-clamp: var(--card-description-lines);
     height: auto;
     min-height: 0;
-    max-height: calc(var(--card-description) * var(--card-description-leading) * var(--card-description-lines));
+    max-height: calc(
+        var(--card-description-font-size) * var(--card-description-line-height) * var(--card-description-lines)
+    );
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: var(--card-description);
-    line-height: var(--card-description-leading);
+    font-size: var(--card-description-font-size);
+    line-height: var(--card-description-line-height);
     text-align: justify;
     text-align-last: right;
     text-justify: inter-word;
@@ -41,7 +43,7 @@ body[data-page] .site-card .site-card__cta > .site-card__cta-label {
     text-decoration-thickness: 1px;
 }
 @media (hover: hover) {
-    body[data-page] .site-card:hover .site-card__cta > .site-card__cta-label {
+    body[data-page] .site-card .site-card__cta:hover > .site-card__cta-label {
         text-decoration: underline;
     }
 }
@@ -49,17 +51,26 @@ body[data-page] .site-card .site-card__cta:focus-visible > .site-card__cta-label
     text-decoration: underline;
 }
 body[data-page] .site-card .site-card__cta {
-    font-size: var(--card-cta);
+    font-size: var(--card-link-font-size);
 }
 body[data-page] .site-card .site-card__cta > .site-card__cta-label {
     font-size: inherit;
 }
-/* This rule follows responsive-cards.css, so category and specification chips
- * use the same role on desktop, tablet and mobile. Keep their natural height. */
-body[data-page] .site-card .site-card__tag {
-    font-size: var(--card-tag);
+/* Independent roles prevent metadata padding from moving image labels. */
+body[data-page] .site-card :is(.site-card__media-tag, .site-card__meta-tag, .site-card__status-tag) {
+    font-size: var(--card-tag-font-size);
     line-height: 1.7;
 }
-body[data-page] .site-card .site-card__tag :where(small, span) {
+body[data-page] .site-card .site-card__media-tag {
+    font-size: var(--card-media-tag-font-size, var(--card-tag-font-size));
+}
+body[data-page] .site-card .site-card__meta-tag {
+    padding-top: 8px;
+    font-size: var(--card-meta-tag-font-size, var(--card-tag-font-size));
+}
+body[data-page]
+    .site-card
+    :is(.site-card__media-tag, .site-card__meta-tag, .site-card__status-tag)
+    :where(small, span) {
     font-size: inherit;
 }

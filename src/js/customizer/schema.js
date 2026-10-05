@@ -1,4 +1,5 @@
 // Pure public contract: targets, responsive ranges and editable CSS properties.
+import { COMPONENT_TARGETS } from "./components.js";
 export const BREAKPOINTS = [
     { key: "all", label: "همه اندازه‌ها", query: "" },
     { key: "desktop", label: "دسکتاپ · ۱۱۸۰ به بالا", query: "(min-width: 1180px)" },
@@ -25,6 +26,14 @@ export const PAGE_NAMES = {
 
 export const TARGETS = [
     { key: "page", label: "کل صفحه", selector: "", group: "چیدمان" },
+    { key: "header-behavior", label: "منوی بالای صفحه · ثابت‌شدن با اسکرول", selector: ".site-header", group: "هدر" },
+    { key: "header", label: "هدر این صفحه · اندازه و ارتفاع", selector: ".site-header", group: "هدر" },
+    {
+        key: "header-content",
+        label: "هدر این صفحه · چیدمان و فاصله",
+        selector: ":is(.site-header__desktop, .site-header__mobile)",
+        group: "هدر",
+    },
     { key: "hero", label: "هیرو · ارتفاع", selector: ".site-hero", group: "هیرو" },
     { key: "hero-content", label: "هیرو · فاصله متن از بالا", selector: ".site-hero__content", group: "هیرو" },
     { key: "hero-eyebrow", label: "هیرو · عنوان کوچک / مسیر صفحه", selector: ".site-hero__eyebrow", group: "هیرو" },
@@ -35,21 +44,23 @@ export const TARGETS = [
         key: "section-title",
         label: "عنوان بخش‌ها",
         selector:
-            "main h2:not(.site-card__title):not(.project-details__testimonial-title):not(:where(.project-details__reference-heading))",
+            "main h2:not(.featured-card__title):not(.site-card__title):not(.project-details__testimonial-title):not(:where(.project-details__reference-heading))",
         group: "محتوا",
     },
     {
         key: "body-text",
         label: "متن‌ها و توضیحات کامل",
         selector:
-            ":is(main p, main li, .site-prose):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__tag):not(.project-details__testimonial-kicker-copy):not(:where(.project-details__reference-copy))",
+            ":is(main p, main li, .site-prose):not(.featured-card__description):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__media-tag):not(.site-card__meta-tag):not(.site-card__status-tag):not(.project-details__testimonial-kicker-copy):not(:where(.project-details__reference-copy))",
         group: "محتوا",
     },
     { key: "card", label: "همه باکس‌ها · ارتفاع و فاصله", selector: ".site-card", group: "باکس‌ها" },
     { key: "card-title", label: "عنوان باکس‌ها", selector: ".site-card__title", group: "باکس‌ها" },
     { key: "card-description", label: "توضیحات باکس‌ها", selector: ".site-card__description", group: "باکس‌ها" },
     { key: "card-cta", label: "CTA باکس‌ها", selector: ".site-card__cta", group: "باکس‌ها" },
-    { key: "card-tag", label: "تگ‌های باکس‌ها", selector: ".site-card__tag", group: "باکس‌ها" },
+    { key: "card-media-tag", label: "تگ روی تصویر", selector: ".site-card__media-tag", group: "باکس‌ها" },
+    { key: "card-meta-tag", label: "تگ مشخصات زیر متن", selector: ".site-card__meta-tag", group: "باکس‌ها" },
+    { key: "card-status-tag", label: "برچسب وضعیت محصول", selector: ".site-card__status-tag", group: "باکس‌ها" },
     { key: "search", label: "فرم جست‌وجو", selector: ":is(.product-search, .articles-search)", group: "فرم‌ها" },
     { key: "filter-chips", label: "فیلترهای انتخاب‌شده", selector: ".product-search__bottom", group: "فرم‌ها" },
     {
@@ -157,6 +168,27 @@ export const TARGETS = [
         group: "جزئیات محصول",
     },
     {
+        key: "product-quick-spec-tag",
+        label: "جزئیات محصول · تگ مشخصات زیر متن",
+        selector: ".product-details__meta-tag",
+        pages: ["product-details"],
+        group: "جزئیات محصول",
+    },
+    {
+        key: "project-product-meta-tag",
+        label: "محصولات پروژه · تگ زیر متن",
+        selector: ".project-details__product-meta-tag",
+        pages: ["project-details"],
+        group: "جزئیات پروژه",
+    },
+    {
+        key: "project-product-media-tag",
+        label: "محصولات پروژه · تگ روی تصویر",
+        selector: ".project-details__product-media-tag",
+        pages: ["project-details"],
+        group: "جزئیات پروژه",
+    },
+    {
         key: "project-product-title",
         label: "محصولات پروژه · عنوان",
         selector: ".project-details__product-card .site-card__title",
@@ -184,13 +216,69 @@ export const TARGETS = [
         pages: ["project-details"],
         group: "جزئیات پروژه",
     },
+    {
+        key: "products-featured-grid",
+        label: "محصولات منتخب · چیدمان گرید",
+        selector: ".featured-products",
+        pages: ["products"],
+        group: "محصولات منتخب",
+    },
+    {
+        key: "products-featured-card",
+        label: "محصولات منتخب · قاب کارت‌ها",
+        selector: ".featured-card",
+        pages: ["products"],
+        group: "محصولات منتخب",
+    },
+    {
+        key: "products-featured-title",
+        label: "محصولات منتخب · عنوان کارت‌ها",
+        selector: ".featured-card__title",
+        pages: ["products"],
+        group: "محصولات منتخب",
+    },
+    {
+        key: "products-featured-description",
+        label: "محصولات منتخب · توضیح کارت‌ها",
+        selector: ".featured-card__description",
+        pages: ["products"],
+        group: "محصولات منتخب",
+    },
+    {
+        key: "products-featured-count",
+        label: "محصولات منتخب · تعداد محصولات",
+        selector: ".featured-card__count",
+        pages: ["products"],
+        group: "محصولات منتخب",
+    },
+    {
+        key: "products-featured-image",
+        label: "محصولات منتخب · تصاویر کارت‌ها",
+        selector: ".featured-card__image",
+        pages: ["products"],
+        group: "محصولات منتخب",
+    },
     { key: "technical-card", label: "قاب جدول فنی", selector: ".details-card", group: "جدول فنی" },
     { key: "technical-cell", label: "سلول‌های جدول", selector: ".details-table td", group: "جدول فنی" },
     { key: "technical-heading", label: "عنوان ستون‌های جدول", selector: ".details-table th", group: "جدول فنی" },
     { key: "technical-image", label: "تصویر فنی", selector: ".details-visual img", group: "جدول فنی" },
     {
+        key: "about-image-container",
+        label: "تصویر درباره ما · عرض و فاصله از هدر",
+        selector: ".about-team-wrap",
+        pages: ["about"],
+        group: "درباره ما",
+    },
+    {
+        key: "about-image-frame",
+        label: "تصویر درباره ما · قاب، ارتفاع و گوشه‌ها",
+        selector: ".about-team-media",
+        pages: ["about"],
+        group: "درباره ما",
+    },
+    {
         key: "about-image",
-        label: "تصویر اصلی درباره ما",
+        label: "تصویر اصلی درباره ما · فایل، اندازه و برش",
         selector: ".about-team-media__image",
         pages: ["about"],
         group: "درباره ما",
@@ -264,11 +352,11 @@ export const TARGETS = [
         selector: ":is([data-consultation] form, .catalog-consultation__form)",
         group: "کامپوننت‌های مشترک",
     },
-    { key: "shared-faq", label: "بخش پرسش‌های متداول", selector: ".catalog-faq", group: "کامپوننت‌های مشترک" },
+    { key: "shared-faq", label: "بخش پرسش‌های متداول", selector: ".site-faq", group: "کامپوننت‌های مشترک" },
     {
         key: "shared-faq-item",
         label: "آیتم پرسش‌های متداول",
-        selector: ".catalog-faq__item",
+        selector: ".site-faq__item",
         group: "کامپوننت‌های مشترک",
     },
     {
@@ -280,6 +368,7 @@ export const TARGETS = [
     { key: "shared-card-image", label: "تصاویر کارت‌ها", selector: ".site-card__image", group: "کامپوننت‌های مشترک" },
     { key: "shared-card-body", label: "محتوای کارت‌ها", selector: ".site-card__body", group: "کامپوننت‌های مشترک" },
     { key: "shared-grid", label: "Grid کارت‌ها", selector: ".site-card-grid", group: "کامپوننت‌های مشترک" },
+    ...COMPONENT_TARGETS,
     { key: "theme", label: "توکن‌های طراحی · رنگ و فاصله", selector: "", group: "تنظیمات سراسری" },
 ];
 
@@ -302,13 +391,52 @@ const number = (min, max, unit = "px", extra = []) => ({
         ? {
               units: [
                   unit,
-                  ...["px", "rem", "em", "%", "vw", "vh", "dvh", "vmin", "vmax"].filter((item) => item !== unit),
+                  ...["px", "rem", "em", "%", "vw", "vh", "dvh", "svh", "lvh", "vmin", "vmax"].filter(
+                      (item) => item !== unit,
+                  ),
               ],
           }
         : {}),
 });
 const choice = (...values) => ({ type: "choice", values });
 export const PROPERTIES = {
+    "--header-fixed-enabled": {
+        ...choice("1", "0"),
+        target: "header-behavior",
+        help: "فعال: منو پس از آستانهٔ اسکرول بالای صفحه می‌ماند. غیرفعال: هدر اصلی همراه صفحه حرکت می‌کند.",
+    },
+    "--header-fixed-scroll-threshold": {
+        ...number(0, 7680),
+        target: "header-behavior",
+        help: "مقدار اسکرول عمودی برای ثابت‌شدن منو، برحسب پیکسل. مقدار ۰ منو را از ابتدای صفحه ثابت می‌کند.",
+    },
+    "--header-fixed-top": {
+        ...number(0, 400),
+        target: "header-behavior",
+        help: "فاصلهٔ منوی ثابت از بالا در حالت دسکتاپ؛ برای صفحه یا بازه مستقل تنظیم کن. در حالت همبرگری (کمتر از ۱۱۸۰px)، فاصله و فضای بالای ردیف خودکار صفر می‌شوند.",
+    },
+    "--header-fixed-background-color": {
+        type: "color",
+        target: "header-behavior",
+        help: "رنگ زمینه فقط زمانی که منو ثابت شده است. رنگ تیره، خوانایی لینک‌های سفید را حفظ می‌کند.",
+    },
+    "--header-fixed-background-opacity": {
+        ...number(0, 100, ""),
+        target: "header-behavior",
+        help: "درصد پوشانندگی زمینه: ۰ شفاف و ۱۰۰ کاملاً پوشیده. رنگ زمینه را جدا انتخاب کن.",
+    },
+    "--header-fixed-backdrop-blur": {
+        ...number(0, 40),
+        target: "header-behavior",
+        help: "میزان محوشدن محتوای پشت منوی ثابت. مقدار ۰ این اثر را حذف می‌کند.",
+    },
+    "--header-fixed-shadow": {
+        type: "text",
+        validate: "shadow",
+        example: "0 6px 24px #0f172b29",
+        target: "header-behavior",
+        help: "سایهٔ زیر منوی ثابت. برای حذف سایه، none وارد کن.",
+    },
     "font-size": number(6, 160),
     "line-height": number(0.8, 4, ""),
     "font-weight": choice("300", "400", "500", "600", "700", "800", "900"),
@@ -372,7 +500,13 @@ export const PROPERTIES = {
     ),
     "flex-direction": choice("row", "row-reverse", "column", "column-reverse"),
     "object-fit": choice("contain", "cover", "fill", "scale-down"),
-    "object-position": choice("center", "center top", "center bottom", "right center", "left center"),
+    "object-position": { type: "text", validate: "object-position", example: "50% 50%" },
+    "image-source": {
+        type: "image",
+        virtual: true,
+        target: "about-image",
+        example: "/assets/images/about/about-team.svg",
+    },
     transform: choice("none"),
     opacity: number(0, 1, ""),
     color: { type: "color" },
@@ -438,9 +572,13 @@ export const PROPERTIES = {
     "--color-brand-orange": { type: "color", theme: true },
     "--color-page-bg": { type: "color", theme: true },
     "--site-gutter": { ...number(0, 300), theme: true },
+    "--site-layout-max-width": { ...number(1180, 3840), theme: true },
     "--card-radius": { ...number(0, 200), theme: true },
-    "--hero-title": { ...number(6, 160), theme: true },
-    "--hero-description": { ...number(6, 160), theme: true },
-    "--card-title": { ...number(6, 160), theme: true },
-    "--card-description": { ...number(6, 160), theme: true },
+    "--hero-title-font-size": { ...number(6, 160), theme: true },
+    "--hero-description-font-size": { ...number(6, 160), theme: true },
+    "--card-title-font-size": { ...number(6, 160), theme: true },
+    "--card-description-font-size": { ...number(6, 160), theme: true },
+    "--card-media-tag-font-size": { ...number(6, 160), theme: true },
+    "--card-meta-tag-font-size": { ...number(6, 160), theme: true },
+    "--card-link-font-size": { ...number(6, 160), theme: true },
 };

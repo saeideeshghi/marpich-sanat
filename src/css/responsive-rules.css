@@ -2,14 +2,14 @@
  * Keep prose readable; change the available layout instead of shrinking type.
  * Page-specific artwork and the approved technical-table structure stay local. */
 body {
-    font-size: var(--text-body, 16px);
+    font-size: var(--body-font-size, 16px);
     line-height: 1.85;
 }
 body[data-page] :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), select, textarea) {
-    font-size: var(--text-control);
+    font-size: var(--form-control-font-size);
 }
 body[data-page] :is(p.site-prose, .industry-textile__faq-answer) {
-    font-size: var(--text-body);
+    font-size: var(--body-font-size);
     line-height: 1.95;
     text-align: right;
     word-break: normal;
@@ -112,19 +112,19 @@ body[data-page] [data-consultation] h2 {
 }
 @media (max-width: 639px) {
     body[data-page] main p {
-        font-size: var(--text-body);
+        font-size: var(--body-font-size);
         line-height: 1.9;
     }
     body[data-page] main h2 {
-        font-size: var(--text-section);
+        font-size: var(--section-title-font-size);
         line-height: 1.6;
     }
     body[data-page] main h3 {
-        font-size: var(--text-card);
+        font-size: var(--content-card-font-size);
         line-height: 1.7;
     }
     body[data-page] :is(p.site-prose, .industry-textile__faq-answer) {
-        font-size: var(--text-body);
+        font-size: var(--body-font-size);
         line-height: 1.95;
         text-align: right;
         text-align-last: auto;

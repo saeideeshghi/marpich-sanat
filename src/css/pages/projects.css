@@ -42,7 +42,7 @@
 .projects-page__eyebrow {
     margin: 0;
     color: var(--color-brand-blue, #79b6ed);
-    font-size: var(--hero-eyebrow);
+    font-size: var(--hero-eyebrow-font-size);
     font-weight: 600;
 }
 
@@ -57,9 +57,9 @@
 .projects-page__hero-title {
     margin: 1.6rem 0 0;
     color: #fff;
-    /* font-size: var(--hero-title);
+    /* font-size: var(--hero-title-font-size);
      */
-    font-size: var(--hero-title);
+    font-size: var(--hero-title-font-size);
     line-height: 1.55;
     font-weight: 800;
 }
@@ -68,7 +68,7 @@
     max-width: 42rem;
     margin: 1rem 0 0;
     color: rgb(255 255 255 / 0.82);
-    font-size: var(--hero-description);
+    font-size: var(--hero-description-font-size);
     line-height: 2;
 }
 
@@ -260,6 +260,8 @@ body[data-page] main .projects-page__card-brand img {
     min-width: 7.25rem;
     padding: 0.32rem 0.65rem;
     border-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     background: var(--color-media-badge);
     color: #fff;
     text-align: center;
@@ -537,7 +539,7 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
     }
 
     .projects-page__eyebrow {
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
     }
 
     .projects-page__eyebrow-line {
@@ -547,13 +549,13 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
 
     .projects-page__hero-title {
         margin-top: 1.15rem;
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
         line-height: 1.8;
     }
 
     .projects-page__hero-description {
         margin-top: 0.55rem;
-        font-size: var(--hero-description);
+        font-size: var(--hero-description-font-size);
         line-height: 2;
     }
 
@@ -702,7 +704,7 @@ body[data-page="projects"] .projects-page__testimonials-subtitle p {
     }
 
     .projects-page__hero-title {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
     }
 
     .projects-page__card-title {

@@ -1,5 +1,7 @@
 // No DOM or Node APIs: the browser and save endpoint enforce the same contract.
+import { normalizeImageSource } from "./image-source.js";
 import { PROPERTIES } from "./schema.js";
+import { TOKEN_CONTRACTS, normalizeTokenValue } from "./token-values.js";
 
 export function rangeQuery(range) {
     const queries = [];
@@ -11,6 +13,20 @@ export function rangeQuery(range) {
 export function validTextValue(kind, value) {
     if (typeof value !== "string" || value.length > 300 || /[;{}<>\\]|url\s*\(|expression\s*\(|\/\*/i.test(value))
         return false;
+    if (kind === "object-position")
+        return (
+            [
+                "center",
+                "center top",
+                "center bottom",
+                "right center",
+                "left center",
+                "top",
+                "bottom",
+                "left",
+                "right",
+            ].includes(value) || /^(?:-?\d+(?:\.\d+)?(?:%|px))\s+(?:-?\d+(?:\.\d+)?(?:%|px))$/.test(value)
+        );
     if (kind === "ratio")
         return (
             value === "auto" ||
@@ -29,7 +45,8 @@ export function validTextValue(kind, value) {
         }
         if (depth) return false;
         const words =
-            value.replace(/\d*\.?\d+(?:px|rem|em|fr|%|vw|vh|dvh|vmin|vmax)?/g, "").match(/[a-zA-Z][\w-]*/g) || [];
+            value.replace(/\d*\.?\d+(?:px|rem|em|fr|%|vw|vh|dvh|svh|lvh|vmin|vmax)?/g, "").match(/[a-zA-Z][\w-]*/g) ||
+            [];
         return words.every((word) =>
             [
                 "none",
@@ -61,17 +78,20 @@ export function validTextValue(kind, value) {
 }
 
 export function normalizeProperty(name, value) {
+    if (!Object.hasOwn(PROPERTIES, name) && Object.hasOwn(TOKEN_CONTRACTS, name))
+        return normalizeTokenValue(name, value);
     if (!Object.hasOwn(PROPERTIES, name)) throw new Error(`تنظیم ناشناخته: ${name}`);
     const spec = PROPERTIES[name];
     const fail = () => {
         throw new Error(`مقدار نامعتبر: ${name}`);
     };
+    if (spec.type === "image") return normalizeImageSource(value);
     if (spec.type === "number") {
         if (spec.extra?.includes(value)) return value;
         if (typeof value === "string") {
             const text = value.trim();
             if (spec.text && validTextValue(spec.text, text)) return text;
-            const length = text.match(/^(-?\d+(?:\.\d+)?)(px|rem|em|%|vw|vh|dvh|vmin|vmax)$/);
+            const length = text.match(/^(-?\d+(?:\.\d+)?)(px|rem|em|%|vw|vh|dvh|svh|lvh|vmin|vmax)$/);
             if (!length || !spec.units?.includes(length[2])) return fail();
             const number = Number(length[1]),
                 max = length[2] === "px" ? 7680 : ["em", "rem"].includes(length[2]) ? 480 : 1000;

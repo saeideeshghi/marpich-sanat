@@ -55,18 +55,18 @@
     margin-top: var(--home-hero-content-margin-top, 105px);
 }
 .hero-content .home-hero-eyebrow {
-    font-size: var(--hero-eyebrow);
+    font-size: var(--hero-eyebrow-font-size);
     line-height: 1.6;
 }
 .hero-content .home-hero-title {
-    font-size: var(--hero-title);
+    font-size: var(--hero-title-font-size);
     line-height: 1.65;
     text-wrap: wrap;
 }
 .hero-content .home-hero-description {
     max-width: 700px;
     margin-top: 20px;
-    font-size: var(--hero-description);
+    font-size: var(--hero-description-font-size);
     line-height: 1.95;
 }
 .hero-content .home-hero-divider {
@@ -165,17 +165,17 @@
         );
     }
     .hero-content .home-hero-eyebrow {
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
     }
     .hero-content .home-hero-title {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
         line-height: 1.6;
     }
     .home-hero-title__ending {
         display: block;
     }
     .hero-content .home-hero-description {
-        font-size: var(--hero-description);
+        font-size: var(--hero-description-font-size);
     }
     .home-hero-actions {
         width: min(100%, 540px);
@@ -224,15 +224,15 @@
         width: 100%;
     }
     .hero-content .home-hero-eyebrow {
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
     }
     .hero-content .home-hero-title {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
         line-height: 1.6;
     }
     .hero-content .home-hero-description {
         margin-top: 18px;
-        font-size: var(--hero-description);
+        font-size: var(--hero-description-font-size);
         line-height: 1.95;
     }
     .hero-content .home-hero-divider {
@@ -273,11 +273,11 @@
 /* Intrinsic logo widths avoid empty stretched tiles. Every loop group includes
  * its trailing gap; JS measures that exact width and supplies enough copies. */
 .home-partners {
-    --logo-height: 80px;
+    --partners-logo-height: 80px;
     --logo-max-width: 150px;
-    --logo-gap: 45px;
-    --marquee-time: 48s;
-    --marquee-distance: 0px;
+    --partners-logo-gap: 45px;
+    --partners-scroll-duration: 48s;
+    --partners-scroll-distance: 0px;
     background: #d3eaff;
 }
 .home-partners__inner {
@@ -314,15 +314,15 @@
 .home-partners__track {
     display: flex;
     width: max-content;
-    animation: partner-flow var(--marquee-time) linear infinite;
+    animation: partner-flow var(--partners-scroll-duration) linear infinite;
 }
 .home-partners__logos {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: var(--logo-gap);
+    gap: var(--partners-logo-gap);
     margin: 0;
-    padding: 0 var(--logo-gap) 0 0;
+    padding: 0 var(--partners-logo-gap) 0 0;
     list-style: none;
     direction: rtl;
 }
@@ -336,7 +336,7 @@
 .home-partners__logos img {
     width: auto;
     max-width: var(--logo-max-width);
-    height: var(--logo-height);
+    height: var(--partners-logo-height);
     object-fit: contain;
 }
 @media (hover: hover) {
@@ -346,7 +346,7 @@
 }
 @keyframes partner-flow {
     to {
-        transform: translateX(calc(-1 * var(--marquee-distance)));
+        transform: translateX(calc(-1 * var(--partners-scroll-distance)));
     }
 }
 .home-partners--static .home-partners__track {
@@ -363,9 +363,9 @@
 }
 @media (max-width: 639px) {
     .home-partners {
-        --logo-height: 56px;
+        --partners-logo-height: 56px;
         --logo-max-width: 110px;
-        --logo-gap: 8px;
+        --partners-logo-gap: 8px;
     }
     .home-partners__inner {
         width: calc(100% - 24px);
@@ -382,14 +382,14 @@
 }
 @media (min-width: 640px) and (max-width: 1179px) {
     .home-partners {
-        --logo-height: 72px;
+        --partners-logo-height: 72px;
         --logo-max-width: 132px;
-        --logo-gap: 10px;
+        --partners-logo-gap: 10px;
     }
 }
 @media (min-width: 1600px) {
     .home-partners {
-        --logo-height: 88px;
+        --partners-logo-height: 88px;
         --logo-max-width: 168px;
     }
     .home-partners__inner {

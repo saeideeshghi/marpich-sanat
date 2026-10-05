@@ -1,4 +1,5 @@
 import "../../css/customizer.css";
+import "../../css/token-reference.css";
 import { pages } from "../../../build/pages.js";
 import {
     BREAKPOINTS,
@@ -17,6 +18,14 @@ import { createStyleControls, setControlValue, filterStyleControls } from "./con
 import { downloadSettings } from "./export.js";
 import { describeElement, semanticClasses, elementSelector, repeatedSelector } from "./picker.js";
 import { createPatternEditor } from "./pattern-editor.js";
+import { createViewportResizer } from "./viewport.js";
+import { normalizeZoom, previewGeometry, ZOOM_LIMITS } from "./zoom.js";
+import { savePreviewSnapshot, previewURL } from "./preview-session.js";
+import { removeSharedPropertyOverrides } from "./shared-overrides.js";
+import { imageSourceRules } from "./image-source.js";
+import { createTokenReference } from "./token-reference.js";
+import { tokenRule } from "./token-values.js";
+import { describeToken } from "./token-descriptions.js";
 
 const $ = (id) => document.getElementById(id);
 const ui = Object.fromEntries(
@@ -54,6 +63,7 @@ const ui = Object.fromEntries(
         "save-error",
         "preview-caption",
         "scale",
+        "open-preview",
     ].map((id) => [id, $(id)]),
 );
 const base = import.meta.env.BASE_URL;
@@ -64,7 +74,11 @@ const asText = (element, value) => {
     element.textContent = value;
 };
 const labelFor = (target) =>
-    target.kind === "role" ? TARGETS.find((role) => role.key === target.key)?.label : target.label;
+    target.kind === "token"
+        ? `متغیر · ${describeToken(target.key).label}`
+        : target.kind === "role"
+          ? TARGETS.find((role) => role.key === target.key)?.label
+          : target.label;
 let saved = defaultConfig(),
     draft = clone(saved),
     revision = "",
@@ -102,6 +116,8 @@ let history = [clone(draft)],
     historyIndex = 0,
     lastChange = { key: "", at: 0 },
     lastRules = "";
+let previewId = null;
+let previewZoom = "fit";
 
 const option = (value, label) => {
     const item = document.createElement("option");
@@ -118,6 +134,14 @@ const fields = createStyleControls({
     onChange: changeProperty,
     onBlur: refreshFields,
     onInvalid: (text) => message(text, true),
+    onReference: showToken,
+});
+const viewportResizer = createViewportResizer({
+    handles: document.querySelectorAll("[data-resize-side]"),
+    stage: ui.stage,
+    getWidth: () => currentWidth,
+    getScale: () => scale,
+    setWidth,
 });
 
 function activeRule() {
@@ -146,9 +170,13 @@ function isDirty() {
     return JSON.stringify(saved) !== JSON.stringify(draft);
 }
 
-function remember() {
+function remember(viewOnly = false) {
     try {
-        localStorage.setItem(preferencesKey, JSON.stringify({ page: currentPage, width: currentWidth }));
+        localStorage.setItem(
+            preferencesKey,
+            JSON.stringify({ page: currentPage, width: currentWidth, zoom: previewZoom }),
+        );
+        if (viewOnly) return;
         if (isDirty())
             localStorage.setItem(cacheKey, JSON.stringify({ baseline: JSON.stringify(saved), config: draft }));
         else localStorage.removeItem(cacheKey);
@@ -194,6 +222,8 @@ function changeProperty(name, value, fromInput = false) {
     }
     if (value === undefined) delete existing.properties[name];
     else existing.properties[name] = value;
+    if (scope === "global" && value !== undefined && $("unify-shared").checked)
+        removeSharedPropertyOverrides(next, existing, name);
     if (target.kind === "component" && value !== undefined && $("unify-repeats").checked) {
         const elements = new Set(matchingElements());
         for (const item of next.rules)
@@ -218,11 +248,20 @@ function changeProperty(name, value, fromInput = false) {
 }
 
 function refreshTargets() {
+    $("about-image-shortcuts").hidden = currentPage !== "about";
+    $("fixed-header-shortcuts").hidden = target.kind !== "role" || target.key !== "header-behavior";
     ui.target.replaceChildren();
     if (target.kind !== "role") ui.target.append(option("__picked", `انتخاب‌شده · ${target.label.slice(0, 45)}`));
     const grouped = new Map();
+    const search = $("target-search").value.trim().toLowerCase();
     for (const role of TARGETS) {
         if (role.pages && !role.pages.includes(currentPage)) continue;
+        if (
+            search &&
+            role.key !== target.key &&
+            !`${role.label} ${role.key} ${role.group}`.toLowerCase().includes(search)
+        )
+            continue;
         if (!grouped.has(role.group)) {
             const group = document.createElement("optgroup");
             group.label = role.group;
@@ -236,6 +275,13 @@ function refreshTargets() {
     if (restricted) scope = "page";
     ui.scope.disabled = Boolean(restricted);
     ui.scope.value = scope;
+    const shared = scope === "global" && target.kind !== "element";
+    $("shared-scope-note").hidden = !shared;
+    $("unify-shared-label").hidden = !shared;
+    asText(
+        $("shared-scope-note"),
+        "پس از ثبت، این تنظیم در همه صفحه‌هایی که همین جزء را دارند اعمال می‌شود. یکسان‌سازی، مقدارهای اختصاصی همین جزء و همین بازه را هم جایگزین می‌کند.",
+    );
     ui.breakpoint.value = currentBreakpoint;
     $("custom-range").hidden = currentBreakpoint !== "range";
     $("range-min").value = customRange.min;
@@ -247,7 +293,12 @@ function refreshTargets() {
     $("element-state").value = currentState;
     $("state-preview").checked = forceState;
     $("state-preview").disabled = currentState === "normal";
-    filterStyleControls(fields, $("property-search").value, target.kind === "role" && target.key === "theme");
+    filterStyleControls(
+        fields,
+        $("property-search").value,
+        target.kind === "role" && target.key === "theme",
+        target.kind === "role" && currentState === "normal" ? target.key : "",
+    );
     refreshRangeStatus();
 }
 
@@ -288,6 +339,10 @@ function refreshRangeStatus() {
     );
 }
 function computedValue(name, element) {
+    if (name === "image-source") {
+        const source = element?.getAttribute("src") || "";
+        return base !== "/" && source.startsWith(base) ? `/${source.slice(base.length)}` : source;
+    }
     if (!element) return "";
     const computed = element.ownerDocument.defaultView.getComputedStyle(element),
         raw = computed.getPropertyValue(name).trim(),
@@ -324,7 +379,7 @@ function refreshFieldMarkers() {
 }
 function refreshFields() {
     const elements = matchingElements(),
-        first = elements[0],
+        first = elements.find((element) => element.getClientRects().length) || elements[0],
         properties = activeProperties();
     for (const [name, entry] of fields) {
         const value = name in properties ? properties[name] : computedValue(name, first);
@@ -441,6 +496,7 @@ function refreshState() {
     );
     ui["save-state"].dataset.dirty = String(dirty);
     ui.save.disabled = !ready || !dirty || busy;
+    ui["open-preview"].disabled = !ready || busy;
     ui.save.textContent = canSave ? "تأیید و ثبت در قالب" : "تأیید و دریافت فایل‌ها";
     ui.undo.disabled = historyIndex <= 0 || busy;
     ui.redo.disabled = historyIndex >= history.length - 1 || busy;
@@ -507,7 +563,14 @@ function applyDraft() {
     if (savedLink) savedLink.disabled = !comparing;
     ui.compare.setAttribute("aria-pressed", String(comparing));
     previewPatterns();
+    frameDocument.defaultView.dispatchEvent(new frameDocument.defaultView.Event("site:styles-preview"));
+    frameDocument.defaultView.dispatchEvent(
+        new frameDocument.defaultView.CustomEvent("site:image-preview", {
+            detail: imageSourceRules((comparing ? saved : draft).rules),
+        }),
+    );
     requestAnimationFrame(positionOverlays);
+    tokenReference.refresh();
 }
 function previewPatterns(paused = patternEditor?.paused || false) {
     if (!frameDocument?.body.dataset.siteReady) return;
@@ -591,22 +654,43 @@ function positionOverlays() {
 }
 function resizePreview() {
     const width = ui.stage.clientWidth - (window.innerWidth <= 760 ? 24 : 48);
-    scale = Math.min(1, Math.max(0.15, width / currentWidth));
-    const height = Math.max(320, ui.stage.clientHeight - 28);
-    ui.preview.style.width = `${currentWidth}px`;
-    ui.preview.style.height = `${Math.round(height / scale)}px`;
+    const geometry = previewGeometry({
+        width: currentWidth,
+        availableWidth: width,
+        availableHeight: ui.stage.clientHeight - 28,
+        zoom: previewZoom,
+        frozenScale: viewportResizer.scale,
+    });
+    scale = geometry.scale;
+    ui.preview.style.width = `${geometry.width}px`;
+    ui.preview.style.height = `${geometry.height}px`;
     ui.preview.style.transform = `scale(${scale})`;
-    ui["frame-shell"].style.width = `${currentWidth * scale}px`;
-    ui["frame-shell"].style.height = `${height}px`;
+    ui["frame-shell"].style.width = `${geometry.shellWidth}px`;
+    ui["frame-shell"].style.height = `${geometry.shellHeight}px`;
+    $("zoom").value = Math.round(scale * 100);
+    $("zoom-fit").setAttribute("aria-pressed", String(previewZoom === "fit"));
+    $("zoom-out").disabled = scale * 100 <= ZOOM_LIMITS.min;
+    $("zoom-in").disabled = scale * 100 >= ZOOM_LIMITS.max;
     asText(
         ui.scale,
         `نمایش ${Math.round(scale * 100).toLocaleString("fa")}٪ · عرض واقعی ${currentWidth.toLocaleString("fa")}px`,
     );
     asText(ui["preview-caption"], `${PAGE_NAMES[currentPage]} · ${currentWidth.toLocaleString("fa")} پیکسل`);
+    tokenReference.refresh();
 }
+function setZoom(value) {
+    previewZoom = normalizeZoom(value);
+    resizePreview();
+    remember(true);
+}
+$("zoom").addEventListener("change", () => setZoom($("zoom").value || "fit"));
+$("zoom-out").addEventListener("click", () => setZoom(Math.round(scale * 100) - ZOOM_LIMITS.step));
+$("zoom-in").addEventListener("click", () => setZoom(Math.round(scale * 100) + ZOOM_LIMITS.step));
+$("zoom-fit").addEventListener("click", () => setZoom("fit"));
 function setWidth(width, breakpoint) {
     currentWidth = Math.min(7680, Math.max(240, Math.round(width)));
     ui.width.value = currentWidth;
+    viewportResizer.update(currentWidth);
     const size =
         breakpoint ||
         (currentWidth >= 1180
@@ -621,11 +705,12 @@ function setWidth(width, breakpoint) {
     for (const button of document.querySelectorAll("[data-device]"))
         button.setAttribute("aria-pressed", String(button.dataset.device === size));
     resizePreview();
-    remember();
+    remember(true);
     refreshRangeStatus();
     // ResizeObserver-driven page layouts and fonts need one frame to settle.
     requestAnimationFrame(() =>
         requestAnimationFrame(() => {
+            if (viewportResizer.dragging) return;
             refreshFields();
             positionOverlays();
         }),
@@ -654,6 +739,12 @@ function navigateToPage(page, keepTarget = false) {
     remember();
 }
 function navigateToRule(rule) {
+    if (rule.target.kind === "token") {
+        if (rule.page !== "*" && rule.page !== currentPage) navigateToPage(rule.page);
+        setEditorMode("tokens");
+        tokenReference.editRule(rule);
+        return;
+    }
     target = clone(rule.target);
     scope = rule.page === "*" ? "global" : "page";
     currentBreakpoint = rule.breakpoint;
@@ -789,9 +880,16 @@ ui.page.addEventListener("change", () => navigateToPage(ui.page.value));
 ui.preview.addEventListener("pointerleave", () => box(hoverOverlay, null));
 ui.target.addEventListener("change", () => {
     if (ui.target.value === "__picked") return;
-    target = { kind: "role", key: ui.target.value };
-    if (TARGETS.find((item) => item.key === target.key)?.group === "کامپوننت‌های مشترک" || target.key === "theme")
-        scope = "global";
+    selectRole(ui.target.value);
+});
+function selectRole(key, nextScope) {
+    $("target-search").value = "";
+    target = { kind: "role", key };
+    scope =
+        nextScope ||
+        (TARGETS.find((item) => item.key === key)?.group === "کامپوننت‌های مشترک" || key === "theme"
+            ? "global"
+            : "page");
     selectedElement = null;
     similarSelector = "";
     exactTarget = null;
@@ -800,7 +898,33 @@ ui.target.addEventListener("change", () => {
     applyDraft();
     refreshFields();
     locate();
+}
+for (const [id, key] of [
+    ["edit-page-header", "header"],
+    ["edit-page-hero", "hero"],
+    ["edit-fixed-header", "header-behavior"],
+    ["edit-about-image", "about-image"],
+    ["edit-about-frame", "about-image-frame"],
+    ["edit-about-container", "about-image-container"],
+])
+    $(id).addEventListener("click", () => {
+        currentState = "normal";
+        forceState = false;
+        $("property-search").value = "";
+        selectRole(key, "page");
+        fields.get("min-height").panel.open = true;
+        if (key === "about-image") fields.get("image-source").panel.open = true;
+        if (key === "header-behavior") fields.get("--header-fixed-enabled").panel.open = true;
+    });
+$("test-fixed-header").addEventListener("click", () => {
+    const measure = frameDocument?.querySelector(".site-header__settings-measure");
+    if (!measure) return;
+    const threshold = parseFloat(frameDocument.defaultView.getComputedStyle(measure).width) || 0;
+    frameDocument.defaultView.scrollTo({ top: threshold + 1, behavior: "instant" });
 });
+$("reset-header-scroll").addEventListener("click", () =>
+    frameDocument?.defaultView.scrollTo({ top: 0, behavior: "instant" }),
+);
 ui.scope.addEventListener("change", () => {
     scope = ui.scope.value;
     refreshTargets();
@@ -902,9 +1026,15 @@ $("state-preview").addEventListener("change", () => {
     refreshRangeStatus();
 });
 $("property-search").addEventListener("input", () =>
-    filterStyleControls(fields, $("property-search").value, target.kind === "role" && target.key === "theme"),
+    filterStyleControls(
+        fields,
+        $("property-search").value,
+        target.kind === "role" && target.key === "theme",
+        target.kind === "role" && currentState === "normal" ? target.key : "",
+    ),
 );
 $("rule-search").addEventListener("input", renderRules);
+$("target-search").addEventListener("input", refreshTargets);
 $("copy-properties").addEventListener("click", () => {
     const properties = activeProperties();
     if (!Object.keys(properties).length) {
@@ -993,6 +1123,22 @@ $("import").addEventListener("change", async (event) => {
 $("export").addEventListener("click", () => {
     downloadSettings(draft);
     message("بستهٔ استایل و پترن دریافت شد؛ پوشه src آن را در پروژه Merge و Replace کن، سپس محلی اجرا یا منتشر کن.");
+});
+ui["open-preview"].addEventListener("click", () => {
+    try {
+        previewId = savePreviewSnapshot(draft, base, previewId);
+        const url = previewURL(
+            pages.find((page) => page.name === currentPage),
+            previewId,
+            base,
+        );
+        window.open(url.href, "_blank", "noopener");
+        message(
+            "پیش‌نمایش تغییرات در تب جدید باز شد؛ با لینک‌های سایت می‌توانی صفحه‌ها را بررسی کنی. ثبت نهایی از همین کاستومایزر انجام می‌شود.",
+        );
+    } catch {
+        message("برای باز کردن پیش‌نمایش، ذخیره‌سازی مرورگر باید در دسترس باشد.", true);
+    }
 });
 
 function showConfirmation() {
@@ -1106,6 +1252,7 @@ async function initialize() {
         const view = JSON.parse(localStorage.getItem(preferencesKey) || "null");
         if (PAGE_NAMES[view?.page]) currentPage = view.page;
         if (Number.isFinite(view?.width)) currentWidth = view.width;
+        previewZoom = normalizeZoom(view?.zoom);
     } catch {
         /* Ignore incompatible/stale local drafts. */
     }
@@ -1116,6 +1263,8 @@ async function initialize() {
         historyIndex = 1;
     }
     ready = true;
+    const requestedPage = new URLSearchParams(location.search).get("page");
+    if (PAGE_NAMES[requestedPage]) currentPage = requestedPage;
     ui.connection.dataset.mode = canSave ? "local" : "static";
     asText(
         ui.connection,
@@ -1125,13 +1274,18 @@ async function initialize() {
     patternEditor.render();
     setWidth(currentWidth);
     navigateToPage(currentPage);
+    const requestedToken = new URLSearchParams(location.search).get("token");
+    if (requestedToken) showToken(requestedToken);
 }
 function setEditorMode(mode) {
     editorMode = mode;
     $("style-editor").hidden = mode !== "style";
     $("pattern-editor").hidden = mode !== "pattern";
+    $("tokens-editor").hidden = mode !== "tokens";
     $("style-tab").setAttribute("aria-pressed", String(mode === "style"));
     $("pattern-tab").setAttribute("aria-pressed", String(mode === "pattern"));
+    $("tokens-tab").setAttribute("aria-pressed", String(mode === "tokens"));
+    if (mode === "tokens") tokenReference.refresh();
     positionOverlays();
 }
 const patternEditor = createPatternEditor({
@@ -1148,6 +1302,45 @@ const patternEditor = createPatternEditor({
         else message("این صفحه پترن هدر ندارد؛ یکی از صفحه‌های داخلی را انتخاب کن.");
     },
 });
+const tokenReference = createTokenReference({
+    container: $("tokens-reference"),
+    getContext: () => ({
+        page: currentPage,
+        width: currentWidth,
+        document: frameDocument,
+        rules: draft.rules,
+        comparing,
+        busy,
+        ready,
+    }),
+    onEdit(name, value, context) {
+        if (busy || !ready) throw new Error("پیش‌نمایش هنوز آماده نیست.");
+        const next = clone(draft),
+            rule = tokenRule(name, context),
+            key = ruleKey(rule);
+        const index = next.rules.findIndex((item) => ruleKey(item) === key);
+        if (value === undefined) {
+            if (index !== -1) next.rules.splice(index, 1);
+        } else {
+            rule.properties[name] = value;
+            if (index === -1) next.rules.push(rule);
+            else next.rules[index] = rule;
+        }
+        // These are explicit Apply/Reset actions, rather than continuous typing;
+        // keep each action as its own undo step even when clicked rapidly.
+        commit(next);
+        message(
+            value === undefined
+                ? "تغییر متغیر در این محدوده حذف شد."
+                : "متغیر در پیش‌نویس تنظیم شد؛ برای ذخیرهٔ دائمی از دکمهٔ ثبت استفاده کن.",
+        );
+    },
+});
+function showToken(name) {
+    setEditorMode("tokens");
+    tokenReference.show(name);
+}
+$("tokens-tab").addEventListener("click", () => setEditorMode("tokens"));
 $("style-tab").addEventListener("click", () => setEditorMode("style"));
 $("pattern-tab").addEventListener("click", () => {
     setEditorMode("pattern");

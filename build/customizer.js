@@ -2,6 +2,7 @@ import { createHash, randomBytes } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { normalizeConfig, compileCSS } from "../src/js/customizer/model.js";
+import { imageSourceRules } from "../src/js/customizer/image-source.js";
 import { pages } from "./pages.js";
 import { loadDesignConfig, settingsText } from "./design-config.js";
 
@@ -43,8 +44,19 @@ export function templateCustomizer(root, base) {
             order: "post",
             handler(html, context) {
                 if (!pages.some((page) => resolve(root, page.file) === context.filename)) return html;
-                const styleVersion = createHash("sha256").update(compileCSS(load())).digest("hex").slice(0, 12);
+                const config = load();
+                const styleVersion = createHash("sha256").update(compileCSS(config)).digest("hex").slice(0, 12);
                 return [
+                    ...(context.filename === resolve(root, "about.html")
+                        ? [
+                              {
+                                  tag: "script",
+                                  attrs: { id: "mps-image-sources", type: "application/json" },
+                                  children: JSON.stringify(imageSourceRules(config.rules)),
+                                  injectTo: "head",
+                              },
+                          ]
+                        : []),
                     {
                         tag: "link",
                         attrs: {

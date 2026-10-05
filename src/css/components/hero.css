@@ -6,7 +6,7 @@ body[data-page] .site-hero {
     z-index: 0;
     isolation: isolate;
     height: auto;
-    min-height: var(--hero-height);
+    min-height: var(--hero-min-height);
     max-height: none;
     padding-block: 0;
 }
@@ -17,17 +17,17 @@ body[data-page] .site-hero .site-hero__content {
     height: auto;
     min-height: 0;
     max-height: none;
-    padding-block: var(--hero-top) var(--hero-bottom);
+    padding-block: var(--hero-content-padding-top) var(--hero-content-padding-bottom);
 }
 body[data-page] .site-hero .site-hero__eyebrow {
     margin-block: 0 10px;
-    font-size: var(--hero-eyebrow);
-    line-height: var(--hero-eyebrow-leading);
+    font-size: var(--hero-eyebrow-font-size);
+    line-height: var(--hero-eyebrow-line-height);
 }
 body[data-page] .site-hero .site-hero__title {
     margin-block: 12px 0;
-    font-size: var(--hero-title);
-    line-height: var(--hero-title-leading);
+    font-size: var(--hero-title-font-size);
+    line-height: var(--hero-title-line-height);
     text-wrap: wrap;
 }
 body[data-page] .site-hero .site-hero__description {
@@ -35,8 +35,8 @@ body[data-page] .site-hero .site-hero__description {
     width: 100%;
     max-width: none;
     margin-block: 16px 0;
-    font-size: var(--hero-description);
-    line-height: var(--hero-description-leading);
+    font-size: var(--hero-description-font-size);
+    line-height: var(--hero-description-line-height);
     overflow-wrap: break-word;
     text-wrap: pretty;
 }
@@ -63,7 +63,7 @@ body[data-page="home"] .hero-shell {
     overflow: hidden;
 }
 body[data-page="home"] .hero-content-wrapper {
-    min-height: var(--hero-height);
+    min-height: var(--hero-min-height);
 }
 body[data-page="home"] .hero-content {
     width: min(100%, 920px);

@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-05",
+  "input": "312231.zip",
+  "passed": [
+    "Details tags: independent roles, 8px metadata padding and preserved center alignment at 390/820/1440px",
+    "Reference page: 181 real tokens, Persian search, group filtering, responsive family links, inline locations, responsive layout",
+    "Manual zoom: 25–200%, fit, scrolling, +/- controls, persistence and unchanged iframe dimensions/media queries/save state",
+    "Resizing and keyboard work at fixed zoom with centered and overflowing canvases",
+    "Integrated help: live element-scoped values, editable token routing, field help, independent metadata edits on both detail pages",
+    "Saving preserves center alignment and applies the changed lower-tag padding after reload",
+    "User CSS changes preserved; content-flow indentation normalized without changing declarations; no browser JavaScript errors"
+  ],
+  "errors": []
+}

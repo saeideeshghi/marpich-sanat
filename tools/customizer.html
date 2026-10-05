@@ -16,6 +16,7 @@
                 <span id="save-state" class="mps-state">در حال بارگذاری</span>
                 <button id="undo" class="mps-button mps-button--quiet" title="برگشت · Ctrl+Z" disabled>برگشت</button>
                 <button id="redo" class="mps-button mps-button--quiet" title="جلو · Ctrl+Shift+Z" disabled>جلو</button>
+                <button id="open-preview" class="mps-button" disabled>پیش‌نمایش در تب جدید</button>
                 <button id="export" class="mps-button">دریافت فایل‌ها</button>
                 <button id="save" class="mps-button mps-button--primary" disabled>تأیید و ثبت در قالب</button>
             </div>
@@ -38,6 +39,12 @@
             >
             <button id="pick" class="mps-button mps-button--toggle" aria-pressed="true">انتخاب با کلیک: روشن</button>
             <button id="compare" class="mps-button mps-button--quiet" aria-pressed="false">نمایش نسخه ثبت‌شده</button>
+            <div class="mps-zoom" aria-label="زوم پیش‌نمایش">
+                <button id="zoom-out" type="button" aria-label="کاهش زوم">−</button>
+                <label>زوم <input id="zoom" type="number" min="25" max="200" step="1" value="100" />٪</label>
+                <button id="zoom-in" type="button" aria-label="افزایش زوم">+</button>
+                <button id="zoom-fit" type="button" aria-pressed="true">جا شدن در قاب</button>
+            </div>
             <span id="scale" class="mps-scale"></span>
         </div>
 
@@ -47,15 +54,54 @@
                 <div class="mps-selector">
                     <div class="mps-editor-tabs"
                         ><button id="style-tab" aria-pressed="true">استایل بخش‌ها</button
-                        ><button id="pattern-tab" aria-pressed="false">پترن و انیمیشن</button></div
+                        ><button id="pattern-tab" aria-pressed="false">پترن و انیمیشن</button
+                        ><button id="tokens-tab" aria-pressed="false">راهنمای متغیرها</button></div
                     >
                 </div>
                 <div id="style-editor">
                     <div class="mps-selector">
+                        <div class="mps-page-geometry">
+                            <span>اندازه‌های همین صفحه</span>
+                            <div
+                                ><button id="edit-page-header" class="mps-button">هدر</button
+                                ><button id="edit-page-hero" class="mps-button">هیرو</button
+                                ><button id="edit-fixed-header" class="mps-button">منوی ثابت</button></div
+                            >
+                            <p class="mps-help"
+                                >صفحه و بازهٔ عرض را انتخاب کن، سپس ارتفاع، عرض و فاصله‌ها را تنظیم کن. حداقل ارتفاع، جا
+                                برای متن بلند نگه می‌دارد.</p
+                            >
+                        </div>
+                        <div id="fixed-header-shortcuts" class="mps-page-geometry" hidden>
+                            <p class="mps-help"
+                                >صفحه، بازهٔ عرض و «اعمال روی» را انتخاب کن؛ ۰ برای آستانهٔ اسکرول یعنی ثابت از ابتدای
+                                صفحه. با این دکمه‌ها نتیجه را آزمایش کن.</p
+                            >
+                            <div
+                                ><button id="test-fixed-header" class="mps-button">آزمایش اسکرول</button
+                                ><button id="reset-header-scroll" class="mps-button">بازگشت بالا</button></div
+                            >
+                        </div>
+                        <div id="about-image-shortcuts" class="mps-page-geometry" hidden>
+                            <span>تصویر اصلی درباره ما</span>
+                            <div
+                                ><button id="edit-about-image" class="mps-button">تصویر و برش</button
+                                ><button id="edit-about-frame" class="mps-button">قاب و ارتفاع</button
+                                ><button id="edit-about-container" class="mps-button">عرض و جایگاه</button></div
+                            >
+                            <p class="mps-help"
+                                >اندازه یا بازه را انتخاب کن. در «تصویر و رنگ»، مسیر فایل یا URL تصویر را وارد کن؛ فایل
+                                محلی باید در assets باشد. جای تصویر را با دو درصد مثل 50% 30% تنظیم کن. برای برش، ارتفاع
+                                قاب و حالت cover را انتخاب کن.</p
+                            >
+                        </div>
                         <label
                             >بخش قابل ویرایش
                             <select id="target"></select
                         ></label>
+                        <label class="mps-help"
+                            >جست‌وجوی بخش<input id="target-search" type="search" placeholder="مثلاً تگ، فوتر یا مشاوره"
+                        /></label>
                         <div class="mps-scope-row">
                             <label
                                 >اعمال روی
@@ -76,6 +122,11 @@
                             ></label>
                             <label class="mps-check"><input id="state-preview" type="checkbox" /> شبیه‌سازی حالت</label>
                         </div>
+                        <p id="shared-scope-note" class="mps-help" hidden></p>
+                        <label id="unify-shared-label" class="mps-check" hidden
+                            ><input id="unify-shared" type="checkbox" />یکسان‌سازی تنظیمات اختصاصی همین جزء در این
+                            بازه</label
+                        >
                         <div id="custom-range" hidden>
                             <div class="mps-scope-row">
                                 <label
@@ -185,6 +236,20 @@
                     </div>
                 </div>
                 <div id="pattern-editor" class="mps-selector mps-pattern-panel" hidden></div>
+                <section id="tokens-editor" class="mps-selector" aria-label="راهنمای متغیرهای طراحی" hidden>
+                    <p class="mps-help"
+                        >نام یا کاربرد را جست‌وجو کن؛ مقدار جدید را در همین تب اعمال کن. کادر سبز مقدار واقعی در صفحهٔ
+                        پیش‌نمایش و عرض انتخاب‌شده را نشان می‌دهد.</p
+                    >
+                    <a class="mps-link" href="./design-tokens.html" target="_blank" rel="noopener"
+                        >باز کردن صفحهٔ کامل راهنما ↗</a
+                    >
+                    <p class="mps-help"
+                        >قانون مستقیمِ یک المان می‌تواند بر متغیر مقدم باشد؛ مقدار متغیر و استایل نهایی المان را جدا
+                        بررسی کن.</p
+                    >
+                    <div id="tokens-reference" class="mps-token-reference"></div>
+                </section>
             </aside>
 
             <main class="mps-preview">
@@ -199,6 +264,30 @@
                             sandbox="allow-scripts allow-same-origin"
                             src="about:blank"
                         ></iframe>
+                        <div
+                            class="mps-resize-handle mps-resize-handle--left"
+                            data-resize-side="left"
+                            role="separator"
+                            tabindex="0"
+                            aria-label="تغییر عرض پیش‌نمایش از سمت چپ"
+                            aria-orientation="vertical"
+                            aria-valuemin="240"
+                            aria-valuemax="7680"
+                            aria-valuenow="1440"
+                            title="بکش یا از کلیدهای جهت استفاده کن"
+                        ></div>
+                        <div
+                            class="mps-resize-handle mps-resize-handle--right"
+                            data-resize-side="right"
+                            role="separator"
+                            tabindex="0"
+                            aria-label="تغییر عرض پیش‌نمایش از سمت راست"
+                            aria-orientation="vertical"
+                            aria-valuemin="240"
+                            aria-valuemax="7680"
+                            aria-valuenow="1440"
+                            title="بکش یا از کلیدهای جهت استفاده کن"
+                        ></div>
                     </div>
                     <div id="loading" class="mps-loading">در حال بارگذاری صفحه…</div>
                 </div>

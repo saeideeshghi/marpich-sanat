@@ -66,7 +66,32 @@
       "breakpoint": "all",
       "target": {
         "kind": "role",
-        "key": "card-tag"
+        "key": "card-media-tag"
+      },
+      "properties": {
+        "text-align": "right",
+        "direction": "rtl"
+      }
+    },
+    {
+      "page": "*",
+      "breakpoint": "all",
+      "target": {
+        "kind": "role",
+        "key": "card-meta-tag"
+      },
+      "properties": {
+        "text-align": "center",
+        "direction": "rtl",
+        "padding-top": 8
+      }
+    },
+    {
+      "page": "*",
+      "breakpoint": "all",
+      "target": {
+        "kind": "role",
+        "key": "card-status-tag"
       },
       "properties": {
         "text-align": "right",
@@ -207,7 +232,29 @@
       "breakpoint": "mobile",
       "target": {
         "kind": "role",
-        "key": "card-tag"
+        "key": "card-media-tag"
+      },
+      "properties": {
+        "font-size": 10
+      }
+    },
+    {
+      "page": "*",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "role",
+        "key": "card-meta-tag"
+      },
+      "properties": {
+        "font-size": 10
+      }
+    },
+    {
+      "page": "*",
+      "breakpoint": "mobile",
+      "target": {
+        "kind": "role",
+        "key": "card-status-tag"
       },
       "properties": {
         "font-size": 10
@@ -766,42 +813,6 @@
       }
     },
     {
-      "page": "products",
-      "breakpoint": "mobile",
-      "target": {
-        "kind": "component",
-        "selector": ".featured-card > div.featured-card__content:nth-of-type(1) > h2.featured-card__title",
-        "label": "باکس‌های تکراری · عنوان بخش · تهویه مطبوع و هواسازها"
-      },
-      "properties": {
-        "font-size": 19
-      }
-    },
-    {
-      "page": "products",
-      "breakpoint": "mobile",
-      "target": {
-        "kind": "component",
-        "selector": ".featured-card > div.featured-card__content:nth-of-type(1) > p.featured-card__description",
-        "label": "باکس‌های تکراری · متن · سیستم‌های پیشرفته برای تهویه مطب"
-      },
-      "properties": {
-        "font-size": 15
-      }
-    },
-    {
-      "page": "products",
-      "breakpoint": "mobile",
-      "target": {
-        "kind": "component",
-        "selector": ".featured-card > div.featured-card__content:nth-of-type(1) > span.featured-card__count > small",
-        "label": "باکس‌های تکراری · المان · محصول"
-      },
-      "properties": {
-        "font-size": 12
-      }
-    },
-    {
       "page": "home",
       "breakpoint": "mobile",
       "target": {
@@ -1240,7 +1251,7 @@
       "breakpoint": "mobile",
       "target": {
         "kind": "component",
-        "selector": ".project-details__product-card > div.project-details__product-body:nth-of-type(2) > div.project-details__product-specs:nth-of-type(2) > span.site-card__tag:nth-of-type(1)",
+        "selector": ".project-details__product-card > div.project-details__product-body:nth-of-type(2) > div.project-details__product-specs:nth-of-type(2) > span.site-card__meta-tag:nth-of-type(1)",
         "label": "باکس‌های تکراری · متن / آیکون · بالانس دقیق"
       },
       "properties": {

@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "project_version": "3.0.0",
+  "baseline_zip_sha256": "0ca1b301f307f71611add74e255b79f7e9567509d61f6078b5fd2e062983e258",
+  "baseline_file_count": 207,
+  "current_file_count": 210,
+  "changed_files": [
+    "CHANGELOG.md",
+    "CUSTOMIZER.md",
+    "README.md",
+    "docs/VALIDATION.md",
+    "docs/stable-header-layout-checks.json",
+    "docs/stable-pages-checks.json",
+    "docs/stable-pattern-motion-checks.json",
+    "docs/stable-preservation.json",
+    "scripts/check-customizer.js",
+    "src/css/components/fixed-header.css",
+    "src/css/site-layout.css",
+    "src/data/patterns/footer-pattern.json",
+    "src/data/patterns/site-pattern.json",
+    "src/js/components/fixed-header.js",
+    "src/js/components/site-pattern.js",
+    "src/js/customizer/pattern-editor.js",
+    "src/js/customizer/pattern-help.js",
+    "src/js/customizer/pattern-model.js",
+    "src/js/customizer/schema.js",
+    "src/js/customizer/token-descriptions.js"
+  ],
+  "added_files": [
+    "docs/stable-pattern-editor-checks.json",
+    "docs/stable-pattern-raster-checks.json",
+    "src/js/customizer/pattern-presets.js"
+  ],
+  "removed_files": [],
+  "protected_files": [
+    {
+      "file": "products.html",
+      "byte_identical": true,
+      "sha256": "f60c35f881f1f0b3d0213022093f995bd3f53d9177e4c63ef3563b3dce3ed389"
+    },
+    {
+      "file": "src/css/pages/products-featured.css",
+      "byte_identical": true,
+      "sha256": "ffbd5e6454d9ac1101b5fb9c824450b3313d05ccc26d420ccab3f7ae82907e4a"
+    },
+    {
+      "file": "src/css/pages/products.css",
+      "byte_identical": true,
+      "sha256": "05c1ecb195cae36cd9f1a7d12bf1f87180e5edfd8477b89f73e39b924e030b91"
+    },
+    {
+      "file": "src/css/components/responsive-cards.css",
+      "byte_identical": true,
+      "sha256": "5b5f114f2d936cbaf99dc6a74e0c9d2bf5374431bc64ceb3ae1c2e01034e7c0a"
+    },
+    {
+      "file": "src/data/pages/products.json",
+      "byte_identical": true,
+      "sha256": "57f44ac36f07ac0a7ddc6a6d62c9f9dfcf19220db8461c3fe4a36cd90a301b0a"
+    },
+    {
+      "file": "src/css/components/catalog.css",
+      "byte_identical": true,
+      "sha256": "6c1c539adfe4e9830a50ad02fbb943ff70ec2dd608971e4f11716b65164e3418"
+    },
+    {
+      "file": "src/css/components/content-flow.css",
+      "byte_identical": true,
+      "sha256": "815025cb74f2bc6ba282d70b036c6d265b21e717c0334107503e8d04aacfcb91"
+    },
+    {
+      "file": "src/css/pages/articles.css",
+      "byte_identical": true,
+      "sha256": "51db7eca2c016232e7085195c68eced46e43d0cf4474e6b3ad3cead9db5ae7bb"
+    },
+    {
+      "file": "src/css/pages/projects.css",
+      "byte_identical": true,
+      "sha256": "c671a7b1f640b6d9d7515556558480e17d7eeabcc65b4b10e4536c743dcd3564"
+    },
+    {
+      "file": "src/css/pages/about-team.css",
+      "byte_identical": true,
+      "sha256": "109807d41bab3f1f4e4d2c2030d887ac75137ba44e810bd854d504daf6ca4297"
+    },
+    {
+      "file": "src/js/components/hero.js",
+      "byte_identical": true,
+      "sha256": "88d3da160dd4292b758068336f9c368b2712b34d505eacc86df3d75be4c1d052"
+    },
+    {
+      "file": "scripts/publish-github.js",
+      "byte_identical": true,
+      "sha256": "c015b105c84242889671db26c4768eae25fe84ed5152b3911a137b4da38f1144"
+    },
+    {
+      "file": "src/data/customizer/settings.json",
+      "byte_identical": true,
+      "sha256": "7472e0821744a776bab55b6af451b833580ef81b12f98ee27ec67c991df945fd"
+    },
+    {
+      "file": "src/css/template-overrides.css",
+      "byte_identical": true,
+      "sha256": "f7178779b9cdd4c127962e30ddbccff4b6e00a388eead467dc6a050946e65571"
+    },
+    {
+      "file": "package.json",
+      "byte_identical": true,
+      "sha256": "c53efca928f3f252127f176439f6240a5720f124ae79e4b3b062b06aa6b0a420"
+    },
+    {
+      "file": "package-lock.json",
+      "byte_identical": true,
+      "sha256": "aa3eecf6a3c2e8c7b487646568f897f9946f8eab2a67729f5025e7756476f0d8"
+    }
+  ],
+  "patterns": [
+    {
+      "file": "src/data/patterns/site-pattern.json",
+      "original_shapes_colors_and_placement_preserved": true,
+      "intentional_motion_defaults": {
+        "speed": 0.7,
+        "period": 24,
+        "lightPeriod": 14,
+        "easing": "smooth",
+        "minStrokeWidth": 0.85
+      }
+    },
+    {
+      "file": "src/data/patterns/footer-pattern.json",
+      "original_shapes_colors_and_placement_preserved": true,
+      "intentional_motion_defaults": {
+        "speed": 0.7,
+        "period": 24,
+        "lightPeriod": 14,
+        "easing": "smooth",
+        "minStrokeWidth": 0.85
+      }
+    }
+  ],
+  "approved_style_rules": 160,
+  "temporary_test_rules_included": false,
+  "original_assets_not_provided": true
+}

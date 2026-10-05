@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "errors": [],
+  "checks": [
+    "static initialization",
+    "shared live style",
+    "new-tab preview with Pages base",
+    "portable ZIP",
+    "mobile overflow"
+  ]
+}

@@ -1,7 +1,7 @@
 /* Authentication belongs to the shared layer; all rules are scoped to auth. */
 .auth-dialog {
-    --auth-surface: #d9d9d9;
-    --auth-muted: #6b7280;
+    --auth-surface-color: #d9d9d9;
+    --auth-muted-text-color: #6b7280;
     box-sizing: border-box;
     width: min(500px, calc(100% - 48px));
     max-width: none;
@@ -12,7 +12,7 @@
     overscroll-behavior: contain;
     border: 0;
     border-radius: 16px;
-    background: var(--auth-surface);
+    background: var(--auth-surface-color);
     color: var(--color-brand-navy);
     text-align: right;
 }
@@ -37,7 +37,7 @@ body.auth-open {
     place-items: center;
     width: 36px;
     height: 36px;
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
     border-radius: 8px;
 }
 .auth-close svg {
@@ -83,7 +83,7 @@ body.auth-open {
     text-align: center;
     font-size: 14px;
     line-height: 1.9;
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
     overflow-wrap: anywhere;
 }
 .auth-field {
@@ -104,7 +104,7 @@ body.auth-open {
     font-size: 14px;
 }
 .auth-input::placeholder {
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
     opacity: 1;
 }
 .auth-field:has(.auth-password-toggle) .auth-input {
@@ -118,7 +118,7 @@ body.auth-open {
     place-items: center;
     width: 40px;
     height: 42px;
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
 }
 .auth-password-toggle svg {
     width: 24px;
@@ -173,7 +173,7 @@ body.auth-open {
     gap: 12px;
     margin-top: 12px;
     font-size: 14px;
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
 }
 .auth-remember {
     display: inline-flex;
@@ -196,7 +196,7 @@ body.auth-open {
 }
 .auth-footer {
     margin-top: 28px;
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
     font-size: 14px;
     line-height: 1.9;
 }
@@ -204,7 +204,7 @@ body.auth-open {
     margin-top: -16px;
     margin-bottom: 26px;
     font-size: 14px;
-    color: var(--auth-muted);
+    color: var(--auth-muted-text-color);
 }
 .auth-otp-group {
     min-width: 0;

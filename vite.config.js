@@ -6,6 +6,7 @@ import { pages } from "./build/pages.js";
 import { preparePublicAssets } from "./build/public-assets.js";
 import { publicAssetBase } from "./build/public-asset-base.js";
 import { templateCustomizer } from "./build/customizer.js";
+import { designTokenReference } from "./build/design-tokens.js";
 
 const root = import.meta.dirname;
 
@@ -15,7 +16,13 @@ export default defineConfig(({ mode }) => {
         // Backend/local builds stay at /. Pages has a repository path prefix.
         base,
         publicDir: preparePublicAssets(root),
-        plugins: [htmlPartials(root), tailwindcss(), publicAssetBase(base), templateCustomizer(root, base)],
+        plugins: [
+            htmlPartials(root),
+            tailwindcss(),
+            publicAssetBase(base),
+            templateCustomizer(root, base),
+            designTokenReference(root),
+        ],
         build: {
             // Razor integration must resolve hashed JS/CSS from the manifest,
             // including CSS belonging to imported shared chunks (see docs).
@@ -24,6 +31,7 @@ export default defineConfig(({ mode }) => {
                 input: {
                     ...Object.fromEntries(pages.map(({ name, file }) => [name, resolve(root, file)])),
                     customizer: resolve(root, "tools/customizer.html"),
+                    "design-tokens": resolve(root, "tools/design-tokens.html"),
                 },
             },
         },

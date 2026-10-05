@@ -96,7 +96,7 @@
 
 /* Branch typography tuned to the supplied desktop reference. */
 .branch-card__address {
-    font-size: var(--card-description);
+    font-size: var(--card-description-font-size);
     line-height: 1.9;
 }
 
@@ -329,7 +329,7 @@ textarea.contact-control {
     }
 
     .branch-card__address {
-        font-size: var(--card-description);
+        font-size: var(--card-description-font-size);
         line-height: 1.95;
     }
 
@@ -549,7 +549,7 @@ textarea.contact-control {
 
 @media (min-width: 1180px) {
     .branch-card__address {
-        font-size: var(--card-description);
+        font-size: var(--card-description-font-size);
         line-height: 1.9;
     }
 
@@ -602,13 +602,13 @@ textarea.contact-control {
 }
 .contact-intro h1 {
     margin-top: 20px;
-    font-size: var(--hero-title);
+    font-size: var(--hero-title-font-size);
     font-weight: 800;
     line-height: 1.55;
 }
 body[data-page="contact"] .contact-intro p.site-prose {
     max-width: none;
-    font-size: var(--hero-description);
+    font-size: var(--hero-description-font-size);
     line-height: 1.9;
 }
 .contact-branches {
@@ -690,10 +690,10 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
     }
     .contact-intro h1 {
         margin-top: 12px;
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
     }
     body[data-page="contact"] .contact-intro p.site-prose {
-        font-size: var(--hero-description);
+        font-size: var(--hero-description-font-size);
     }
     .contact-branches {
         width: min(calc(100% - 40px), 760px);
@@ -746,7 +746,7 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
         padding-top: 132px;
     }
     .contact-intro h1 {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
         line-height: 1.65;
     }
     .contact-branches {
@@ -868,6 +868,6 @@ body[data-page="contact"] .contact-benefits .benefit-item :is(h3, p) {
 
 /* An office address is complete contact information, not a clamped excerpt. */
 body[data-page="contact"] .branch-card__address {
-    font-size: var(--card-description);
+    font-size: var(--card-description-font-size);
     line-height: 1.85;
 }

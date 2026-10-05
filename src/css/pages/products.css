@@ -87,7 +87,7 @@
 
     color: #79b6ed;
 
-    font-size: var(--hero-eyebrow);
+    font-size: var(--hero-eyebrow-font-size);
 
     font-weight: 500;
 
@@ -99,7 +99,7 @@
 
     color: #ffffff;
 
-    font-size: var(--hero-title);
+    font-size: var(--hero-title-font-size);
 
     font-weight: 700;
 
@@ -458,198 +458,6 @@
    FEATURED CATEGORIES
 
 ========================================================= */
-
-.featured-products {
-    display: grid;
-
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    grid-template-rows: repeat(3, 200px);
-
-    grid-template-areas:
-        "spiral spiral air air"
-        "dust fitting air air"
-        "dust support diffuser diffuser";
-
-    gap: 16px;
-
-    direction: ltr;
-
-    align-items: stretch;
-}
-
-.featured-card {
-    position: relative;
-
-    display: flex;
-
-    min-width: 0;
-
-    overflow: hidden;
-
-    border: 1px solid #e3e9f2;
-
-    border-radius: 9px;
-
-    background: #ffffff;
-
-    box-shadow: var(--shadow-card);
-
-    direction: rtl;
-
-    text-align: right;
-}
-
-.featured-card--air {
-    grid-area: air;
-}
-
-.featured-card--diffuser {
-    grid-area: diffuser;
-}
-
-.featured-card--spiral {
-    grid-area: spiral;
-}
-
-.featured-card--fitting {
-    grid-area: fitting;
-}
-
-.featured-card--dust {
-    grid-area: dust;
-}
-
-.featured-card--support {
-    grid-area: support;
-}
-
-.featured-card__content {
-    position: relative;
-
-    z-index: 2;
-
-    width: 47%;
-
-    padding: 28px 26px;
-}
-
-.featured-card__title {
-    margin: 0;
-
-    color: #0f172b;
-
-    font-size: 18px;
-
-    font-weight: 700;
-
-    line-height: 1.55;
-}
-
-.featured-card__description {
-    margin: 7px 0 0;
-
-    color: #28354b;
-
-    font-size: 14px;
-
-    line-height: 1.85;
-}
-
-.featured-card__count {
-    display: block;
-
-    margin-top: 12px;
-
-    color: #49a7f3;
-
-    font-size: 23px;
-
-    font-weight: 400;
-
-    line-height: 1;
-}
-
-.featured-card__count small {
-    display: block;
-
-    margin-top: 5px;
-
-    color: #4f5c72;
-
-    font-size: 14px;
-}
-
-.featured-card__count::after {
-    display: block;
-    width: 27px;
-    height: 8px;
-    margin-top: 8px;
-    background: url("/assets/icons/products/count-arrow.svg") center / contain no-repeat;
-    content: "";
-}
-
-.featured-card__image-wrap {
-    display: flex;
-
-    min-width: 0;
-
-    flex: 1;
-
-    align-items: flex-end;
-
-    justify-content: center;
-
-    padding: 12px 14px 0;
-}
-
-.featured-card__image {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center bottom;
-}
-
-.featured-card--air .featured-card__content {
-    width: 43%;
-
-    padding: 34px 30px;
-}
-
-.featured-card--air .featured-card__image-wrap {
-    padding: 22px 12px 10px;
-}
-
-.featured-card--air .featured-card__title,
-.featured-card--spiral .featured-card__title,
-.featured-card--diffuser .featured-card__title {
-    font-size: 20px;
-}
-
-.featured-card--dust,
-.featured-card--fitting,
-.featured-card--support {
-    flex-direction: column;
-}
-
-.featured-card--dust .featured-card__content,
-.featured-card--fitting .featured-card__content,
-.featured-card--support .featured-card__content {
-    width: 100%;
-
-    padding: 20px 20px 6px;
-}
-
-.featured-card--dust .featured-card__image-wrap,
-.featured-card--fitting .featured-card__image-wrap,
-.featured-card--support .featured-card__image-wrap {
-    min-height: 0;
-
-    padding-top: 0;
-}
 
 /* =========================================================
 
@@ -1018,25 +826,6 @@
         padding-top: 48px;
     }
 
-    .featured-products {
-        grid-template-rows: repeat(3, 176px);
-    }
-
-    .featured-card__content {
-        padding: 22px 18px;
-    }
-
-    .featured-card__title,
-    .featured-card--air .featured-card__title,
-    .featured-card--spiral .featured-card__title,
-    .featured-card--diffuser .featured-card__title {
-        font-size: 15px;
-    }
-
-    .featured-card__description {
-        font-size: 14px;
-    }
-
     .products-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1075,13 +864,13 @@
     }
 
     .products-hero__eyebrow {
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
     }
 
     .products-hero__title {
         margin-top: 4px;
 
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
 
         line-height: 1.55;
     }
@@ -1209,124 +998,6 @@
 
     .section-heading {
         font-size: 19px;
-    }
-
-    .featured-products {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        grid-template-rows: auto;
-
-        grid-auto-rows: auto;
-
-        grid-template-areas:
-            "air air"
-            "diffuser diffuser"
-            "spiral spiral"
-            "fitting dust"
-            "fitting support";
-
-        gap: 8px;
-    }
-
-    .featured-card {
-        height: auto;
-
-        min-height: 0;
-
-        border-radius: 6px;
-    }
-
-    .featured-card--air {
-        min-height: 228px;
-    }
-
-    .featured-card--diffuser,
-    .featured-card--spiral {
-        min-height: 132px;
-    }
-
-    .featured-card--fitting {
-        min-height: 286px;
-    }
-
-    .featured-card--dust,
-    .featured-card--support {
-        min-height: 139px;
-    }
-
-    .featured-card__content,
-    .featured-card--air .featured-card__content {
-        width: 49%;
-
-        padding: 14px 12px;
-    }
-
-    .featured-card__title,
-    .featured-card--air .featured-card__title,
-    .featured-card--spiral .featured-card__title,
-    .featured-card--diffuser .featured-card__title {
-        font-size: 14px;
-
-        line-height: 1.5;
-    }
-
-    .featured-card__description {
-        margin-top: 4px;
-
-        font-size: 14px;
-
-        line-height: 1.8;
-    }
-
-    .featured-card__count {
-        margin-top: 7px;
-
-        font-size: 15px;
-    }
-
-    .featured-card__count small {
-        margin-top: 2px;
-
-        font-size: 14px;
-    }
-
-    .featured-card__image-wrap,
-    .featured-card--air .featured-card__image-wrap {
-        padding: 9px 7px 0;
-    }
-
-    .featured-card--air {
-        flex-direction: column;
-    }
-
-    .featured-card--air .featured-card__content {
-        width: 100%;
-
-        padding-bottom: 0;
-    }
-
-    .featured-card--air .featured-card__image-wrap {
-        min-height: 130px;
-    }
-
-    .featured-card--dust,
-    .featured-card--fitting,
-    .featured-card--support {
-        flex-direction: column;
-    }
-
-    .featured-card--dust .featured-card__content,
-    .featured-card--fitting .featured-card__content,
-    .featured-card--support .featured-card__content {
-        width: 100%;
-
-        padding: 10px 9px 0;
-    }
-
-    .featured-card--dust .featured-card__image-wrap,
-    .featured-card--fitting .featured-card__image-wrap,
-    .featured-card--support .featured-card__image-wrap {
-        padding: 3px 6px 0;
     }
 
     .catalog-head {
@@ -1468,7 +1139,7 @@
     }
 
     .products-hero__title {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
     }
 
     .product-card__media {

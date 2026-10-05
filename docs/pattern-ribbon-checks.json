@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "kind": "header",
+      "width": 390,
+      "axis": "y",
+      "framesChecked": 90,
+      "reversedEdges": 0,
+      "minimumWidthRatio": 0.9692841125824155
+    },
+    {
+      "kind": "header",
+      "width": 820,
+      "axis": "y",
+      "framesChecked": 90,
+      "reversedEdges": 0,
+      "minimumWidthRatio": 0.9692841125824155
+    },
+    {
+      "kind": "header",
+      "width": 1440,
+      "axis": "y",
+      "framesChecked": 90,
+      "reversedEdges": 0,
+      "minimumWidthRatio": 0.9692841125824155
+    },
+    {
+      "kind": "footer",
+      "width": 390,
+      "axis": "x",
+      "framesChecked": 108,
+      "reversedEdges": 0,
+      "minimumWidthRatio": 0.974549696312783
+    },
+    {
+      "kind": "footer",
+      "width": 820,
+      "axis": "y",
+      "framesChecked": 90,
+      "reversedEdges": 0,
+      "minimumWidthRatio": 0.9692841125824155
+    },
+    {
+      "kind": "footer",
+      "width": 1440,
+      "axis": "y",
+      "framesChecked": 90,
+      "reversedEdges": 0,
+      "minimumWidthRatio": 0.9692841125824155
+    }
+  ],
+  "errors": []
+}

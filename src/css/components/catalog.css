@@ -296,7 +296,9 @@
     height: 30px;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     background: var(--color-media-badge);
     padding-inline: 12px;
     color: #fff;

@@ -13,11 +13,11 @@ body[data-page] .site-hero__description {
     text-align-last: right !important;
     direction: rtl !important;
 }
-body[data-page] main h2:not(.site-card__title):not(.project-details__testimonial-title):not(:where(.project-details__reference-heading)) {
+body[data-page] main h2:not(.featured-card__title):not(.site-card__title):not(.project-details__testimonial-title):not(:where(.project-details__reference-heading)) {
     text-align: right !important;
     direction: rtl !important;
 }
-body[data-page] :is(main p, main li, .site-prose):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__tag):not(.project-details__testimonial-kicker-copy):not(:where(.project-details__reference-copy)) {
+body[data-page] :is(main p, main li, .site-prose):not(.featured-card__description):not(.site-card__description):not(.site-hero__description):not(.site-hero__eyebrow):not(.site-card__media-tag):not(.site-card__meta-tag):not(.site-card__status-tag):not(.project-details__testimonial-kicker-copy):not(:where(.project-details__reference-copy)) {
     text-align: justify !important;
     text-align-last: right !important;
     direction: rtl !important;
@@ -81,12 +81,31 @@ body[data-page] .site-card__cta {
     font-size: 12px !important;
 }
 }
-body[data-page] .site-card__tag {
+body[data-page] .site-card__media-tag {
     text-align: right !important;
     direction: rtl !important;
 }
 @media (max-width: 639px) {
-body[data-page] .site-card__tag {
+body[data-page] .site-card__media-tag {
+    font-size: 10px !important;
+}
+}
+body[data-page] .site-card__meta-tag {
+    text-align: center !important;
+    direction: rtl !important;
+    padding-top: 8px !important;
+}
+@media (max-width: 639px) {
+body[data-page] .site-card__meta-tag {
+    font-size: 10px !important;
+}
+}
+body[data-page] .site-card__status-tag {
+    text-align: right !important;
+    direction: rtl !important;
+}
+@media (max-width: 639px) {
+body[data-page] .site-card__status-tag {
     font-size: 10px !important;
 }
 }
@@ -285,21 +304,6 @@ body[data-page="home"] .home-article__row > div:nth-of-type(2) > p.home-article_
 }
 }
 @media (max-width: 639px) {
-body[data-page="products"] .featured-card > div.featured-card__content:nth-of-type(1) > h2.featured-card__title {
-    font-size: 19px !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="products"] .featured-card > div.featured-card__content:nth-of-type(1) > p.featured-card__description {
-    font-size: 15px !important;
-}
-}
-@media (max-width: 639px) {
-body[data-page="products"] .featured-card > div.featured-card__content:nth-of-type(1) > span.featured-card__count > small {
-    font-size: 12px !important;
-}
-}
-@media (max-width: 639px) {
 body[data-page="home"] .site-card-shadow > div:nth-of-type(2) > p.site-prose {
     font-size: 16px !important;
 }
@@ -345,7 +349,7 @@ body[data-page="project-details"] .project-details__product-card > div.project-d
 }
 }
 @media (max-width: 639px) {
-body[data-page="project-details"] .project-details__product-card > div.project-details__product-body:nth-of-type(2) > div.project-details__product-specs:nth-of-type(2) > span.site-card__tag:nth-of-type(1) {
+body[data-page="project-details"] .project-details__product-card > div.project-details__product-body:nth-of-type(2) > div.project-details__product-specs:nth-of-type(2) > span.site-card__meta-tag:nth-of-type(1) {
     font-size: 10px !important;
 }
 }

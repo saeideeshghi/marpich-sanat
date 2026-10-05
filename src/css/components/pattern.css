@@ -17,9 +17,11 @@
 
 .site-pattern-stage {
     position: absolute;
-    inset-inline: 0;
+    left: 50%;
     top: 0;
     width: 100%;
+    max-width: var(--site-layout-max-width, 1920px);
+    transform: translateX(-50%);
     overflow: visible;
     pointer-events: none;
 }

@@ -22,7 +22,7 @@ export function initHeroLayout() {
         const heroBottom = hero.getBoundingClientRect().bottom;
         const textBottom = text.getBoundingClientRect().bottom;
         // Respect the actual root size when the preferred value uses rem.
-        const raw = getComputedStyle(document.body).getPropertyValue("--hero-summary-preferred").trim();
+        const raw = getComputedStyle(document.body).getPropertyValue("--hero-summary-overlap-preferred").trim();
         const preferred = parseFloat(raw) || 0;
         const pixels = raw.endsWith("rem")
             ? preferred * parseFloat(getComputedStyle(document.documentElement).fontSize)

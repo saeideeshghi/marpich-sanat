@@ -1,0 +1,10 @@
+{
+  "passed": [
+    "Fixed menu exposes accessible help, threshold, top, color, opacity, blur and scroll-test shortcuts",
+    "Shared and page-only rules, desktop/tablet/mobile and inclusive custom ranges apply independently",
+    "Disable, undo and comparison restore the correct fixed-menu behavior",
+    "Variable guide edits fixed-menu settings through their shared contract",
+    "Draft new-tab preview, portable ZIP, approved save and reload retain menu settings"
+  ],
+  "errors": []
+}

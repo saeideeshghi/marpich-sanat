@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "checks": [
+    "single-open expertise cards, keyboard/hash navigation and both bottom corners at 390/820/1440px",
+    "pointer resizing updates actual media queries at scale 1 and auto-fit zoom; keyboard and minimum width",
+    "independent page header heights for desktop/tablet/mobile and inclusive 501–600px range",
+    "per-page hero minimum/fixed heights, all device modes and isolation from home page",
+    "metadata tags start at 8px and edit independently of image tags across component instances",
+    "global consultation on three pages and full FAQ child style controls",
+    "new-tab unsaved preview, shared styles/navigation/reload/exit, and normal-site isolation",
+    "actual settings/CSS/pattern file writeback, reload and persistent page/component geometry"
+  ],
+  "errors": []
+}

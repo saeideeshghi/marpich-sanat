@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "project_version": "3.0.0",
+  "baseline_archive_sha256": "ef37e84077a117424296414369661afd235ddd6b48fbaba8fa1e69cd2ae9f884",
+  "changed_operational_files": ["scripts/publish-github.js", "scripts/check-publish.js", "src/css/components/site.css"],
+  "checks": {
+    "npm_run_check": "PASS",
+    "format": "PASS",
+    "build": "PASS",
+    "build_pages": "PASS",
+    "publication_fixture": "local bare Git repository, no external push",
+    "repository_root": "spaces, parentheses, Persian characters, alternative Windows path spellings and directory aliases/junctions; nested directory rejected before mutations"
+  },
+  "platform": "Executed on Linux; Windows path variations simulated. No native Windows execution.",
+  "browser": {
+    "dev": {
+      "pages": 12,
+      "desktop_widths": [1180, 1440, 1920, 2560, 3840],
+      "hamburger_widths": [390, 820, 1179],
+      "javascript_errors": 0,
+      "single_marker_with_saved_decoration": true,
+      "asset_fixtures": true
+    },
+    "pages": {
+      "pages": 12,
+      "desktop_widths": [1180, 1440, 1920, 2560, 3840],
+      "hamburger_widths": [390, 820, 1179],
+      "javascript_errors": 0,
+      "single_marker_with_saved_decoration": true,
+      "asset_fixtures": true
+    }
+  },
+  "protected_files": [
+    {
+      "file": "src/data/customizer/settings.json",
+      "byte_identical": true,
+      "sha256": "7472e0821744a776bab55b6af451b833580ef81b12f98ee27ec67c991df945fd"
+    },
+    {
+      "file": "src/css/template-overrides.css",
+      "byte_identical": true,
+      "sha256": "f7178779b9cdd4c127962e30ddbccff4b6e00a388eead467dc6a050946e65571"
+    },
+    {
+      "file": "src/data/patterns/site-pattern.json",
+      "byte_identical": true,
+      "sha256": "f55745cb269eefd7896846cf14ecd940a05c3e1a048c500ef962ffe8f8c553e1"
+    },
+    {
+      "file": "src/data/patterns/footer-pattern.json",
+      "byte_identical": true,
+      "sha256": "17badaa6c3ff3573d6e2a0d74c3686b5f9cf422538ed2db9544edc40bb1dc48c"
+    },
+    {
+      "file": "src/css/pages/products.css",
+      "byte_identical": true,
+      "sha256": "05c1ecb195cae36cd9f1a7d12bf1f87180e5edfd8477b89f73e39b924e030b91"
+    },
+    {
+      "file": "src/css/pages/products-featured.css",
+      "byte_identical": true,
+      "sha256": "ffbd5e6454d9ac1101b5fb9c824450b3313d05ccc26d420ccab3f7ae82907e4a"
+    },
+    {
+      "file": "src/components/header.html",
+      "byte_identical": true,
+      "sha256": "8e39ecc14d24b3752819a0ac5579800ec3b4e2759b974805c15ed56a84f8f138"
+    },
+    {
+      "file": "src/css/components/fixed-header.css",
+      "byte_identical": true,
+      "sha256": "7509b3e27fe731d1899d2af7d3d7a396d3ce8bec7a38cd0031cb3578bc94640f"
+    },
+    {
+      "file": "package.json",
+      "byte_identical": true,
+      "sha256": "8c4b2991c3a4884637869c04ddf38fe5ea3b75173828a7881bdc0b3e5a4fc2cd"
+    },
+    {
+      "file": "package-lock.json",
+      "byte_identical": true,
+      "sha256": "aa3eecf6a3c2e8c7b487646568f897f9946f8eab2a67729f5025e7756476f0d8"
+    }
+  ],
+  "saved_style_rules": 160,
+  "configuration_in_patch": false,
+  "assets_in_patch": false
+}

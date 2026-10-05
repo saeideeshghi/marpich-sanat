@@ -1,0 +1,27 @@
+{
+  "passed": [
+    "All visible card CTAs across 11 page families: no default/card-hover underline; CTA hover and keyboard focus reveal it",
+    "Standalone reference still explains all 189 variables, shows 182 editable values, and fits mobile/tablet/desktop",
+    "Direct variable form changes local component colors and real typography; undo/redo and comparison preserve the draft",
+    "Shared colors apply across pages; page-only changes stay scoped; responsive alias and locally defined size override their actual owners",
+    "Inclusive custom range, reset/undo, invalid-range feedback and unsafe-value rejection work; automatic variables explain their proper controls",
+    "Every pattern input/select and every gradient-stop field has visible Persian help, units and accessible descriptions; header/footer breakpoints are explicit",
+    "Draft preview in a new tab, portable export, canonical writeback, editor reload and approved website reload all preserve variable rules",
+    "Tools fit mobile/tablet/desktop, protected grid/source files are unchanged, and no JavaScript errors occurred"
+  ],
+  "preserved": [
+    "products.html",
+    "src/css/pages/products-featured.css",
+    "src/css/pages/products.css",
+    "src/css/components/responsive-cards.css",
+    "src/data/pages/products.json",
+    "src/css/components/catalog.css",
+    "src/css/components/content-flow.css",
+    "src/css/pages/articles.css",
+    "src/css/pages/projects.css",
+    "src/css/pages/about-team.css",
+    "scripts/publish-github.js"
+  ],
+  "errors": [],
+  "assetFixtures": true
+}

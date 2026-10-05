@@ -6,19 +6,19 @@
  */
 
 .industries-page {
-    --ind-navy: #0f172b;
-    --ind-blue: #79b6ed;
-    --ind-search-blue: #2f63a2;
-    --ind-orange: #f76e11;
-    --ind-page: #f4f7fc;
-    --ind-card: #ffffff;
-    --ind-border: #dce3ee;
-    --ind-muted: #64748b;
-    --ind-shadow: var(--shadow-card);
+    --industries-navy-color: #0f172b;
+    --industries-blue-color: #79b6ed;
+    --industries-search-button-color: #2f63a2;
+    --industries-orange-color: #f76e11;
+    --industries-page-background-color: #f4f7fc;
+    --industries-card-background-color: #ffffff;
+    --industries-border-color: #dce3ee;
+    --industries-muted-text-color: #64748b;
+    --industries-card-shadow: var(--shadow-card);
 
     overflow: clip;
-    background: var(--ind-page);
-    color: var(--ind-navy);
+    background: var(--industries-page-background-color);
+    color: var(--industries-navy-color);
 }
 
 .industries-hero > .site-container,
@@ -38,7 +38,7 @@
     z-index: 2;
     padding-top: 120px;
     padding-bottom: 38px;
-    background: var(--ind-page);
+    background: var(--industries-page-background-color);
     color: #fff;
 }
 
@@ -47,7 +47,7 @@
     inset: 0 0 auto;
     z-index: -2;
     height: 470px;
-    background: var(--ind-navy);
+    background: var(--industries-navy-color);
     content: "";
 }
 
@@ -59,8 +59,8 @@
 
 .industries-hero__eyebrow {
     margin: 0 0 8px;
-    color: var(--ind-blue);
-    font-size: var(--hero-eyebrow);
+    color: var(--industries-blue-color);
+    font-size: var(--hero-eyebrow-font-size);
     font-weight: 600;
     line-height: 1.65;
 }
@@ -68,7 +68,7 @@
 .industries-hero__title {
     max-width: 980px;
     margin: 0;
-    font-size: var(--hero-title);
+    font-size: var(--hero-title-font-size);
     font-weight: 800;
     line-height: 1.35;
 }
@@ -82,7 +82,7 @@
     background:
         linear-gradient(90deg, transparent 0 92%, rgb(121 182 237 / 0.035) 92% 92.15%, transparent 92.15%) 0 0 / 86px
             100%,
-        var(--ind-page);
+        var(--industries-page-background-color);
 }
 
 /* =========================================================
@@ -197,7 +197,7 @@
     margin-inline-end: auto;
     padding-bottom: 6px;
     direction: rtl;
-    color: var(--ind-blue);
+    color: var(--industries-blue-color);
     font-size: 14px;
     font-weight: 500;
     text-align: right;
@@ -211,7 +211,7 @@
 }
 
 .industry-feature__content--dark {
-    color: var(--ind-navy);
+    color: var(--industries-navy-color);
 }
 
 .industry-feature__content--dark p {
@@ -219,7 +219,7 @@
 }
 
 .industry-feature__link--dark {
-    color: var(--ind-blue);
+    color: var(--industries-blue-color);
 }
 
 /* =========================================================
@@ -240,7 +240,7 @@
 
 .industries-catalog__head h2 {
     margin: 0;
-    color: var(--ind-navy);
+    color: var(--industries-navy-color);
     font-size: 31px;
     font-weight: 800;
     line-height: 1.5;
@@ -257,10 +257,10 @@
     width: 38px;
     height: 38px;
     place-items: center;
-    border: 1px solid var(--ind-blue);
+    border: 1px solid var(--industries-blue-color);
     border-radius: 5px;
     background: transparent;
-    color: var(--ind-blue);
+    color: var(--industries-blue-color);
     font-size: 14px;
     cursor: pointer;
     transition:
@@ -269,7 +269,7 @@
 }
 
 .industries-page .view-switcher__button.is-active {
-    background: var(--ind-blue);
+    background: var(--industries-blue-color);
     color: #fff;
 }
 
@@ -341,11 +341,11 @@
     }
 
     .industries-hero__eyebrow {
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
     }
 
     .industries-hero__title {
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
     }
 
     .industries-featured {
@@ -387,13 +387,13 @@
 
     .industries-hero__eyebrow {
         margin-bottom: 4px;
-        font-size: var(--hero-eyebrow);
+        font-size: var(--hero-eyebrow-font-size);
         line-height: 1.6;
     }
 
     .industries-hero__title {
         max-width: 360px;
-        font-size: var(--hero-title);
+        font-size: var(--hero-title-font-size);
         line-height: 1.4;
     }
 

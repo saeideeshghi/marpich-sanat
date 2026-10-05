@@ -1,0 +1,83 @@
+{
+  "results": [
+    {
+      "page": "home",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "about",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "contact",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "articles",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "products",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "product-details",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "projects",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "project-details",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "industries",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "industry-textile",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "expertise",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "page": "air-handling",
+      "cappedWidths": [1920, 2560, 3840],
+      "headerWidths": [390, 820, 1179, 1180, 1440],
+      "passed": true
+    },
+    {
+      "entry": "180ms",
+      "persistentTransform": false,
+      "reducedMotionRespected": true
+    }
+  ],
+  "assetFixtures": true,
+  "errors": []
+}

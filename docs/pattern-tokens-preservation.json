@@ -1,0 +1,53 @@
+{
+  "baseline": "312231.zip version 2",
+  "version": "3.0.0",
+  "changed": [
+    "CHANGELOG.md",
+    "CUSTOMIZER.md",
+    "README.md",
+    "build/design-tokens.js",
+    "docs/DESIGN-TOKENS.md",
+    "docs/VALIDATION.md",
+    "package.json",
+    "scripts/check-view-tools.js",
+    "src/css/components/card-type.css",
+    "src/css/customizer.css",
+    "src/css/token-reference.css",
+    "src/js/components/site-pattern.js",
+    "src/js/customizer/editor.js",
+    "src/js/customizer/model.js",
+    "src/js/customizer/pattern-editor.js",
+    "src/js/customizer/token-reference.js",
+    "src/js/customizer/values.js",
+    "tools/customizer.html"
+  ],
+  "new": [
+    "build/token-contract.js",
+    "docs/pattern-ribbon-checks.json",
+    "docs/pattern-timing-checks.json",
+    "docs/pattern-tokens-browser-checks.json",
+    "docs/pattern-tokens-grid-image-checks.json",
+    "docs/pattern-tokens-static-checks.json",
+    "scripts/check-token-editor.js",
+    "scripts/refresh-tokens.js",
+    "src/data/customizer/token-contract.json",
+    "src/js/customizer/pattern-help.js",
+    "src/js/customizer/token-values.js"
+  ],
+  "unchangedCount": 167,
+  "protectedFiles": [
+    "products.html",
+    "src/css/pages/products-featured.css",
+    "src/css/pages/products.css",
+    "src/css/components/responsive-cards.css",
+    "src/data/pages/products.json",
+    "src/css/pages/about-team.css",
+    "src/data/customizer/settings.json",
+    "src/css/template-overrides.css",
+    "src/data/patterns/site-pattern.json",
+    "src/data/patterns/footer-pattern.json",
+    "scripts/publish-github.js"
+  ],
+  "patternsIdentical": true,
+  "savedSettingsIdentical": true
+}

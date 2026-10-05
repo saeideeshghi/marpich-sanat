@@ -1,0 +1,9 @@
+{
+  "passed": [
+    "Built Pages embeds approved image sources and applies responsive/range sources with the repository asset prefix",
+    "Static dictionary edits and About source edits appear in iframe/new tab; exiting draft restores approved variables/images and ordinary pages stay unchanged",
+    "Static settings export supports image sources; About shortcuts fit mobile tool layout; no JavaScript errors"
+  ],
+  "assetFixtures": true,
+  "errors": []
+}

@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "kind": "header",
+      "width": 390,
+      "profile": "mobile",
+      "lines": 10,
+      "largestTipChange": 0.0005000000000023874,
+      "largestInteriorChange": 16.858000000000004,
+      "held": 7,
+      "pausedTime": 7,
+      "resumedTime": 7.046559999999404
+    },
+    {
+      "kind": "header",
+      "width": 820,
+      "profile": "tablet",
+      "lines": 10,
+      "largestTipChange": 0.0005000000000023874,
+      "largestInteriorChange": 16.858000000000004,
+      "held": 7,
+      "pausedTime": 7,
+      "resumedTime": 7.130720000000707
+    },
+    {
+      "kind": "header",
+      "width": 1440,
+      "profile": "desktop",
+      "lines": 10,
+      "largestTipChange": 0.0005000000000023874,
+      "largestInteriorChange": 16.858000000000004,
+      "held": 7,
+      "pausedTime": 7,
+      "resumedTime": 7.1233100000003535
+    },
+    {
+      "kind": "footer",
+      "width": 390,
+      "profile": "mobile",
+      "lines": 12,
+      "largestTipChange": 0.0002999999999957481,
+      "largestInteriorChange": 5.490000000000002,
+      "held": 7,
+      "pausedTime": 7,
+      "resumedTime": 7.031699999999814
+    },
+    {
+      "kind": "footer",
+      "width": 820,
+      "profile": "tablet",
+      "lines": 10,
+      "largestTipChange": 0.0005000000000023874,
+      "largestInteriorChange": 16.858000000000004,
+      "held": 7,
+      "pausedTime": 7,
+      "resumedTime": 7.0915799999999996
+    },
+    {
+      "kind": "footer",
+      "width": 1440,
+      "profile": "desktop",
+      "lines": 10,
+      "largestTipChange": 0.0005000000000023874,
+      "largestInteriorChange": 16.858000000000004,
+      "held": 7,
+      "pausedTime": 7,
+      "resumedTime": 7.155989999999647
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "Real line endpoints stay anchored while interiors move",
+    "Desktop/tablet/mobile header and footer profiles",
+    "Pause/seek/resume keeps a continuous clock"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "results": [
+    {
+      "name": "about",
+      "region": "header",
+      "changes": {
+        "d": 740,
+        "x1": 370,
+        "x2": 370
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "about",
+      "region": "footer",
+      "changes": {
+        "d": 760,
+        "x1": 380,
+        "x2": 380
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "contact",
+      "region": "header",
+      "changes": {
+        "d": 740,
+        "x1": 370,
+        "x2": 370
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "contact",
+      "region": "footer",
+      "changes": {
+        "d": 740,
+        "x1": 370,
+        "x2": 370
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "articles",
+      "region": "header",
+      "changes": {
+        "d": 720,
+        "x1": 360,
+        "x2": 360
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "articles",
+      "region": "footer",
+      "changes": {
+        "d": 760,
+        "x1": 380,
+        "x2": 380
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "products",
+      "region": "header",
+      "changes": {
+        "d": 720,
+        "x1": 360,
+        "x2": 360
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    },
+    {
+      "name": "products",
+      "region": "footer",
+      "changes": {
+        "d": 740,
+        "x1": 370,
+        "x2": 370
+      },
+      "geometry": 1,
+      "count": 73,
+      "slowFrames": 0,
+      "maxInterval": 16.800000000000182,
+      "profile": "desktop"
+    }
+  ],
+  "errors": []
+}

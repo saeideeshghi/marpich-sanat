@@ -1,0 +1,14 @@
+{
+  "passed": [
+    "Pixel control/help, actual duration, light/calm presets, Undo/Redo/compare and independent region/device profiles",
+    "Header desktop offset remains editable; the hamburger ignores its offset and removes introductory padding",
+    "Draft in new tab, source ZIP, local writeback and reload preserve pattern/header settings; artwork retained; no JavaScript errors"
+  ],
+  "errors": [],
+  "temporarySourceFilesRestored": [
+    "src/data/customizer/settings.json",
+    "src/css/template-overrides.css",
+    "src/data/patterns/site-pattern.json",
+    "src/data/patterns/footer-pattern.json"
+  ]
+}

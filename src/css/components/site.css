@@ -63,6 +63,15 @@
     position: relative;
 }
 
+/* The marker below owns desktop navigation's underline. Saved text/border
+ * decorations must not add a second line to the link, its label or its icon.
+ * Keep this scoped to navigation so card actions and dropdowns retain theirs. */
+body[data-page] .site-header .site-navigation .site-nav-link,
+body[data-page] .site-header .site-navigation .site-nav-link * {
+    border-bottom-width: 0 !important;
+    text-decoration-line: none !important;
+}
+
 /* Same blue underline language for hover/focus and the current page. */
 .site-nav-link::after {
     position: absolute;
@@ -481,7 +490,7 @@ body.menu-open {
 
 /* Shared navigation typography. Footer styles live in footer.css. */
 .site-navigation > ul {
-    font-size: var(--text-navigation, 14px);
+    font-size: var(--navigation-font-size, 14px);
 }
 @media (min-width: 1180px) and (max-width: 1279px) {
     .site-header__desktop {

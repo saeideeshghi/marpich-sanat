@@ -1,0 +1,36 @@
+{
+  "input": "312231.zip",
+  "input_sha256": "80663009e24bffc5c58429e06b64a61f1dbcccdf9455a70b813f3534daf98d41",
+  "input_files": 160,
+  "removed_files": [],
+  "unchanged_files": 139,
+  "changed_files": [
+    "CHANGELOG.md",
+    "CUSTOMIZER.md",
+    "README.md",
+    "docs/DESIGN-TOKENS.md",
+    "docs/VALIDATION.md",
+    "package-lock.json",
+    "package.json",
+    "product-details.html",
+    "project-details.html",
+    "src/css/components/card-type.css",
+    "src/css/components/content-flow.css",
+    "src/css/customizer.css",
+    "src/css/pages/project-details.css",
+    "src/css/template-overrides.css",
+    "src/data/customizer/settings.json",
+    "src/js/customizer/controls.js",
+    "src/js/customizer/editor.js",
+    "src/js/customizer/schema.js",
+    "src/js/customizer/viewport.js",
+    "tools/customizer.html",
+    "vite.config.js"
+  ],
+  "user_changes": {
+    "catalog_articles_projects": "byte-for-byte preserved",
+    "content-flow": "only indentation of the border-radius line normalized",
+    "template-overrides": "center alignment preserved in canonical settings; regenerated CSS keeps it"
+  },
+  "version": "3.0.0"
+}

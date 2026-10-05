@@ -206,6 +206,65 @@ button:disabled {
     color: #758499;
     font-size: 11px;
 }
+.mps-field__help {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 1px solid #d8e5ef;
+    border-radius: 50%;
+    color: #32748e;
+    background: #f3f8fb;
+    font-size: 11px;
+}
+.mps-field__token {
+    display: block;
+    margin-top: 5px;
+    color: #75889b;
+    font:
+        9px/1.6 ui-monospace,
+        monospace;
+    overflow-wrap: anywhere;
+}
+.mps-editor-tabs {
+    flex-wrap: wrap;
+}
+#tokens-reference {
+    margin-top: 14px;
+}
+.mps-zoom {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px;
+    border: 1px solid #dce3ed;
+    border-radius: 9px;
+    background: #f8fafc;
+}
+.mps-zoom label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+.mps-zoom input {
+    width: 57px;
+    direction: ltr;
+    text-align: center;
+}
+.mps-zoom button {
+    min-height: 32px;
+    border: 0;
+    border-radius: 6px;
+    padding: 4px 9px;
+    color: #37516e;
+    background: transparent;
+    font-size: 12px;
+}
+.mps-zoom button[aria-pressed="true"] {
+    background: #deedf9;
+    color: #14628f;
+}
 .mps-workspace {
     display: flex;
     flex: 1;
@@ -426,6 +485,20 @@ button:disabled {
     margin-block: 6px;
     direction: ltr;
 }
+.mps-pattern-help {
+    display: block;
+    color: #61758a;
+    font-size: 11px;
+    line-height: 1.9;
+    margin-top: 6px;
+}
+.mps-pattern-stop__field {
+    display: grid;
+    direction: rtl;
+    min-width: 0;
+    font-size: 11px;
+    align-content: start;
+}
 #custom-range input {
     width: 100%;
     direction: ltr;
@@ -529,6 +602,7 @@ button:disabled {
     position: relative;
     padding: 10px 24px 18px;
     direction: ltr;
+    scrollbar-gutter: stable;
 }
 .mps-frame-shell {
     margin: 0 auto;
@@ -546,6 +620,65 @@ button:disabled {
     left: 0;
     transform-origin: top left;
     background: #fff;
+}
+.mps-resize-handle {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    cursor: ew-resize;
+    touch-action: none;
+    user-select: none;
+    background: #e1e8f0;
+    border: 1px solid #cad6e3;
+}
+.mps-resize-handle::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 18px);
+    left: 3px;
+    width: 4px;
+    height: 36px;
+    border-inline: 1px solid #788da5;
+}
+.mps-resize-handle--left {
+    left: 0;
+}
+.mps-resize-handle--right {
+    right: 0;
+}
+.mps-resize-handle:focus-visible,
+.mps-resize-handle:hover {
+    background: #bed9f5;
+    outline: 2px solid #4387ca;
+    outline-offset: -2px;
+}
+.mps-stage.is-resizing {
+    cursor: ew-resize;
+    user-select: none;
+}
+.mps-stage.is-resizing iframe {
+    pointer-events: none;
+}
+.mps-page-geometry {
+    margin-bottom: 14px;
+    padding: 10px;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+.mps-page-geometry > span {
+    font-size: 12px;
+    font-weight: 600;
+}
+.mps-page-geometry > div {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.mps-page-geometry .mps-button {
+    flex: 1;
 }
 .mps-loading {
     position: absolute;

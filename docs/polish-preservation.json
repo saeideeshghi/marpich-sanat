@@ -1,0 +1,36 @@
+{
+  "base": "Last delivered V3 312231.zip",
+  "protected": [
+    {
+      "file": "src/css/components/catalog.css",
+      "unchanged": true
+    },
+    {
+      "file": "src/css/pages/articles.css",
+      "unchanged": true
+    },
+    {
+      "file": "src/css/pages/projects.css",
+      "unchanged": true
+    },
+    {
+      "file": "src/css/components/content-flow.css",
+      "unchanged": true
+    },
+    {
+      "file": "src/data/pages/products.json",
+      "unchanged": true
+    },
+    {
+      "file": "src/data/patterns/site-pattern.json",
+      "unchanged": true
+    },
+    {
+      "file": "src/data/patterns/footer-pattern.json",
+      "unchanged": true
+    }
+  ],
+  "settingsPreserved": true,
+  "supersededFeaturedFontRules": 3,
+  "deletedSourceFiles": []
+}

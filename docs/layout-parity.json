@@ -3,5 +3,26 @@
   "matched": 66,
   "differences": [],
   "baselineOverflow": [],
-  "finalOverflow": []
+  "finalOverflow": [],
+  "v3_update": {
+    "cases": 66,
+    "properties_per_element": 27,
+    "matched": 65,
+    "different": ["articles:900"],
+    "horizontal_overflow": [],
+    "comparison": "Original V3 appearance; the requested 8px metadata padding is isolated in a separate comparison copy. One transient articles:900 margin in the saved baseline was rechecked against the old built source.",
+    "checked_date": "2026-10-05",
+    "exceptions": {
+      "articles:900": {
+        "properties": ["margin-right", "margin-left"],
+        "observed_values": ["0px", "32px"],
+        "paired_visual_bounds": {
+          "x": 32,
+          "width": 836,
+          "height": 636.078125
+        },
+        "classification": "Same rendered bounds; resolved auto-margin serialization varies between reads."
+      }
+    }
+  }
 }

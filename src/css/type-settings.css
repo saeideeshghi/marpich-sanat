@@ -4,149 +4,149 @@
  * below switch at the breakpoints; page styles consume them without hardcoding.
  * Hero heights are configured by ID in hero-heights.css. */
 body[data-page] {
-    --hero-eyebrow-desktop: 28px;
-    --hero-eyebrow-tablet: 20px;
-    --hero-eyebrow-mobile: 20px;
-    --hero-title-desktop: 42px;
-    --hero-title-tablet: 38px;
-    --hero-title-mobile: 25px;
-    --hero-description-desktop: 22px;
-    --hero-description-tablet: 18px;
-    --hero-description-mobile: 18px;
-    --hero-top-desktop: 164px;
-    --hero-top-tablet: 168px;
-    --hero-top-mobile: 156px;
-    --hero-bottom: 40px;
-    --hero-summary-desktop: 0px;
-    --hero-summary-tablet: 0px;
-    --hero-summary-mobile: 0px;
-    --hero-eyebrow-leading: 1.5;
-    --hero-title-leading: 1.4;
-    --hero-description-leading: 1.55;
+    --hero-eyebrow-font-size-desktop: 28px;
+    --hero-eyebrow-font-size-tablet: 20px;
+    --hero-eyebrow-font-size-mobile: 20px;
+    --hero-title-font-size-desktop: 42px;
+    --hero-title-font-size-tablet: 38px;
+    --hero-title-font-size-mobile: 25px;
+    --hero-description-font-size-desktop: 22px;
+    --hero-description-font-size-tablet: 18px;
+    --hero-description-font-size-mobile: 18px;
+    --hero-content-padding-top-desktop: 164px;
+    --hero-content-padding-top-tablet: 168px;
+    --hero-content-padding-top-mobile: 156px;
+    --hero-content-padding-bottom: 40px;
+    --hero-summary-overlap-desktop: 0px;
+    --hero-summary-overlap-tablet: 0px;
+    --hero-summary-overlap-mobile: 0px;
+    --hero-eyebrow-line-height: 1.5;
+    --hero-title-line-height: 1.4;
+    --hero-description-line-height: 1.55;
     /* Card roles are independent from hero/section typography. */
-    --card-title-desktop: 17px;
-    --card-title-tablet: 17px;
-    --card-title-mobile: 20px;
-    --card-description-desktop: 14px;
-    --card-description-tablet: 14px;
-    --card-description-mobile: 18px;
-    --card-cta-desktop: 12px;
-    --card-cta-tablet: 14px;
-    --card-cta-mobile: 14px;
-    --card-tag-desktop: 10px;
-    --card-tag-tablet: 10px;
-    --card-tag-mobile: 10px;
+    --card-title-font-size-desktop: 17px;
+    --card-title-font-size-tablet: 17px;
+    --card-title-font-size-mobile: 20px;
+    --card-description-font-size-desktop: 14px;
+    --card-description-font-size-tablet: 14px;
+    --card-description-font-size-mobile: 18px;
+    --card-link-font-size-desktop: 12px;
+    --card-link-font-size-tablet: 14px;
+    --card-link-font-size-mobile: 14px;
+    --card-tag-font-size-desktop: 10px;
+    --card-tag-font-size-tablet: 10px;
+    --card-tag-font-size-mobile: 10px;
     --card-description-lines: 2;
-    --card-title-leading: 1.7;
-    --card-description-leading: 1.85;
-    --text-body-desktop: 16px;
-    --text-body-tablet: 16px;
-    --text-body-mobile: 15px;
-    --text-card-desktop: 18px;
-    --text-card-tablet: 17px;
-    --text-card-mobile: 16px;
-    --text-section-desktop: 28px;
-    --text-section-tablet: 26px;
-    --text-section-mobile: 22px;
-    --text-control: 16px;
-    --text-label: 14px;
-    --text-navigation: 14px;
-    --text-table: 14px;
-    --text-table-heading: 14px;
+    --card-title-line-height: 1.7;
+    --card-description-line-height: 1.85;
+    --body-font-size-desktop: 16px;
+    --body-font-size-tablet: 16px;
+    --body-font-size-mobile: 15px;
+    --content-card-font-size-desktop: 18px;
+    --content-card-font-size-tablet: 17px;
+    --content-card-font-size-mobile: 16px;
+    --section-title-font-size-desktop: 28px;
+    --section-title-font-size-tablet: 26px;
+    --section-title-font-size-mobile: 22px;
+    --form-control-font-size: 16px;
+    --label-font-size: 14px;
+    --navigation-font-size: 14px;
+    --table-cell-font-size: 14px;
+    --table-heading-font-size: 14px;
 }
 
 /* PAGE OVERRIDES: add only the values that differ from the shared defaults.
- * Example: body[data-page="projects"] { --hero-title-desktop: 44px; }
+ * Example: body[data-page="projects"] { --hero-title-font-size-desktop: 44px; }
  * Set all page overrides here, above the breakpoint resolvers. */
 body[data-page="home"] {
-    --hero-top-desktop: 120px;
-    --hero-top-tablet: 192px;
+    --hero-content-padding-top-desktop: 120px;
+    --hero-content-padding-top-tablet: 192px;
     /* Preserve the owner's extra top margin; height lives in hero-heights.css. */
     --home-hero-content-margin-top: 105px;
 }
 body[data-page="contact"] {
-    --hero-top-desktop: 120px;
+    --hero-content-padding-top-desktop: 120px;
 }
 body[data-page="about"] {
-    --hero-bottom: 64px;
-    --hero-summary-desktop: 36px;
-    --hero-summary-tablet: 36px;
-    --hero-summary-mobile: 24px;
+    --hero-content-padding-bottom: 64px;
+    --hero-summary-overlap-desktop: 36px;
+    --hero-summary-overlap-tablet: 36px;
+    --hero-summary-overlap-mobile: 24px;
 }
 body[data-page="project-details"] {
-    --hero-eyebrow-desktop: 14px;
-    --hero-eyebrow-tablet: 14px;
-    --hero-eyebrow-mobile: 14px;
-    --hero-description-desktop: 18px;
-    --hero-description-tablet: 16px;
-    --hero-description-mobile: 14px;
-    --hero-top-mobile: 148px;
-    --hero-bottom: 100px;
-    --hero-summary-desktop: 150px;
-    --hero-summary-tablet: 142px;
-    --hero-summary-mobile: 144px;
+    --hero-eyebrow-font-size-desktop: 14px;
+    --hero-eyebrow-font-size-tablet: 14px;
+    --hero-eyebrow-font-size-mobile: 14px;
+    --hero-description-font-size-desktop: 18px;
+    --hero-description-font-size-tablet: 16px;
+    --hero-description-font-size-mobile: 14px;
+    --hero-content-padding-top-mobile: 148px;
+    --hero-content-padding-bottom: 100px;
+    --hero-summary-overlap-desktop: 150px;
+    --hero-summary-overlap-tablet: 142px;
+    --hero-summary-overlap-mobile: 144px;
 }
 body[data-page="product-details"] {
-    --hero-eyebrow-desktop: 14px;
-    --hero-eyebrow-tablet: 14px;
-    --hero-eyebrow-mobile: 14px;
-    --hero-top-mobile: 168px;
-    --hero-summary-desktop: 176px;
-    --hero-summary-tablet: 176px;
-    --hero-summary-mobile: 140px;
+    --hero-eyebrow-font-size-desktop: 14px;
+    --hero-eyebrow-font-size-tablet: 14px;
+    --hero-eyebrow-font-size-mobile: 14px;
+    --hero-content-padding-top-mobile: 168px;
+    --hero-summary-overlap-desktop: 176px;
+    --hero-summary-overlap-tablet: 176px;
+    --hero-summary-overlap-mobile: 140px;
 }
 body[data-page="industry-textile"] {
-    --hero-summary-desktop: 9.2rem;
-    --hero-summary-tablet: 8rem;
-    --hero-summary-mobile: 12.2rem;
+    --hero-summary-overlap-desktop: 9.2rem;
+    --hero-summary-overlap-tablet: 8rem;
+    --hero-summary-overlap-mobile: 12.2rem;
 }
 
 body[data-page] {
-    --hero-eyebrow: var(--hero-eyebrow-desktop);
-    --hero-title: var(--hero-title-desktop);
-    --hero-description: var(--hero-description-desktop);
-    --hero-top: var(--hero-top-desktop);
-    --hero-summary-preferred: var(--hero-summary-desktop);
-    --card-title: var(--card-title-desktop);
-    --card-description: var(--card-description-desktop);
-    --card-cta: var(--card-cta-desktop);
-    --card-tag: var(--card-tag-desktop);
-    --text-body: var(--text-body-desktop);
-    --text-card: var(--text-card-desktop);
-    --text-section: var(--text-section-desktop);
+    --hero-eyebrow-font-size: var(--hero-eyebrow-font-size-desktop);
+    --hero-title-font-size: var(--hero-title-font-size-desktop);
+    --hero-description-font-size: var(--hero-description-font-size-desktop);
+    --hero-content-padding-top: var(--hero-content-padding-top-desktop);
+    --hero-summary-overlap-preferred: var(--hero-summary-overlap-desktop);
+    --card-title-font-size: var(--card-title-font-size-desktop);
+    --card-description-font-size: var(--card-description-font-size-desktop);
+    --card-link-font-size: var(--card-link-font-size-desktop);
+    --card-tag-font-size: var(--card-tag-font-size-desktop);
+    --body-font-size: var(--body-font-size-desktop);
+    --content-card-font-size: var(--content-card-font-size-desktop);
+    --section-title-font-size: var(--section-title-font-size-desktop);
 }
 @media (min-width: 640px) and (max-width: 1179px) {
     body[data-page] {
-        --hero-eyebrow: var(--hero-eyebrow-tablet);
-        --hero-title: var(--hero-title-tablet);
-        --hero-description: var(--hero-description-tablet);
-        --hero-top: var(--hero-top-tablet);
-        --hero-summary-preferred: var(--hero-summary-tablet);
-        --card-title: var(--card-title-tablet);
-        --card-description: var(--card-description-tablet);
-        --card-cta: var(--card-cta-tablet);
-        --card-tag: var(--card-tag-tablet);
-        --text-body: var(--text-body-tablet);
-        --text-card: var(--text-card-tablet);
-        --text-section: var(--text-section-tablet);
+        --hero-eyebrow-font-size: var(--hero-eyebrow-font-size-tablet);
+        --hero-title-font-size: var(--hero-title-font-size-tablet);
+        --hero-description-font-size: var(--hero-description-font-size-tablet);
+        --hero-content-padding-top: var(--hero-content-padding-top-tablet);
+        --hero-summary-overlap-preferred: var(--hero-summary-overlap-tablet);
+        --card-title-font-size: var(--card-title-font-size-tablet);
+        --card-description-font-size: var(--card-description-font-size-tablet);
+        --card-link-font-size: var(--card-link-font-size-tablet);
+        --card-tag-font-size: var(--card-tag-font-size-tablet);
+        --body-font-size: var(--body-font-size-tablet);
+        --content-card-font-size: var(--content-card-font-size-tablet);
+        --section-title-font-size: var(--section-title-font-size-tablet);
     }
 }
 @media (max-width: 639px) {
     body[data-page] {
-        --hero-eyebrow: var(--hero-eyebrow-mobile);
-        --hero-title: var(--hero-title-mobile);
-        --hero-description: var(--hero-description-mobile);
-        --hero-top: var(--hero-top-mobile);
-        --hero-summary-preferred: var(--hero-summary-mobile);
-        --card-title: var(--card-title-mobile);
-        --card-description: var(--card-description-mobile);
-        --card-cta: var(--card-cta-mobile);
-        --card-tag: var(--card-tag-mobile);
-        --text-body: var(--text-body-mobile);
-        --text-card: var(--text-card-mobile);
-        --text-section: var(--text-section-mobile);
+        --hero-eyebrow-font-size: var(--hero-eyebrow-font-size-mobile);
+        --hero-title-font-size: var(--hero-title-font-size-mobile);
+        --hero-description-font-size: var(--hero-description-font-size-mobile);
+        --hero-content-padding-top: var(--hero-content-padding-top-mobile);
+        --hero-summary-overlap-preferred: var(--hero-summary-overlap-mobile);
+        --card-title-font-size: var(--card-title-font-size-mobile);
+        --card-description-font-size: var(--card-description-font-size-mobile);
+        --card-link-font-size: var(--card-link-font-size-mobile);
+        --card-tag-font-size: var(--card-tag-font-size-mobile);
+        --body-font-size: var(--body-font-size-mobile);
+        --content-card-font-size: var(--content-card-font-size-mobile);
+        --section-title-font-size: var(--section-title-font-size-mobile);
     }
     body[data-page="about"] {
-        --hero-bottom: 48px;
+        --hero-content-padding-bottom: 48px;
     }
 }

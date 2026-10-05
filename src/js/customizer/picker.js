@@ -73,7 +73,7 @@ export function elementSelector(element) {
 
 export function repeatedSelector(element) {
     let anchor = element.closest(
-            ".site-card, .project-details__meta-item, .product-details__quick-spec-item, .details-table tr, .catalog-faq__item",
+            ".site-card, .project-details__meta-item, .product-details__quick-spec-item, .details-table tr, .site-faq__item",
         ),
         baseSelector = "";
     if (anchor?.matches("tr")) {
@@ -97,7 +97,7 @@ export function repeatedSelector(element) {
     if (!anchor) {
         // A header or footer occurs once per page but is shared across all pages.
         anchor = element.closest(
-            ".site-header, .mobile-menu, .site-footer, .catalog-consultation, [data-consultation], .catalog-faq",
+            ".site-header, .mobile-menu, .site-footer, .catalog-consultation, [data-consultation], .site-faq, .site-testimonials, .home-partners, .product-search, .auth-card",
         );
         if (anchor)
             baseSelector = anchor.matches("[data-consultation]")

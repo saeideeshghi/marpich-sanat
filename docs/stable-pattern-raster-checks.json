@@ -1,0 +1,165 @@
+{
+  "status": "PASS",
+  "physical_scale_checks": [
+    {
+      "dpr": 1,
+      "width": 390,
+      "region": "header",
+      "projectedCssPixels": 0.8500072729534831,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 1,
+      "width": 390,
+      "region": "footer",
+      "projectedCssPixels": 0.8500253174570337,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 1,
+      "width": 820,
+      "region": "header",
+      "projectedCssPixels": 0.8499961771719055,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 1,
+      "width": 820,
+      "region": "footer",
+      "projectedCssPixels": 0.850016243752553,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 1,
+      "width": 1440,
+      "region": "header",
+      "projectedCssPixels": 0.8500117189865136,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 1,
+      "width": 1440,
+      "region": "footer",
+      "projectedCssPixels": 0.8499624632288669,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 2,
+      "width": 390,
+      "region": "header",
+      "projectedCssPixels": 0.8500072729534831,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 2,
+      "width": 390,
+      "region": "footer",
+      "projectedCssPixels": 0.8500253174570337,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 2,
+      "width": 820,
+      "region": "header",
+      "projectedCssPixels": 0.8499961771719055,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 2,
+      "width": 820,
+      "region": "footer",
+      "projectedCssPixels": 0.850016243752553,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 2,
+      "width": 1440,
+      "region": "header",
+      "projectedCssPixels": 0.8500117189865136,
+      "sourceStrokeRestored": true
+    },
+    {
+      "dpr": 2,
+      "width": 1440,
+      "region": "footer",
+      "projectedCssPixels": 0.8499624632288669,
+      "sourceStrokeRestored": true
+    }
+  ],
+  "controlled_white_on_black_raster_samples": [
+    {
+      "width": 820,
+      "floor": 0,
+      "time": 0,
+      "sampled_points": 979,
+      "faint_fraction": 0.024514811031664963,
+      "invisible_fraction": 0.0,
+      "min_intensity": 7
+    },
+    {
+      "width": 820,
+      "floor": 0,
+      "time": 6,
+      "sampled_points": 979,
+      "faint_fraction": 0.024514811031664963,
+      "invisible_fraction": 0.0,
+      "min_intensity": 7
+    },
+    {
+      "width": 820,
+      "floor": 0.85,
+      "time": 0,
+      "sampled_points": 979,
+      "faint_fraction": 0.0,
+      "invisible_fraction": 0.0,
+      "min_intensity": 247
+    },
+    {
+      "width": 820,
+      "floor": 0.85,
+      "time": 6,
+      "sampled_points": 979,
+      "faint_fraction": 0.0,
+      "invisible_fraction": 0.0,
+      "min_intensity": 243
+    },
+    {
+      "width": 1440,
+      "floor": 0,
+      "time": 0,
+      "sampled_points": 986,
+      "faint_fraction": 0.016227180527383367,
+      "invisible_fraction": 0.0,
+      "min_intensity": 5
+    },
+    {
+      "width": 1440,
+      "floor": 0,
+      "time": 6,
+      "sampled_points": 986,
+      "faint_fraction": 0.02129817444219067,
+      "invisible_fraction": 0.002028397565922921,
+      "min_intensity": 3
+    },
+    {
+      "width": 1440,
+      "floor": 0.85,
+      "time": 0,
+      "sampled_points": 986,
+      "faint_fraction": 0.0,
+      "invisible_fraction": 0.0,
+      "min_intensity": 187
+    },
+    {
+      "width": 1440,
+      "floor": 0.85,
+      "time": 6,
+      "sampled_points": 986,
+      "faint_fraction": 0.0,
+      "invisible_fraction": 0.0,
+      "min_intensity": 180
+    }
+  ],
+  "errors": [],
+  "note": "Controlled visibility test removes authored opacity/fades for comparison; actual artwork may intentionally fade. Browser performance varies."
+}

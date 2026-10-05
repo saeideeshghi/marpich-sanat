@@ -139,14 +139,22 @@ if (contactIntro && contactHero && contactBranches) {
         const firstCard = contactBranches.querySelector(".branch-card")?.getBoundingClientRect();
         const overlap = window.innerWidth < 1180 ? 0.5 : 0.42;
         const bottom = firstCard ? firstCard.top - top + firstCard.height * overlap : introBottom + 28;
-        contactHero.style.setProperty(
-            "--contact-intro-background",
-            `${Math.ceil(Math.max(introBottom + 28, bottom))}px`,
-        );
+        const value = `${Math.ceil(Math.max(introBottom + 28, bottom))}px`;
+        if (contactHero.style.getPropertyValue("--contact-intro-background") !== value)
+            contactHero.style.setProperty("--contact-intro-background", value);
     };
-    new ResizeObserver(fitContactBackdrop).observe(contactIntro);
-    new ResizeObserver(fitContactBackdrop).observe(contactBranches);
-    window.addEventListener("resize", fitContactBackdrop, { passive: true });
+    let backdropFrame = 0;
+    const scheduleBackdrop = () => {
+        if (backdropFrame) return;
+        backdropFrame = requestAnimationFrame(() => {
+            backdropFrame = 0;
+            fitContactBackdrop();
+        });
+    };
+    const backdropObserver = new ResizeObserver(scheduleBackdrop);
+    backdropObserver.observe(contactIntro);
+    backdropObserver.observe(contactBranches);
+    window.addEventListener("resize", scheduleBackdrop, { passive: true });
     document.fonts.ready.then(fitContactBackdrop);
     fitContactBackdrop();
 }

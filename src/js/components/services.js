@@ -1,9 +1,12 @@
-/** Independent service disclosures. HTML details remain readable without JS.
+/** Single-open service disclosures. HTML details remain readable without JS.
  * Keep each trigger's aria-controls equal to the details panel ID when using CMS.
  */
 export function initServiceDisclosures(scope = document) {
     const services = [...scope.querySelectorAll("[data-service]")];
     const controls = [];
+    const openOnly = (selected) => {
+        for (const control of controls) control.setOpen(control === selected);
+    };
     services.forEach((service) => {
         if (service.dataset.initialized) return;
         const trigger = service.querySelector("[data-service-toggle]");
@@ -20,7 +23,8 @@ export function initServiceDisclosures(scope = document) {
         };
         const toggle = (event) => {
             event.preventDefault();
-            setOpen(trigger.getAttribute("aria-expanded") !== "true");
+            if (trigger.getAttribute("aria-expanded") === "true") setOpen(false);
+            else openOnly(controls.find((control) => control.service === service));
         };
         trigger.addEventListener("click", toggle);
         trigger.addEventListener("keydown", (event) => {
@@ -38,7 +42,7 @@ export function initServiceDisclosures(scope = document) {
             return;
         }
         const match = controls.find(({ service, panel }) => service.id === id || panel.id === id);
-        match?.setOpen(true);
+        if (match) openOnly(match);
     };
     window.addEventListener("hashchange", revealHash);
     revealHash();

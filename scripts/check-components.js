@@ -27,6 +27,26 @@ const ids = [...(one + two).matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
 assert.equal(ids.length, new Set(ids).size, "Independent FAQ IDs must not collide");
 assert.equal((one.match(/aria-expanded="true"/g) || []).length, 1);
 assert.throws(() => renderComponent("not-a-component", {}, root));
+const product = renderComponent(
+    "product-cards",
+    [
+        {
+            image: "/assets/sample.svg",
+            alt: "sample",
+            category: "category",
+            title: "title",
+            description: "description",
+            specs: ["specification"],
+            href: "product-details.html",
+            linkText: "more",
+        },
+    ],
+    root,
+);
+assert(product.includes("product-card__category site-card__media-tag"));
+assert(product.includes("product-card__spec site-card__meta-tag"));
+assert(!product.includes("site-card__tag"));
+assert(one.includes("site-faq__answer"));
 for (const file of ["index.html", "about.html", "expertise.html"]) {
     const html = renderPage(readFileSync(resolve(root, file), "utf8"), file, root);
     assert.equal(

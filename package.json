@@ -10,13 +10,16 @@
     "build:pages": "vite build --mode pages",
     "preview": "vite preview",
     "preview:pages": "vite preview --mode pages",
-    "check": "node scripts/check-project.js && node scripts/check-components.js && node scripts/check-handoff.js && node scripts/check-customizer.js",
+    "check": "node scripts/check-project.js && node scripts/check-components.js && node scripts/check-handoff.js && node scripts/check-customizer.js && node scripts/check-view-tools.js && node scripts/check-token-editor.js && node scripts/check-platform.js && node scripts/check-publish.js",
     "check:assets": "node scripts/check-assets.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean:legacy": "node scripts/clean-legacy.js"
+    "clean:legacy": "node scripts/clean-legacy.js",
+    "publish:github": "node scripts/publish-github.js",
+    "tokens:refresh": "node scripts/refresh-tokens.js"
   },
   "devDependencies": {
+    "postcss": "^8.5.28",
     "prettier": "^3.9.9",
     "vite": "^8.3.0"
   },

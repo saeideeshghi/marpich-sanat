@@ -1,5 +1,6 @@
 // Controls and labels are independent of editor state, selection and persistence.
 import { PROPERTIES } from "./schema.js";
+import { describeToken } from "./token-descriptions.js";
 const option = (value, label) => {
     const node = document.createElement("option");
     node.value = value;
@@ -11,6 +12,10 @@ const digits = (value) =>
         .replace(/[۰-۹]/g, (digit) => "۰۱۲۳۴۵۶۷۸۹".indexOf(digit))
         .replace(/[٠-٩]/g, (digit) => "٠١٢٣٤٥٦٧٨٩".indexOf(digit));
 const choices = {
+    "--header-fixed-enabled": [
+        ["1", "فعال"],
+        ["0", "غیرفعال"],
+    ],
     "font-weight": [
         ["300", "نازک"],
         ["400", "معمولی"],
@@ -119,6 +124,19 @@ const choices = {
 };
 const groups = [
     [
+        "منوی ثابت با اسکرول",
+        true,
+        [
+            ["--header-fixed-enabled", "ثابت‌شدن منو"],
+            ["--header-fixed-scroll-threshold", "آستانهٔ اسکرول"],
+            ["--header-fixed-top", "فاصله از بالا"],
+            ["--header-fixed-background-color", "رنگ زمینه"],
+            ["--header-fixed-background-opacity", "پوشانندگی زمینه (%)"],
+            ["--header-fixed-backdrop-blur", "محو پشت منو"],
+            ["--header-fixed-shadow", "سایهٔ منو", true],
+        ],
+    ],
+    [
         "فونت و راست‌چین",
         true,
         [
@@ -213,6 +231,7 @@ const groups = [
         "تصویر و رنگ",
         false,
         [
+            ["image-source", "فایل تصویر درباره ما · مسیر یا URL", true],
             ["object-fit", "نمایش تصویر"],
             ["object-position", "جای تصویر"],
             ["transform", "زوم و چرخش", true],
@@ -276,16 +295,20 @@ const groups = [
             ["--color-brand-orange", "نارنجی برند"],
             ["--color-page-bg", "پس‌زمینه صفحه"],
             ["--site-gutter", "فاصله از لبه‌ها"],
+            ["--site-layout-max-width", "سقف عرض نمایشگر بزرگ"],
             ["--card-radius", "گردی کارت"],
-            ["--hero-title", "عنوان Hero"],
-            ["--hero-description", "توضیح Hero"],
-            ["--card-title", "عنوان کارت"],
-            ["--card-description", "توضیح کارت"],
+            ["--hero-title-font-size", "عنوان Hero"],
+            ["--hero-description-font-size", "توضیح Hero"],
+            ["--card-title-font-size", "عنوان کارت"],
+            ["--card-description-font-size", "توضیح کارت"],
+            ["--card-link-font-size", "اندازه متن لینک کارت"],
+            ["--card-media-tag-font-size", "اندازه تگ روی تصویر"],
+            ["--card-meta-tag-font-size", "اندازه تگ مشخصات پایین"],
         ],
     ],
 ];
 
-export function createStyleControls({ container, onChange, onBlur, onInvalid }) {
+export function createStyleControls({ container, onChange, onBlur, onInvalid, onReference }) {
     const fields = new Map();
     for (const [title, open, definitions] of groups) {
         const panel = document.createElement("details");
@@ -301,8 +324,11 @@ export function createStyleControls({ container, onChange, onBlur, onInvalid }) 
             const spec = PROPERTIES[name];
             const field = document.createElement("div");
             field.className = `mps-field${wide ? " mps-field--wide" : ""}`;
-            field.dataset.search = `${label} ${name}`.toLowerCase();
+            const explanation = spec.help || (spec.theme ? describeToken(name).description : "");
+            if (spec.theme) field.title = `${name} · ${explanation}`;
+            field.dataset.search = `${label} ${name} ${explanation}`.toLowerCase();
             field.dataset.theme = String(Boolean(spec.theme));
+            field.dataset.target = spec.target || "";
             const labelRow = document.createElement("div");
             labelRow.className = "mps-field__label";
             const text = document.createElement("label");
@@ -315,6 +341,16 @@ export function createStyleControls({ container, onChange, onBlur, onInvalid }) 
             reset.title = "حذف مقدار این قانون";
             reset.setAttribute("aria-label", `بازنشانی ${label}`);
             labelRow.append(text, reset);
+            if (spec.theme && onReference) {
+                const help = document.createElement("button");
+                help.type = "button";
+                help.className = "mps-field__help";
+                help.textContent = "؟";
+                help.title = explanation;
+                help.setAttribute("aria-label", `راهنمای ${label}`);
+                help.addEventListener("click", () => onReference(name));
+                labelRow.append(help);
+            }
             const row = document.createElement("div");
             row.className = "mps-field__input";
             const input = document.createElement(spec.type === "choice" ? "select" : "input");
@@ -349,6 +385,13 @@ export function createStyleControls({ container, onChange, onBlur, onInvalid }) 
                     unitLabel.textContent = spec.unit;
                     row.append(unitLabel);
                 }
+                if (choices[name] && spec.type === "text") {
+                    const suggestions = document.createElement("datalist");
+                    suggestions.id = `suggestions-${name}`;
+                    for (const [value, label] of choices[name]) suggestions.append(option(value, label));
+                    input.setAttribute("list", suggestions.id);
+                    field.append(suggestions);
+                }
                 if (spec.type === "color") {
                     picker = document.createElement("input");
                     picker.type = "color";
@@ -365,13 +408,28 @@ export function createStyleControls({ container, onChange, onBlur, onInvalid }) 
             input.dataset.property = name;
             row.prepend(input);
             field.append(labelRow, row);
+            if (spec.theme) {
+                const code = document.createElement("code");
+                code.className = "mps-field__token";
+                code.textContent = name;
+                code.dir = "ltr";
+                field.append(code);
+            }
             const actual = document.createElement("small");
             actual.className = "mps-field__actual";
             actual.dir = "ltr";
             field.append(actual);
+            if (spec.help) {
+                const help = document.createElement("small");
+                help.className = "mps-help";
+                help.id = `help-${name}`;
+                help.textContent = spec.help;
+                input.setAttribute("aria-describedby", help.id);
+                field.append(help);
+            }
             const entry = { field, input, reset, unit, picker, actual, panel };
             const read = () => {
-                let value = digits(input.value.trim());
+                let value = spec.type === "image" ? input.value.trim() : digits(input.value.trim());
                 if (!value) value = undefined;
                 else if (spec.type === "number" && !spec.extra?.includes(value) && Number.isFinite(Number(value))) {
                     value = Number(value);
@@ -385,7 +443,7 @@ export function createStyleControls({ container, onChange, onBlur, onInvalid }) 
                 input.setCustomValidity("");
                 onChange(name, value, true);
             };
-            input.addEventListener(spec.type === "choice" ? "change" : "input", read);
+            input.addEventListener(["choice", "image"].includes(spec.type) ? "change" : "input", read);
             input.addEventListener("blur", onBlur);
             if (unit)
                 unit.addEventListener("change", () => {
@@ -414,7 +472,7 @@ export function setControlValue(name, entry, value, actual) {
         spec = PROPERTIES[name];
     if (input.tagName === "SELECT") input.value = spec.values.includes(String(value)) ? String(value) : "";
     else if (input.type === "number" && typeof value === "string") {
-        const match = value.match(/^(-?\d+(?:\.\d+)?)(px|rem|em|%|vw|vh|dvh|vmin|vmax)$/);
+        const match = value.match(/^(-?\d+(?:\.\d+)?)(px|rem|em|%|vw|vh|dvh|svh|lvh|vmin|vmax)$/);
         input.value = match && unit ? match[1] : "";
         input.placeholder = match ? "" : value;
         if (unit) unit.value = match?.[2] || spec.unit;
@@ -430,11 +488,13 @@ export function setControlValue(name, entry, value, actual) {
     entry.actual.textContent = actual ? `computed: ${actual}` : "";
 }
 
-export function filterStyleControls(fields, query, theme = false) {
+export function filterStyleControls(fields, query, theme = false, targetKey = "") {
     const search = query.trim().toLowerCase();
     for (const { field } of fields.values())
         field.hidden =
-            (field.dataset.theme === "true") !== theme || Boolean(search && !field.dataset.search.includes(search));
+            (field.dataset.theme === "true") !== theme ||
+            Boolean(field.dataset.target && field.dataset.target !== targetKey) ||
+            Boolean(search && !field.dataset.search.includes(search));
     const panels = new Set([...fields.values()].map((entry) => entry.panel));
     for (const panel of panels) {
         panel.hidden = ![...panel.querySelectorAll(".mps-field")].some((field) => !field.hidden);

@@ -1,4 +1,6 @@
 // Edits actual shared SVG settings. The preview remains the real current page.
+import { PATTERN_HELP } from "./pattern-help.js";
+import { applyPatternPreset } from "./pattern-presets.js";
 const fields = [
     [
         "جای پترن و وضوح",
@@ -27,6 +29,7 @@ const fields = [
         [
             ["mode", "حالت", ["none", "wave", "light", "combined"]],
             ["speed", "سرعت", 0, 10],
+            ["minStrokeWidth", "حداقل ضخامت پیکسلی (px)", 0, 2],
             ["amplitude", "دامنه موج", 0, 100],
             ["period", "دوره موج (ثانیه)", 0.05, 600],
             ["cycles", "تعداد موج", 0.1, 10],
@@ -46,7 +49,6 @@ const fields = [
             ["entrance", "ورود", ["none", "fade", "reveal"]],
             ["entranceDuration", "زمان ورود", 0.05, 600],
             ["entranceDelay", "تأخیر ورود", 0, 60],
-            ["fps", "فریم در ثانیه", 1, 60],
             ["respectReducedMotion", "رعایت کاهش حرکت دستگاه", "boolean"],
         ],
     ],
@@ -67,7 +69,7 @@ const fields = [
             ["gradientShift", "جابجایی گرادینت", -200, 200],
             ["wave", "موج مسیر (%)", 0, 300],
             ["speed", "سرعت مسیر", 0, 10],
-            ["phase", "فاز", -10, 10],
+            ["phase", "فاز (درجه)", -180, 180],
             ["delay", "تأخیر", 0, 60],
             ["light", "نور مسیر (%)", 0, 300],
         ],
@@ -92,8 +94,27 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
         paused = false,
         signature = "";
     const controls = [];
-    container.innerHTML =
-        '<p class="mps-help">پترن‌ها روی همهٔ صفحه‌ها مشترک‌اند؛ هندسه، مسیرها و انیمیشن هر اندازه مستقل است.</p><div class="mps-scope-row"><label>پترن<select id="pattern-kind"><option value="footer">فوتر</option><option value="header">هدر</option></select></label><label>اندازه<select id="pattern-profile"><option value="desktop">دسکتاپ</option><option value="tablet">تبلت</option><option value="mobile">موبایل</option></select></label></div><div class="mps-selection-actions" style="margin-top:12px"><button id="pattern-locate" class="mps-link">رفتن به پترن</button><button id="pattern-pause" class="mps-link">مکث انیمیشن</button></div><label class="mps-help">مسیر SVG<select id="pattern-line"></select></label><div id="pattern-fields"></div><div id="pattern-stops"></div><label class="mps-help">وارد کردن JSON پترن<input id="pattern-import" type="file" accept=".json"></label>';
+    container.innerHTML = `
+        <p class="mps-help">پترن‌ها روی همهٔ صفحه‌ها مشترک‌اند؛ هندسه، مسیرها و انیمیشن هر اندازه مستقل است. حرکت پیوسته را خود مرورگر اجرا می‌کند؛ نیازی به تنظیم FPS نیست.</p>
+        <div class="mps-scope-row">
+            <label>پترن<select id="pattern-kind"><option value="footer">فوتر</option><option value="header">هدر</option></select></label>
+            <label>اندازه<select id="pattern-profile"><option value="desktop">دسکتاپ</option><option value="tablet">تبلت</option><option value="mobile">موبایل</option></select></label>
+        </div>
+        <details class="mps-panel" open>
+            <summary>رفع پرش و انتخاب تنظیمات</summary>
+            <p class="mps-help">اول هدر/فوتر و اندازه را انتخاب کن. «حرکت ملایم» تنظیم آرام آماده را اعمال می‌کند؛ برای مرورگر کند، «فقط نور» تغییر شکل موج را خاموش می‌کند. هر دکمه فقط همین اندازه و همین پترن را تغییر می‌دهد و با Undo برمی‌گردد.</p>
+            <div class="mps-selection-actions">
+                <button type="button" id="pattern-preset-calm" class="mps-link">حرکت ملایم</button>
+                <button type="button" id="pattern-preset-light" class="mps-link">نسخه سبک · فقط نور</button>
+            </div>
+            <p class="mps-help">با زوم ۱۰۰٪ بررسی کن. برای خطوط محو و بریده: «حداقل ضخامت پیکسلی» را ۱ یا ۱٫۲ بگذار. برای حرکت آرام‌تر: سرعت ۰٫۵، دوره موج ۳۰ تا ۳۶ ثانیه، دوره نور ۱۸ تا ۲۴ ثانیه؛ درخشش و ضربان صفر. ضخامت پیکسلی با ضخامت مسیر SVG فرق دارد.</p>
+            <p id="pattern-motion-status" class="mps-help" role="status" aria-live="polite"></p>
+        </details>
+        <div class="mps-selection-actions" style="margin-top:12px"><button id="pattern-locate" class="mps-link">رفتن به پترن</button><button id="pattern-pause" class="mps-link">مکث انیمیشن</button></div>
+        <label class="mps-help">مسیر SVG<select id="pattern-line"></select></label>
+        <div id="pattern-fields"></div><div id="pattern-stops"></div>
+        <label class="mps-help">وارد کردن JSON پترن<input id="pattern-import" type="file" accept=".json"></label>
+    `;
     const $ = (id) => container.querySelector("#" + id),
         config = () => getConfig().patterns?.[kind],
         p = () => config()?.profiles[profile];
@@ -169,10 +190,17 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
                         ].includes(key)
                             ? "1"
                             : "0.1";
+                    if (key === "minStrokeWidth") input.step = "0.05";
                 }
             }
             input.id = `pattern-${type}-${key}`;
             field.append(input);
+            const help = document.createElement("small");
+            help.className = "mps-pattern-help";
+            help.id = `${input.id}-help`;
+            help.textContent = PATTERN_HELP[type][key];
+            input.setAttribute("aria-describedby", help.id);
+            field.append(help);
             grid.append(field);
             controls.push({ type, key, input });
             input.addEventListener(input.type === "number" ? "input" : "change", () => {
@@ -211,6 +239,21 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
         render();
     });
     $("pattern-locate").addEventListener("click", () => locate(kind));
+    for (const preset of ["calm", "light"]) {
+        $("pattern-preset-" + preset).addEventListener("click", () => {
+            try {
+                const next = structuredClone(getConfig());
+                applyPatternPreset(next.patterns[kind], profile, preset);
+                commit(next);
+                preview(paused);
+                render();
+                $("pattern-animation-minStrokeWidth").closest("details").open = true;
+                message("تنظیم آماده روی همین پترن و اندازه اعمال شد؛ با Undo قابل برگشت است.");
+            } catch (error) {
+                message(error.message, true);
+            }
+        });
+    }
     $("pattern-pause").addEventListener("click", () => {
         paused = !paused;
         $("pattern-pause").textContent = paused ? "پخش انیمیشن" : "مکث انیمیشن";
@@ -236,6 +279,17 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
         if (!config()) return;
         $("pattern-kind").value = kind;
         $("pattern-profile").value = profile;
+        let guide = $("pattern-profile-help");
+        if (!guide) {
+            guide = document.createElement("p");
+            guide.id = "pattern-profile-help";
+            guide.className = "mps-help";
+            container.querySelector(".mps-scope-row").after(guide);
+            for (const id of ["pattern-kind", "pattern-profile", "pattern-line", "pattern-import"])
+                $(id).setAttribute("aria-describedby", guide.id);
+        }
+        const breakpoint = kind === "header" ? 640 : config().breakpoint;
+        guide.textContent = `تنظیمات ${kind === "header" ? "هدر" : "فوتر"} در همهٔ صفحه‌ها مشترک است. موبایل: عرض کمتر از ${breakpoint}px؛ تبلت: ${breakpoint} تا ۱۱۷۹؛ دسکتاپ: ۱۱۸۰ به بالا. «مسیر SVG» فقط یکی از خطوط طرح را برای ویرایش انتخاب می‌کند. JSON، تنظیمات همین پترن را جایگزین می‌کند. برای ارتفاع خودِ هیرو یا هدر از تب استایل استفاده کن.`;
         const lines = config().artworks[p().artwork].lines;
         if (lineIndex >= lines.length) lineIndex = 0;
         if ($("pattern-line").options.length !== lines.length) {
@@ -257,6 +311,13 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
         }
         const line = object("line"),
             nextSignature = `${kind}:${profile}:${lineIndex}:${line.stops.length}`;
+        const motion = object("animation");
+        const rate = motion.speed * p().motionSpeed * line.speed;
+        const seconds = (value) => (rate > 0 ? `${(value / rate).toFixed(1)} ثانیه` : "متوقف");
+        const wave = ["wave", "combined"].includes(motion.mode) && line.wave > 0;
+        const light = ["light", "combined"].includes(motion.mode) && line.light > 0;
+        $("pattern-motion-status").textContent =
+            `مدت واقعی مسیر انتخاب‌شده با همهٔ ضریب‌های سرعت: موج ${wave ? seconds(motion.period) : "خاموش"}؛ نور ${light ? seconds(motion.lightPeriod + motion.lightPause) : "خاموش"}. زوم پیش‌نمایش این زمان‌ها را عوض نمی‌کند.`;
         if (signature !== nextSignature) {
             signature = nextSignature;
             $("pattern-stops").replaceChildren();
@@ -275,7 +336,16 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
                     const input = document.createElement("input");
                     input.type = type;
                     input.value = stop[key];
-                    input.title = key === "color" ? "رنگ" : key === "offset" ? "جای رنگ (%)" : "وضوح رنگ";
+                    const label = document.createElement("label");
+                    label.className = "mps-pattern-stop__field";
+                    const text = document.createElement("span");
+                    text.textContent = key === "color" ? "رنگ" : key === "offset" ? "جای رنگ (%)" : "وضوح رنگ (۰ تا ۱)";
+                    input.id = `pattern-stop-${index}-${key}`;
+                    const help = document.createElement("small");
+                    help.id = `${input.id}-help`;
+                    help.className = "mps-pattern-help";
+                    help.textContent = PATTERN_HELP.stops[key];
+                    input.setAttribute("aria-describedby", help.id);
                     if (type === "number") {
                         input.min = min;
                         input.max = max;
@@ -296,7 +366,8 @@ export function createPatternEditor({ container, getConfig, commit, preview, set
                             message(error.message, true);
                         }
                     });
-                    row.append(input);
+                    label.append(text, input, help);
+                    row.append(label);
                 }
                 $("pattern-stops").append(row);
             });
