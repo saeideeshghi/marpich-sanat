@@ -47,7 +47,12 @@ export function htmlPartials(root) {
         configureServer(server) {
             server.watcher.add([directory, dataDirectory]);
             server.watcher.on("change", (file) => {
-                if (file.startsWith(directory) || (file.startsWith(dataDirectory) && !file.startsWith(resolve(dataDirectory, "customizer")) && !file.startsWith(resolve(dataDirectory, "patterns"))))
+                if (
+                    file.startsWith(directory) ||
+                    (file.startsWith(dataDirectory) &&
+                        !file.startsWith(resolve(dataDirectory, "customizer")) &&
+                        !file.startsWith(resolve(dataDirectory, "patterns")))
+                )
                     server.ws.send({ type: "full-reload" });
             });
         },

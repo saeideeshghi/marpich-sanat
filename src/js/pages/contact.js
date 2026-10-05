@@ -4,7 +4,7 @@
  */
 import "../../css/main.css";
 import "../../css/pages/contact.css";
-import "../../css/layout-checks.css";
+import "../../css/components/content-flow.css";
 import "../../css/responsive.css";
 import { initSite } from "../main.js";
 

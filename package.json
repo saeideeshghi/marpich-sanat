@@ -1,6 +1,6 @@
 {
   "name": "marpich-sanat",
-  "version": "0.4.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,9 +11,13 @@
     "preview": "vite preview",
     "preview:pages": "vite preview --mode pages",
     "check": "node scripts/check-project.js && node scripts/check-components.js && node scripts/check-handoff.js && node scripts/check-customizer.js",
-    "check:assets": "node scripts/check-assets.js"
+    "check:assets": "node scripts/check-assets.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean:legacy": "node scripts/clean-legacy.js"
   },
   "devDependencies": {
+    "prettier": "^3.9.9",
     "vite": "^8.3.0"
   },
   "dependencies": {

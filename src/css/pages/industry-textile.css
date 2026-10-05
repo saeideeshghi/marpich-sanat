@@ -1,3 +1,4 @@
+/* Page-specific geometry; shared type and card roles remain in shared components and type-settings.css. */
 .industry-textile,
 .industry-textile__hero-wrap {
     direction: rtl;

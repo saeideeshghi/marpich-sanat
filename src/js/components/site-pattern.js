@@ -259,7 +259,12 @@ export function mountPattern(root, initialConfig) {
     function layout() {
         // Header switches below 640px; footer follows its independent JSON breakpoint.
         const breakpoint = root.dataset.sitePattern === "header" ? 640 : config.breakpoint;
-        const profileName = root.clientWidth < breakpoint ? "mobile" : root.clientWidth < 1180 && config.profiles.tablet ? "tablet" : "desktop";
+        const profileName =
+            root.clientWidth < breakpoint
+                ? "mobile"
+                : root.clientWidth < 1180 && config.profiles.tablet
+                  ? "tablet"
+                  : "desktop";
         profile = config.profiles[profileName];
         animation = { ...config.animation, ...profile.animation };
         root.dataset.patternProfile = profileName;
@@ -556,7 +561,11 @@ export function initSitePatterns() {
             const layer = createPatternLayer("header");
             headerHost.prepend(layer);
             const config = cloneConfig();
-            mountedPatterns.set("header", { root: layer, config: JSON.stringify(config), player: mountPattern(layer, config) });
+            mountedPatterns.set("header", {
+                root: layer,
+                config: JSON.stringify(config),
+                player: mountPattern(layer, config),
+            });
         }
     }
 
@@ -567,7 +576,11 @@ export function initSitePatterns() {
         footer.prepend(layer);
         // Desktop placement and the <=500px mobile artwork come from the footer export.
         const config = cloneConfig(footerPatternSettings);
-        mountedPatterns.set("footer", { root: layer, config: JSON.stringify(config), player: mountPattern(layer, config) });
+        mountedPatterns.set("footer", {
+            root: layer,
+            config: JSON.stringify(config),
+            player: mountPattern(layer, config),
+        });
     }
     if (!previewListener) {
         previewListener = true;
@@ -577,7 +590,9 @@ export function initSitePatterns() {
                 const config = normalizePattern(event.detail[kind]);
                 const signature = JSON.stringify(config);
                 if (signature !== entry.config) {
-                    entry.player.destroy(); entry.player = mountPattern(entry.root, config); entry.config = signature;
+                    entry.player.destroy();
+                    entry.player = mountPattern(entry.root, config);
+                    entry.config = signature;
                 }
                 entry.player.pause(Boolean(event.detail.paused));
             }

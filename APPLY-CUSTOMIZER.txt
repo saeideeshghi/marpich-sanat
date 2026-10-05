@@ -1,5 +1,0 @@
-پوشه src این بسته را کنار package.json پروژه Merge و Replace کنید. تصاویر و فونت‌های قبلی را نگه دارید.
-اجرای محلی: npm run customize
-خروجی سایت: npm run build:pages
-این بسته شامل CSS، تنظیمات ریسپانسیو و پترن هدر/فوتر است؛ به مرورگر یا localStorage وابسته نیست.
-برای انتشار: PUSH-GITHUB.cmd

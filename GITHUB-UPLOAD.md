@@ -1,108 +1,50 @@
-# آپدیت همین پروژه روی GitHub
+# انتشار V3 در GitHub
 
-ریپو: https://github.com/saeideeshghi/marpich-sanat
+نسخهٔ package برابر `3.0.0` و tag انتشار `v3` است. GitHub Pages از branch `main` ساخته می‌شود؛ کدهای این نسخه را در همان branch قرار بده.
 
-شاخه انتشار: `main`
+## روش آماده برای ویندوز
 
-سایت: https://saeideeshghi.github.io/marpich-sanat/index.html
+۱. محتویات `marpich-sanat-v3.zip` را کنار `package.json` در clone فعلی Merge/Replace کن. پوشه‌های تصاویر و فونت‌های موجود را نگه دار.
 
-## روش ثابت هر بار
+۲. فایل `PUSH-GITHUB.cmd` را اجرا کن. اسکریپت فایل‌های منسوخ را حذف می‌کند، تغییرات را با پیام V3 commit می‌کند، تغییرات remote را با rebase می‌گیرد، Check و Build را انجام می‌دهد و سپس `main` و tag `v3` را در یک Push می‌فرستد.
 
-۱. بسته اصلاحات را خارج از پروژه Extract کن. **محتویات داخل بسته** را کنار `package.json` در ریشه همان پروژه قبلی کپی و Replace کن. پوشه‌های `src` و `public` با نسخه موجود ادغام شوند؛ تصاویر، فونت‌ها و تاریخچه Git را حذف نکن.
+۳. نتیجهٔ Deploy را در [GitHub Actions](https://github.com/saeideeshghi/marpich-sanat/actions) بررسی کن. بعد از موفقیت، [سایت](https://saeideeshghi.github.io/marpich-sanat/) به‌روزرسانی می‌شود.
 
-۲. همان پوشه را در VS Code باز کن. در **Terminal → New Terminal** اجرا کن:
+اسکریپت فقط با اجرای خودت انتشار را انجام می‌دهد. tag موجود جابه‌جا نمی‌شود و force push ندارد.
 
-```powershell
-.\PUSH-GITHUB.cmd
-```
+## اجرای دستی در CMD
 
-این فایل Windows، نام ریپو و شاخه را بررسی می‌کند؛ Check و Build مخصوص Pages را اجرا می‌کند، تغییرات را Commit می‌کند، با `origin/main` همگام می‌کند و Push می‌کند. اگر dependencies نصب نیستند ابتدا `npm ci` اجرا می‌شود. روی اولین خطا توقف می‌کند. Tagها جابه‌جا نمی‌شوند.
+در پوشهٔ پروژه اجرا کن. اگر tag `v3` از قبل وجود دارد، برای انتشار بعدی نام دیگری انتخاب کن.
 
-۳. [Actions پروژه](https://github.com/saeideeshghi/marpich-sanat/actions) را باز کن. وقتی اجرای جدید **Deploy website to GitHub Pages** سبز شد، سایت را با **Ctrl + F5** تازه کن. Workflow فعلی Build و Deploy را انجام می‌دهد؛ `dist` را دستی آپلود نکن.
-
-## اجرای دستی همین مراحل
-
-دستورها را یکی‌یکی اجرا کن؛ بعد از خطا مرحله بعد را اجرا نکن:
-
-```powershell
+```cmd
+git switch main
+git ls-remote --tags origin refs/tags/v3
+npm run clean:legacy -- --apply
 git status
-npm.cmd run check
-npm.cmd run build:pages
 git add -A
-git commit -m "Update v2 frontend"
+git commit -m "Release V3 - clean frontend and advanced customizer"
 git pull --rebase origin main
-git push origin main
+npm ci
+npm run check
+npm run build:pages
+git tag -a v3 -m "Marpich Sanat V3"
+git push --atomic origin main refs/tags/v3
 ```
 
-`git status` باید `On branch main` نشان دهد. اگر dependencies نصب نیستند قبل از Check، `npm.cmd ci` اجرا کن. اگر Commit نوشت `nothing to commit`، تغییر جدیدی باقی نمانده و می‌توانی دو دستور آخر را اجرا کنی.
+اگر هر دستور خطا داد، همان خطا را برطرف کن و بعد ادامه بده. اگر commit می‌گوید تغییری وجود ندارد، از مرحلهٔ pull ادامه بده. اگر rebase conflict داشت، فایل‌ها را اصلاح و `git rebase --continue` را اجرا کن.
 
-## اجرای محلی
+اگر Push اسکریپت به دلیل اتصال یا احراز هویت متوقف شد و tag محلی ساخته شده بود، پس از رفع مشکل فقط Push همان commit و tag را تکرار کن:
 
-```powershell
-npm.cmd run dev
+```cmd
+git push --atomic origin main refs/tags/v3
 ```
 
-آدرس ترمینال را باز کن. برای Preview مسیر Pages، بعد از `build:pages` اجرا کن:
+## نمایش V3 در بخش Releases
 
-```powershell
-npm.cmd run preview:pages
-```
+بعد از Push موفق، در GitHub به **Releases → Draft a new release** برو؛ tag موجود `v3` را انتخاب کن، عنوان را `Marpich Sanat V3` بگذار و **Publish release** را بزن. انتشار سایت با Push روی `main` انجام می‌شود و ساخت Release برای نمایش و دانلود نسخه است.
 
-آدرس معمول: http://localhost:4173/marpich-sanat/index.html
+## آپلود با صفحهٔ GitHub
 
-اگر پورت متفاوتی نمایش داده شد، همان را استفاده کن. سرور با **Ctrl + C** بسته می‌شود. بازکردن HTML مستقیم یا Live Server، includeهای مشترک را پردازش نمی‌کند.
+در branch `main` از **Add file → Upload files** استفاده کن. سورس‌ها و فایل‌های workflow را با ساختار کامل آپلود و پیام commit را `Release V3` بگذار. فایل ZIP، `node_modules`، `dist` و cache را به‌عنوان سورس سایت آپلود نکن. بعد از commit، از **Releases → Draft a new release**، tag جدید `v3` را روی `main` بساز و منتشر کن.
 
-## خطاهای رایج
-
-| پیام | اقدام |
-| --- | --- |
-| `not a git repository` | همان پوشه‌ای را باز کن که قبلاً Push کردی. اگر فقط ZIP داری، روش Clone پایین را اجرا کن. |
-| شاخه `main` نیست | با `git status` شاخه و تغییرات را بررسی کن. |
-| Remote تطبیق ندارد | `git remote -v` باید همین ریپوی `saeideeshghi/marpich-sanat` باشد. |
-| `npm.ps1 cannot be loaded` | از `npm.cmd` یا `PUSH-GITHUB.cmd` استفاده کن؛ تغییر Execution Policy لازم نیست. |
-| Check یا Build ناموفق | خطای دقیق را اصلاح کن و دوباره فایل Push را اجرا کن. |
-| خطای شبکه یا ورود | اتصال یا احراز هویت GitHub را کامل کن و دوباره اجرا کن. رمز یا Token را داخل فایل‌ها ننویس. |
-| `CONFLICT` | فایل‌های Conflict را در VS Code حل کن، سپس دستورهای زیر را اجرا کن. |
-| `fetch first` / `non-fast-forward` | بعد از Commit محلی، `git pull --rebase origin main` و سپس Push کن. |
-| Actions قرمز شد | اجرای جدید را باز کن و خطای مرحله ناموفق را بررسی کن. |
-
-بعد از حل Conflict در Rebase:
-
-```powershell
-git add -A
-git rebase --continue
-npm.cmd run check
-npm.cmd run build:pages
-git push origin main
-```
-
-`git rebase --abort` همگام‌سازی ناموفق را لغو می‌کند و Commit محلی خودت حفظ می‌شود. برای آپدیت معمول این پروژه از `git push --force` استفاده نکن.
-
-## اگر پوشه فعلی Git ندارد
-
-فقط در این حالت در یک پوشه تازه اجرا کن:
-
-```powershell
-git clone https://github.com/saeideeshghi/marpich-sanat.git marpich-sanat
-cd marpich-sanat
-```
-
-اصلاحات و دارایی‌های محلی جدید را در ریشه این Clone ادغام کن و روش ثابت بالا را اجرا کن. پوشه قبلی خودت را نگه دار.
-
-## v2 و Tag
-
-سایت از آخرین Commit روی `main` ساخته می‌شود و آدرسش ثابت می‌ماند. Tag قدیمی `v2.0.0` تصویر ثبت‌شده همان زمان است و با Push معمولی تغییر نمی‌کند. این روال اصلاحات v2 را روی سایت منتشر می‌کند و تاریخچه نسخه قبلی را حفظ می‌کند.
-
-## بررسی دارایی‌ها
-
-```powershell
-npm.cmd run check:assets
-```
-
-این بررسی مستقل، فایل‌های مفقود را مشخص می‌کند. در زمان تحویل فقط PDF واقعی زیر موجود نبود:
-
-```text
-public/assets/documents/product-details/northair-pro-flow-datasheet.pdf
-```
-
-دیتاشیت اصلی را با همین مسیر اضافه کن. فایل Push، Check و Build را اجرا می‌کند؛ بررسی دارایی‌ها جداگانه در اختیار توست.
+مرورگر فایل‌های قدیمی را هنگام Merge حذف نمی‌کند؛ مسیرهای `docs/obsolete-files.json` را نیز از مخزن حذف کن. روش اسکریپت این پاک‌سازی را خودش انجام می‌دهد.

@@ -90,11 +90,6 @@
     flex: 0 0 auto;
 }
 
-.branch-card__address {
-    direction: rtl;
-    text-align: right;
-}
-
 .contact-whatsapp {
     direction: ltr;
 }
@@ -124,19 +119,6 @@
 
 .contact-whatsapp span {
     color: #fff !important;
-}
-
-.contact-whatsapp__icon,
-.contact-submit__icon {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    filter: brightness(0) invert(1);
-}
-
-.contact-upload__icon {
-    display: block !important;
-    flex: 0 0 auto;
 }
 
 .contact-submit {

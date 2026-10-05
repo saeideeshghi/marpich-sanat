@@ -307,17 +307,6 @@
     cursor: pointer;
 }
 
-/* .catalog-more__button::after {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: currentColor;
-    content: "";
-    opacity: 0.7;
-} */
-
 /* =========================================================
    Consultation — local copy of approved CTA visual
    ========================================================= */
@@ -331,98 +320,6 @@
     background: #cfeaff;
     padding: 42px 56px;
     direction: ltr;
-}
-
-.industries-consultation__visual {
-    grid-area: visual;
-    min-width: 0;
-}
-
-.industries-consultation__visual img {
-    display: block;
-    width: 100%;
-    max-height: 370px;
-    object-fit: contain;
-}
-
-.industries-consultation__content {
-    grid-area: content;
-    direction: rtl;
-    text-align: right;
-}
-
-.industries-consultation__eyebrow {
-    margin: 0 0 10px;
-    color: #70b7ed;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.industries-consultation__content h2 {
-    margin: 0;
-    font-size: max(14px, clamp(27px, 2.1vw, 34px));
-    font-weight: 800;
-    line-height: 1.45;
-}
-
-.industries-consultation__description {
-    max-width: 610px;
-    margin: 14px 0 0;
-    color: #3f4b61;
-    font-size: 15px;
-    line-height: 1.95;
-}
-
-.industries-consultation__accent {
-    display: block;
-    width: 48px;
-    height: 2px;
-    margin: 18px 0 22px;
-    background: var(--ind-orange);
-}
-
-.industries-consultation__form {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-}
-
-.industries-consultation__field {
-    min-height: 46px;
-    border: 1px solid #75baf0;
-    border-radius: 999px;
-    outline: 0;
-    background: transparent;
-    padding: 0 16px;
-    color: var(--ind-navy);
-    font: inherit;
-    font-size: 14px;
-}
-
-.industries-consultation__field::placeholder {
-    color: #65748b;
-}
-
-.industries-consultation__field--wide {
-    grid-column: 1 / -1;
-}
-
-.industries-consultation__submit {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    justify-self: start;
-    gap: 9px;
-    border: 0;
-    border-radius: 999px;
-    background: var(--ind-orange);
-    padding: 0 20px;
-    color: #fff;
-    font: inherit;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 8px 18px rgb(247 110 17 / 0.2);
 }
 
 /* =========================================================
@@ -621,51 +518,6 @@
         min-height: 0;
         margin-inline: -12px;
         padding: 24px 16px 28px;
-    }
-
-    .industries-consultation__visual img {
-        max-height: 245px;
-    }
-
-    .industries-consultation__eyebrow {
-        margin-bottom: 7px;
-        font-size: 14px;
-    }
-
-    .industries-consultation__content h2 {
-        font-size: 23px;
-    }
-
-    .industries-consultation__description {
-        margin-top: 10px;
-        font-size: 14px;
-        line-height: 1.95;
-    }
-
-    .industries-consultation__accent {
-        width: 40px;
-        margin: 14px 0 16px;
-    }
-
-    .industries-consultation__form {
-        grid-template-columns: 1fr;
-        gap: 7px;
-    }
-
-    .industries-consultation__field {
-        min-height: 40px;
-        font-size: 14px;
-    }
-
-    .industries-consultation__field--wide {
-        grid-column: auto;
-    }
-
-    .industries-consultation__submit {
-        width: 100%;
-        min-height: 41px;
-        justify-self: stretch;
-        font-size: 14px;
     }
 }
 

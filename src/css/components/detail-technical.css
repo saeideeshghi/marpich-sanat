@@ -217,10 +217,19 @@ body[data-page="project-details"] {
         grid-template-columns: minmax(0, 1fr);
     }
     /* Diagram first on narrow screens; desktop column order stays authored. */
-    .details-card__body > .details-visual { grid-row: 1; border-bottom: 1px solid var(--line-soft); }
-    .details-card__body--project > .details-table-wrap { grid-row: 2; }
-    .details-card__body--product > .extras-panel { grid-row: 2; }
-    .details-card__body--product > .details-table-wrap { grid-row: 3; }
+    .details-card__body > .details-visual {
+        grid-row: 1;
+        border-bottom: 1px solid var(--line-soft);
+    }
+    .details-card__body--project > .details-table-wrap {
+        grid-row: 2;
+    }
+    .details-card__body--product > .extras-panel {
+        grid-row: 2;
+    }
+    .details-card__body--product > .details-table-wrap {
+        grid-row: 3;
+    }
     .details-table-wrap {
         border-right: 0;
         border-bottom: 1px solid var(--line-strong);
@@ -230,26 +239,46 @@ body[data-page="project-details"] {
         justify-content: flex-start;
         padding: 20px 16px;
     }
-    .extras-panel__content { width: 100%; }
-    .extras-panel ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
-    .extras-panel li { margin-bottom: 0; }
-    .extras-title { margin-bottom: 16px; }
-    .extras-title h3 { font-size: 18px; }
+    .extras-panel__content {
+        width: 100%;
+    }
+    .extras-panel ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 12px;
+    }
+    .extras-panel li {
+        margin-bottom: 0;
+    }
+    .extras-title {
+        margin-bottom: 16px;
+    }
+    .extras-title h3 {
+        font-size: 18px;
+    }
     .details-visual {
         min-height: 280px;
     }
 }
 @media (max-width: 520px) {
-    body[data-page="project-details"], body[data-page="product-details"] {
+    body[data-page="project-details"],
+    body[data-page="product-details"] {
         --table-cell-padding-block: 10px;
         --table-cell-padding-inline: 8px;
         --table-heading-padding-block: 12px;
         --text-table: 13px;
         --text-table-heading: 14px;
     }
-    .details-table col.col-label { width: 42%; }
-    .details-table col.col-value { width: 58%; }
-    .details-table :is(th,td) { line-height: 1.9; overflow-wrap: break-word; }
+    .details-table col.col-label {
+        width: 42%;
+    }
+    .details-table col.col-value {
+        width: 58%;
+    }
+    .details-table :is(th, td) {
+        line-height: 1.9;
+        overflow-wrap: break-word;
+    }
     .details-card__note {
         margin-inline: 10px;
     }

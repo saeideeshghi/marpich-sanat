@@ -1,3 +1,4 @@
+/* Page-specific geometry; shared type and card roles remain in shared components and type-settings.css. */
 .projects-page,
 .projects-page__hero-wrap {
     direction: rtl;
@@ -352,9 +353,6 @@ body[data-page] main .projects-page__card-brand img {
 
 .projects-page__grid.is-list .projects-page__card-body {
     padding: 1.2rem 1.3rem 1rem;
-}
-
-.projects-page__grid.is-list .projects-page__card-description {
 }
 
 /* ---------------------------------------------

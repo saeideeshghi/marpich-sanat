@@ -1,3 +1,4 @@
+/* Page-specific geometry; shared type and card roles remain in shared components and type-settings.css. */
 @import "../components/catalog.css";
 @import "./project-details-settings.css";
 .project-details__hero {
@@ -103,8 +104,7 @@
 }
 .project-details__section,
 .project-details__two-columns,
-.project-details__products,
-.project-details__cta {
+.project-details__products {
     position: relative;
     z-index: 1;
 }
@@ -331,126 +331,6 @@
     font-size: 14px;
     line-height: 1;
 }
-.project-details__cta {
-    margin-top: 40px;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #cfe8ff;
-}
-
-.project-details__cta-grid {
-    display: grid;
-    grid-template-areas:
-        "media"
-        "copy";
-}
-
-.project-details__cta-copy {
-    grid-area: copy;
-    padding: 18px 14px 20px;
-}
-
-.project-details__cta-eyebrow {
-    color: var(--color-brand-blue);
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.project-details__cta-copy h2 {
-    margin-top: 5px;
-    color: var(--color-text-dark);
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.65;
-}
-
-.project-details__cta-copy > p {
-    margin-top: 7px;
-    color: rgb(51 65 85);
-    font-size: 14px;
-    line-height: 2;
-}
-
-.project-details__cta-accent {
-    display: block;
-    width: 30px;
-    height: 2px;
-    margin-top: 10px;
-    background: var(--color-brand-orange);
-}
-
-.project-details__cta-form {
-    display: grid;
-    gap: 7px;
-    margin-top: 14px;
-}
-
-.project-details__cta-fields {
-    display: grid;
-    gap: 7px;
-}
-
-.project-details__cta-field input {
-    width: 100%;
-    height: 34px;
-    border: 1px solid var(--color-brand-blue);
-    border-radius: 999px;
-    background: rgb(255 255 255 / 0.24);
-    padding: 0 13px;
-    color: var(--color-text-dark);
-    outline: none;
-    font-size: 14px;
-}
-
-.project-details__cta-field input::placeholder {
-    color: rgb(71 85 105 / 0.72);
-}
-
-.project-details__cta-field input:focus {
-    border-color: rgb(69 150 221);
-    box-shadow: 0 0 0 3px rgb(121 182 237 / 0.2);
-}
-
-.project-details__cta-button {
-    width: 156px;
-    height: 44px;
-    justify-self: start;
-    border-radius: 8px;
-    background: linear-gradient(90deg, #f76e11 0%, #f4824c 100%);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgb(247 110 17 / 0.2);
-    transition:
-        transform 180ms ease,
-        box-shadow 180ms ease;
-}
-
-.project-details__cta-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgb(247 110 17 / 0.28);
-}
-
-.project-details__cta-media {
-    grid-area: media;
-    display: grid;
-    min-height: 205px;
-    place-items: center;
-    overflow: visible;
-    padding: 13px 12px 0;
-}
-
-.project-details__cta-image {
-    display: block !important;
-    visibility: visible !important;
-    width: 100% !important;
-    max-width: 390px;
-    height: 190px !important;
-    max-height: none !important;
-    opacity: 1 !important;
-    object-fit: contain;
-    object-position: center;
-}
 @media (min-width: 48rem) {
     .project-details__hero {
         height: 455px;
@@ -474,8 +354,8 @@
     }
 
     .project-details__intro-list,
-.project-details__importance p,
-.project-details__content-column > p {
+    .project-details__importance p,
+    .project-details__content-column > p {
         font-size: 14px;
     }
 
@@ -485,7 +365,7 @@
     }
 
     .project-details__bullet-list,
-.project-details__check-list {
+    .project-details__check-list {
         font-size: 14px;
     }
 
@@ -553,48 +433,6 @@
     .project-details__product-link {
         font-size: 14px;
     }
-
-    .project-details__cta-grid {
-        grid-template-areas: "copy media";
-        grid-template-columns: 1fr 1fr;
-        min-height: 390px;
-        direction: ltr;
-    }
-
-    .project-details__cta-copy,
-.project-details__cta-media {
-        direction: rtl;
-    }
-
-    .project-details__cta-copy {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 28px 32px;
-    }
-
-    .project-details__cta-copy h2 {
-        font-size: 23px;
-    }
-
-    .project-details__cta-copy > p {
-        font-size: 14px;
-    }
-
-    .project-details__cta-fields {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .project-details__cta-media {
-        min-height: 390px;
-        padding: 24px 22px;
-    }
-
-    .project-details__cta-image {
-        width: 100% !important;
-        height: 320px !important;
-        max-width: 520px;
-    }
 }
 @media (min-width: 73.75rem) {
     .project-details__hero {
@@ -641,7 +479,7 @@
     }
 
     .project-details__importance p,
-.project-details__content-column > p {
+    .project-details__content-column > p {
         margin-top: 11px;
         font-size: 14px;
         line-height: 2.15;
@@ -657,7 +495,7 @@
     }
 
     .project-details__bullet-list,
-.project-details__check-list {
+    .project-details__check-list {
         gap: 9px;
         margin-top: 14px;
         font-size: 14px;
@@ -739,63 +577,6 @@
         padding-top: 11px;
         font-size: 14px;
     }
-
-    .project-details__cta {
-        margin-top: 55px;
-        border-radius: 0;
-    }
-
-    .project-details__cta-grid {
-        min-height: 500px;
-    }
-
-    .project-details__cta-copy {
-        padding: 42px 50px;
-    }
-
-    .project-details__cta-eyebrow {
-        font-size: 14px;
-    }
-
-    .project-details__cta-copy h2 {
-        margin-top: 7px;
-        font-size: 28px;
-        line-height: 1.6;
-    }
-
-    .project-details__cta-copy > p {
-        margin-top: 9px;
-        font-size: 14px;
-        line-height: 2;
-    }
-
-    .project-details__cta-form {
-        gap: 8px;
-        margin-top: 16px;
-    }
-
-    .project-details__cta-field input {
-        height: 39px;
-        font-size: 14px;
-    }
-
-    .project-details__cta-button {
-        width: 206px;
-        height: 45px;
-        border-radius: 16px;
-        font-size: 14px;
-    }
-
-    .project-details__cta-media {
-        min-height: 500px;
-        padding: 34px 34px 24px;
-    }
-
-    .project-details__cta-image {
-        width: 100% !important;
-        max-width: 600px;
-        height: 420px !important;
-    }
 }
 .project-details__consultation-shell {
     position: relative;
@@ -835,7 +616,8 @@ body[data-page="project-details"] :is(.project-details__section, .project-detail
 body[data-page="project-details"] .project-details__two-columns {
     gap: var(--project-grid-gap);
 }
-body[data-page="project-details"] :is(.project-details__intro-list, .project-details__bullet-list, .project-details__check-list),
+body[data-page="project-details"]
+    :is(.project-details__intro-list, .project-details__bullet-list, .project-details__check-list),
 body[data-page="project-details"] :is(.project-details__importance, .project-details__content-column) > p.site-prose {
     font-size: var(--project-body);
     line-height: var(--project-body-leading);
@@ -849,17 +631,39 @@ body[data-page="project-details"] :is(.project-details__importance, .project-det
         gap: 12px;
         grid-auto-rows: auto;
     }
-    body[data-page="project-details"] main .project-details__product-card .project-details__product-body { padding: 12px; }
-    body[data-page="project-details"] main .project-details__product-card .site-card__title { line-height: 1.75; min-height: 0; }
-    body[data-page="project-details"] main .project-details__product-card .site-card__description { line-height: 1.9; }
-    body[data-page="project-details"] main .project-details__product-specs { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-    body[data-page="project-details"] main .project-details__product-specs span { min-height: 24px; padding: 3px 5px; line-height: 1.6; }
-    body[data-page="project-details"] main .project-details__product-link { font-size: 12px; min-height: 36px; padding-top: 8px; }
+    body[data-page="project-details"] main .project-details__product-card .project-details__product-body {
+        padding: 12px;
+    }
+    body[data-page="project-details"] main .project-details__product-card .site-card__title {
+        line-height: 1.75;
+        min-height: 0;
+    }
+    body[data-page="project-details"] main .project-details__product-card .site-card__description {
+        line-height: 1.9;
+    }
+    body[data-page="project-details"] main .project-details__product-specs {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+    }
+    body[data-page="project-details"] main .project-details__product-specs span {
+        min-height: 24px;
+        padding: 3px 5px;
+        line-height: 1.6;
+    }
+    body[data-page="project-details"] main .project-details__product-link {
+        font-size: 12px;
+        min-height: 36px;
+        padding-top: 8px;
+    }
 }
 @media (max-width: 500px) {
-    body[data-page="project-details"] main .project-details__products .project-details__products-grid { grid-template-columns: minmax(0, 1fr); }
+    body[data-page="project-details"] main .project-details__products .project-details__products-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
-body[data-page="project-details"] .project-details__surface { background-color: #ecf0f8; }
+body[data-page="project-details"] .project-details__surface {
+    background-color: #ecf0f8;
+}
 
 @media (width < 50px) {
     body[data-page="project-details"] main .project-details__product-card .project-details__product-specs {

@@ -9,10 +9,15 @@ export function initTemplateStyles() {
             url.searchParams.set("v", revision);
             link.href = url.href;
             try {
-                const response = await fetch(`${import.meta.env.BASE_URL}assets/customizer/settings.json`, { cache: "no-store" });
+                const response = await fetch(`${import.meta.env.BASE_URL}assets/customizer/settings.json`, {
+                    cache: "no-store",
+                });
                 const config = await response.json();
-                if (config.patterns) window.dispatchEvent(new CustomEvent("site:pattern-preview", { detail: config.patterns }));
-            } catch { /* A later page load uses the saved source artwork. */ }
+                if (config.patterns)
+                    window.dispatchEvent(new CustomEvent("site:pattern-preview", { detail: config.patterns }));
+            } catch {
+                /* A later page load uses the saved source artwork. */
+            }
         });
     }
 }

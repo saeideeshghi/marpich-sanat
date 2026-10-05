@@ -1,83 +1,51 @@
-# مارپیچ صنعت — فرانت‌اند
+# مارپیچ صنعت
 
-نسخهٔ ۴ اکتبر ۲۰۲۶ بر اساس سورس شاخهٔ `main` با Commit `0261039b`. باکس بالایی، جدول فنی، دستاوردها و دیدگاه کارفرمای `project-details` از فایل مرجع `marpich-sanatf-07(1).zip` بازگردانده شده‌اند. سایر بخش‌ها و ۱۵۹ تنظیم ذخیره‌شدهٔ Customizer حفظ شده‌اند.
+نسخهٔ V3 (`3.0.0`) — ۴ اکتبر ۲۰۲۶. انتشار با tag به نام `v3` روی branch `main` انجام می‌شود؛ راهنما در `GITHUB-UPLOAD.md` است. مبنا: `backup.rar` ارسالی؛ ظاهر، محتوای ۱۲ صفحه و ۱۵۹ قانون ثبت‌شدهٔ قبلی حفظ شده‌اند. فایل ورودی Customizer و workflow لازم از همان ریپوی GitHub بازیابی شدند.
 
-راهنمای این اصلاح: [APPLY-PROJECT-DETAILS-RESTORE.md](APPLY-PROJECT-DETAILS-RESTORE.md).
+HTML، Tailwind CSS 4، ES Modules و Vite؛ کامپوننت‌های HTML در زمان Build ترکیب می‌شوند. فریم‌ورک UI اضافه نشده است.
 
-۱۲ صفحه با HTML، Tailwind CSS 4، ES Modules و Vite؛ بدون React یا Vue.
-Header، Footer، منوی موبایل و فرم‌های تکراری از `src/components` ساخته می‌شوند.
+## جایگزینی این بسته
 
-## اجرا و ساخت
-
-Node.js حداقل 22.12.0، مطابق `package.json`:
+1. محتوای ZIP را در پوشهٔ اصلی پروژه کنار `package.json`، Merge و Replace کن.
+2. پوشه‌های `assets`، `public` و فونت‌های قبلی را نگه دار. این بسته جایگزین تصاویر اصلی نیست.
+3. فایل‌های قدیمی مشخص‌شده را حذف کن:
 
 ```bash
+npm run clean:legacy -- --apply
 npm ci
 npm run check
-npm run dev
+npm run customize
 ```
 
-صفحات را با Vite باز کنید؛ بازکردن مستقیم HTML با `file://`، includeها را پردازش نمی‌کند.
+`clean:legacy` فقط فهرست صریح `docs/obsolete-files.json` را حذف می‌کند؛ بدون `--apply` فقط فهرست را نمایش می‌دهد. نیازی به پاک‌کردن دستی پوشه‌ها نیست.
+
+Node.js حداقل 22.12.0 لازم است. در ویندوز `CUSTOMIZE.cmd` نیز همان ویرایشگر را اجرا و وابستگی‌های قدیمی را اصلاح می‌کند. برای اجرای عادی: `npm run dev`. بازکردن HTML با دوبار کلیک یا Live Server، includeها را پردازش نمی‌کند.
+
+## Customizer
+
+مسیر محلی: `/tools/customizer.html`. بخش مشترک یا المان دقیق را انتخاب کن، محدودهٔ صفحه و اندازه را مشخص کن و مقادیر را تغییر بده. بازه‌های دلخواه، واحدهای CSS، Grid/Flex، موقعیت، رنگ، سایه، hover/focus، پترن‌ها، Undo/Redo، کپی تنظیمات و مدیریت قانون‌ها قابل ویرایش‌اند.
+
+ثبت محلی، فایل‌های واقعی را می‌نویسد. نسخهٔ GitHub Pages امکان نوشتن سورس ندارد و ZIP قابل جایگزینی می‌دهد. برای انتشارِ تغییرات ثبت‌شده باید Build و Push انجام شود.
+
+راهنمای عملی: [CUSTOMIZER.md](CUSTOMIZER.md). قرارداد کلاس‌ها و ترتیب CSS: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). راهنمای Backend: [docs/backend-handoff.html](docs/backend-handoff.html).
+
+## ساخت و کنترل
 
 ```bash
+npm run format:check
+npm run check
 npm run check:assets
 npm run build
-npm run preview
-```
-
-برای همین GitHub Pages:
-
-```bash
 npm run build:pages
 npm run preview:pages
 ```
 
-راهنمای به‌روزرسانی ریپو: [GITHUB-UPLOAD.md](GITHUB-UPLOAD.md).
+`check:assets` را در نسخهٔ دارای تصاویر کامل اجرا کن. خروجی Build در `dist` قرار می‌گیرد؛ آن را داخل سورس نگه ندار.
 
-## تنظیم ظاهر
+- موبایل: تا 639px؛ تبلت: 640–1179px؛ دسکتاپ: از 1180px.
+- فرمت کد با `npm run format` یکسان می‌شود. JSON پترن‌ها و CSS تولیدی از فرمت دستی مستثنی‌اند.
+- `assets` ریشه و `public/assets` پشتیبانی می‌شوند؛ فایل هم‌نام در `public/assets` اولویت دارد.
+- Auth واقعی و ثبت فرم‌ها هنوز به Backend نیاز دارند. adapterهای رویداد و قرارداد API حفظ شده‌اند.
+- ۱۱۴ لینک placeholder موجود در قالب‌های رندرشده، همان محتوای قبلی‌اند و مقصد واقعی‌شان باید هنگام اتصال CMS تکمیل شود.
 
-برای ویرایش زندهٔ همهٔ صفحه‌ها، دستور `npm run customize` را اجرا کنید؛ راهنمای کامل: [CUSTOMIZER.md](CUSTOMIZER.md).
-پیش‌نمایش صفحه، انتخاب دقیق المان یا اجزای تکراری، تنظیم مستقل دسکتاپ/تبلت/موبایل و بازهٔ دلخواه، مقایسه و برگشت تغییرات دارد. پترن هدر و فوتر هم برای هندسه، مسیرها، گرادینت و انیمیشن هر حالت ویرایشگر دارند.
-دکمهٔ «تأیید و ثبت» در Vite محلی، CSS، تنظیمات و دو JSON پترن را واقعاً ذخیره می‌کند؛ در نسخهٔ آنلاین، ZIP همان چهار فایل با مسیر پروژه می‌دهد. پوشهٔ `src` خروجی را Merge و Replace کنید، سپس محلی اجرا یا Build کنید.
-
-| تنظیم | فایل |
-| --- | --- |
-| ویرایشگر بصری همهٔ صفحه‌ها | `tools/customizer.html` |
-| تنظیمات تأییدشدهٔ ویرایشگر | `src/data/customizer/settings.json` |
-| CSS نهایی تولیدشدهٔ ویرایشگر | `src/css/template-overrides.css` |
-| فاصلهٔ برابر از دو لبه، اندازهٔ عکس List، فاصلهٔ بخش‌ها و Padding جدول | `src/css/layout-settings.css` |
-| فونت Hero، عنوان و توضیح کارت، CTA، تگ و جدول | `src/css/type-settings.css` |
-| ارتفاع مستقل هر Hero با ID همان صفحه | `src/css/hero-heights.css` |
-| ظاهر خاص هر صفحه | `src/css/pages/` |
-| محتوای componentها، محصولات و فیلترها | `src/data/pages/` |
-| متن، تصاویر و مزایای پنج خدمت بازشونده | `expertise.html` |
-| ظاهر مرجع باکس بالایی، جدول، دستاوردها و دیدگاه کارفرمای پروژه | `src/css/pages/project-details-reference.css` |
-| جای‌گذاری فوتر و طرح مرجع موبایل تا عرض ۵۰۰ پیکسل | `src/data/patterns/footer-pattern.json` |
-| پروفایل‌های مستقل هدر در دسکتاپ، تبلت و موبایل | `src/data/patterns/site-pattern.json` |
-
-راهنمای دقیق تنظیمات: [docs/DESIGN-SETTINGS.md](docs/DESIGN-SETTINGS.md).
-تغییرات و نتیجهٔ بررسی: [docs/RESPONSIVE-REVIEW.md](docs/RESPONSIVE-REVIEW.md).
-روش جایگزینی فایل‌ها: [APPLY-RESPONSIVE-FINAL.md](APPLY-RESPONSIVE-FINAL.md).
-راهنمای این تحویل: [APPLY-FINAL-POLISH.md](APPLY-FINAL-POLISH.md).
-
-## دارایی‌ها
-
-تصاویر اصلی موجود روی سیستم خودتان را نگه دارید؛ این بسته آن‌ها را دوباره اضافه نمی‌کند.
-دارایی‌های کوچک همراه نسخهٔ اولیه، فونت‌های همراه ورودی و لوگوی جدید موج‌های آبی در بسته هستند.
-مسیرهای `public/assets` و `assets` در ریشه، هر دو پشتیبانی می‌شوند؛ فایل هم‌نام در `public/assets` اولویت دارد.
-فهرست مراجع در [docs/assets-manifest.json](docs/assets-manifest.json) است.
-
-## قراردادهای اتصال
-
-- `build/pages.js`: فهرست صفحات و منوی فعال.
-- `build/html-partials.js` و `build/components.js`: ترکیب HTML و داده‌ها هنگام اجرا و Build.
-- `src/js/main.js`: رفتار مشترک؛ entryهای هر صفحه در `src/js/pages` هستند.
-- ترتیب CSS: عمومی، CSS صفحه، اجزای مشترک صفحه، سپس `responsive.css`؛ تنظیمات تأییدشدهٔ Customizer از یک stylesheet جدا در انتهای head بارگذاری می‌شوند.
-- Breakpointها: موبایل تا 639px، تبلت از 640 تا 1179px، Desktop از 1180px.
-- فرم جستجو، حالت Grid/List، منو و خدمات بازشونده فعال‌اند. نتیجهٔ جستجوی آنلاین، ثبت فرم‌ها و Auth واقعی به Backend نیاز دارند.
-- فرم‌ها رویدادهای `catalog:search`، `consultation:submit` و `rfq:submit` را منتشر می‌کنند؛ adapter باید پیش از `await`، رویداد قابل لغو را `preventDefault()` کند.
-- Select اصلی در فرم حفظ شده است؛ Input جستجوی گزینه‌ها جای فیلد ارسالی Backend را نمی‌گیرد.
-- شناسه‌های هر خدمت، `aria-controls` و شناسهٔ پنلش باید هنگام انتقال به CMS با هم حفظ شوند.
-- لینک‌های `#` باقی‌مانده و فایل‌های واقعی PDF/CAD باید پیش از تحویل محتوایی نهایی تکمیل شوند؛ جزئیات در گزارش بررسی آمده است.
-
-برای افزودن صفحه، HTML و entry اختصاصی آن را در `build/pages.js` ثبت کنید و `npm run check` و Build را اجرا کنید.
+گزارش همین نسخه: [docs/VALIDATION.md](docs/VALIDATION.md). انتشار: [GITHUB-UPLOAD.md](GITHUB-UPLOAD.md).
