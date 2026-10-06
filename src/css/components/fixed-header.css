@@ -1,7 +1,7 @@
 /* Shared navigation settings; each variable can be scoped to a page/range. */
 .site-header {
     --header-fixed-enabled: 1;
-    --header-fixed-scroll-threshold: 96px;
+    --header-fixed-scroll-threshold: 600px;
     --header-fixed-top: 0px;
     --header-fixed-background-color: #0f172b;
     --header-fixed-background-opacity: 96;
@@ -33,15 +33,15 @@ body[data-page] .site-header[data-header-fixed="true"] {
         transform: translateY(0);
     }
 }
-/* Match the navigation's hamburger breakpoint. The original introductory
- * padding stays on the hero; only the fixed compact row removes that space. */
+/* Match the navigation's hamburger breakpoint. Keep the fixed header flush
+ * with the viewport, with breathing room inside its compact navigation row. */
 @media (max-width: 1179px) {
     body[data-page] .site-header[data-header-fixed="true"] {
         top: 0;
     }
     body[data-page] .site-header[data-header-fixed="true"] .site-header__mobile {
-        padding-block: 0;
-        min-height: 64px;
+        padding-block: 8px;
+        min-height: 80px;
     }
     body[data-page] .site-header__settings-measure {
         height: 0;

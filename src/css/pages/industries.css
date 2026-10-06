@@ -285,6 +285,35 @@
    Markup in industries.html carries both industry-card and product-card classes.
    Keep only Industries-specific layout in this file. */
 
+/* Anchor each photo to its own frame, including responsive and list layouts.
+ * Image dimensions must not participate in sizing the media container. */
+body[data-page="industries"] .industry-card__media {
+    position: relative;
+    min-width: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+body[data-page="industries"] .industry-card__media > .product-card__image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Right-aligned text inside a badge, as well as a badge on the right edge. */
+body[data-page="industries"] .industry-card__tag {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+    justify-content: flex-start;
+    direction: rtl;
+    text-align: right;
+}
+
 .catalog-more {
     display: flex;
     justify-content: center;
@@ -518,6 +547,13 @@
         min-height: 0;
         margin-inline: -12px;
         padding: 24px 16px 28px;
+    }
+}
+
+@media (max-width: 639px) {
+    body[data-page="industries"] #industries-catalog-title {
+        font-size: 22px;
+        line-height: 1.6;
     }
 }
 

@@ -2,7 +2,9 @@
 import { readFileSync, existsSync, lstatSync, rmSync } from "node:fs";
 import { resolve, relative } from "node:path";
 const root = resolve(import.meta.dirname, "..");
-const files = JSON.parse(readFileSync(resolve(root, "docs/obsolete-files.json"), "utf8"));
+// Publication needs this source registry even when documentation is omitted
+// from a handoff. It contains only the previously approved migration paths.
+const files = JSON.parse(readFileSync(resolve(root, "scripts/legacy-files.json"), "utf8"));
 const apply = process.argv.includes("--apply");
 let count = 0;
 for (const name of files) {
